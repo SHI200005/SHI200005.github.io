@@ -4,10 +4,10 @@
 baseurl:
 url: https://SHI200005.github.io
 date_format: "ordinal"
-title: 码志
-subtitle: "公众号：闷骚的程序员"
-description: "马壮的个人博客，公众号：闷骚的程序员"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
+title: SHI
+subtitle: "SHI的公共空间"
+description: "作为一个仓库"
+keywords: 无, null
 timezone: Asia/Shanghai
 encoding: "utf-8"
 repository: SHI200005/SHI200005.github.io
@@ -33,11 +33,11 @@ components:
     # 文章字数统计
     word_count:
         enabled: true
-    # 页面右上角，以及「关于」页面的二维码
-    # 修改图片请替换 assets/images/qrcode.jpg
-    qrcode:
-        enabled: true
-        image_alt: 闷骚的程序员
+    # # 页面右上角，以及「关于」页面的二维码
+    # # 修改图片请替换 assets/images/qrcode.jpg
+    # qrcode:
+    #     enabled: true
+    #     image_alt: 闷骚的程序员
 # 压缩页面内容
 compress_html:
   clippings: all
@@ -48,12 +48,12 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
+author: L.-N. Shi
 organization: 
 organization_url: 
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+github_username: SHI200005
+location: Nanjing, China
+email: 2476877139@qq.com
 
 # ---------------- #
 #    Navigation    #
@@ -126,23 +126,23 @@ comments_provider: gitalk
 # !!!重要!!! 请修改下面这些信息为你自己申请的
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
-disqus:
-    username: 
-# https://imsun.net/posts/gitment-introduction/
-gitment:
-    owner: mzlogin
-    repo: blog-comments
-    oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# https://github.com/gitalk/gitalk#install
-gitalk:
-    owner: mzlogin
-    repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# 在使用其它评论组件时可点击显示 Disqus
-lazy_load_disqus : false
+# disqus:
+#     username: 
+# # https://imsun.net/posts/gitment-introduction/
+# gitment:
+#     owner: mzlogin
+#     repo: blog-comments
+#     oauth:
+#         client_id: d2e1cbbd298958076462
+#         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+#  # https://github.com/gitalk/gitalk#install
+# gitalk:
+#     owner: mzlogin
+#     repo: blog-comments
+#     clientID: d2e1cbbd298958076462
+#     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+# # 在使用其它评论组件时可点击显示 Disqus
+# lazy_load_disqus : false
 
 # ---------------- #
 #      Search      #
