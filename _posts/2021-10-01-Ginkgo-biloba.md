@@ -10,7 +10,7 @@ keywords: Ginkgo biloba L., Phenology
 
 ## 观测株位置
 
-![](/image/blog/loc-Ginkgo-biloba.jpg)
+![](/images/blog/loc-Ginkgo-biloba.jpg)
 
 ## 形态特征
 
@@ -26,4 +26,5 @@ keywords: Ginkgo biloba L., Phenology
 
 ## 图片记录
 
-
+![](/images/blog/20211002-Ginkgo-biloba.jpg)
+上图摄于2021/10/02，其中路上白果实为北园某处，可以看出此时银杏已开始落叶，并有大量白果掉落，有点味道。

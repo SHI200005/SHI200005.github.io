@@ -10,7 +10,7 @@ keywords: Cinnamomum camphora (Linn) Presl, Phenology
 
 ## 观测株位置
 
-![](/image/blog/loc-Cinnamomum-camphora.jpg)
+![](/images/blog/loc-Cinnamomum-camphora.jpg)
 
 ## 形态特征
 
@@ -24,6 +24,8 @@ keywords: Cinnamomum camphora (Linn) Presl, Phenology
 
 ## 图片记录
 
+![](/images/blog/20211002-Cinnamomum-camphora.jpg)
+上图摄于2021/10/02。
 
 ## 备注
-其他重要植株
+教学楼北侧有一株2015年记载有90年的香樟。

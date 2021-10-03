@@ -10,7 +10,7 @@ permalink: /about/
 
 我是 L.-N. Shi, 不务正业，无所长也不博学。
 
-喜欢处理抽象的问题胜过处理具象的问题。
+喜欢抽象胜过具象。
 
 喜欢理论胜过经验。
 
@@ -18,7 +18,9 @@ permalink: /about/
 
 喜欢局域性分析胜过全局性分析。
 
-## 联系
+与我联系：slnsinlangmc@sina.com
+
+## 社交帐号
 
 <ul>
 {% for website in site.data.social %}

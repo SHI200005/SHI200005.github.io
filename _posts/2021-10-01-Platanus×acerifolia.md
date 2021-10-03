@@ -10,7 +10,7 @@ keywords: Platanus × acerifolia, Phenology
 
 ## 观测株位置
 
-![](/image/blog/loc-Platanus×acerifolia.jpg)
+![](/images/blog/loc-Platanus×acerifolia.jpg)
 
 ## 形态特征
 
@@ -19,3 +19,5 @@ keywords: Platanus × acerifolia, Phenology
 
 ## 图片记录
 
+![](/images/blog/20211002-Platanus×acerifolia.jpg)
+上图为2021/10/02拍摄，此时校内法桐虽仍枝繁叶茂，但地面已有明显落叶。
