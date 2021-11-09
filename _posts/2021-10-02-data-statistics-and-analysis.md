@@ -14,7 +14,7 @@ keywords: data statistics and analysis
 
 本文目的：梳理概念。
 
-更新记录 2021.10.02 Ver 0.1 
+更新记录 2021.10.02 Ver 0.1 2021.11.9 Ver 0.2
 
 | 学习时间                                   | 大二上                                   |
 | 周学时                                     | 3                                       |
@@ -36,12 +36,21 @@ keywords: data statistics and analysis
     离散型随机变量
         (0-1)分布（两点分布）、二项分布（X~b(n,p)）、泊松分布（X~π(λ)）
     
+    二项分布
      - n重伯努利试验 -> 二项分布  n=1 -> (0-1)分布
-     - 二项分布n->∞ -> X~b(n,p)->X~π(λ),λ=np  用于简化计算
+     - n->∞ 而 p 很小 -> X~b(n,p)->X~π(λ),λ=np  
+       推荐链接<https://www.yuque.com/angsweet/machine-learning/shu-xue-ji-chu_shu-xue-ji-chu_gai-lv-tong-ji_gai-lv-fen-bu>
+     - np 和 n(1-p) 都很大 -> X~b(n,p)->X~N(μ,σ^2)
+     - 知乎网友定量刻画工作<https://zhuanlan.zhihu.com/p/27604254>
+
 
     连续型随机变量 分布函数、概率密度
         均匀分布（X~U(a,b)）、指数分布、正态分布（高斯分布）（X~N(μ,σ^2)）
-     - 指数分布具有无记忆性
+    
+    指数分布
+     - 泊松分布与指数分布的联系：符合泊松分布的两个事件发生时间间隔符合指数分布。证明<https://zhuanlan.zhihu.com/p/261961315>
+     - 指数分布具有无记忆性。闲聊：知乎网友<https://www.zhihu.com/question/354825596/answer/893242882>
+     - 无记忆性，所以描述的是任意两次时间发生时间间隔。
 
 3. 多维随机变量及其分布
 
@@ -64,17 +73,18 @@ keywords: data statistics and analysis
 
     中心极限定理：独立同分布的中心极限定理 -> De Moiver-Laplace 定理、Lyapunov 定理
      - 独立同分布的中心极限定理：X~N(μ,σ^2) -> Xbar~N(μ,σ^2/n)
-     - Lyapunov 定理：无论各个随机变量服从什么分布，只要满足定理的条件，那么它们的和当n很大时，就近似地服从正态分布。
+     - Lyapunov 定理：无论各个随机变量服从什么分布，只要满足定理的条件，那么它们的和当n很大时，就近似地服从正态分布。哈哈，我觉得这个还是要留个印象的~
      - De Moiver-Laplace 定理：正态分布是二项分布的极限分布。
 
 附录：
-| 分布      | 参数               | 数学期望 | 方差        |
+
+| 分布       | 参数              | 数学期望 | 方差        |
 | 两点分布   | 0 < p < 1         | p       | p(1-p)      |
 | 二项分布   | n >= 1, 0 < p < 1 | np      | np(1-p)     |
 | 泊松分布   | λ > 0             | λ       | λ           |
 | 均匀分布   | a < b             | (a+b)/2 | (b-a)^2/2   |
-| 指数分布   | θ > 0             | θ       | θ^2      |
-| 正态分布   | μ, σ > 0          | μ       | σ^2      |
+| 指数分布   | θ > 0             | θ       | θ^2         |
+| 正态分布   | μ, σ > 0          | μ       | σ^2         |
 
 
 ## 数理统计
@@ -104,3 +114,6 @@ keywords: data statistics and analysis
 
 抱歉，数理统计部分还没怎么在实践中用过，因此先简要地写一下，以后用到再补充w
 
+依然推荐链接<https://www.yuque.com/angsweet/machine-learning/shu-xue-ji-chu_shu-xue-ji-chu_gai-lv-tong-ji_gai-lv-fen-bu>
+以及知乎网友回答![](/images/blog/distribution.jpg)[来源]<https://zhuanlan.zhihu.com/p/32932782>
+其中有很多课程涉及过的分布。
