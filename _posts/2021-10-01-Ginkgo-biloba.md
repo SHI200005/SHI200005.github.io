@@ -28,3 +28,14 @@ keywords: Ginkgo biloba L., Phenology
 
 ![](/images/blog/20211002-Ginkgo-biloba.jpg)
 上图摄于2021/10/02，其中路上白果实为北园某处，可以看出此时银杏已开始落叶，并有大量白果掉落，有点味道。
+
+![](/images/blog/20211017-Ginkgo-biloba.jpg)
+上图摄于2021/10/17，雌性银杏树的白果。
+
+
+![](/images/blog/20211102-Ginkgo-biloba.jpg)
+上图摄于2021/11/02，银杏叶子转黄中。
+
+![](/images/blog/20211113-Ginkgo-biloba.jpg)
+上图摄于2021/11/13，银杏叶子转黄中。
+

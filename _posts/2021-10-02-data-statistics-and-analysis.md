@@ -14,7 +14,7 @@ keywords: data statistics and analysis
 
 本文目的：梳理概念。
 
-更新记录 2021.10.02 Ver 0.1 2021.11.9 Ver 0.2
+更新记录 2021.10.02 Ver 0.1 2021.11.9 Ver 0.2 2021.11.17 Ver 0.3
 
 | 学习时间                                   | 大二上                                   |
 | 周学时                                     | 3                                       |
@@ -35,6 +35,9 @@ keywords: data statistics and analysis
 
     离散型随机变量
         (0-1)分布（两点分布）、二项分布（X~b(n,p)）、泊松分布（X~π(λ)）
+
+    连续型随机变量 分布函数、概率密度
+        均匀分布（X~U(a,b)）、指数分布、正态分布（高斯分布）（X~N(μ,σ^2)）
     
     二项分布
      - n重伯努利试验 -> 二项分布  n=1 -> (0-1)分布
@@ -42,15 +45,13 @@ keywords: data statistics and analysis
        推荐链接<https://www.yuque.com/angsweet/machine-learning/shu-xue-ji-chu_shu-xue-ji-chu_gai-lv-tong-ji_gai-lv-fen-bu>
      - np 和 n(1-p) 都很大 -> X~b(n,p)->X~N(μ,σ^2)
      - 知乎网友定量刻画工作<https://zhuanlan.zhihu.com/p/27604254>
-
-
-    连续型随机变量 分布函数、概率密度
-        均匀分布（X~U(a,b)）、指数分布、正态分布（高斯分布）（X~N(μ,σ^2)）
     
     指数分布
-     - 泊松分布与指数分布的联系：符合泊松分布的两个事件发生时间间隔符合指数分布。证明<https://zhuanlan.zhihu.com/p/261961315>
      - 指数分布具有无记忆性。闲聊：知乎网友<https://www.zhihu.com/question/354825596/answer/893242882>
-     - 无记忆性，所以描述的是任意两次时间发生时间间隔。
+    
+    泊松分布
+     - 泊松分布与指数分布的联系：符合泊松分布的两个事件发生时间间隔符合指数分布。证明<https://zhuanlan.zhihu.com/p/261961315>
+     - 泊松分布可以继续非常少的假设推导出来。本人知乎文章（搬运数学动力学模型）<https://zhuanlan.zhihu.com/p/431389631>
 
 3. 多维随机变量及其分布
 
@@ -95,6 +96,7 @@ keywords: data statistics and analysis
      - 样本方差 <https://www.zhihu.com/question/20099757/answer/13971886> <https://www.zhihu.com/question/20099757/answer/26586088> <https://www.zhihu.com/question/20099757> 
     
     来自正态分布总体的几个常用统计分布：卡方分布、t分布、F分布（反正我从来没用过）
+
 2. 参数估计
 
     点估计：社总体X的分布函数的形式已知，但它的一个或多个参数未知，借助于总体X的一个样本来估计总体未知参数的值的问题。

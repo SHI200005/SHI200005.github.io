@@ -21,3 +21,6 @@ keywords: Platanus × acerifolia, Phenology
 
 ![](/images/blog/20211002-Platanus×acerifolia.jpg)
 上图为2021/10/02拍摄，此时校内法桐虽仍枝繁叶茂，但地面已有明显落叶。
+
+![](/images/blog/20211029-Platanus×acerifolia.jpg)
+上图为2021/10/29拍摄，下图为2021/11/02拍摄，法桐叶子转黄。

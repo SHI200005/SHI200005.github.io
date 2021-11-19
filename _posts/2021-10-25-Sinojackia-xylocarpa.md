@@ -26,9 +26,12 @@ keywords: Sinojackia xylocarpa, Phenology
 
 ## 图片记录
 
-![](/images/blog/20211002-Sinojackia-xylocarpa.jpg)
-上图摄于2021/10/02。
+![](/images/blog/20211017-Sinojackia-xylocarpa.jpg)
+上图摄于2021/10/17。此时正值果期，可以看到秤锤状果实。
+
+![](/images/blog/20211108-Sinojackia-xylocarpa.jpg)
+上图摄于2021/11/08。秤锤树叶子转黄。
 
 ## 备注
 
-据记载，截至2015年，此株秤锤树已有85年历史。
+据记载，截至2015年，此株秤锤树已有85年历史，编号276。

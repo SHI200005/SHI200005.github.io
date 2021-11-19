@@ -22,10 +22,16 @@ keywords: Metasequoia glyptostroboides Hu & W. C. Cheng, Phenology
 
 ## 图片记录
 
-![](/images/blog/20210325-Metasequoia-glyptostroboides.jpg)
+![](/images/blog/20210325-Metasequoia-glyptostroboides.jpeg)
 上图摄于2021/03/25，实际为物理楼天台触手可及的一株。
 
 ![](/images/blog/20211002-Metasequoia-glyptostroboides.jpg)
 上图摄于2021/10/02，右为细节图。实不相瞒，之所以放一张03/25的图是选定植株对我来说拍到细节太高了，所以选了天台上拍到的。
+
+![](/images/blog/20211011-Metasequoia-glyptostroboides.jpg)
+左图摄于2021/10/11，右图摄于2021/10/08。可以看出，叶刚开始枯萎时，是从每一支根部的边缘开始的。
+
+![](/images/blog/20211102-Metasequoia-glyptostroboides.jpg)
+上图摄于2021/11/02。枯萎中。
 
 ## 备注

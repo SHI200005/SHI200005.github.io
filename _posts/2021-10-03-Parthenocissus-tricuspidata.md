@@ -20,8 +20,14 @@ keywords: Parthenocissus tricuspidata, Phenology
 
 ## 图片记录
 
-![](/images/blog/20211002-Parthenocissus-tricuspidata.jpg)
-上图摄于2021/10/02。
+![](/images/blog/20211017-Parthenocissus-tricuspidata.jpg)
+上图摄于2021/10/17。部分叶片从边缘变为褐色。
+
+![](/images/blog/20211108-Parthenocissus-tricuspidata.jpg)
+上图摄于2021/11/08。部分叶片转为红色，可以看到果实。
+
+![](/images/blog/2021110-Parthenocissus-tricuspidata.jpg)
+上图摄于2021/11/10。一面墙壁上的变色pattern。
 
 ## 备注
 
