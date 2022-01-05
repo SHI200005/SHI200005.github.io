@@ -27,5 +27,8 @@ keywords: Cinnamomum camphora (Linn) Presl, Phenology
 ![](/images/blog/20211002-Cinnamomum-camphora.jpg)
 上图摄于2021/10/02。
 
+![](/images/blog/20211108-Cinnamomum-camphora.jpg)
+上图摄于2021/11/08。香樟有大量果实掉落。
+
 ## 备注
-教学楼北侧有一株2015年记载有90年的香樟。
+教学楼北侧有一株2015年记载有90年的香樟。香樟在冬季常绿不落叶。

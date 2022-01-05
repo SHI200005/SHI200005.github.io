@@ -8,10 +8,6 @@ keywords: Osmanthus fragrans, Phenology
 
 桂花开了？
 
-## 观测株位置
-
-![](/images/blog/loc-Osmanthus-fragrans.jpg)
-
 ## 形态特征
 
 常绿乔木或灌木，高3-5米，最高可达18米；树皮灰褐色。小枝黄褐色，无毛。叶片革质，椭圆形、长椭圆形或椭圆状披针形，长7-14.5厘米，宽2.6-4.5厘米，先端渐尖，基部渐狭呈楔形或宽楔形，全缘或通常上半部具细锯齿，两面无毛，腺点在两面连成小水泡状突起，中脉在上面凹入，下面凸起，侧脉6-8对，多达10对，在上面凹入，下面凸起；叶柄长0.8-1.2厘米，最长可达15厘米，无毛。
@@ -30,6 +26,9 @@ keywords: Osmanthus fragrans, Phenology
 
 ![](/images/blog/20211108-Osmanthus-fragrans.jpg)
 上图摄于2021/11/08。桂花已经枯萎。
+
+![](/images/blog/20211228-Osmanthus-fragrans.jpg)
+上图摄于2021/12/28。桂花已经枯萎，而叶子常绿。
 
 ## 备注
 

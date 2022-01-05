@@ -8,10 +8,6 @@ keywords: Sinojackia xylocarpa, Phenology
 
 直到看到果实才直到俗名的来源。
 
-## 观测株位置
-
-![](/images/blog/loc-Sinojackia-xylocarpa.jpg)
-
 ## 形态特征
 
 乔木，高达7米；胸径达10厘米；嫩枝密被星状短柔毛，灰褐色，成长后红褐色而无毛，表皮常呈纤维状脱落。
@@ -31,6 +27,12 @@ keywords: Sinojackia xylocarpa, Phenology
 
 ![](/images/blog/20211108-Sinojackia-xylocarpa.jpg)
 上图摄于2021/11/08。秤锤树叶子转黄。
+
+![](/images/blog/20211120-Sinojackia-xylocarpa.jpg)
+上图摄于2021/11/20。秤锤树叶子转黄以及落叶。
+
+![](/images/blog/20211227-Sinojackia-xylocarpa.jpg)
+上图摄于2021/12/27。秤锤树落叶宣告结束。后悔没有早点来看看，叶子应该早就落光了。
 
 ## 备注
 

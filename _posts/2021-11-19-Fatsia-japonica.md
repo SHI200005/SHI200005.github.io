@@ -8,10 +8,6 @@ keywords: Fatsia japonica, Phenology
 
 叶有7-9深裂纹，我数了，确实是，所以为什么叫“八角金盘”？
 
-## 观测株位置
-
-![](/images/blog/loc-Fatsia-japonica.jpg)
-
 ## 形态特征
 
 常绿灌木或小乔木，高可达5m。茎光滑无刺。叶柄长10-30cm；叶片大，革质，近圆形，直径12-30cm，掌状7-9深裂，裂片长椭圆状卵形，先端短渐尖，基部心形，边缘有疏离粗锯齿，上表面暗亮绿色，下面色较浅，有粒状突起，边缘有时呈金黄色；侧脉搏在两面隆起，网脉在下面稍显着。
@@ -26,6 +22,9 @@ keywords: Fatsia japonica, Phenology
 
 ![](/images/blog/20211118-Fatsia-japonica.jpg)
 上图摄于2021/11/18，正值花期。
+
+![](/images/blog/20211207-Fatsia-japonica.jpg)
+上图摄于2021/12/07。感觉花期好长，年末还在花期。
 
 ## 备注
 

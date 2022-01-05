@@ -8,10 +8,6 @@ keywords: Parthenocissus tricuspidata, Phenology
 
 北大楼的代表形象。
 
-## 观测株位置
-
-![](/images/blog/loc-Parthenocissus-tricuspidata.jpg)
-
 ## 形态特征
 
 多年生大型落叶木质藤本植物。树皮有皮孔，髓白色。枝条粗壮，卷须短，多分枝，顶端有吸盘。叶互生，花枝上的叶宽卵形，长8～18cm，宽6～16cm，常3裂，或下部枝上的叶分裂成3小叶，幼枝上的叶较小，常不分裂。聚伞花序常着生于两叶间的短枝上，长4～8cm,较叶柄短；花5数；萼全缘；花瓣顶端反折，子房2室，每室有2胚珠。浆果小球形，熟时蓝黑色。花期6月，果期9～10月。
@@ -28,6 +24,12 @@ keywords: Parthenocissus tricuspidata, Phenology
 
 ![](/images/blog/2021110-Parthenocissus-tricuspidata.jpg)
 上图摄于2021/11/10。一面墙壁上的变色pattern。
+
+![](/images/blog/20211202-Parthenocissus-tricuspidata.jpg)
+均摄于2021/12/02。北大楼爬墙虎全部变红，叶子几乎都落光了，果实也变得干瘪。
+
+![](/images/blog/20211227-Parthenocissus-tricuspidata.jpg)
+均摄于2021/12/27。红色已经凋谢，爬墙虎宣告结束。
 
 ## 备注
 

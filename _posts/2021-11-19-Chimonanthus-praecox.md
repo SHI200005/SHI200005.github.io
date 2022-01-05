@@ -8,10 +8,6 @@ keywords: Chimonanthus praecox, Phenology
 
 它会在你放寒假时偷偷开花。
 
-## 观测株位置
-
-![](/images/blog/loc-Chimonanthus-praecox.jpg)
-
 ## 形态特征
 
 落叶灌木，高达4米；幼枝四方形，老枝近圆柱形，灰褐色，无毛或被疏微毛，有皮孔；鳞芽通常着生于第二年生的枝条叶腋内，芽鳞片近圆形，覆瓦状排列，外面被短柔毛。叶纸质至近革质，卵圆形、椭圆形、宽椭圆形至卵状椭圆形，有时长圆状披针形，长5-25厘米，宽2-8厘米，顶端急尖至渐尖，有时具尾尖，基部急尖至圆形，除叶背脉上被疏微毛外无毛。
@@ -25,6 +21,12 @@ keywords: Chimonanthus praecox, Phenology
 
 ![](/images/blog/20211002-Chimonanthus-praecox.jpg)
 上图摄于2021/10/02。
+
+![](/images/blog/20211219-Chimonanthus-praecox.jpg)
+上图摄于2021/12/19。发现叶子黄了不少。还是早点来就好了。
+
+![](/images/blog/20211228-Chimonanthus-praecox.jpg)
+上图摄于2021/12/28。是不是要开花了呢？
 
 ## 备注
 

@@ -8,10 +8,6 @@ keywords: Metasequoia glyptostroboides Hu & W. C. Cheng, Phenology
 
 说实话，给我留下最深刻印象的特点是高耸。
 
-## 观测株位置
-
-![](/images/blog/loc-Metasequoia-glyptostroboides.jpg)
-
 ## 形态特征
 
 水杉是乔木，高达35米，胸径达2.5米；树干基部常膨大；树皮灰色、灰褐色或暗灰色，幼树裂成薄片脱落，大树裂成长条状脱落，内皮淡紫褐色；枝斜展，小枝下垂，幼树树冠尖塔形，老树树冠广圆形，枝叶稀疏；一年生枝光滑无毛，幼时绿色，后渐变成淡褐色，二、三年生枝淡褐灰色或褐灰色；侧生小枝排成羽状，长4-15厘米，冬季凋落；主枝上的冬芽卵圆形或椭圆形，顶端钝，长约4毫米，径3毫米，芽鳞宽卵形，先端圆或钝，长宽几相等，约2-2.5毫米，边缘薄而色浅，背面有纵脊。叶条形，长0.8-3.5（常1.3-2）厘米，宽1-2.5（常1.5-2）毫米，上面淡绿色，下面色较淡，沿中脉有两条较边带稍宽的淡黄色气孔带，每带有4-8条气孔线，叶在侧生小枝上列成二列，羽状，冬季与枝一同脱落。
@@ -33,5 +29,15 @@ keywords: Metasequoia glyptostroboides Hu & W. C. Cheng, Phenology
 
 ![](/images/blog/20211102-Metasequoia-glyptostroboides.jpg)
 上图摄于2021/11/02。枯萎中。
+
+![](/images/blog/20211208-Metasequoia-glyptostroboides.jpg)
+上图摄于2021/11/02。枯萎中。这种颜色就像铁锈一样。落叶时，感觉一根一根生了锈的铁针从空中落下。
+
+![](/images/blog/20211212-Metasequoia-glyptostroboides.jpg)
+上图摄于2021/11/02。红色的树。
+
+![](/images/blog/20211222-Metasequoia-glyptostroboides.jpg)
+上图摄于2021/11/02。枯萎中。
+
 
 ## 备注

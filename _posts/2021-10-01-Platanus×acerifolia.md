@@ -24,3 +24,15 @@ keywords: Platanus × acerifolia, Phenology
 
 ![](/images/blog/20211029-Platanus×acerifolia.jpg)
 上图为2021/10/29拍摄，下图为2021/11/02拍摄，法桐叶子转黄。
+
+![](/images/blog/20211119-Platanus×acerifolia.jpg)
+上图为2021/11/19拍摄，法桐叶子继续转黄。
+
+![](/images/blog/20211127-Platanus×acerifolia.jpg)
+均于2021/11/27拍摄，当天法桐大量落叶。
+
+![](/images/blog/20211219-Platanus×acerifolia.jpg)
+均于2021/12/19拍摄，法桐秃秃。
+
+![](/images/blog/20211224-Platanus×acerifolia.jpg)
+于2021/12/24拍摄，一个大幅降温的日子，伴有风，叶子大量落下。

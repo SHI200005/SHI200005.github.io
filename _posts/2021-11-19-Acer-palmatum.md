@@ -20,11 +20,27 @@ keywords: Acer palmatum, Phenology
 
 ## 图片记录
 
+![](/images/blog/20211017-Acer-palmatum.jpg)
+上图摄于2021/10/17。叶片仍为绿色。
+
 ![](/images/blog/20211027-Acer-palmatum.jpg)
 上图摄于2021/10/27。此时叶子开始变色，尖端枯干，莫名想到燃烧后的香烟，晚上路灯下尤为好看。
 
 ![](/images/blog/20211118-Acer-palmatum.jpg)
 上图摄于2021/11/18。红色的红枫。
+
+![](/images/blog/20211125-Acer-palmatum.jpg)
+上图摄于2021/11/25。仙林456食堂前。让我看一看同一植株叶子裂纹是否可以有不同的特点？
+
+![](/images/blog/20211215-Acer-palmatum.jpg)
+上图摄于2021/12/15。大部分叶子都枯萎了，只有最上方有几片是鲜艳的红色。
+
+![](/images/blog/20211222-Acer-palmatum.jpg)
+上图摄于2021/12/22。更加枯萎。
+
 ## 备注
 
 百度百科云，“叶掌状，5-7深裂纹”。目前我在仙林以及鼓楼遇到的红枫均为7深裂纹，欢迎找到5深裂纹的朋友给我发邮件。
+第二天：好的，我找到了，在鼓楼校区逸夫馆东侧有一株5深裂纹叶的红枫。好耶！
+
+啊，叶子变红了，我们甚至可以读一些文献 - > <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC125091/>

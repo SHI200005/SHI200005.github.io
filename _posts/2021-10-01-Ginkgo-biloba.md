@@ -39,3 +39,11 @@ keywords: Ginkgo biloba L., Phenology
 ![](/images/blog/20211113-Ginkgo-biloba.jpg)
 上图摄于2021/11/13，银杏叶子转黄中。
 
+![](/images/blog/20211119-Ginkgo-biloba.jpg)
+上图摄于2021/11/19，叶子全部变黄，并伴有大量落叶。
+
+![](/images/blog/20211127-Ginkgo-biloba.jpg)
+上图摄于2021/11/27，大量落叶。
+
+![](/images/blog/20211208-Ginkgo-biloba.jpg)
+上图摄于2021/12/08，银杏叶宣告结束。
