@@ -26,6 +26,16 @@ keywords: Fatsia japonica, Phenology
 ![](/images/blog/20211207-Fatsia-japonica.jpg)
 上图摄于2021/12/07。感觉花期好长，年末还在花期。
 
+![](/images/blog/20220108-Fatsia-japonica.jpg)
+上图摄于2022/01/08。感觉花期好长，新的一年年初还在花期，还有可爱的小蜜蜂。
+
+![](/images/blog/20220322-Fatsia-japonica.jpg)
+![](/images/blog/20220322(2)-Fatsia-japonica.jpg)
+上图摄于2022/03/22。花期大概是结束了。下面的图是八角金盘的新叶！
+
+![](/images/blog/20220401-Fatsia-japonica.jpg)
+上图摄于2022/04/01。果皮由绿色变为紫色。八角金盘的花期很长，而且总是能吸引很多可爱的小虫子。记录到此结束，祝八角金盘健康！
+
 ## 备注
 
 致谢：此物种的识别得益于查阅鼓楼校区图书馆《江苏植物志》。感谢图书编纂的相关负责人。

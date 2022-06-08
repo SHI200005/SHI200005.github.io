@@ -36,3 +36,6 @@ keywords: Platanus × acerifolia, Phenology
 
 ![](/images/blog/20211224-Platanus×acerifolia.jpg)
 于2021/12/24拍摄，一个大幅降温的日子，伴有风，叶子大量落下。
+
+![](/images/blog/20220401-Platanus×acerifolia.jpg)
+于2022/04/01拍摄，太高大了，难以捕捉萌芽过程，现在已经枝繁叶茂。看着是什么？梧桐絮！好了，鼓楼的同学们请准备好口罩和护目镜，以及领口也要注意一下。再见啦，祝法桐健康！

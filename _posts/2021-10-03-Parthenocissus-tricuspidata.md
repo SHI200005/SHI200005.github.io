@@ -31,6 +31,21 @@ keywords: Parthenocissus tricuspidata, Phenology
 ![](/images/blog/20211227-Parthenocissus-tricuspidata.jpg)
 均摄于2021/12/27。红色已经凋谢，爬墙虎宣告结束。
 
+![](/images/blog/20220308-Parthenocissus-tricuspidata.jpg)
+均摄于2022/03/08。光秃秃的枝条...你看这是什么？红色的锥形叶芽！
+
+![](/images/blog/20220316-Parthenocissus-tricuspidata.jpg)
+均摄于2022/03/16。抽出了红色的新叶。可以看出新叶上有很多结晶颗粒。这是什么？
+
+![](/images/blog/20220322-Parthenocissus-tricuspidata.jpg)
+均摄于2022/03/22。叶子慢慢长大，部分叶子还是红色，部分叶子已经变成绿色。
+
+![](/images/blog/20220404-Parthenocissus-tricuspidata.jpg)
+均摄于2022/04/04。变绿的叶子。
+
+![](/images/blog/20220404(2)-Parthenocissus-tricuspidata.jpg)
+还是摄于2021/04/04。之前没有注意过爬墙虎的果实，虽然知道秋季北大楼会由绿变红，然后叶子落尽，但是没有注意过爬墙虎的新叶也是红色的。在这个季节里，北大楼又变成了绿色，在晨光中和爬墙虎说再见吧。别忘了“一日之计在于晨”。祝爬墙虎健康！
+
 ## 备注
 
 据记载，截至2015年，此株爬墙虎已有96年历史。

@@ -34,6 +34,15 @@ keywords: Sinojackia xylocarpa, Phenology
 ![](/images/blog/20211227-Sinojackia-xylocarpa.jpg)
 上图摄于2021/12/27。秤锤树落叶宣告结束。后悔没有早点来看看，叶子应该早就落光了。
 
+![](/images/blog/20220323-Sinojackia-xylocarpa.jpg)
+上图摄于2022/03/23。大概有一段时间忘记去看，没看到抽新叶的样子，来时已经将要郁郁葱葱。不过我看到了花骨朵。花期将至！
+
+![](/images/blog/20220329-Sinojackia-xylocarpa.jpg)
+上图摄于2022/03/29。花期来临！
+
+![](/images/blog/20220403-Sinojackia-xylocarpa.jpg)
+上图摄于2022/04/03。花期来临！那么在花期中，向郁郁葱葱的秤锤树说再见吧！祝秤锤树健康！
+
 ## 备注
 
 据记载，截至2015年，此株秤锤树已有85年历史，编号276。

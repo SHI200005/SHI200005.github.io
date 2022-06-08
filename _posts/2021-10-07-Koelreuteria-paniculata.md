@@ -31,3 +31,6 @@ keywords: Koelreuteria paniculata, Phenology
 
 ![](/images/blog/20211228-Koelreuteria-paniculata.jpg)
 上图为2021/12/28拍摄，叶片几乎落尽，而果实还挂在树梢。
+
+![](/images/blog/20220404-Koelreuteria-paniculata.jpg)
+上图为2022/04/04拍摄，这时落叶乔木大多已经长出新叶，栾树似乎还是光秃秃的，果实还挂在树枝上。相信很快栾树也会郁郁葱葱，而我的记录到此结束。祝栾树健康！

@@ -39,5 +39,14 @@ keywords: Metasequoia glyptostroboides Hu & W. C. Cheng, Phenology
 ![](/images/blog/20211222-Metasequoia-glyptostroboides.jpg)
 上图摄于2021/11/02。枯萎中。
 
+![](/images/blog/20220322-Metasequoia-glyptostroboides.jpg)
+上图摄于2022/03/22。新芽！
 
-## 备注
+![](/images/blog/20220329-Metasequoia-glyptostroboides.jpg)
+上图摄于2022/03/29。新芽的样子很可爱。
+
+![](/images/blog/20220404(2)-Metasequoia-glyptostroboides.jpg)
+上图摄于2022/04/04。这是水杉掉落的头发（逃
+
+![](/images/blog/20220404-Metasequoia-glyptostroboides.jpg)
+上图摄于2022/04/04。高耸的叶子如何才能企及？唯有上物理楼天台。然而因为这学期没有实验课也就没去。很容易想象出天台上看水杉的乐趣。那么祝水杉健康！

@@ -47,3 +47,6 @@ keywords: Ginkgo biloba L., Phenology
 
 ![](/images/blog/20211208-Ginkgo-biloba.jpg)
 上图摄于2021/12/08，银杏叶宣告结束。
+
+![](/images/blog/20220403-Ginkgo-biloba.jpg)
+上图摄于2022/04/03，春天的银杏不止有新芽！不过我没再去区分它的性别。祝活化石银杏在新的一年中健康！

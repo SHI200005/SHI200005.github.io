@@ -28,6 +28,9 @@ keywords: Magnolia grandiflora, Phenology
 ![](/images/blog/20211010-Magnolia-grandiflora.jpg)
 上图摄于2021/10/10。
 
+![](/images/blog/20220322-Magnolia-grandiflora.jpg)
+上图摄于2022/03/22。荷花玉兰也是常绿的，可以明显看到春天有向上的新叶长出。本来想等到它的花期，有很漂亮的白的花，然而最终错过了。不管怎样，祝荷花玉兰健康！
+
 ## 备注
 
 致谢：感谢微博用户 @盛近钰 帮我识别物种。此博文的创建得益于他/她的帮助。

@@ -30,6 +30,18 @@ keywords: Osmanthus fragrans, Phenology
 ![](/images/blog/20211228-Osmanthus-fragrans.jpg)
 上图摄于2021/12/28。桂花已经枯萎，而叶子常绿。
 
+![](/images/blog/20220301-Osmanthus-fragrans.jpg)
+上图摄于2022/03/01。北方很少见常绿乔木，才发现常绿乔木其实春天也会长新叶。
+
+![](/images/blog/20220308-Osmanthus-fragrans.jpg)
+上图摄于2022/03/08。嘿！这是木犀的果实。
+
+![](/images/blog/20220318-Osmanthus-fragrans.jpg)
+上图摄于2022/03/18。刚萌发的新叶颜色发红，在其他向下展开的旧叶中，新叶的方向形成了一定视觉冲击。
+
+![](/images/blog/20220330-Osmanthus-fragrans.jpg)
+上图摄于2022/03/30。顶端是伸展开的褐色新叶。就此结束了！祝木犀健康！
+
 ## 备注
 
 据记载，2021年秋，桂花花期比以往推迟约一个月。

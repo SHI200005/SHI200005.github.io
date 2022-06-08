@@ -30,5 +30,8 @@ keywords: Cinnamomum camphora (Linn) Presl, Phenology
 ![](/images/blog/20211108-Cinnamomum-camphora.jpg)
 上图摄于2021/11/08。香樟有大量果实掉落。
 
+![](/images/blog/20220412-Cinnamomum-camphora.jpg)
+上图摄于2022/04/12。香樟是常青的，然而春天会有红色的落叶。春天落叶（多有趣啊）！这条主干道也被春风铺成了两种颜色，红色的香樟叶和黄色的梧桐絮。祝香樟健康！
+
 ## 备注
 教学楼北侧有一株2015年记载有90年的香樟。香樟在冬季常绿不落叶。

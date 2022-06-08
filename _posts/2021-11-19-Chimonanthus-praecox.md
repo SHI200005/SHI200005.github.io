@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 腊梅 Chimonanthus praecox (Linn.) Link
+title: 蜡梅 Chimonanthus praecox (Linn.) Link
 categories: NJU-Phenology
-description: 关于腊梅的物候记录
+description: 关于蜡梅的物候记录
 keywords: Chimonanthus praecox, Phenology
 ---
 
@@ -28,6 +28,24 @@ keywords: Chimonanthus praecox, Phenology
 ![](/images/blog/20211228-Chimonanthus-praecox.jpg)
 上图摄于2021/12/28。是不是要开花了呢？
 
+![](/images/blog/20220104-Chimonanthus-praecox.jpg)
+上图摄于2022/01/04。花苞。
+
+![](/images/blog/20220108-Chimonanthus-praecox.jpg)
+上图摄于2022/01/08。初步盛开！这时叶子还没有落尽！
+
+![](/images/blog/20220216-Chimonanthus-praecox.jpg)
+上图摄于2022/02/16。寒假结束回到学校，蜡梅叶子落光，花期还没有结束。
+
+![](/images/blog/20220318-Chimonanthus-praecox.jpg)
+上图摄于2022/03/18。花期结束，开始长新叶。
+
+![](/images/blog/20220322-Chimonanthus-praecox.jpg)
+上图摄于2022/03/22。长叶子！
+
+![](/images/blog/20220404-Chimonanthus-praecox.jpg)
+上图摄于2022/04/04。茂盛的绿树！一切即将为盛夏做准备！对于这株蜡梅的记录就此结束！祝蜡梅健康！
+
 ## 备注
 
-据记载，截至2015年，此株腊梅已有105年历史。笔者第一次见到其开花，是在2021年1月寒假期间。此前该区域一直装修，不得进入。第一次进入就遇见了花期。
+据记载，截至2015年，此株蜡梅已有105年历史。笔者第一次见到其开花，是在2021年1月寒假期间。此前该区域一直装修，不得进入。第一次进入就遇见了花期。
