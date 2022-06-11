@@ -5,7 +5,7 @@ baseurl:
 url: https://SHI200005.github.io
 date_format: "ordinal"
 title: SHI
-subtitle: "SHI的公共空间"
+subtitle: "SHI的仓库"
 description: "作为一个仓库"
 keywords: 无, null
 timezone: Asia/Shanghai
@@ -48,12 +48,12 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: L.-N. Shi
+author: L.Shi
 organization: 
 organization_url: 
 github_username: SHI200005
 location: Nanjing, China
-email: 2476877139@qq.com
+email: slnsinlangmc@sina.com
 
 # ---------------- #
 #    Navigation    #
