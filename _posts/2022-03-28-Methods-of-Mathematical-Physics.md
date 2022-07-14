@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 数学——数学物理方法
+title: 数学物理方法
 categories: BS-NJU-Course-Review
 description: 对于数学物理方法的回顾
 keywords: mathematical physics
