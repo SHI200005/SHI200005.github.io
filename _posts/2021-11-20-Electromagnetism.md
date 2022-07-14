@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 物理——电磁学
+title: 电磁学
 categories: BS-NJU-Course-Review
 description: 电动力学前先来点
 keywords: Electromagnetism

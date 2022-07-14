@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 物理——理论力学
+title: 理论力学
 categories: BS-NJU-Course-Review
 description: 对于理论力学的回顾
 keywords: theoretical mechanics

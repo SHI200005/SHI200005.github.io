@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 物理——牛顿力学
+title: 牛顿力学
 categories: BS-NJU-Course-Review
 description: 对于牛顿力学的回顾
 keywords: Newtonian mechanics

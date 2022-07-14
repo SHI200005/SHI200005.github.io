@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 数学——微积分与线性代数
+title: 微积分与线性代数
 categories: BS-NJU-Course-Review
 description: 对于微积分与线性代数的回顾
 keywords: calculus, linear algebra

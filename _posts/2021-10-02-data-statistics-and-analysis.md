@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 数学——概率论与数理统计
+title: 概率论与数理统计
 categories: BS-NJU-Course-Review
 description: 对于概率论与数理统计的回顾
 keywords: data statistics and analysis
