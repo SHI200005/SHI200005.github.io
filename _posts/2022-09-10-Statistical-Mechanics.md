@@ -73,7 +73,7 @@ $$\left\{\array{\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial \vec p_i} \\ \fr
 
 ### 微正则系综
 
- - 如何描述系统达到了平衡态？需要相应的系综满足 $$\frac{\partial\rho_{eq}}{\partial t}=0$$ 以及 $$\frac{\partial H}{\partial t}=0$$，代入刘维定理也就是 $$\{\rho_{eq},H\}=0$$。如何实现 $$\{\rho_{eq},H\}=0$$？一个实现方式是如果 $$\rho_{eq}$$ 是 $$H$$ 的函数（泊松括号里整个求导链式法则推出 $$\rho\prime(H)\{H,H\}=0$$）。于是，对于**微正则系综**，考虑 **mechanically and adiabatically isolated system**， 也就是 specify 物理量 $$E$$，也就是 $$H=E=const$$，于是 $$ρ_{eq}$$ 在相空间两个相邻的能量曲面 $$E$$ 和 $$E+ΔE$$ ($$\Delta E\rightarrow 0$$)之间是一个**常数**（为啥能整出个 $$\Delta E$$？Justified by thermodynamic limit.）这是统计物理的基本**假说**，无法证实，但是从这个基础上推导的结果和实验符合得挺好。Refer to Kardar 3.2 Consequences of Liouville's theorem. The third consequence.
+ - 如何描述系统达到了平衡态？需要相应的系综满足 $$\frac{\partial\rho_{eq}}{\partial t}=0$$ 以及 $$\frac{\partial H}{\partial t}=0$$，代入刘维定理也就是 $$\{\rho_{eq},H\}=0$$。如何实现 $$\{\rho_{eq},H\}=0$$？一个实现方式是如果 $$\rho_{eq}$$ 是 $$H$$ 的函数（泊松括号里整个求导链式法则推出 $$\rho^\prime(H)\{H,H\}=0$$）。于是，对于**微正则系综**，考虑 **mechanically and adiabatically isolated system**， 也就是 specify 物理量 $$E$$，也就是 $$H=E=const$$，于是 $$ρ_{eq}$$ 在相空间两个相邻的能量曲面 $$E$$ 和 $$E+ΔE$$ ($$\Delta E\rightarrow 0$$)之间是一个**常数**（为啥能整出个 $$\Delta E$$？Justified by thermodynamic limit.）这是统计物理的基本**假说**，无法证实，但是从这个基础上推导的结果和实验符合得挺好。Refer to Kardar 3.2 Consequences of Liouville's theorem. The third consequence.
 
  - 于是，微正则系综为，宏观态 $$M$$ 由总能量 $$E$$ 和位形坐标 $$\boldsymbol x$$ 表示（比如粒子数、体积），$$M\equiv(E,\boldsymbol x)$$。
 
