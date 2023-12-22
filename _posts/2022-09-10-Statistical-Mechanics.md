@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 统计物理 1.0
+title: (Zh-En) 统计物理 1.0
 categories: BS-NJU-Course-Review-Physics
 description: 生物物理方向相当重要的课
 keywords: statistical mechanics
@@ -23,6 +23,8 @@ mathjax: true
 统计物理学从物体的微观组成和结构出发，把宏观的性质看成**微观性质的统计平均**，采用统计平均的方法。所以说，这门课的基础是[概率论](https://shi200005.github.io/2021/10/02/Probability/)，不幸的是，这门课上得太 crap。
 
 龚昇在《话说微积分》中说“高级的数学未必难，低级的数学未必容易”，统计物理也是同样的道理。这个道理给我的启示是：别看 crappy textbooksss，快去看 Kardar。
+
+<span style="font-size: 25px;">(En) Part I: Within the Syllabus</span>
 
 ## Rules for large numbers
 
@@ -64,16 +66,16 @@ $$\left\{\array{\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial \vec p_i} \\ \fr
 
 为什么要引入系综？给定一个由大量微观粒子构成的宏观系统，如果我们知道完整的每个粒子的初始条件，带入哈密顿力学，就能算出一切了（确切地知道一个相点，通过哈密顿力学算出从今往后的相轨道）。然而，完整的初始条件，我们不可能知道，也不需要知道，知道了也懒得拿来算。处于同样宏观条件下的平衡态系统（一坨理想气体的 $$p,V,T$$），对应的微观条件的数目是巨大的（每个气体分子的坐标和动量）。其实我们只需要知道代表点在相空间内的概率分布就行了。**系综是具有相同宏观条件但是各自处于其微观状量相空间的大量系统的集合**。
 
-系统的微观状态随时间不断变化，如何描述系统是否处于**平衡态**呢？系综随时间如何演化，对应相空间中代表点的**概率演化**，描述它的定理就是**刘维定理**。
+系统的微观状态随时间不断变化，如何描述系统是否处于**平衡态**呢？系综随时间如何演化，对应相空间中代表点的**概率演化**，描述它的定理就是**刘维尔定理**。
 
-### 刘维定理
+### 刘维尔定理
 
  - 证明过程：连续性方程、带入**正则运动方程**......
- - 结论：$$\frac{d\rho}{dt}=\frac{\partial\rho}{\partial t}+\{\rho,H\}=0$$。如果把系综在相空间的运动看成代表点组成的“流体”，那么刘维定理表示这个“流体”是**不可压缩**的。系综的几率密度（或代表点密度）在运动中不变。P.S. 其中$$\frac{d}{dt}$$ 指跟着代表点一起运动，$$\frac{\partial}{\partial t}$$ 指固定地点。上一句话作为 Kardar Eq.(3.11) & Eq.(3.13) 的注释。为啥我们盯着这一群代表点？因为你要套到哈密顿力学里，哈密顿力学描述的是这群粒子广义坐标和广义动量的变化嘛=-=。
+ - 结论：$$\frac{d\rho}{dt}=\frac{\partial\rho}{\partial t}+\{\rho,H\}=0$$。如果把系综在相空间的运动看成代表点组成的“流体”，那么刘维尔定理表示这个“流体”是**不可压缩**的。系综的几率密度（或代表点密度）在运动中不变。P.S. 其中$$\frac{d}{dt}$$ 指跟着代表点一起运动，$$\frac{\partial}{\partial t}$$ 指固定地点。上一句话作为 Kardar Eq.(3.11) & Eq.(3.13) 的注释。为啥我们盯着这一群代表点？因为你要套到哈密顿力学里，哈密顿力学描述的是这群粒子广义坐标和广义动量的变化嘛=-=。
 
 ### 微正则系综
 
- - 如何描述系统达到了平衡态？需要相应的系综满足 $$\frac{\partial\rho_{eq}}{\partial t}=0$$ 以及 $$\frac{\partial H}{\partial t}=0$$，代入刘维定理也就是 $$\{\rho_{eq},H\}=0$$。如何实现 $$\{\rho_{eq},H\}=0$$？一个实现方式是如果 $$\rho_{eq}$$ 是 $$H$$ 的函数（泊松括号里整个求导链式法则推出 $$\rho^\prime(H)\{H,H\}=0$$）。于是，对于**微正则系综**，考虑 **mechanically and adiabatically isolated system**， 也就是 specify 物理量 $$E$$，也就是 $$H=E=const$$，于是 $$ρ_{eq}$$ 在相空间两个相邻的能量曲面 $$E$$ 和 $$E+ΔE$$ ($$\Delta E\rightarrow 0$$)之间是一个**常数**（为啥能整出个 $$\Delta E$$？Justified by thermodynamic limit.）这是统计物理的基本**假说**，无法证实，但是从这个基础上推导的结果和实验符合得挺好。Refer to Kardar 3.2 Consequences of Liouville's theorem. The third consequence.
+ - 如何描述系统达到了平衡态？需要相应的系综满足 $$\frac{\partial\rho_{eq}}{\partial t}=0$$ 以及 $$\frac{\partial H}{\partial t}=0$$，代入刘维尔定理也就是 $$\{\rho_{eq},H\}=0$$。如何实现 $$\{\rho_{eq},H\}=0$$？一个实现方式是如果 $$\rho_{eq}$$ 是 $$H$$ 的函数（泊松括号里整个求导链式法则推出 $$\rho^\prime(H)\{H,H\}=0$$）。于是，对于**微正则系综**，考虑 **mechanically and adiabatically isolated system**， 也就是 specify 物理量 $$E$$，也就是 $$H=E=const$$，于是 $$ρ_{eq}$$ 在相空间两个相邻的能量曲面 $$E$$ 和 $$E+ΔE$$ ($$\Delta E\rightarrow 0$$)之间是一个**常数**（为啥能整出个 $$\Delta E$$？Justified by thermodynamic limit.）这是统计物理的基本**假说**，无法证实，但是从这个基础上推导的结果和实验符合得挺好。Refer to Kardar 3.2 Consequences of Liouville's theorem. The third consequence.
 
  - 于是，微正则系综为，宏观态 $$M$$ 由总能量 $$E$$ 和位形坐标 $$\boldsymbol x$$ 表示（比如粒子数、体积），$$M\equiv(E,\boldsymbol x)$$。
 
@@ -105,7 +107,7 @@ $$\left\{\array{\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial \vec p_i} \\ \fr
 
 ### 正则系综
 
-微正则系综里面，我们 specify 了内能，deduce 了温度。其实也可以 specify 温度，deduce 内能。记得从刘维尔定理得出结论，平衡态只要 $$\rho_{eq}$$ 是哈密顿量 $$H(\vec p,\vec q)$$ 的函数即可，如果我们选择 $$\rho_{eq}(\mu)\propto e^{-\beta H}$$，就是正则系综分布函数了。更进一步说，只要概率密度是与哈密顿量对易的力学量（即任意守恒量）的函数即可。
+微正则系综里面，我们 specify 了内能，deduce 了温度。其实也可以 specify 温度，deduce 内能。记得从刘维尔尔定理得出结论，平衡态只要 $$\rho_{eq}$$ 是哈密顿量 $$H(\vec p,\vec q)$$ 的函数即可，如果我们选择 $$\rho_{eq}(\mu)\propto e^{-\beta H}$$，就是正则系综分布函数了。更进一步说，只要概率密度是与哈密顿量对易的力学量（即任意守恒量）的函数即可。
 
  - 宏观条件：**小系统**与**大热源**接触达到平衡（注意这里的“小”和“大”的假设在推导过程中的作用，展开与恒定温度），两者构成的整体是一个**大孤立系**，相当于小系统的 $$(T,\boldsymbol x,N)$$ 一定。
 
@@ -313,3 +315,82 @@ $$\left\{\array{\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial \vec p_i} \\ \fr
 
 感谢多伦多大学物理学院 Yuzheng Xie, Yuchong Li。 
 
+---
+
+<span style="font-size: 25px;">(En) Part II: Beyond the Syllabus</span>
+
+I also self-learnt a lot of probability theory from Kardar's book, which makes what we had to memorized for our second year undergrad course under good intuition and now I don't need to *know* them by memorizing. Check [随机变量的 fancy 数字特征 - 概率论](https://shi200005.github.io/2021/10/07/Probability/#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84-fancy-%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81).
+
+## References
+
+1. Kardar, Mehran. *Statistical physics of particles*. Cambridge University Press, 2007.
+
+## Information and Entropy
+
+The content for this part mainly comes from 2.7 of Kardar (particles) (a lot of direct copy... tell me whether it is appropriate and help me to improve!)
+
+### Information
+
+Consider a random variable with a discrete set of outcomes $$\mathbf{x}=\{x_i\}$$ (you use a language to write a letter and the language contains 5 letters, "a, b, c, d, e"), occurring with probabilities $$\{p(i)\}$$ (in that language, all words start with "a", making "a" the most frequent letter in texts), for $$i=1,...,M$$ ($$M$$ is the size of the alphabet, in the "letter" case, $$M=5$$).
+
+Your message contains $$N$$ letters. There are $$M^N$$ kinds of different letter combinations. Choose the unit as "bits" means $$\ln_2(M^N)$$. The number of bits (**information**) to transmit your text precisely (imaging you are sending via email so the letters are coded in a binary way) is $$N\ln_2M$$ (the bits of two texts should add, and the possibilities of the combined text should multiply, which could be reached in this logarithm way).
+
+However, in the limit of large $$N$$, we expect the message to contain"roughly" $$\{N_i=Np_i\}$$ occurrences for each symbol. The number of typical messages thus corresponds to the number of ways of rearranging the $$\{N_i\}$$ occurrences of $$\{x_i\}$$, and is given by the multinomial coefficient $$g=\frac{N!}{\prod_{i=1}^M N_i!}$$, compared with $$M^N$$ before considering the non-uniform distribution. Using **Stirling's approximation**, we have $$\ln_2g\approx -N\displaystyle\sum_{i=1}^M p_i\ln_2p_i$$.
+
+- It is interesting that statistical physicists use $$\ln_2$$ to indicate $$\log_2$$, while engineers use $$\log x$$ to indicate $$\log_2$$.
+
+- Here, we start from "large $$N$$ gives $$\{N_i=Np_i\}$$"  (introduced in [概率论](https://shi200005.github.io/2022/02/17/Probability/#%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86-1))) and then use Stirling's approximation (introduced in [统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)).  Actually,
+
+
+$$
+  \text{The bound by the extreme value among distribution -> }
+  \begin{cases}
+  \text{The weak law of large number} \\
+  \text{Stirling's approximation}
+  \end{cases}
+$$
+
+
+  The above was written before I took [(En) Information Theory](https://shi200005.github.io/2023/10/03/Information-Theory/), where $$H(X)=-\displaystyle\sum_{x}p(x)\log p(x)$$ was derived from three axioms in Shannon's 1948 paper. In Shannon's argument, derivation for uniform distribution over $$n$$ elements, the entropy $$H_U(n)=H_2(n)\log n$$ was determined by a bound, and this sandwich just look like what we did in Stirling's...
+
+### The Entropy of Mixing
+
+Suppose mixing $$M$$ distinct components in the context of statistical mechanics. Consider characterizing the *distribution*, let alone the outcomes from different trials (how many samples taken and the sampling error...).
+
+The *entropy* for *any probability distribution* as $$S=-\displaystyle\sum_{i=1}^Mp(i)lnp(i)=-\langle lnp(i)\rangle$$. 
+
+The above is the entropy for a discrete probability distribution, for that of a continuous distribution, $$S=-\int dxp(x)lnp(x)=-\langle lnp(x)\rangle$$. The problem of scaling remains to be discussed.
+
+## The BBGKY hierarchy
+
+Scan-reading the irreversibility parts from Kardar's book (particles)...
+
+To find out how the probability evolves with time...
+
+In the previous posts, we considered $$N$$-particle ideal gas, with no interacting terms in the Hamiltonian. Now we take **two-body interactions** into account (but not the ignorable higher-body interaction terms), and get the Hamiltonian of the **weakly interacting gas** 
+
+$$\mathcal{H}(\mathbf{p},\mathbf{q})=\displaystyle\sum_{i=1}^N[\frac{\vec{p_i}^2}{2m}+U(\vec{q_i})]+\frac{1}{2}\displaystyle\sum_{(i,j)=1}^N\mathcal{V}(\vec{q_i}-\vec{q_j})$$.
+
+Consider $$f_s(\vec p_1,...,\vec q_s,t)$$ as the expectation value of finding $$S$$ of the $$N$$ particles at point $$(\vec p_1,...,\vec q_s)$$ in the phase space at time $$t$$.
+
+With the help of dividing the Hamiltonian..., after tedious mathematical derivations... (and some more elaborate math can be find here [PHY526_Sussman](https://www.dmsussman.org/assets/teaching/phys526/3_kineticTheory.pdf)), we have the **time evolution of $$f_s$$** as 
+
+$$\frac{\partial f_s}{\partial t}-\{\mathcal{H_s,f_s}\}=\displaystyle\sum_{n=1}^N\int dV_{s+1}\frac{\partial \mathcal{V(\vec{q_n}-\vec{q}_{s+1})}}{\partial \vec{q}_n}·\frac{\partial f_{s+1}}{\partial\vec{p}_n}$$. 
+
+This is the BBGKY hierarchy.
+
+## The Boltzmann Equation
+
+The above BBGKY hierarchy is too complicated to tell us anything. Consider the **time scales** of different terms under **short-range interactions**, cancel something, 
+
+and the final result is a **closed form equation for $$f_1$$**, as equation (3.41) in Kardar's book. I don't bother to write down.
+
+## The H-theorem and irreversibility
+
+If $$f_1(\vec p,\vec q,t)$$ satisfies the Boltzmann equation, then $$d\Eta/dt\leq 0$$, where
+
+$$\Eta(t)=\int d^3\vec pd^3\vec qf_1(\vec p,\vec q,t)lnf_1(\vec p,\vec q,t)$$,
+
+which is related to the **information content of the one-particle PDF** (for information of a distribution, see [Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/)). Proved by plugging in the Boltzmann equation.
+
+Key mathematical step for introducing time irreversibility: check Kardar Eq.(3.40). *The assumption of molecular chaos* (factorizing $$f_2$$ as the product of two $$f_1$$) is applied to the "before collision term", but not the "after collision term", since when out of equilibrium, after collision, the coordinates are likely to be more correlated!

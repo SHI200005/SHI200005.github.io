@@ -11,7 +11,7 @@ mathjax: true
 
 版本 2023/09/08 Ver0.1
 
-## External References
+## References
 
 1. Kardar, Mehran. *Statistical physics of particles*. Cambridge University Press, 2007.
 

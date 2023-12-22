@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 理论力学
+title: 理论力学 1.0
 categories: BS-NJU-Course-Review-Physics
 description: 对于理论力学的回顾
 keywords: theoretical mechanics
@@ -202,7 +202,7 @@ $$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_
 
 概念：简正坐标、简正频率、模式。无需赘述。
 
-[小振动的一般理论 - 矩阵表述](https://shi200005.github.io/download_file/ACM_Oscillations.pdf)。其中教材 5.3.5 节写道，$$\hat M$$ 与 $$\hat K$$ 是两个对称矩阵，而且 $$\hat M$$ 是正定的，于是按照**矩阵理论**，一定可以找到一个实的非奇异满秩代换使 $$\hat M$$ 和 $$\hat K$$ 同时对角化。请问这个矩阵理论在哪？我告诉你，可以参见 Theorem 7.6.1, Horn, Roger A.; Johnson, Charles R. (2013). *Matrix Analysis, second edition*. Cambridge University Press。在[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)中，我称之为面向理论物理的教材。
+[小振动的一般理论 - 矩阵表述](https://shi200005.github.io/download_file/ACM_Oscillations.pdf)。其中教材 5.3.5 节写道，$$\hat M$$ 与 $$\hat K$$ 是两个对称矩阵，而且 $$\hat M$$ 是正定的，于是按照**矩阵理论**，一定可以找到一个实的非奇异满秩代换使 $$\hat M$$ 和 $$\hat K$$ 同时对角化。请问这个矩阵理论在哪？参见 Theorem 7.6.1, Horn, Roger A.; Johnson, Charles R. (2013). *Matrix Analysis, second edition*. Cambridge University Press。
 
 ## 哈密顿力学
 
@@ -226,8 +226,6 @@ $$
 在经典力学问题求解中，如果用哈密顿力学求解，总是逃不开拉格朗日函数的求解。那么我们为什么要用哈密顿力学呢？对于这个问题，梁昆淼老师在其《理论力学》教材第 7-9 章深入探讨。从一切可能运动的拉格朗日函数 $$L(q,\dot q,t)$$ 出发（拉格朗日动力学）或从一切可能运动的哈密顿函数 $$H(q,p,t)$$ 出发（哈密顿动力学），此时 $$q$$ 和 $$\dot q$$ 相互独立，$$q$$ 和 $$p$$ 也相互独立。但是进入虚位移求实际运动时 $$\dot q$$ 就不再独立于 $$q$$（我的理解是”关联“指的就是拉格朗日方程？），然而 $$p$$ 却独立于 $$q$$（这句话详见下文**哈密顿原理**部分）。于是拉格朗日动力学在 $$s$$ 维位形空间研究，哈密顿力学在 $$2s$$ 维位形空间中研究。
 
 [统计物理 - 统计系综理论](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/#%E7%BB%9F%E8%AE%A1%E7%B3%BB%E7%BB%BC%E7%90%86%E8%AE%BA)（刘维尔定理）。把广义坐标和广义动量当作直角坐标而构成 $$2s$$ 维的空间叫做相空间。哈密顿正则方程的重要性：刘维尔定理是 $$2s$$ 维的相空间中的定理，在普通空间或 $$s$$ 维的位形空间中并不存在类似的定理。
-
-本书翻译为刘维尔定理，统计物理教材翻译成刘维定理，我以后有机会把后者都改成刘维尔吧。
 
 ### 泊松括号
 
@@ -299,4 +297,73 @@ Significance: 见梁老师本章引言。
 
 ## 正则变换 哈密顿-雅可比方程
 
-这个打算以后再写（或者不写）
+揭示了向量子力学的过渡......
+
+### 正则变换
+
+哈密顿原理 $$\delta \displaystyle\int_{t_1}^{t_2}L(q,\dot q,t)dt=0$$（位形空间中）或者 $$\delta \displaystyle\int_{t_1}^{t_2}[\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H(p,q,t)]dt=0$$（相空间中），被积函数如果加上初末值给定的一个时间全微分 $$U$$，则变分为 $$\delta\displaystyle\int_{t_1}^{t_2}\frac{dU}{dt}dt=0$$，并不改变动力学方程。
+
+我们希望对哈密顿函数里的广义坐标和广义动量做变换，
+
+
+$$
+\begin{cases}
+P_\alpha=P_\alpha(p,q,t)\\
+Q_\alpha=Q_\alpha(p,q,t)\quad(\alpha=1,2,...,s).
+\end{cases}
+$$
+
+
+得到一个与之等价的函数 $$K(P,Q,t)$$，变换后满足的变分原理与原来等价，
+
+
+$$
+\begin{cases}
+\delta \displaystyle\int_{t_1}^{t_2}[\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H(p,q,t)]dt=0\\
+\delta \displaystyle\int_{t_1}^{t_2}[\displaystyle\sum_{\alpha=1}^s P_\alpha\dot Q_\alpha-K(P,Q,t)]dt=0.
+\end{cases}
+$$
+
+
+如何实现？按照上面的说法，$$(\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H)-(\displaystyle\sum_{\alpha=1}^s P_\alpha\dot Q_\alpha-K)=\frac{dU}{dt}$$，即 $$\displaystyle\sum_{\alpha=1}^s p_\alpha dq_\alpha-\displaystyle\sum_{\alpha=1}^s P_\alpha dQ_\alpha+(K-H)=dU$$ 即可，这就是**正则变换**。我们希望经过这个变换，能变换出来尽可能多的可遗坐标和相应守恒的“广义动量”。
+
+怎么变？书上例子已经很清楚了。应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6)把宗量给变了。概念：母函数。
+
+**泊松括号不变性**：在正则变换下，$$[\varphi,\psi]_{pq}=[\varphi,\psi]_{PQ}$$。
+
+**无限小正则变换**我还没想好怎么概括比较好，先把梁老师的黑体结论扔上来。
+
+1. 力学系统的正则变量在时刻 $$t$$ 的值，可由其初始值（常数）通过正则变换得出，这正则变换是时间 $$t$$ 的函数。
+2. $$dH=\epsilon[H,G]$$. 检查哈密顿函数在哪些变换下不变，就能确定力学系统的所有运动积分！
+3. 例子：有心力作用下的哈密顿量 $$H$$ 取绕某轴转动的角动量为母函数 $$G$$，算得 $$[H,G]=0$$。
+
+### 哈密顿-雅可比方程
+
+如何找到上文中能把正则变量都变成常数（初始值）的正则变换？我们希望 $$K(P,Q,t)=0$$，正则方程就保证了正则变量是常数。在哈密顿函数代入 $$K=0$$ 的条件，把原来的一阶 linear system of ODEs 变换为一阶 a nonlinear PDE，这就是**哈密顿-雅可比方程**，方程的解叫做**哈密顿主函数** $$S$$，其实就是拉格朗日函数 $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$。
+
+一种特殊的可积系统（见[泊松定理](https://shi200005.github.io/2022/03/30/Advanced-Classical-Mechanics/#%E6%B3%8A%E6%9D%BE%E5%AE%9A%E7%90%86)）：完全可分离的系统，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$。
+
+书中给出了一些用哈密顿-雅可比方程对力学系统进行正则变换求解然后再变回去的例子。其中谐振子的问题很有意思。早在高中学量子力学初步时，我们记忆了“速度和动量不可同时测准，能量和时间不可同时测准”，到[近代物理](https://shi200005.github.io/2022/07/15/Modern-Physics/)，谈论到为什么能量和时间也是一对共轭变量时，用的是光衍射条纹说明。这个打发高中生可以，打发本科生就不太行了。在这个例子里我们发现，能量和时间其实就是对系统做正则变换后的一对共轭变量，其实就是变换后的哈密顿函数的一对“动量”和“坐标”。也就给了我们一点点 taste。
+
+在平方反比有心吸引力的例子里，提到哈密顿-雅可比方法总是直接给出轨道。
+
+### 正则微扰理论
+
+> 在力学中，有许许多多的问题是无法精确求解的。但是经常遇见这样的情况，这些无法精确求解的问题与能够严格求解的问题之间，仅有微笑的差别，因而可以在后者严格解的基础上近似求解前者，这就是**微扰理论**。建立在正则变换基础上的正则微扰理论就是微扰理论的一种。
+
+$$H=H_0+\epsilon H^\prime$$。蒙上眼睛不看微扰，解 $$H_0$$ 假定可以按哈密顿-雅可比方程求解出主函数 $$S(q_1,q_2,...,q_s;\frac{\partial S}{\partial q_1},\frac{\partial S}{\partial q_2},\frac{\partial S}{\partial q_s};t)$$，解出 $$S(q_1,q_2,...,q_s;\alpha_1,\alpha_2,...,\alpha_s;t)=0$$ 一堆积分常数 $$\alpha_\alpha,\beta_\alpha$$ 满足 $$\frac{\partial S}{\partial \alpha_\alpha}=\beta_\alpha$$。现在考虑微扰，这些常数就不在是常数，但是以 $$S$$ 为母函数，正则变换的关系不变，原来求出来的常量是正则变量，满足正则方程 
+
+
+$$
+\begin{cases}
+\dot\alpha_\alpha=-\frac{\partial(\epsilon H^\prime)}{\partial\beta_\alpha},\\
+\dot\beta_\alpha=-\frac{\partial(\epsilon H^\prime)}{\partial\alpha_\alpha}.
+\end{cases}
+$$
+
+
+满足以微扰函数 $$\epsilon H^\prime$$ 为哈密顿函数的正则方程。这个方程一般称为**微扰方程**。
+
+### 从“几何力学”到“波动力学”
+
+先自己看看吧，我有的东西需要再看看再写。

@@ -20,9 +20,9 @@ Not everyone who writes academical articles is a nerd. The author is **unfortuna
 
 Note that the author started this website at such a young age that didn't consider writing in English. One of the properties of those articles is that the author has always been trying to connect the knowledge in math, physics, biology courses etc. That makes it difficult to write this blog in Chinese while the others are in English and connect them... The author also cited many interesting Chinese web sources, making the language switch more difficult...
 
-因此，博客的默认语言是中文。双语博客的前缀是"(Zh&En)"，而英语博客的前缀是"(En)"。中文的语言风格夹带过多整活，英文收敛点er。
+因此，博客的默认语言是中文。双语博客的前缀是"(Zh&En)"，而英语博客的前缀是"(En)"。中文的语言风格夹带过多整活，英文收敛点er。“(Zh-En)” 则指文章前半部分为按照本科（应）所学以中文为基础写了前半部分，后半部分为研究生阶段的补充，以英文为基础。
 
-Therefore, the default language for the blogs is Chinese. Bilingual blogs have a "(Zh&En)" prefix, and English blogs have a "(En)" prefix. The Chinese is in a casual style but the English is more formal.
+Therefore, the default language for the blogs is Chinese. Bilingual blogs have a "(Zh&En)" prefix, and English blogs have a "(En)" prefix. The Chinese is in a casual style but the English is more formal. "(Zh-En)" means that the first half of the article is written in Chinese based on what the author (should) have learned as an undergrad, and the second half is a supplement for the grad school self-learning and is based on English.
 
 ## 关于我 About Me
 
