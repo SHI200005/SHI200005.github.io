@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (Zh-En) 统计物理 1.0
+title: (Zh-En) 统计物理 Statistical Mechanics 1.0
 categories: BS-NJU-Course-Review-Physics
 description: 生物物理方向相当重要的课
 keywords: statistical mechanics
@@ -24,7 +24,7 @@ mathjax: true
 
 龚昇在《话说微积分》中说“高级的数学未必难，低级的数学未必容易”，统计物理也是同样的道理。这个道理给我的启示是：别看 crappy textbooksss，快去看 Kardar。
 
-<span style="font-size: 25px;">(En) Part I: Within the Syllabus</span>
+<span style="font-size: 25px;">(Zh) Part I: Within the Syllabus</span>
 
 ## Rules for large numbers
 
@@ -60,7 +60,14 @@ Important to check Kardar's 2.6 **Rules for large numbers**. （这一段特别�
 
 对于自由度为 $$N$$ 的力学**系统**，其微观状态用 $$N$$ 个广义坐标与 $$N$$ 个广义动量描写：$$\vec q_i(t);\vec p_i(t)$$。（试想这个系统有 $$N_A$$ 个粒子，那么自由度就是 $$6N_A$$，就有 $$6N_A$$ 维）。系统微观状态随时间的变化遵从**正则运动方程**（[理论力学](https://shi200005.github.io/2022/01/25/Theoretical-Mechanics/)）在相空间中形成**相轨道**：
 
-$$\left\{\array{\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial \vec p_i} \\ \frac{d\vec p_i}{dt}=-\frac{\partial H}{\partial \vec q_i}}\right\}$$ $$(i=1,2,...,N)$$
+
+$$
+\begin{cases}
+\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial \vec p_i}\\
+\frac{d\vec p_i}{dt}=-\frac{\partial H}{\partial \vec q_i}\quad(i=1,2,...,N)
+\end{cases}
+$$
+
 
 系统微观状态的几率分布函数或几率密度 $$\rho(\boldsymbol p,\boldsymbol q,t)$$，代表 $$t$$ 时刻系统的微观状态处于相点$$\rho(\boldsymbol p,\boldsymbol q,t)$$周围小**相体积元** $$d\Gamma=\displaystyle\prod_{i=1}^{N}d^3\vec p_id^e\vec q_i$$ 内的几率，满足归一化条件 $$\int d\Gamma\rho=1$$。宏观量 $$\langle O\rangle=\int d\Gamma \rho(\boldsymbol p,\boldsymbol q,t)O(\boldsymbol p,\boldsymbol q)$$。
 
@@ -70,7 +77,7 @@ $$\left\{\array{\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial \vec p_i} \\ \fr
 
 ### 刘维尔定理
 
- - 证明过程：连续性方程、带入**正则运动方程**......
+ - 保守哈密顿系统。证明过程：连续性方程、带入**正则运动方程**......
  - 结论：$$\frac{d\rho}{dt}=\frac{\partial\rho}{\partial t}+\{\rho,H\}=0$$。如果把系综在相空间的运动看成代表点组成的“流体”，那么刘维尔定理表示这个“流体”是**不可压缩**的。系综的几率密度（或代表点密度）在运动中不变。P.S. 其中$$\frac{d}{dt}$$ 指跟着代表点一起运动，$$\frac{\partial}{\partial t}$$ 指固定地点。上一句话作为 Kardar Eq.(3.11) & Eq.(3.13) 的注释。为啥我们盯着这一群代表点？因为你要套到哈密顿力学里，哈密顿力学描述的是这群粒子广义坐标和广义动量的变化嘛=-=。
 
 ### 微正则系综
