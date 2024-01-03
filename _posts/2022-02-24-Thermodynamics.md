@@ -39,7 +39,7 @@ mathjax: true
 
 温度的统计意义：温度标志着物体内部分子热运动的剧烈程度，它是大量分子**热运动平动动能**的统计平均值的量度，$$\bar{\epsilon_k}=\frac{3}{2}kT$$。
 
-温标得国际单位制是怎么确定的（一开尔文多大）？标准：**水的三相点**——水的三相共存状态的温度是273.16开尔文。那么问题来了，水三相共存的温度怎么是唯一的？详见下文。
+温标得国际单位制是怎么确定的（一开尔文多大）？标准：**水的三相点**——水的三相共存状态的温度是 273.16 开尔文。那么问题来了，水三相共存的温度怎么是唯一的？详见下文。
 
 ## 理想气体物态方程
 
@@ -95,7 +95,7 @@ mathjax: true
   2. $$dU=\bar{d}Q+\bar{d}W$$ 无限小过程第一定律表达式，$$\bar dW=\displaystyle\sum_i J_idx_i$$. 广义力-广义位移
   3. $$\bar dU=\bar dQ-pdV$$ 对于理想气体体积功可逆过程。
 
-- 等体过程、绝热过程、等温过程、等压过程在 $$V-p$$ 图上的曲线。注意，这里所谈论的都是可逆过程，否则不平衡状态无法在 $$V-p$$ 平面描绘。将这些过程**带入热力学第一定律求解**，是本章习题的一大考察内容。i.e. 绝热过程泊松公式 $$pV^\gamma=C$$，其中 $$\gamma=\frac{C_{p,m}}{C_{V,m}}$$。
+- 等体过程、绝热过程、等温过程、等压过程在 $$V-p$$ 图上的曲线。注意，这里所谈论的都是可逆过程，否则不平衡状态无法在 $$V-p$$ 平面描绘。将这些过程**带入热力学第一定律求解**，是本章习题的一大考察内容。e.g.,  绝热过程泊松公式 $$pV^\gamma=C$$，其中 $$\gamma=\frac{C_{p,m}}{C_{V,m}}$$。
 
 - 焓 $$H=U+pV$$。$$c_V=(\frac{\partial u}{\partial T})_V$$。$$c_p=(\frac{\partial h}{\partial T})_p$$。
 
@@ -129,7 +129,7 @@ mathjax: true
 
 参考阅读《[从卡诺定理到熵增加原理](https://mp.weixin.qq.com/s/cReyM2-80XYFbwc_bB_sQg)》。
 
-补充：来自 Kardar，要参见下面粒子数可变系统。。。$$dE=TdS+\boldsymbol{J}· d\boldsymbol{x}+\boldsymbol{\mu}·d\boldsymbol{N}$$（热力学基本方程）。被微分的都是广延量。数学操作广延性后，$$E=TS+\boldsymbol{J}· \boldsymbol{x}+\boldsymbol{\mu}\boldsymbol{N}$$（热力学基本方程更基本，广延性来自系统中相互作用是短程的假设）。联立得**约束条件** $$SdT+\boldsymbol{x}· d\boldsymbol{J}+\boldsymbol{N}·d\boldsymbol{\mu}=0$$。为啥提这个？回答**吉布斯相律** i.e.**水的三相点**为什么是个点（见[大学化学](https://shi200005.github.io/2023/02/10/General-Chemistry/)）。
+补充：来自 Kardar，要参见下面粒子数可变系统。。。$$dE=TdS+\boldsymbol{J}· d\boldsymbol{x}+\boldsymbol{\mu}·d\boldsymbol{N}$$（热力学基本方程）。被微分的都是广延量。数学操作广延性后，$$E=TS+\boldsymbol{J}· \boldsymbol{x}+\boldsymbol{\mu}\boldsymbol{N}$$（热力学基本方程更基本，广延性来自系统中相互作用是短程的假设）。联立得**约束条件** $$SdT+\boldsymbol{x}· d\boldsymbol{J}+\boldsymbol{N}·d\boldsymbol{\mu}=0$$。为啥提这个？回答**吉布斯相律** e.g., **水的三相点**为什么是个点（见[大学化学](https://shi200005.github.io/2023/02/10/General-Chemistry/)）。
 
 ***
 

@@ -7,11 +7,9 @@ keywords: linear algebra
 mathjax: true
 ---
 
-微积分和线性代数是大部分理科、工科专业的必修课，其中的知识是后来很多专业课要用到的。非常重要！非常重要！
+**矩阵是线性变换。**
 
-更新记录 2021.09.30 Ver 0.1 2021.09.30 Ver 0.11 2023.01.01,Ver0.12 2023.01.07,Ver1.0 2023.09.18 Ver1.1 相似对角化 约尔当标准型 Matrix exponential
-
-## 线性代数
+更新记录 2021.09.30,Ver 0.1 2021.09.30,Ver 0.11 2023.01.01,Ver0.12 2023.01.07,Ver1.0 2023.09.18,Ver1.1 相似对角化 约尔当标准型 Matrix exponential  2023.12.24,Ver2.0 
 
 | 学习时间                 | 线性代数(第一层次)：大一上                                                                |
 | 周课时                     | 4                                                                                                              |
@@ -20,9 +18,49 @@ mathjax: true
 | 个人建议参考教材  | 任广千等 《线性代数的几何意义》西安电子科技大学出版社 2015 |
 | 先修课程                 | 无                                                                                                            |
 
-教材评论：张等老师这部教材在推理上是严谨的，可以正经学。但和其他教材一样，很多数理基础像我一样差的同学学完（虽然成绩可能比我高不少），仍不知道自己学了什么。对此我的建议是，最晚在学完线性代数这门课的半年内，完整阅读任等老师这本。
+很多数理理解像我一样差的同学学完（虽然成绩可能比我高不少），仍不知道自己学了什么。
 
-面向理论物理（尤其是[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)）的推荐教材：Horn, Roger A.; Johnson, Charles R. (2013). *Matrix Analysis, second edition*. Cambridge University Press.
+参考阅读：
+
+1. 任广千等 《线性代数的几何意义》西安电子科技大学出版社 2015
+2. Garrity, T. A. (2021). *All the Math You Missed: But Need to Know for Graduate School*. Cambridge University Press. Chapter 1.
+3. Horn, Roger A.; Johnson, Charles R. (2013). *Matrix Analysis, second edition*. Cambridge University Press.
+
+## 线性空间与线性变换
+
+线性 $f$：$f(ax_1+bx_2)=af(x_1)+bf(x_2)$。可叠加的。
+
+概念的数学定义请参见任意一本相关教科书。
+
+以一定的标准（一组**基**）描述（**向量**）某个范围（**线性空间**）内的事物。
+
+基的数量：线性空间的维数（$$\dim(V)$$）。核（kernel）、像（image，见行列式定义）。
+
+## 矩阵 - 线性变换
+
+**矩阵**代表**线性变换**（$$T:V\rightarrow W$$）在给定基下的描述。（在教学中竟然完全没有被强调）
+
+- 《线性代数的几何意义》任广千等 5.5 矩阵与线性变换关系的几何意义
+
+矩阵的**秩**与线性变换中变换前后图形**维度**的关系。
+
+ - 《线性代数的几何意义》任广千等 6.3 线性方程组的秩及解的关系的几何意义
+
+特殊的矩阵——**非退化的方阵**：联系的两个线性空间维数相同，可以看成在同一个线性空间下做**基变换**（相应有**坐标变换**关系）。
+
+### 应用
+
+应用：[固体物理](https://shi200005.github.io/2023/03/15/Solid-State-Physics/)晶体宏观对称性
+
+应用：[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6)中多元积分换元的雅可比矩阵 -> 雅可比矩阵及其行列式的几何意义
+
+ - 《线性代数的几何意义》任广千等 5.11 雅可比矩阵及其行列式的几何意义
+ - 《数学分析新讲II》张筑生 第十三章 5.a 注记
+
+应用：利用**高斯消元法**求解线性方程组 $$\hat A\vec x=\vec b$$
+
+- 技能：行简化梯形矩阵、齐次以及非齐次方程组解的结构。示例：[线性代数-求解线性方程组](https://shi200005.github.io/download_file/Linear_Algebra_Solve_Eqs.pdf)。高斯消元法求解线性方程组在后续徒手解矩阵特征值对应的**特征向量**时是必要的。
+- 知识链接：计算物理导论-最小二乘法，参见《线性代数的几何意义》任广千等 6.7 超定方程组的最小二乘解的几何意义
 
 ## 行列式
 
@@ -34,31 +72,13 @@ mathjax: true
 
 行列式的计算在后续徒手解矩阵**特征值**时是必要的。
 
+显示行列式几何意义的定义（来自Garrity）
+
+> Definition 1.5.4 The *determinant* of the matrix $$A$$ is the signed volume of the image of the unit cube.
+
 ### 伴随矩阵
 
-[Adjugate matrix](https://en.wikipedia.org/wiki/Adjugate_matrix).
-
-## 高斯消元法
-
-技能：行简化梯形矩阵、高斯消元法求解线性方程组、齐次以及非齐次方程组解的结构。示例：[线性代数-求解线性方程组](https://shi200005.github.io/download_file/Linear_Algebra_Solve_Eqs.pdf)。高斯消元法求解线性方程组在后续徒手解矩阵特征值对应的**特征向量**时是必要的。
-
-### 矩阵
-
-考察中没有被强调但非常重要的：**线性变换**与矩阵的关系。[固体物理](https://shi200005.github.io/2023/03/15/Solid-State-Physics/)晶体宏观对称性习题中，部分同学不明白变换操作的矩阵是如何写出的，这一节给出了通俗的解答。 
- - 《线性代数的几何意义》任广千等 5.5 矩阵与线性变换关系的几何意义
-
-个人认为应该放在比较靠前位置学但放在比较靠后位置学的：基变换与坐标变换。
-
-知识链接：[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6)中多元积分换元的雅可比矩阵 -> 雅可比矩阵及其行列式的几何意义
- - 《线性代数的几何意义》任广千等 5.11 雅可比矩阵及其行列式的几何意义
- - 《数学分析新讲II》张筑生 第十三章 5.a注记
-
-考察中没有被强调但有点意思的：矩阵的秩与线性变换中变换前后图形维度的关系。
- - 《线性代数的几何意义》任广千等 6.3 线性方程组的秩及解的关系的几何意义
-   
-
-知识链接：计算物理导论-最小二乘法
- - 《线性代数的几何意义》任广千等 6.7 超定方程组的最小二乘解的几何意义
+[Adjugate matrix](https://en.wikipedia.org/wiki/Adjugate_matrix). 用于一种定义方阵行列式的方式。$$\det(A)=\displaystyle\sum_{k=1}^n(-1)^{k+1}a_{1k}\det(A_{1k})$$（来自Garrity）。
 
 ## 特征值和特征向量
 
@@ -66,7 +86,6 @@ mathjax: true
 
 > 几何意义：如果矩阵对某一个向量或某些向量只发生伸缩变换，不对这些向量产生旋转效果，那么这些向量就称为这个矩阵的特征向量，伸缩的比例就是特征值。特征向量在一个矩阵的作用下作伸缩运动，伸缩的幅度由特征值确定。
 >
-> 特征值是振动的谱。
 
 复数特征值及特征向量的几何意义，我在**系统生物学**的 fixed point analysis 会 revisit，看
 
@@ -140,3 +159,4 @@ n×n 方阵可对角化的充要条件是有 n 个线性无关的特征向量（
 系统性总结参见 [矩阵求导术（上）](https://zhuanlan.zhihu.com/p/24709748)& [矩阵求导术（下）](https://zhuanlan.zhihu.com/p/24709748)——知乎用户[长躯鬼侠](https://www.zhihu.com/people/chang-qu-gui-xia)的文章。写得挺循循善诱的，也有和机器学习（[(En) Machine Learning](https://shi200005.github.io/2022/12/05/Machine-Learning/)）中相关运算的结合。
 
 其中行列式的微分详见[行列式微分形式的推导](https://zhuanlan.zhihu.com/p/144255438)——知乎用户 [genekiller](https://www.zhihu.com/people/jiahao-lee-73) 的文章，结论为：可逆情形下的行列式微分形式：$$d\vert A\vert=\vert A\vert tr(A^{-1}dA)$$。
+
