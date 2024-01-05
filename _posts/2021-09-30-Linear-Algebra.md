@@ -64,6 +64,10 @@ mathjax: true
 
 ## 行列式
 
+行列式几何意义的定义（来自Garrity）
+
+> Definition 1.5.4 The *determinant* of the matrix $$A$$ is the signed volume of the image of the unit cube.
+
 作为考察重点但实际上没用的：诡异行列式的计算。评价：行列式只要记住基本计算方法即可，任何复杂计算在以后的课程中不会用到，却占到期中考试巨大分值，实属不解。
 
 就我目前遇到的情况而言，对于物理空间的描述（例如变换），绝大部分都是三维方阵，对于计算物理中的数据处理，矩阵一般比较大，但是不可能让你算矩阵的行列式，因为它们大部分是 sparse matrices。对于三维方阵对应的三阶行列式的计算，在不使用计算软件的情况下，下面的方法最高效（实际中会用到！）
@@ -71,10 +75,6 @@ mathjax: true
 ![](/images/blog/Linear_Algebra_3D_Determinant.jpg)
 
 行列式的计算在后续徒手解矩阵**特征值**时是必要的。
-
-显示行列式几何意义的定义（来自Garrity）
-
-> Definition 1.5.4 The *determinant* of the matrix $$A$$ is the signed volume of the image of the unit cube.
 
 ### 伴随矩阵
 

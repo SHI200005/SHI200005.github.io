@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (En-Zh) Nonlinear-Dynamics
+title: (En-Zh) Nonlinear Dynamics
 categories: BS-NJU-Course-Review-Others
 description: 
 keywords: 
