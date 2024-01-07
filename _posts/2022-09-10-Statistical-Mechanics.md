@@ -9,7 +9,7 @@ mathjax: true
 
 > Ludwig Boltzmann, who spent much of his life studying Statistical Mechanics, died in 1906,  by his own hand. Paul Ehrenfest, carrying on the work, died similarly in 1933. Now it is our  turn to study Statistical Mechanics. Perhaps it will be wise to approach the subject cautiously. --in *States of Matter*, by David. L. Goodstein, 1975, Dover N.Y. 
 
-2022.09.10,Ver0.0  2023.01.18,Ver1.0 2023.05.19,Ver2.0 *\*统计物理，还我青春！\*\*\*！
+2022.09.10 Ver0.0,  2023.01.18 Ver1.0, 2023.05.19 Ver2.0 *\*统计物理，还我青春！\*\*\*！
 
 | 学习时间                | 大三下                                                                        |
 | 周课时                    | 4                                                                                 |

@@ -219,18 +219,6 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 电流单位“安培”的定义：放在真空中的两条无限长平行导线，通有相等的稳恒电流，若两导线相距 $$1m$$，而每一导线每米长度上所受另一导线对它的作用力为 $$2\times10^{-7}N$$，则导线上的电流定义为 $$1A$$。
 
-### 磁矢势
-
-回想[微积分 - 斯托克斯定理](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F) $$\displaystyle\oint_{l}\vec A\cdot d\vec l=\displaystyle\int_{S}(\nabla\times\vec A)\cdot d\vec S=\displaystyle\int_{S}\vec B\cdot d\vec S$$，不难猜到 $$\vec B=\nabla\times\vec A$$ 即为所求。但是，这样，$$\vec B$$ 对应的 $$\vec A$$ 不唯一，加上任何一个标量势的梯度仍满足 $$\vec B=\nabla\times(\vec A+\nabla\phi)$$（根据[矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#多元函数积分学#矢量分析)，任何标量场的梯度场都是无旋场）。出于**一些目的**（啥目的之后补充），取**库伦规范势**满足 $$\nabla\cdot\vec A=0$$。于是，磁矢势的求解归为求解 $$\vec A$$ 满足
-
-
-$$
-\begin{cases}
-\vec B=\nabla\times\vec A \\
-\nabla\cdot\vec A=0
-\end{cases}
-$$
-
 
 ## 电磁场与电荷运动
 
@@ -300,9 +288,9 @@ $$
 
 ### 法拉第电磁感应定律
 
-前文说过，电流会产生磁场。这个由给定回路磁通变化产生的磁场有什么特点？**楞次定律**：当回路磁通变化时，感应电流所产生的感应磁通总是力图阻止原磁通的变化。
+前文说过，电流会产生磁场。这个由给定回路磁通变化产生的磁场有什么特点？**楞次定律**：当回路磁通变化时，感应电流所产生的感应磁通总是力图阻止原磁通的变化（能量守恒的必然结果）。
 
-**感应电动势**：$$\Sigma=-\displaystyle\frac{d\Phi_B}{dt}=-\displaystyle\int_S(\displaystyle\frac{\partial\vec B}{\partial t})\cdot d\vec S+\displaystyle\oint_l(\vec v\times\vec B)\cdot d\vec l$$，感生电动势 + 动生电动势。注意，这里**感应电场不再是保守场了**。
+**感应电动势**：$$\Sigma=-\displaystyle\frac{d\Phi_B}{dt}=-\displaystyle\int_S(\displaystyle\frac{\partial\vec B}{\partial t})\cdot d\vec S+\displaystyle\oint_l(\vec v\times\vec B)\cdot d\vec l$$，感生电动势 + 动生电动势。注意，这里**感应电场不再是保守场了**。考虑感生场，微分形式为 $$\nabla\times\vec E=-\displaystyle\frac{\partial \vec B}{\partial t}$$。动生电动势和感生电动势对于参考系是不对称的，我们需要狭义相对论消除。
 
 做功问题和前文洛伦兹力和安培力的关系那里讨论差不多。洛伦兹力不做功，只有安培力做功。
 
@@ -326,7 +314,11 @@ $$w_m=\frac{1}{2}\mu H^2=\frac{1}{2}BH$$
 
   <img src="\images\blog\Electromagnetism_Displacement_Current.JPG" alt="Electromagnetism_Displacement_Current" width="450px;" />
 
-  引入电荷守恒和高斯定理，构造位移电流 $$\vec j_D(t)=\displaystyle\frac{\partial\vec D}{\partial\vec t}$$，随即 $$\displaystyle\oint_l\vec H\cdot d\vec l=\displaystyle\int_S(\vec j_0+\displaystyle\frac{\partial\vec D}{\partial\vec t})\cdot d\vec S$$  形式上得到满足。
+  引入**电荷守恒**和**高斯定理**，构造位移电流 $$\vec j_D(t)=\displaystyle\frac{\partial\vec D}{\partial\vec t}$$，随即 $$\displaystyle\oint_l\vec H\cdot d\vec l=\displaystyle\int_S(\vec j_0+\displaystyle\frac{\partial\vec D}{\partial\vec t})\cdot d\vec S$$  形式上得到满足。
+  
+- [电动力学](???)给出，如果对 $$\nabla\times\vec B(\vec x)=\mu_0\vec J(\vec x)$$ 两边同时取 $$\nabla\cdot$$，则得 $$\nabla\cdot\vec J(\vec x)=0$$，显然不总成立。
+
+但磁场高斯定理（无源）推广到动态变量仍成立，因为决定磁场的毕-萨定律仍成立。
 
 ## 麦克斯韦方程组与电磁波
 
