@@ -249,7 +249,36 @@ P.S. 冲量定理法的数学验证中涉及到了 fancy 的**牛顿-莱布尼�
 
 又称**点源影响函数**，代表一个点源在一定的边界条件和（或）初始条件下所产生的场。
 
-例：Linear Response，参见 [Linear Response - (En) Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/#linear-response)。
+### Linear Response
+
+求解一般线性一阶 ODEs 的线性响应问题，需要应用拉普拉斯变换求解。
+
+例：参见 [Linear Response - (En) Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/#linear-response)。
+
+### 泊松方程
+
+实质：通过格林定理，把边值问题转化为求相应的另一个看似简单的边值问题的求解——格林函数。
+
+求解
+$$
+\text{微分方程：泊松方程}\\
+\nabla^2u=f(\vec x),\quad(\vec x\in T)\\
+\text{边界条件}\\
+\ [\alpha\frac{\partial u}{\partial n}+\beta u]_{\Sigma}=\varphi(M)
+$$
+在场论中，常常需要区分**场点** $$\vec x$$ 和**源点** $$\vec x'$$ 。定义算符对场点微分 $$\nabla=\vec e_i\displaystyle\frac{\partial}{\partial x_i}$$，对源点微分 $$\nabla'=\vec e_i\displaystyle\frac{\partial}{\partial x_i'}$$，具体关于**相对位矢** $$\vec r=\vec x-\vec x'$$ 的运算律见电动力学课件。  
+
+考虑电源产生的场。由[微积分 - 矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F)结论，$$\nabla^2v(\vec x,\vec x_0)=\delta(\vec x-\vec x_0)$$。矢量分析一顿操作猛如虎，$$u(\vec x_0)=\displaystyle\int_Tv(\vec x,\vec x_0)f(\vec x)dV-\displaystyle\int_{\Sigma}[v(\vec x,\vec x_0)\displaystyle\frac{\partial u(\vec x)}{\partial n}-u(\vec x)\displaystyle\frac{\partial v(\vec x,\vec x_0)}{\partial n}]dS$$，接下来，就可以按不同边界条件转化为对格林函数 $$G(\vec x,\vec x_0)$$ 的求解。
+
+例：第一类边值条件 $$u=\varphi(M)$$ 的求解。
+
+- 记满足 $$v\vert_\Sigma=0$$ 的 $$v$$ 为 $$G(\vec x,\vec x_0)$$，根据边界条件化简 $$u(\vec x_0)$$，再根据调和函数性质得到格林函数对称性（证明在教材上），$$G(\vec x_1.\vec x_2)=G(\vec x_2.\vec x_1)$$，则 $$u(\vec x)=\displaystyle\int_TG(\vec x,\vec x_0)f(\vec x_0)dV_0-\displaystyle\int_{\Sigma}\varphi(\vec x_0)\displaystyle\frac{\partial G(\vec x,\vec x_0)}{\partial n_0}dS_0$$.
+
+  例：[电磁学](https://shi200005.github.io/2022/03/29/Electromagnetism/)中含有导体空间的静电场求解。$$G$$ 由特定边界条件确定。
+
+### 波动和输运方程
+
+与上面类似，处理受迫振动或有源输运的含时 PDE。需要注意格林函数的对称性变为 $$G(\vec x,t;\vec x_0,t_0)=G(\vec x_0,-t_0;\vec r,-t)$$。输运问题可以用**冲量定理法**求解格林函数。
 
 ## 积分变换法
 
@@ -259,13 +288,13 @@ P.S. 冲量定理法的数学验证中涉及到了 fancy 的**牛顿-莱布尼�
 
 >  用分离变数法求解**有界空间**的定解问题时，所得到的本征值是**分立**的，所求的解可表为对分立本征值求和得到**傅里叶级数**。对于**无界空间**，用分离变数法求解定解问题时，所得到的本征谱一般是**连续**的，所求的解可表为对连续本征值求积分的**傅里叶积分**。因此，对于无界空间的定解问题，傅里叶变换是一种很适用的求解方法。
 
-例：点源扩散问题，参见 [Diffusion Equation - (En) Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/#diffusion-equation)。
+例：点源扩散问题，参见 [Diffusion Equation - (En) Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/#diffusion-equation)。参见教材 13.1 例 3。
 
 ### 拉普拉斯变换法
 
 > 拉普拉斯变换法方法适用于求解初值问题，不管方程及边界条件是否为齐次的。
 
-我想举的俩例子不知道和上面这句话有没有关系
+我想举的俩例子不知道和上面这句话有没有关系。
 
 例：Linear impulse function，参见 [(En) fan2023effect](https://shi200005.github.io/2023/10/30/fan2023effect/)。
 

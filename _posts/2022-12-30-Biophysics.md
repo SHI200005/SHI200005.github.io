@@ -35,6 +35,8 @@ Then apply $$L$$ on both sides, $$L[\mathbf x(t)]=L[\displaystyle\int_{-\infty}^
 
 How do species in a **genetic network** influence each other's dynamics? **Application in research**: Fan, R., & Hilfinger, A. (2023). The effect of microRNA on protein variability and gene expression fidelity. *Biophysical Journal*, *122*(5), 905-923. [online](https://www.sciencedirect.com/science/article/pii/S0006349523000437?via%3Dihub)
 
+- Detailed solution: [(En) fan2023effect](https://shi200005.github.io/2023/10/30/fan2023effect/).
+
 ### Convolution Theorem
 
 After applying convolution theorem, we get $$\tilde y(\omega)=\tilde x(\omega)\tilde h(\omega)$$. Look, 
