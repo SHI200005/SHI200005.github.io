@@ -260,12 +260,16 @@ P.S. 冲量定理法的数学验证中涉及到了 fancy 的**牛顿-莱布尼�
 实质：通过格林定理，把边值问题转化为求相应的另一个看似简单的边值问题的求解——格林函数。
 
 求解
+
+
 $$
 \text{微分方程：泊松方程}\\
 \nabla^2u=f(\vec x),\quad(\vec x\in T)\\
 \text{边界条件}\\
 \ [\alpha\frac{\partial u}{\partial n}+\beta u]_{\Sigma}=\varphi(M)
 $$
+
+
 在场论中，常常需要区分**场点** $$\vec x$$ 和**源点** $$\vec x'$$ 。定义算符对场点微分 $$\nabla=\vec e_i\displaystyle\frac{\partial}{\partial x_i}$$，对源点微分 $$\nabla'=\vec e_i\displaystyle\frac{\partial}{\partial x_i'}$$，具体关于**相对位矢** $$\vec r=\vec x-\vec x'$$ 的运算律见电动力学课件。  
 
 考虑电源产生的场。由[微积分 - 矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F)结论，$$\nabla^2v(\vec x,\vec x_0)=\delta(\vec x-\vec x_0)$$。矢量分析一顿操作猛如虎，$$u(\vec x_0)=\displaystyle\int_Tv(\vec x,\vec x_0)f(\vec x)dV-\displaystyle\int_{\Sigma}[v(\vec x,\vec x_0)\displaystyle\frac{\partial u(\vec x)}{\partial n}-u(\vec x)\displaystyle\frac{\partial v(\vec x,\vec x_0)}{\partial n}]dS$$，接下来，就可以按不同边界条件转化为对格林函数 $$G(\vec x,\vec x_0)$$ 的求解。
