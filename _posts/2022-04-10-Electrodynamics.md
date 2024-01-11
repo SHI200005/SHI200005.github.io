@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 电动力学
+title: (Zh-En) 电动力学 Electrodynamics 1.0
 categories: BS-NJU-Course-Review-Physics
 description: 
 keywords: Electrodynamics
@@ -199,15 +199,18 @@ $$
 
 $$
 \begin{bmatrix}
-		\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}
-	\end{bmatrix}
-	\begin{bmatrix}
-		A_1 \\ A_2 \\ A_3 \\ \varphi  
-	\end{bmatrix}
-	=
-	\begin{bmatrix}
-		\mu_0J_1  \\ \mu_0J_2 \\ \mu_0J_3 \\ \rho/\epsilon_0  
-	\end{bmatrix}
+	\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}
+\end{bmatrix}
+
+\begin{bmatrix}
+	A_1 \\ A_2 \\ A_3 \\ \varphi  
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+	\mu_0J_1  \\ \mu_0J_2 \\ \mu_0J_3 \\ \rho/\epsilon_0  
+\end{bmatrix}
 $$
 
 
@@ -230,3 +233,109 @@ $$
 > 电荷 / 电流所产生的物理作用不能够立刻传至场点，而是需要在较晚的时刻到达场点，这个推迟的时间 $$r/c$$ 为电磁作用春波所需要的时间，我们将上面两个电磁势的表达式成为**推迟势**。——电动力学课件 5.2
 
 可以证明推迟势满足**洛伦兹规范**。
+
+### 电磁多极辐射
+
+采用势的多级展开，讨论单频做简谐振荡的小区域电荷和电流系统在远场所产生的辐射问题（远场满足 $$l\ll\lambda\ll r$$，也称辐射区场）。
+
+简谐振荡的小区域电荷 $$\vec J(\vec x',t)=\vec J(\vec x')e^{-i\omega t}$$  <->  $$\rho(\vec x',t)=\rho(\vec x')e^{-i\omega t}$$。记体系含时电偶极矩 $$\vec p(t)=\vec pe^{-i\omega t}$$，其中 $$\vec p=\displaystyle\int_{V'}\rho(\vec x')\vec x'dV'$$。
+
+该 $$\vec J(\vec x',t)$$ 产生 $$\vec A(\vec x,t)=\vec A(\vec x)e^{-i\omega t}$$，其中 $$\vec A(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\int_{V'}\displaystyle\frac{\vec J(\vec x')}{r}dV'$$，我们通过对 $$r\approx R-\vec n\cdot \vec x'$$ 的近似展开 $$\vec A$$，注意，坟墓中的距离可以扔掉后面的相位项，但分子中关于相位的振荡项不能扔掉相位项。进一步展开结果中的指数因子 $$e^{-ik\vec n\cdot\vec x'}=1-ik\vec n\cdot\vec x'+...$$，得 $$\vec A(\vec x)=\vec A^{(0)}(\vec x)+\vec A^{(1)}(\vec x)+...$$，其中 $$\vec A^{(0)}(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')dV'$$ 称为电偶极辐射，后一项 $$\vec A^{(0)}(\vec x)=-ik\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')\vec n\cdot\vec x'dV'$$ 又可以分解为磁偶极辐射和电四极辐射。
+
+#### 电偶极辐射
+
+辐射特点有点累了，懒得写了。
+
+磁偶极辐射和电四极辐射得功率要远小于电偶极辐射。
+
+## 狭义相对论
+
+局限于惯性参考系的理论，解决物理规律在**惯性参考系**之间的物理量转换问题。
+
+牛顿力学方程在[伽利略变换](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E6%83%AF%E6%80%A7%E5%8F%82%E8%80%83%E7%B3%BB)下保持不变，不幸的是，电磁学基本定律不能保持不变。麦克斯韦方程组提出的光速 $$c$$ 是关于什么参考系的速度？Michelson-Morley 试图测量光速沿不同方向的差异，结果发现没有差异。
+
+狭义相对论
+
+- 两条基本假设：相对性原理、光速不变原理（两个事件间隔 $$s^2=c^2(\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2$$ 参考系变换下不变）
+- 三个重要推论：同时的相对性（一个光源向两个方向射光，从两个有相对运动的参考系看，什么时候到达两个目标点）、运动时钟延缓（$$\Delta t=\displaystyle\frac{\Delta\tau}{\sqrt{1-(v/c)^2}}$$）、运动尺度缩短（$$l=l_0{\sqrt{1-(v/c)^2}}$$）。
+
+### 洛伦兹变换
+
+两个惯性系，$$\Sigma'$$ 相对于 $$\Sigma$$ 以 $$v$$ 沿 $$x$$ 轴匀速运动。代入两个事件的间隔在两个参考系中相等的条件，得到洛伦兹变换
+
+
+$$
+x'=\gamma(x-\beta c)\\
+y'=y\\
+z'=z\\
+t'=\gamma(t-\frac{\beta}{c}x)\\
+$$
+
+
+where $$\beta=v/c$$, $$\gamma=1/\sqrt{1-\beta^2}$$. 由此可见，在 $$\beta\approx0$$ 的极限下，洛伦兹变换还原为伽利略变换。伽利略相对性是狭义相对论在低速度下的近似。
+
+
+$$
+x'=x-vt\\
+y'=y\\
+z'=z\\
+t'=t\\
+$$
+
+
+把形式凑对称点，把间隔里的 $$c^2\Delta t^2$$ 项改写成 $$-(ic\Delta t)^2$$。定义坐标 $$x_4=ict$$，洛伦兹变换也可改写成矩阵形式
+
+
+$$
+\begin{bmatrix}
+	x_1' \\ x_2' \\ x_3' \\ x_4' \\
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+	\gamma & 0 & 0 & i\beta\gamma \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    -i\beta\gamma & 0 & 0 & \gamma \\ 
+\end{bmatrix}
+
+\begin{bmatrix}
+	x_1 \\ x_2 \\ x_3 \\ x_4  
+\end{bmatrix}
+$$
+
+
+记为 $$\vec x'=\hat a\vec x$$。不难发现，其**逆变换矩阵**应该是转置矩阵 $$\hat{\tilde a}$$（从物理意义上）。变换，然后逆变换的操作为 $$\hat a\hat{\tilde a}=I$$，毕竟，如果 $$\Sigma'$$ 相对于 $$\Sigma$$ 沿 $$x$$ 轴以 $$v$$ 运动，如果 $$\Sigma''$$ 相对于 $$\Sigma'$$ 沿 $$x'$$ 轴以 $$-v$$ 运动，则 $$\Sigma''$$ 应当与 $$\Sigma$$ 相对静止，否则洛伦兹将感到深深的恐惧。
+
+这里注意，我们把实对称矩阵推广到复数域定义了厄米矩阵，在量子力学中关注厄米共轭，满足 $$\hat U^H=\hat U$$。这里洛伦兹变换矩阵也是复矩阵，但这里满足的 $$\hat a\hat{\tilde a}=I$$ 只是取转置，没有取厄米共轭。因为我们想讨论与物理直觉对应的坐标系转换，逆变换就是转置矩阵，不是厄米共轭矩阵，所以这里考虑转置矩阵，就不足为奇了。
+
+狭义相对论局限性举例：双生子佯谬。狭义相对论不能解决，必须用广义相对论解决。
+
+### 多普勒效应和光行差现象
+
+> 多普勒效应指的是在不同的参考系中观察到的频率存在差异。光行差现象指的是光源运动是，光的传播方向亦发生变化。——电动力学课件 6.4
+
+---
+
+## Conservation Laws
+
+Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation with Newton's third law.
+
+###  Momentum
+
+Consider the total electromagnetic force on the charges in volume $$\mathscr V$$  ->  the force per unit $$\vec f=\rho\vec E+\vec J\times\vec B$$. Now transform $$\rho$$, $$\vec J$$ into $$\vec E$$, $$\vec B$$. 
+
+Introduce the **Maxwell stress tensor** $$T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$.
+
+Now $$\vec f=\nabla\cdot\overleftrightarrow T-\epsilon_0\mu_0\displaystyle\frac{\partial\vec S}{\partial t}$$, where $$\vec S$$ is the **Poynting vector**.
+
+The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec F=\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a-\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. Consider the third law, $$\vec F=\displaystyle\frac{d\vec p_{\text{mech}}}{dt}$$, where $$\vec p_{\text{mech}}$$ is the (mechanical) momentum of the particles in volume $$\mathscr V$$. The first integral represents *momentum stored in the fields*: $$\vec p=\epsilon_0\mu_0\displaystyle\int_\mathscr V \vec Sd\tau$$. The second integral is the *momentum per unit time flowing in through the surface*.
+
+**The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\epsilon_0(\vec E\times\vec B)$$.
+
+> when there *are* charges around the field momentum by itself, and the mechanical momentum by itself, are not conserved--charges and fields exchange momentum, and only the *total* is conserved.--Griffiths 8.2
+
+### Angular Momentum
+
+**The angular momentum density in the fields** is $$\vec l=\vec r\times\vec g=\epsilon_0[\vec r(\vec E\times\vec B)]$$.

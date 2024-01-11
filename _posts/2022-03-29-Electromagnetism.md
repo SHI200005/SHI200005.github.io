@@ -428,7 +428,7 @@ $$
 
 回想[微积分 - 斯托克斯定理](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F) $$\displaystyle\oint_{l}\vec A\cdot d\vec l=\displaystyle\int_{S}(\nabla\times\vec A)\cdot d\vec S=\displaystyle\int_{S}\vec B\cdot d\vec S$$，不难猜到 $$\vec B=\nabla\times\vec A$$ 即为所求。但是，这样，$$\vec B$$ 对应的 $$\vec A$$ 不唯一，加上任何一个标量势的梯度仍满足 $$\vec B=\nabla\times(\vec A+\nabla\phi)$$（根据[矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#多元函数积分学#矢量分析)，任何标量场的梯度场都是无旋场）。
 
-在静磁学中，我们一般取**库伦规范**势，满足 $$\nabla\cdot\vec A=0$$。P.S. 在随时间变化的磁场中，我们一般取**洛伦兹规范**势，见**电动力学**（还没写）。
+在静磁学中，我们一般取**库伦规范**势，满足 $$\nabla\cdot\vec A=0$$。P.S. 在随时间变化的磁场中，我们一般取**洛伦兹规范**势，见[电动力学](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2%E4%B8%8E%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7)。
 
 这样的磁矢势怎么找？见电动力学课件 1.2。利用 $$\nabla\displaystyle\frac{1}{r}=-\displaystyle\frac{\vec r}{r^3}$$，难运算，我们最终得到符合条件的 $$\vec A(\vec x)=\displaystyle\frac{\mu}{4\pi}\displaystyle\int\frac{\vec J(\vec x')}{r}dV'$$  ->  $$\nabla\cdot\vec B(\vec x)=\nabla\cdot(\nabla\times\vec A)=0$$  **无源场**。在稳恒电流场条件下，难证明上述磁矢势满足
 
