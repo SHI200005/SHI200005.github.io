@@ -27,6 +27,8 @@ Expand the Taylor series around $$t$$ with respect to $$t_2=t+\tau$$ yielding $$
 
 ... take the limit $$\tau\rightarrow 0$$ then the **Master Equation** is obtained $$\frac{dP(\vec n,t)}{dt}=\displaystyle\sum_{\vec m}w_t(\vec n,\vec m)P(\vec m,t)-w_t(\vec m,\vec n)P(\vec n,t)$$.
 
+I also came across a nice link on **Chapman-Kolmogorov Equation** -> **Master Equation**: [Master Equation](https://statisticalphysics.leima.is/nonequilibrium/master-eqn.html).
+
 Notes on "Markov" from Section IV.1 of [1](https://shi200005.github.io/2022/10/28/Stochastic-Processes/#refernces).
 
 > In principle any closed isolated physical system can be described as a Markov process by introducing all microscopic variables as components of $$Y$$. In fact, the microscopic motion in phase space is deterministic and therefore Markovian, compare $$P_{1\vert 1}(x,t\vert x_0, t_0)=\delta[x-\phi(x_0,t-t_0)]$$. The physicist's question, however, is whether he can find a small set of variables whose behavior in time can be described as a multicomponent Markov process. The well-known, but still miraculous, experimental fact is that this is so far most many-body systems in nature. Of course, such a description is at best approximate and restricted to a macroscopic, coarse-grained level. This reduction to a much smaller number of variables is called "contraction" or "projection", but the justification of this approximation involves the fundamental problems of statistical mechanics and is still the subject of many discussions. 

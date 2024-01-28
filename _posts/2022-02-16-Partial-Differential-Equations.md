@@ -52,11 +52,11 @@ mathjax: true
 抱歉暂时没觉得这节有什么用。值得注意的是上面讨论的都是实方程，对于量子力学的薛定谔方程，由于有虚数存在，虽是抛物型，却是波动方程。
 
 ### 达朗贝尔公式 定解问题
-求解常微分方程的方法是先求出通解再带入初始条件。一维波动方程可以仿照求解常微分方程的方法，
+求解常微分方程的方法是先求出通解再带入初始条件。[一维波动方程](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E4%B8%80%E7%BB%B4%E6%B3%A2)可以仿照求解常微分方程的方法，
 
 $$(\frac{\partial^2}{\partial t^2}-a^2\frac{\partial^2}{\partial x^2})u=0$$ -> $$(\frac{\partial}{\partial t}+a\frac{\partial}{\partial x})(\frac{\partial}{\partial t}-a\frac{\partial}{\partial x})u=0$$
 
-求出通解：沿着正负方向行波之和（$$f_1(x+at)$$ 沿负方向，$$f_1(x+at)$$ 沿正方向），
+求出通解：沿着正负方向行波之和（$$f_1(x-at)$$ 沿负方向，$$f_2(x+at)$$ 沿正方向，讲解可见 Griffiths 电动力学第九章），
 
 $$u=f_1(x+at)+f_2(x-at)$$
 

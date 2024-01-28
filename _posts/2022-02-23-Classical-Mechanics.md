@@ -266,6 +266,8 @@ Morin 书上相关内容整理成的教学材料[力学-质心参考系-柯尼�
 
 ### 一维波
 
+通过列解经典力学牛顿方程，做小量近似，绳上微扰传播的波动方程：$$\displaystyle\frac{\partial^2f}{\partial z^2}=\frac{1}{v^2}\frac{\partial ^2 f}{\partial t^2}$$，其中 $$v=\sqrt{\displaystyle\frac{T}{\mu}}$$，其中 $$T$$ 是绳中张力，$$\mu$$ 是绳子线密度。讲解的文本很多，例如梁昆淼老师的数学物理方法和 Griffiths 电动力学第九章。[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/)的重点之一就是求解这种线性偏微分方程。
+
 一维波传播：负载、阻抗、反射波、透射波。 驻波。 多普勒效应。
 
  - 若负载的阻抗不等于绳的阻抗，反射系数和透射系数。

@@ -73,9 +73,9 @@ $$\ce{S + E<=>C_1<=>C_2<=>P +E }$$
 
 Assumptions: 1. $\ce{C_1<=>C_2}$ is fast compared to the association and dissociation events; 2. $P$ never binds free enzyme, which lead to 
 
-$$\ce{S + E<=>[k_1][k_{-1}]C->[k_2]P + E}$$.
+$\ce{S + E<=>[k_1][k_{-1}]C->[k_2]P + E}$.
 
-Assumption: For many reactions in the cell, the substract is far more abundant than the enzyme, then complex $$C$$ is considered in **quasi-steady state**.
+Assumption: For many reactions in the cell, the substract is far more abundant than the enzyme, then complex $C$ is considered in **quasi-steady state**.
 
 Result: $\text{Rate of S → P}=\frac{k_2k_1e_Ts}{k_{-1}+k_2+k_1s}=\frac{V_{max}s}{K_M+s}$, where $$e_T$$ denote the total enzyme concentration, $$s$$ denote the substrate concentration, $V_{max}=k_2e_T$ is the limiting (or maximal) rate, $K_M=(k_{-1}+k_2)/k_1$ is the Michaelis (or half-saturating) constant.
 
@@ -127,8 +127,9 @@ $$
 \ce{PX_3 + X<=>[k_4][4k_{-4}]PX_4}.
 $$
 
+(For instance, there are four sites available for the first ligand to bind, so the overall reaction rate is $4k_1$ . There are only three sites available for the second ligand to bind, so the rate is $3k_2$.) When the binding events are in equilibrium, write down the fractional saturation...
 
-(For instance, there are four sites available for the first ligand to bind, so the overall reaction rate is $4k_1$ . There are only three sites available for the second ligand to bind, so the rate is $3k_2$.)
+##### Hill Function
 
 If the final binding event has a much higher affinity than the earlier binding events (i.e., $K_4\ll K_1,K_2,K_3,K_4$), then the fractional saturation can be approximated by $Y=\frac{[X]^4/(K_1K_2K_3K_4)}{1+[X]^4/(K_1K_2K_3K_4)}$, formalized in the **Hill function** $Y=\frac{[X]^n}{K^n+[X]^n}$.
 
