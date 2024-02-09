@@ -21,6 +21,24 @@ mathjax: true
 
 本文主要参考詹老师的课件，markdown 引用体内为直接引用原文。
 
+## 波动方程
+
+此部分主要来自 Hecht Optics 第二章，我决定先介绍麦克斯韦方程组，然后把对光的描述作为电磁波的特殊形式。真空中电磁波传播满足的微分方程是**波动方程**。
+
+一维波见[力学 - 一维波](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E4%B8%80%E7%BB%B4%E6%B3%A2)。
+
+### 三维波
+
+三维波动方程的解，长啥样难说，要参考对称性，一般来说传播过程中波形是会改变的（例如振幅改变）。如 Hecht 2.9 就导出了球对称波的波函数。
+
+#### 平面波
+
+波前：相位相等的面。普通波的波前太诡异，我们先来看最简单的平面波。
+
+平面波作为波动方程一种很特殊的解的良好品质之一是可以实现传播过程中波形不变，等相面就是相互平行的平面往前匀速跑。由解析几何，与 $$\vec k$$ 垂直的向量 $$\vec r$$ 所在平面满足 $$\vec k\cdot\vec r=\text{const}=a$$​，描述了平面波的一个波前。于是平面波满足 $$\psi(\vec r,t)=G(\vec k\cdot\vec r,t)$$。
+
+我们可以用简谐振动激发这种波，得到**简谐**平面波，波函数：$$\psi(\vec r,t)=Ae^{i\vec k\cdot\vec r\mp\omega t}$$。矢量 $$\vec k$$ 满足 $$k=\displaystyle\frac{2\pi}{\lambda}$$，称作波矢量。homogeneous 的简谐平面波满足 $$A$$ 处处相等。波前的奔跑速度是相速度，和上文一维情况一致。
+
 ## 电磁波的传播
 
 ### 真空自由空间
@@ -34,7 +52,7 @@ $$
 $$
 
 
-计算 $$\nabla\times(\nabla\times\vec E)$$  -> $$\nabla^2\vec E(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec E(\vec x,t)$$，同理 $$\nabla^2\vec B(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec B(\vec x,t)$$。这就是波动方程，波速为 $$c=\displaystyle\frac{1}{\sqrt{\mu_0\epsilon_0}}$$，即为真空中光速。于是，波动方程写为......
+计算 $$\nabla\times(\nabla\times\vec E)$$  -> $$\nabla^2\vec E(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec E(\vec x,t)$$，同理 $$\nabla^2\vec B(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec B(\vec x,t)$$。这就是**波动方程**，波速为 $$c=\displaystyle\frac{1}{\sqrt{\mu_0\epsilon_0}}$$，即为真空中光速。于是，波动方程写为......
 
 #### 时谐电磁波（单色波）
 
@@ -50,7 +68,7 @@ $$\vec E(\vec x)=\vec E_0e^{i\vec k\cdot\vec x}$$, $$\vec E(\vec x,t)=\vec E_0e^
 
 考虑与磁场的关系，得到 $$\vec E=c\vec B\times\vec e_k$$，电场、磁场和传播方向右手互相垂直（TEM 波）。
 
-<img src="\images\blog\Electrodynamics_Plain.JPG" alt="Electrodynamics_Plain" width="150px;" />
+<img src="\images\blog\Electrodynamics_Plain.JPG" alt="Electrodynamics_Plain" width="300px;" />
 
 （图来自刘老师电磁学课件）
 
@@ -154,7 +172,7 @@ $$
 
 #### 群速度和相速度
 
-相速度 $$v_p=\displaystyle\frac{dz}{dt}$$，群速度 $$v_g=\displaystyle\frac{d\omega}{dk_z}$$。结论：波在波导管中传播时，$$v_p=\displaystyle\frac{c}{\sqrt{1-(\omega_c/\omega)^2}}$$, $$v_pv_c=c^2$$。
+相速度 $$v_p=\displaystyle\frac{dz}{dt}$$，群速度 $$v_g=\displaystyle\frac{d\omega}{dk_z}$$（包络线奔跑的速度）。结论：波在波导管中传播时，$$v_p=\displaystyle\frac{c}{\sqrt{1-(\omega_c/\omega)^2}}$$, $$v_pv_c=c^2$$。
 
 ### 理想导体矩形谐振腔
 
@@ -320,6 +338,8 @@ $$
 
 ## Conservation Laws
 
+**This part mainly comes from Griffiths 8.2.**
+
 Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation with Newton's third law.
 
 ###  Momentum
@@ -328,11 +348,11 @@ Consider the total electromagnetic force on the charges in volume $$\mathscr V$$
 
 Introduce the **Maxwell stress tensor** $$T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$.
 
-Now $$\vec f=\nabla\cdot\overleftrightarrow T-\epsilon_0\mu_0\displaystyle\frac{\partial\vec S}{\partial t}$$, where $$\vec S$$ is the **Poynting vector**.
+Now $$\vec f=\nabla\cdot\overleftrightarrow T-\epsilon_0\mu_0\displaystyle\frac{\partial\vec S}{\partial t}$$, where $$\vec S$$ is the [Poynting vector](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E5%92%8C%E8%83%BD%E6%B5%81%E5%AF%86%E5%BA%A6%E7%9F%A2%E9%87%8F).
 
 The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec F=\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a-\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. Consider the third law, $$\vec F=\displaystyle\frac{d\vec p_{\text{mech}}}{dt}$$, where $$\vec p_{\text{mech}}$$ is the (mechanical) momentum of the particles in volume $$\mathscr V$$. The first integral represents *momentum stored in the fields*: $$\vec p=\epsilon_0\mu_0\displaystyle\int_\mathscr V \vec Sd\tau$$. The second integral is the *momentum per unit time flowing in through the surface*.
 
-**The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\epsilon_0(\vec E\times\vec B)$$.
+**The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\epsilon_0(\vec E\times\vec B)$$. 
 
 > when there *are* charges around the field momentum by itself, and the mechanical momentum by itself, are not conserved--charges and fields exchange momentum, and only the *total* is conserved.--Griffiths 8.2
 
