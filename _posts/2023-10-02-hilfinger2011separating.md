@@ -46,12 +46,12 @@ Also a quick note on the part **Modeling intrinsic noise - multiplicative enviro
   $$
   
   
-  For this system, as the supplemental material shows, fortunately, we have $\langle\sigma^2_{X_t\vert\vec Z[0,t]}\rangle_{\vec Z[0,t]}=\langle X_t\vert\vec Z[0,t]\rangle_{\vec Z[0,t]}$.
+  For this system, as the supplemental material shows, fortunately, we have $\langle\sigma^2_{X_t\vert\vec Z[0,t]}\rangle=\langle\langle\vec  X_t\vert \vec Z[0,t]\rangle_e\rangle_{\vec Z[0,t]}$.
 
 The black-square term $\frac{b+1}{2}\frac{1}{\langle x\rangle}$ comes from assuming static environment (no correlations between the environment and the variable).
 
 - the flux balance (first-order property) $0=b\langle\lambda(\vec z)\rangle-\langle\beta(\vec z)\rangle\langle x\rangle$ and 
-- the Lyapunov equation $0=b^2\langle\lambda(\vec z)\rangle+\langle\beta(\vec z)\rangle\langle x\rangle-2\langle\beta(\vec z)\rangle\sigma^{2,black -squares}_{xx}$.
+- the Lyapunov equation $0=b^2\langle\lambda(\vec z)\rangle+\langle\beta(\vec z)\rangle\langle x\rangle-2\langle\beta(\vec z)\rangle\sigma^{2}_{xx,\text{black -squares}}$.
 
 ## Brief summary
 

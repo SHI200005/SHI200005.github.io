@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (Zh-En) 统计物理 Statistical Mechanics 1.0
+title: 统计物理 1.0
 categories: BS-NJU-Course-Review-Physics
 description: 生物物理方向相当重要的课
 keywords: statistical mechanics
@@ -23,8 +23,6 @@ mathjax: true
 统计物理学从物体的微观组成和结构出发，把宏观的性质看成**微观性质的统计平均**，采用统计平均的方法。所以说，这门课的基础是[概率论](https://shi200005.github.io/2021/10/02/Probability/)，不幸的是，这门课上得太 crap。
 
 龚昇在《话说微积分》中说“高级的数学未必难，低级的数学未必容易”，统计物理也是同样的道理。这个道理给我的启示是：别看 crappy textbooksss，快去看 Kardar。
-
-<span style="font-size: 25px;">(Zh) Part I: Within the Syllabus</span>
 
 ## Rules for large numbers
 
@@ -318,19 +316,9 @@ $$
 
    **未完待续**
 
-## 致谢
-
-感谢多伦多大学物理学院 Yuzheng Xie, Yuchong Li。 
-
 ---
 
-<span style="font-size: 25px;">(En) Part II: Beyond the Syllabus</span>
-
 I also self-learnt a lot of probability theory from Kardar's book, which makes what we had to memorized for our second year undergrad course under good intuition and now I don't need to *know* them by memorizing. Check [随机变量的 fancy 数字特征 - 概率论](https://shi200005.github.io/2021/10/07/Probability/#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84-fancy-%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81).
-
-## References
-
-1. Kardar, Mehran. *Statistical physics of particles*. Cambridge University Press, 2007.
 
 ## Information and Entropy
 
@@ -401,3 +389,11 @@ $$\Eta(t)=\int d^3\vec pd^3\vec qf_1(\vec p,\vec q,t)lnf_1(\vec p,\vec q,t)$$,
 which is related to the **information content of the one-particle PDF** (for information of a distribution, see [Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/)). Proved by plugging in the Boltzmann equation.
 
 Key mathematical step for introducing time irreversibility: check Kardar Eq.(3.40). *The assumption of molecular chaos* (factorizing $$f_2$$ as the product of two $$f_1$$) is applied to the "before collision term", but not the "after collision term", since when out of equilibrium, after collision, the coordinates are likely to be more correlated!
+
+## References
+
+1. Kardar, Mehran. *Statistical physics of particles*. Cambridge University Press, 2007.
+
+## 致谢
+
+感谢多伦多大学物理学院 Yuzheng Xie, Yuchong Li。 

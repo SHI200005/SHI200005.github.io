@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (Zh-En) 电动力学 Electrodynamics 1.0
+title: 电动力学 1.0
 categories: BS-NJU-Course-Review-Physics
 description: 
 keywords: Electrodynamics
@@ -38,6 +38,32 @@ mathjax: true
 平面波作为波动方程一种很特殊的解的良好品质之一是可以实现传播过程中波形不变，等相面就是相互平行的平面往前匀速跑。由解析几何，与 $$\vec k$$ 垂直的向量 $$\vec r$$ 所在平面满足 $$\vec k\cdot\vec r=\text{const}=a$$​，描述了平面波的一个波前。于是平面波满足 $$\psi(\vec r,t)=G(\vec k\cdot\vec r,t)$$。
 
 我们可以用简谐振动激发这种波，得到**简谐**平面波，波函数：$$\psi(\vec r,t)=Ae^{i\vec k\cdot\vec r\mp\omega t}$$。矢量 $$\vec k$$ 满足 $$k=\displaystyle\frac{2\pi}{\lambda}$$，称作波矢量。homogeneous 的简谐平面波满足 $$A$$ 处处相等。波前的奔跑速度是相速度，和上文一维情况一致。
+
+## Conservation Laws
+
+**This part mainly comes from Griffiths 8.2.**
+
+Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation with Newton's third law.
+
+###  Momentum
+
+Consider the total electromagnetic force on the charges in volume $$\mathscr V$$  ->  the force per unit $$\vec f=\rho\vec E+\vec J\times\vec B$$. Now transform $$\rho$$, $$\vec J$$ into $$\vec E$$, $$\vec B$$. 
+
+Introduce the **Maxwell stress tensor** $$T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$​.
+
+> Physically, $$\overleftrightarrow T$$ is the force per unit area (or **stress** acting on the surface). More precisely, $$T_{ij}$$ is the force (per unit area) in the $$i$$th direction acting on an element of surface oriented in the $$j$$th direction--"diagonal" elements ($$T_{xx},T_{yy},T_{zz}$$) represents *pressures*, and "off-diagonal" elements ($$T_{xy},T_{xz}$$,etc.) are *shears*.
+
+Now $$\vec f=\nabla\cdot\overleftrightarrow T-\epsilon_0\mu_0\displaystyle\frac{\partial\vec S}{\partial t}$$, where $$\vec S$$ is the [Poynting vector](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E5%92%8C%E8%83%BD%E6%B5%81%E5%AF%86%E5%BA%A6%E7%9F%A2%E9%87%8F).
+
+The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec F=\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a-\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. Consider the third law, $$\vec F=\displaystyle\frac{d\vec p_{\text{mech}}}{dt}$$, where $$\vec p_{\text{mech}}$$ is the (mechanical) momentum of the particles in volume $$\mathscr V$$. Therefore, $$\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a=\frac{d\vec p_{\text{mech}}}{dt}+\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. *Momentum stored in the fields*: $$\vec p=\epsilon_0\mu_0\displaystyle\int_\mathscr V \vec Sd\tau$$. *Momentum per unit time flowing in through the surface*: $$\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a$$.
+
+**The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\displaystyle\frac{1}{c^2}\vec S=\epsilon_0(\vec E\times\vec B)$$. 
+
+> when there *are* charges around the field momentum by itself, and the mechanical momentum by itself, are not conserved--charges and fields exchange momentum, and only the *total* is conserved.--Griffiths 8.2
+
+### Angular Momentum
+
+**The angular momentum density in the fields** is $$\vec l=\vec r\times\vec g=\epsilon_0[\vec r(\vec E\times\vec B)]$$.
 
 ## 电磁波的传播
 
@@ -101,7 +127,7 @@ $$
 
 根据波动方程和边值条件，我们求出反射波和折射波的方向和入射波的关系。那么它们的**振幅**和入射波本身有没有定量关系？
 
-将入射波 $$\vec E_0$$, $$\vec B_0$$ 分解为偏振方向垂直于入射面（s 偏振）和偏振方向平行于入射面（p 偏振），分别代入边界条件，得到定量的**菲涅尔定律**。令人惊讶的是，当 $$\theta+\theta''=90\degree$$ 的时候，p 偏振的反射波电场强度解为 0，消失。这个 $$\theta$$ 就是 **布儒斯特角**
+将入射波 $$\vec E_0$$, $$\vec B_0$$ 分解为偏振方向垂直于入射面（s 偏振）和偏振方向平行于入射面（p 偏振），分别代入边界条件，得到定量的**菲涅尔定律**。令人惊讶的是，当 $$\theta+\theta''=90°$$ 的时候，p 偏振的反射波电场强度解为 0，消失。这个 $$\theta$$ 就是**布儒斯特角**。
 
 研究反射和折射能流密度振幅：反射系数 $$R$$ 和折射系数 $$T$$。
 
@@ -113,7 +139,7 @@ $$
 
 材料介电常数事实上和电磁波频率相关，电磁波传播时会发生色散。
 
-#### Lorenz 模型
+#### 绝缘体 - Lorenz 模型
 
 描述无极分子构成的介质的介电常数的电子极化而引起的色散模型（回忆[电磁学 - 电介质的行为](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E8%A1%8C%E4%B8%BA)）。有人要问，电子被束缚着，只能原地挣扎，电磁波怎么传播？当然，电磁波的传播不是通过电子像信鸽一样送信传播出去的，传播的是一种运动的形式，电磁波强迫电子极化振荡，这种振荡就是电磁波的体现。
 
@@ -123,25 +149,42 @@ $$
 
 如果频率接近共振频率，介电常数存在一个比较大的虚部（dissipative part），介质存在显著的吸收损耗，此区域随着频率增加，折射率反而减小，称为**反常色散**。如果频率远离共振区域，只需要去介电常数的实部，忽略虚部，电磁波传播时的损耗可以忽略。
 
-#### Drude 模型
+#### 导体
 
-描述自由电子占主导的导体（如贵金属）的介电常数。
+##### Drude 模型
 
-这时含有电子振荡本征频率的谐振项在受迫振动方程中消失。相对介电常数的复数解为 $$\epsilon_r(\omega)=1-\displaystyle\frac{\omega_p^2}{\omega^2+i\gamma\omega}$$，其中 $$\omega_p^2=\displaystyle\frac{Ne^2}{m\epsilon_0}=\displaystyle\frac{\sigma_c\gamma}{\epsilon_0}$$，其中 $$\sigma_c=\displaystyle\frac{Ne^2}{\gamma m}$$ 为金属电导率。
+描述自由电子占主导的导体（如贵金属）的介电常数。这时含有电子振荡本征频率的谐振项在受迫振动方程中消失（电子自由了，不被“弹簧”牵着了）。相对介电常数的复数解为 $$\epsilon_r(\omega)=1-\displaystyle\frac{\omega_p^2}{\omega^2+i\gamma\omega}$$，其中 $$\omega_p^2=\displaystyle\frac{Ne^2}{m\epsilon_0}=\displaystyle\frac{\sigma_c\gamma}{\epsilon_0}$$，其中 $$\sigma_c=\displaystyle\frac{Ne^2}{\gamma m}$$ 为金属电导率。
 
-- 在低频和微波波段（$$\omega\ll\omega_p$$），相对介电常数实部是一个与频率无关的**负数**（$$10^4$$ 量级 电磁波不允许在媒质中传播），虚部有极大的值。电磁波入射到导体表面**穿透深度几乎为 0**，因此都可以看成**理想导体**。
+- 在低频和微波波段（$$\omega\ll\omega_p$$），相对介电常数实部是一个与频率无关的**负数**（$$10^4$$ 量级，电磁波不允许在媒质中传播），虚部有极大的值。电磁波入射到导体表面**穿透深度几乎为 0**，因此都可以看成**理想导体**。
 
 - 在近红外 / 可见光区波段，相对介电常数是一个绝对值不是特别大的负数......电磁波不允许在金属体内传播，一旦入射到金属导体表面，则在金属表面下急剧衰减。
 
 - 等离子体色散特性 - 等离子体频率（不懂）。
 
-导电介质：把两个模型结合起来，在低频情况下，Lorenz 模型保留实部 $$\epsilon_c(\omega)>0$$，导电性的贡献用 $$i\displaystyle\frac{\sigma_c}{\omega}$$ 表示。电磁波入射到导电介质表面，可以在内部传播，随着深度的增加振幅呈现指数衰减。
+##### 电磁场方程 - 导体内部衰减波
+
+补充：参见 Griffiths 9.4.1。这时，导体内部允许有自由电流存在，根据欧姆定律 $$\vec J_f=\sigma\vec E$$，代入麦克斯韦方程组求解。
+
+- 结论：向导体内注入自由电荷，自由电荷会流到导体边界，最终内部自由电荷为零，符合我们对导体静电平衡态的认知；
+
+- 等一段时间，导体内自由电荷变为零后，麦克斯韦方程组变为
+
+- 
+  $$
+  \nabla^2\vec E=\mu\epsilon\frac{\partial^2\vec E}{\partial t^2}+\mu\sigma\frac{\partial\vec E}{\partial t},\\
+  \nabla^2\vec B=\mu\epsilon\frac{\partial^2\vec B}{\partial t^2}+\mu\sigma\frac{\partial\vec B}{\partial t}.
+  $$
+  
+
+  这不就是[阻尼振动](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E4%B8%80%E4%B8%AA%E8%87%AA%E7%94%B1%E5%BA%A6%E7%9A%84%E6%8C%AF%E5%8A%A8)方程，解得 $$\tilde{\vec E}(z,t)=\tilde{\vec E}_0e^{-\kappa z}e^{i(kz-\omega z)}$$，磁场长得一样。于是我们看到电磁场在导体内部传播时是怎么随着穿透深度指数衰减的。穿透深度 $$d=1/\kappa$$。对于理想导体，$$\sigma→\infty$$，$$\kappa→0$$。
+
+- 进一步，导体内部的衰减波是横波，见 Griffiths。
+
+最后，对于导电介质：把两个模型结合起来，在低频情况下，Lorenz 模型保留实部 $$\epsilon_c(\omega)>0$$，导电性的贡献用 $$i\displaystyle\frac{\sigma_c}{\omega}$$ 表示。电磁波入射到导电介质表面，可以在内部传播，随着深度的增加振幅呈现指数衰减。
 
 ### 理想导体矩形波导及谐振腔
 
-通过上面对电磁波在材料中传播的介电常数的物理源头讨论，结合实验事实，
-
-> 低频的电磁波（如微波）入射到如金属表面时，其穿透深度非常小（在纳米尺度），而反射率几乎接近 100%。故当微波在金属波导中传播时，物理上把金属看成理想导体。对于理想导体，进入导体的穿透深度 $$\delta\rightarrow0$$，导体内部的电磁场可以近似认为为零。此时，电流被限制在贴近表面厚度趋于 0 的薄层，刑场无损耗的面电流 $$\vec\alpha_f$$ 分布和面电荷 $$\sigma_f$$ 分布。——课件 4.6
+> 低频的电磁波（如微波）入射到如金属表面时，其穿透深度非常小（在纳米尺度），而反射率几乎接近 100%。故当微波在金属波导中传播时，物理上把金属看成理想导体。对于理想导体，进入导体的穿透深度 $$\delta\rightarrow0$$，导体内部的电磁场可以近似认为为零。此时，电流被限制在贴近表面厚度趋于 0 的薄层，形成无损耗的面电流 $$\vec\alpha_f$$ 分布和面电荷 $$\sigma_f$$ 分布。——课件 4.6
 
 注意，自由空间中的时谐平面波解是 TEM 波，来源于全空间都有 $$\nabla\cdot\vec E=0$$，但在波导管中，由于金属表面出现面电荷和面电流分布，这个微分关系在边界失效，我们求得的满足波动方程的解便不再是 TEM 波。
 
@@ -174,7 +217,7 @@ $$
 
 相速度 $$v_p=\displaystyle\frac{dz}{dt}$$，群速度 $$v_g=\displaystyle\frac{d\omega}{dk_z}$$（包络线奔跑的速度）。结论：波在波导管中传播时，$$v_p=\displaystyle\frac{c}{\sqrt{1-(\omega_c/\omega)^2}}$$, $$v_pv_c=c^2$$。
 
-### 理想导体矩形谐振腔
+#### 理想导体矩形谐振腔
 
 利用金属谐振腔激发微波波段的电磁波。利用分离变量法求解电磁场方程，得到谐振腔的本征圆频率 $$\omega_{mnl}$$ 与谐振腔几何线度的关系。
 
@@ -212,7 +255,7 @@ $$
 $$
 
 
-为了方便，我们加某种限制条件，称之为**规范辅助条件**（简称**规范条件**），我们已经讨论过，在电磁波问题中，我们一般采用**洛伦兹规范** $$\nabla\cdot\vec A+\displaystyle\frac{1}{c^2}\frac{\partial\varphi}{\partial t}=0$$。然后，上述方程组将简化为漂亮的
+为了方便，我们加某种限制条件，称之为**规范辅助条件**（简称**规范条件**），我们已经讨论过，在电磁波问题中，我们一般采用**洛伦兹规范** $$\nabla\cdot\vec A+\displaystyle\frac{1}{c^2}\frac{\partial\varphi}{\partial t}=0$$（在静磁场中使用的[**库伦规范**](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%A3%81%E7%9F%A2%E5%8A%BF)）。然后，上述方程组将简化为漂亮的
 
 
 $$
@@ -237,6 +280,8 @@ $$
 - 例：用达朗贝尔方程求解自由空间中的平面电磁波，和我们之前直接用麦克斯韦方程组解出来的一致。
 - 例：用库伦规范求解自由空间中的平面电磁波，和用洛伦兹规范求得的电场和磁场一致。
 
+洛伦兹规范下的拉格朗日力学见[理论力学 - 拉格朗日力学的推广](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6%E7%9A%84%E6%8E%A8%E5%B9%BF)。
+
 ### 推迟势
 
 考虑含时电荷源产生的标势，代入**达朗贝尔方程**，......
@@ -251,6 +296,10 @@ $$
 > 电荷 / 电流所产生的物理作用不能够立刻传至场点，而是需要在较晚的时刻到达场点，这个推迟的时间 $$r/c$$ 为电磁作用春波所需要的时间，我们将上面两个电磁势的表达式成为**推迟势**。——电动力学课件 5.2
 
 可以证明推迟势满足**洛伦兹规范**。
+
+- 有了推迟势，可以推出相应的场 $$\vec E(\vec r,t),\vec B(\vec r,t)$$​（Jefimenko's Equations），详见 Griffiths 10.2.2。
+- 运动的点电荷产生的磁矢势（Liénard-Wiechert potentials），详见 Griffiths 10.3.1。注意，对于有时间推迟效应的源积分，则相应积分体积将发生变化。
+  - 匀速直线运动情况产生的电磁场：见 Griffiths 10.3.2，$$\vec B=\displaystyle\frac{1}{c^2}(\vec v\times\vec E)$$。
 
 ### 电磁多极辐射
 
@@ -333,29 +382,3 @@ $$
 ### 多普勒效应和光行差现象
 
 > 多普勒效应指的是在不同的参考系中观察到的频率存在差异。光行差现象指的是光源运动是，光的传播方向亦发生变化。——电动力学课件 6.4
-
----
-
-## Conservation Laws
-
-**This part mainly comes from Griffiths 8.2.**
-
-Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation with Newton's third law.
-
-###  Momentum
-
-Consider the total electromagnetic force on the charges in volume $$\mathscr V$$  ->  the force per unit $$\vec f=\rho\vec E+\vec J\times\vec B$$. Now transform $$\rho$$, $$\vec J$$ into $$\vec E$$, $$\vec B$$. 
-
-Introduce the **Maxwell stress tensor** $$T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$.
-
-Now $$\vec f=\nabla\cdot\overleftrightarrow T-\epsilon_0\mu_0\displaystyle\frac{\partial\vec S}{\partial t}$$, where $$\vec S$$ is the [Poynting vector](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E5%92%8C%E8%83%BD%E6%B5%81%E5%AF%86%E5%BA%A6%E7%9F%A2%E9%87%8F).
-
-The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec F=\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a-\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. Consider the third law, $$\vec F=\displaystyle\frac{d\vec p_{\text{mech}}}{dt}$$, where $$\vec p_{\text{mech}}$$ is the (mechanical) momentum of the particles in volume $$\mathscr V$$. The first integral represents *momentum stored in the fields*: $$\vec p=\epsilon_0\mu_0\displaystyle\int_\mathscr V \vec Sd\tau$$. The second integral is the *momentum per unit time flowing in through the surface*.
-
-**The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\epsilon_0(\vec E\times\vec B)$$. 
-
-> when there *are* charges around the field momentum by itself, and the mechanical momentum by itself, are not conserved--charges and fields exchange momentum, and only the *total* is conserved.--Griffiths 8.2
-
-### Angular Momentum
-
-**The angular momentum density in the fields** is $$\vec l=\vec r\times\vec g=\epsilon_0[\vec r(\vec E\times\vec B)]$$.

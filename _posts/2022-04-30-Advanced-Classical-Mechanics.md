@@ -93,19 +93,19 @@ mathjax: true
   \frac{\partial}{\partial q_\beta}(\frac{d}{dt}\mathbf{r}_i)=\frac{d}{dt}(\frac{\partial\mathbf{\dot{r}_i}}{\partial q_\beta}).
   $$
   
-- 坐标变换带入达朗贝尔原理，再用拉格朗日关系做变换。对于**完整系统**，广义虚位移独立，每个广义坐标对应的方程为零，得到**拉格朗日方程** $$\frac{d}{dt}\frac{\partial T}{\partial\dot q_\alpha}-\frac{\partial T}{\partial q_\alpha}=Q_\alpha$$，其中 $$T=\displaystyle\sum_{i=1}^n \frac{1}{2}m_i\vert \mathbf{\dot{r}_i}\vert^2$$ 是动能。
+- 坐标变换带入达朗贝尔原理，再用拉格朗日关系做变换。对于**完整系统**，广义虚位移独立，每个广义坐标对应的方程为零，得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial T}{\partial\dot q_\alpha}-\frac{\partial T}{\partial q_\alpha}=Q_\alpha$$，其中 $$T=\displaystyle\sum_{i=1}^n \frac{1}{2}m_i\vert \mathbf{\dot{r}_i}\vert^2$$ 是动能。
 
 - 把广义坐标、广义速度和 $$t$$ 当作**独立**变量，因为考虑的不是实际运动，而是虚幻的所有可能的运动。
 
 拉格朗日函数
 
-- 如果主动力全是**保守力**，存在**势能函数** $$V$$，与广义力的关系为 $$Q_\alpha=-\frac{\partial V}{\partial q_\alpha}$$。定义**拉格朗日函数**（不可观测量）$$L=T-V$$。得到**拉格朗日方程** $$\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha}=0$$（您要是实在学不会，把放进大脑 RAM 上考场，应该能混个总评及格）。
+- 如果主动力全是**保守力**，存在**势能函数** $$V$$，与广义力的关系为 $$\displaystyle Q_\alpha=-\frac{\partial V}{\partial q_\alpha}$$。定义**拉格朗日函数**（不可观测量）$$L=T-V$$。得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha}=0$$（您要是实在学不会，把放进大脑 RAM 上考场，应该能混个总评及格）。
 
   这种类型的拉格朗日方程还可以通过哈密顿原理得到，它是**哈密顿作用量** $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$ 取极值时的欧拉-拉格朗日方程。详见后文变分法。
 
-- **[广义动量](https://shi200005.github.io/download_file/ACM_Generalized_Momentum.pdf)** $$p_\alpha=\frac{\partial L}{\partial\dot q_\alpha}$$ 
+- **[广义动量](https://shi200005.github.io/download_file/ACM_Generalized_Momentum.pdf)** $$\displaystyle p_\alpha=\frac{\partial L}{\partial\dot q_\alpha}$$ 
 
-  基础课程内主要考虑 $$V$$ 与 $$\dot q_\alpha$$ 无关的情况，于是 $$p_\alpha=\frac{\partial T}{\partial\dot q_\alpha}$$）。这时，类比牛顿力学，拉格朗日方程可读作：广义动量的时间变化率等于广义力。
+  基础课程内主要考虑 $$V$$ 与 $$\dot q_\alpha$$ 无关的情况，于是 $$p_\alpha=\displaystyle\frac{\partial T}{\partial\dot q_\alpha}$$）。这时，类比牛顿力学，拉格朗日方程可读作：广义动量的时间变化率等于广义力。
 
   广义动量包含了通常的动量、角动量等物理量，它的量纲取决于广义坐标的量纲。
   
@@ -121,14 +121,14 @@ mathjax: true
   
   广义动量积分
   
-  - $$\frac{\partial L}{\partial q_\beta}=0$$（$$q_\beta$$ 是可遗坐标）-> $$\frac{d}{dt}\frac{\partial L}{\partial \dot q_\beta}=0$$ -> 广义动量守恒 $$p_\beta=\text{const}$$ 成为广义动量积分
+  - $$\displaystyle\frac{\partial L}{\partial q_\beta}=0$$（$$q_\beta$$ 是可遗坐标）-> $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial \dot q_\beta}=0$$ -> 广义动量守恒 $$p_\beta=\text{const}$$ 成为广义动量积分
   
   - 拉格朗日系统并不以牛顿第三定律为先决条件，而是根据某广义坐标是否为可遗坐标，也可以处理电磁场问题（其中质点机械运动动量并不守恒，在拉格朗日函数中计入广义势之后，广义动量包括电磁场的动量，广义动量守恒）。
   
   [广义能量积分](https://shi200005.github.io/download_file/ACM_Generalized_Energy.pdf) $$H=\displaystyle\sum_{\alpha=1}^sp_\alpha\dot q_\alpha-L$$
   
-  - $$\frac{dH}{dt}=\frac{\partial L}{\partial t}=0$$.
-  - 若 $$\frac{\partial\mathbf r_i}{\partial t}=0$$（定常约束）-> 动能是广义速度的二次齐次式 -> $$H$$ 就是机械能  （齐次函数的欧拉定理参见[多元函数微分学-微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6)）
+  - $$\displaystyle\frac{dH}{dt}=\frac{\partial L}{\partial t}=0$$.
+  - 若 $$\displaystyle\frac{\partial\mathbf r_i}{\partial t}=0$$（定常约束）-> 动能是广义速度的二次齐次式 -> $$H$$ 就是机械能  （齐次函数的欧拉定理参见[多元函数微分学-微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6)）
   - 关于矢量力学和拉格朗日力学关于机械能守恒条件的区别，见教材 73-74 页。
 
 **诺特定理**
@@ -145,7 +145,11 @@ mathjax: true
 
 ### 拉格朗日力学的推广
 
-例如，带电粒子在电磁场中所受的洛伦兹力 $$\vec v\times\vec B$$ 与速度有关，可以定义磁失势 $$\vec A$$，从而定义广义势能 $$U(q,\dot q,t)=e\varphi-e\vec A\cdot\vec v$$，拉格朗日函数成为 $$L=T-U$$，原来的拉格朗日方程仍成立。此时，研究的守恒量，如广义动量守恒，是不以牛顿第三定律为基础的。
+例：带电粒子在电磁场中受洛伦兹力 $$\vec F=q(\vec E+\vec v\times\vec B)$$。在[洛伦兹规范](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E8%BE%90%E5%B0%84)下，$$\vec E+\displaystyle\frac{\partial\vec A}{\partial t}=-\nabla V$$, $$\vec B=\nabla\times\vec A$$。于是 $$\vec F=q[\displaystyle-\nabla V-\vec v\times(\nabla\times\vec A)]$$...... -> $$\displaystyle\frac{d}{dt}(\vec p+q\vec A)=\nabla[q(V-\vec v\cdot\vec A)]$$, $$\displaystyle\frac{d}{dt}(T+qV)=\frac{\partial}{\partial t}[q(V-\vec v\cdot\vec A)]$$。详见 Griffiths 10.1.4.
+
+从而定义广义势能 $$U(q,\dot q,t)=e\varphi-e\vec A\cdot\vec v$$，拉格朗日函数成为 $$L=T-U$$​，原来的拉格朗日方程仍成立。此时，研究的守恒量，如广义动量守恒，是不以牛顿第三定律为基础的。
+
+通过我每篇表头，可以知道我们先学理论力学后学电动力学。因此，在理论力学教材看到第二段的时候，我很蒙蔽，想着学了电动力学可能就会了。然而学了电动力学，我的矢量分析还是毫无长进，也不敢回过头来看能不能懂这个推广的拉格朗日函数。当然，在看 Griffiths 不厌其烦的细致讲解之前，我是不能懂的。在此，我代表全体物理学院笨蛋，强烈支持循循善诱的讲解，而非点到为止。
 
 ## 有心力 散射问题
 
