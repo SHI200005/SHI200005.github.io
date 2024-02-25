@@ -286,7 +286,33 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 孤立体系中的电磁场能量和机械能相互转化 $$\displaystyle\int_{\infty}\vec f\cdot\vec vdV=-\displaystyle\frac{d}{dt}\displaystyle\int_{\infty}wdV$$，$$\nabla\cdot\vec s+\displaystyle\frac{\partial w}{\partial t}+\vec f\cdot\vec v=0$$。由于洛伦兹力不做功，$$\vec f\cdot\vec v=\vec J_f\cdot\vec E$$，...，凑出 $$\vec s=\vec E\times\vec H$$, $$\displaystyle\frac{\partial w}{\partial t}=\vec E\cdot\displaystyle\frac{\partial\vec D}{\partial t}+\vec H\cdot\displaystyle\frac{\partial\vec B}{\partial t}$$。并不严格？
 
-经观察，容易发现对于各向同性线性介质 $$w=\displaystyle\frac{1}{2}\epsilon E^2+\displaystyle\frac{1}{2}\mu H^2$$。电场能 + 磁场能。
+经观察，容易发现对于各向同性线性介质 $$w=\displaystyle\frac{1}{2}\epsilon E^2+\displaystyle\frac{1}{2}\mu H^2$$​。电场能 + 磁场能。
+
+## Conservation Laws
+
+**This part mainly comes from Griffiths 8.2.**
+
+Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation with Newton's third law.
+
+###  Momentum
+
+Consider the total electromagnetic force on the charges in volume $$\mathscr V$$  ->  the force per unit $$\vec f=\rho\vec E+\vec J\times\vec B$$. Now transform $$\rho$$, $$\vec J$$ into $$\vec E$$, $$\vec B$$. 
+
+Introduce the **Maxwell stress tensor** $$T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$​.
+
+> Physically, $$\overleftrightarrow T$$ is the force per unit area (or **stress** acting on the surface). More precisely, $$T_{ij}$$ is the force (per unit area) in the $$i$$th direction acting on an element of surface oriented in the $$j$$th direction--"diagonal" elements ($$T_{xx},T_{yy},T_{zz}$$) represents *pressures*, and "off-diagonal" elements ($$T_{xy},T_{xz}$$,etc.) are *shears*.
+
+Now $$\vec f=\nabla\cdot\overleftrightarrow T-\epsilon_0\mu_0\displaystyle\frac{\partial\vec S}{\partial t}$$, where $$\vec S$$ is the [Poynting vector](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E5%92%8C%E8%83%BD%E6%B5%81%E5%AF%86%E5%BA%A6%E7%9F%A2%E9%87%8F).
+
+The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec F=\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a-\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. Consider the third law, $$\vec F=\displaystyle\frac{d\vec p_{\text{mech}}}{dt}$$, where $$\vec p_{\text{mech}}$$ is the (mechanical) momentum of the particles in volume $$\mathscr V$$. Therefore, $$\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a=\frac{d\vec p_{\text{mech}}}{dt}+\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. *Momentum stored in the fields*: $$\vec p=\epsilon_0\mu_0\displaystyle\int_\mathscr V \vec Sd\tau$$. *Momentum per unit time flowing in through the surface*: $$\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a$$.
+
+**The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\displaystyle\frac{1}{c^2}\vec S=\epsilon_0(\vec E\times\vec B)$$. 
+
+> when there *are* charges around the field momentum by itself, and the mechanical momentum by itself, are not conserved--charges and fields exchange momentum, and only the *total* is conserved.--Griffiths 8.2
+
+### Angular Momentum
+
+**The angular momentum density in the fields** is $$\vec l=\vec r\times\vec g=\epsilon_0[\vec r(\vec E\times\vec B)]$$.
 
 ---
 

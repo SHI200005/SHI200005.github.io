@@ -39,32 +39,6 @@ mathjax: true
 
 我们可以用简谐振动激发这种波，得到**简谐**平面波，波函数：$$\psi(\vec r,t)=Ae^{i\vec k\cdot\vec r\mp\omega t}$$。矢量 $$\vec k$$ 满足 $$k=\displaystyle\frac{2\pi}{\lambda}$$，称作波矢量。homogeneous 的简谐平面波满足 $$A$$ 处处相等。波前的奔跑速度是相速度，和上文一维情况一致。
 
-## Conservation Laws
-
-**This part mainly comes from Griffiths 8.2.**
-
-Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation with Newton's third law.
-
-###  Momentum
-
-Consider the total electromagnetic force on the charges in volume $$\mathscr V$$  ->  the force per unit $$\vec f=\rho\vec E+\vec J\times\vec B$$. Now transform $$\rho$$, $$\vec J$$ into $$\vec E$$, $$\vec B$$. 
-
-Introduce the **Maxwell stress tensor** $$T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$​.
-
-> Physically, $$\overleftrightarrow T$$ is the force per unit area (or **stress** acting on the surface). More precisely, $$T_{ij}$$ is the force (per unit area) in the $$i$$th direction acting on an element of surface oriented in the $$j$$th direction--"diagonal" elements ($$T_{xx},T_{yy},T_{zz}$$) represents *pressures*, and "off-diagonal" elements ($$T_{xy},T_{xz}$$,etc.) are *shears*.
-
-Now $$\vec f=\nabla\cdot\overleftrightarrow T-\epsilon_0\mu_0\displaystyle\frac{\partial\vec S}{\partial t}$$, where $$\vec S$$ is the [Poynting vector](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E5%92%8C%E8%83%BD%E6%B5%81%E5%AF%86%E5%BA%A6%E7%9F%A2%E9%87%8F).
-
-The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec F=\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a-\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. Consider the third law, $$\vec F=\displaystyle\frac{d\vec p_{\text{mech}}}{dt}$$, where $$\vec p_{\text{mech}}$$ is the (mechanical) momentum of the particles in volume $$\mathscr V$$. Therefore, $$\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a=\frac{d\vec p_{\text{mech}}}{dt}+\epsilon_0\mu_0\frac{d}{dt}\int_\mathscr V \vec Sd\tau$$. *Momentum stored in the fields*: $$\vec p=\epsilon_0\mu_0\displaystyle\int_\mathscr V \vec Sd\tau$$. *Momentum per unit time flowing in through the surface*: $$\displaystyle\oint_S\overleftrightarrow T\cdot d\vec a$$.
-
-**The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\displaystyle\frac{1}{c^2}\vec S=\epsilon_0(\vec E\times\vec B)$$. 
-
-> when there *are* charges around the field momentum by itself, and the mechanical momentum by itself, are not conserved--charges and fields exchange momentum, and only the *total* is conserved.--Griffiths 8.2
-
-### Angular Momentum
-
-**The angular momentum density in the fields** is $$\vec l=\vec r\times\vec g=\epsilon_0[\vec r(\vec E\times\vec B)]$$.
-
 ## 电磁波的传播
 
 ### 真空自由空间
@@ -119,7 +93,7 @@ $$
 
 ### 反射定律和折射定律
 
-研究**各向同性均匀线性介质**，**时谐平面波**的规律。对于**绝缘介质**，**分界面上没有自由电荷和传导电流面分布**时，代入电磁场边值关系，则得到中学时很熟悉的**反射定律**（$$\vec k'$$）和**折射定律**（$$\vec k''$$）。和光学中光程费马定理得到的结论一致（[理论力学 - 最小作用量原理](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86)）。
+研究**各向同性均匀线性介质**，**时谐平面波**的规律。对于**绝缘介质**，**分界面上没有自由电荷和传导电流面分布**时，代入电磁场边值关系，则得到中学时很熟悉的**反射定律**（$$\vec k'$$）和**折射定律**（$$\vec k''$$，斯涅尔定律）。和光学中光程费马定理得到的结论一致（[理论力学 - 最小作用量原理](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E6%9C%80%E5%B0%8F%E4%BD%9C%E7%94%A8%E9%87%8F%E5%8E%9F%E7%90%86)）。
 
 在光学波段，材料一般 $$\mu_1=\mu_2=\mu_0$$，此时折射定律叫**菲涅尔公式**。
 
@@ -147,7 +121,7 @@ $$
 
 介电常数的解为复数，其实，我们对它的分析完全可以参照受迫振动的振幅分析，对实部和虚部的物理意义分析可以参见 [David Tong: Lectures on Kinetic Theory - Linear Response](http://www.damtp.cam.ac.uk/user/tong/kintheory/four.pdf)。
 
-如果频率接近共振频率，介电常数存在一个比较大的虚部（dissipative part），介质存在显著的吸收损耗，此区域随着频率增加，折射率反而减小，称为**反常色散**。如果频率远离共振区域，只需要去介电常数的实部，忽略虚部，电磁波传播时的损耗可以忽略。
+如果频率接近共振频率，介电常数存在一个比较大的虚部（dissipative part），介质存在显著的吸收损耗，此区域随着频率增加，折射率反而减小，称为**反常色散**。如果频率远离共振区域，只需要去介电常数的实部，忽略虚部，电磁波传播时的损耗可以忽略。关于此模型中电磁波转播时振幅的衰减、损耗和反常色散区光速超过 $$c$$ 的现象，详见 Griffiths 9.4.3。
 
 #### 导体
 
@@ -221,11 +195,7 @@ $$
 
 利用金属谐振腔激发微波波段的电磁波。利用分离变量法求解电磁场方程，得到谐振腔的本征圆频率 $$\omega_{mnl}$$ 与谐振腔几何线度的关系。
 
-## 电磁波的辐射
-
->辐射是指能量以电磁波的形式从场源向远场发射的现象，而电磁波就是由随时间交变运动的电荷系统辐射出来的。
->
->本章的讨论仅限于如何从给定的电流分布计算出辐射的电磁波。——电动力学课件 5.1
+## 运动电荷产生的电磁势和电磁场
 
 真空麦克斯韦方程组
 
@@ -284,8 +254,9 @@ $$
 
 ### 推迟势
 
-考虑含时电荷源产生的标势，代入**达朗贝尔方程**，......
+I can know the news only AFTER things happened....
 
+考虑含时电荷源产生的标势 $$\rho(\vec x,t)=Q(t)\delta(\vec x)$$，代入**达朗贝尔方程**，-> $$\varphi(r,t)=\displaystyle\frac{1}{4\pi\epsilon_0r}Q(t-\frac{r}{c})$$......
 
 $$
 \varphi(\vec x,t)=\frac{1}{4\pi\epsilon_0}\int_{V'}\frac{\rho(\vec x',t-\frac{r}{c})}{r}dV'\\
@@ -298,22 +269,46 @@ $$
 可以证明推迟势满足**洛伦兹规范**。
 
 - 有了推迟势，可以推出相应的场 $$\vec E(\vec r,t),\vec B(\vec r,t)$$​（Jefimenko's Equations），详见 Griffiths 10.2.2。
-- 运动的点电荷产生的磁矢势（Liénard-Wiechert potentials），详见 Griffiths 10.3.1。注意，对于有时间推迟效应的源积分，则相应积分体积将发生变化。
-  - 匀速直线运动情况产生的电磁场：见 Griffiths 10.3.2，$$\vec B=\displaystyle\frac{1}{c^2}(\vec v\times\vec E)$$。
+- 运动的点电荷产生的电磁势（Liénard-Wiechert potentials），详见 Griffiths 10.3.1。注意，对于有时间推迟效应的源积分，则相应积分体积将发生变化（类似于多普勒效应，**不是狭义相对论效应**）。产生的电磁场 $$\vec B(\vec x,t)=\displaystyle\frac{1}{c}\vec r\times\vec E(\vec x,t)$$.
+  - 匀速直线运动情况产生的电磁场：见 Griffiths 10.3.2，$$\vec B=\displaystyle\frac{1}{c^2}(\vec v\times\vec E)$$​。
+- 上面两个推论都用到了 $$t_r=t-\displaystyle\frac{r}{c}$$ 是空间场点 $$\vec x$$ 的隐函数。
+
+## 电磁波的辐射
+
+>辐射是指能量以电磁波的形式从场源向远场发射的现象，而电磁波就是由随时间交变运动的电荷系统辐射出来的......本章的讨论仅限于如何从给定的电流分布计算出辐射的电磁波。——电动力学课件 5.1
+>
+>When charges *accelerate*, their fields can transport energy irreversibly out to infinity - a process we call **radiation**. ---Griffiths 11.1.1
+
+辐射部分关注的核心物理量：坡印廷矢量。
 
 ### 电磁多极辐射
 
-采用势的多级展开，讨论单频做简谐振荡的小区域电荷和电流系统在远场所产生的辐射问题（远场满足 $$l\ll\lambda\ll r$$，也称辐射区场）。
+采用势的多级展开，讨论单频做简谐振荡的小区域电荷和电流系统在远场所产生的辐射问题（远场满足 $$l\ll\lambda\ll r$$​，也称辐射区场）。
+
+辐射场和静电磁场的对比——场矢量大小与辐射源距离的衰减关系。见 Griffiths 11.1.1.
 
 简谐振荡的小区域电荷 $$\vec J(\vec x',t)=\vec J(\vec x')e^{-i\omega t}$$  <->  $$\rho(\vec x',t)=\rho(\vec x')e^{-i\omega t}$$。记体系含时电偶极矩 $$\vec p(t)=\vec pe^{-i\omega t}$$，其中 $$\vec p=\displaystyle\int_{V'}\rho(\vec x')\vec x'dV'$$。
 
-该 $$\vec J(\vec x',t)$$ 产生 $$\vec A(\vec x,t)=\vec A(\vec x)e^{-i\omega t}$$，其中 $$\vec A(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\int_{V'}\displaystyle\frac{\vec J(\vec x')}{r}dV'$$，我们通过对 $$r\approx R-\vec n\cdot \vec x'$$ 的近似展开 $$\vec A$$，注意，坟墓中的距离可以扔掉后面的相位项，但分子中关于相位的振荡项不能扔掉相位项。进一步展开结果中的指数因子 $$e^{-ik\vec n\cdot\vec x'}=1-ik\vec n\cdot\vec x'+...$$，得 $$\vec A(\vec x)=\vec A^{(0)}(\vec x)+\vec A^{(1)}(\vec x)+...$$，其中 $$\vec A^{(0)}(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')dV'$$ 称为电偶极辐射，后一项 $$\vec A^{(0)}(\vec x)=-ik\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')\vec n\cdot\vec x'dV'$$ 又可以分解为磁偶极辐射和电四极辐射。
+该 $$\vec J(\vec x',t)$$ 产生 $$\vec A(\vec x,t)=\vec A(\vec x)e^{-i\omega t}$$，其中 $$\vec A(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\int_{V'}\frac{\vec J(\vec x')}{r}e^{ikr}dV'$$，其中 $$e^{ikr}$$ 时推迟作用因子。
+
+将电荷（源）存在的小区域放置到坐标原点，记 $$R=\vert\vec x\vert$$，$$\vec n=\vec x/R$$。我们通过对 $$r\approx R-\vec n\cdot \vec x'$$ 的近似展开 $$\vec A$$，注意，坟墓中的距离可以扔掉后面的相位项，但分子中关于相位的振荡项不能扔掉相位项。进一步展开结果中的指数因子 $$e^{-ik\vec n\cdot\vec x'}=1-ik\vec n\cdot\vec x'+...$$，得 $$\vec A(\vec x)=\vec A^{(0)}(\vec x)+\vec A^{(1)}(\vec x)+...$$，其中 $$\vec A^{(0)}(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')dV'$$ 称为电偶极辐射，后一项 $$\vec A^{(1)}(\vec x)=-ik\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')\vec n\cdot\vec x'dV'$$ 又可以分解为磁偶极辐射和电四极辐射 $$\vec A^{(1)}(\vec x)=\vec A_m^{(1)}(\vec x)+\vec A_D^{(1)}(\vec x)$$。磁偶极辐射和电四极辐射得功率要远小于电偶极辐射。
 
 #### 电偶极辐射
 
-辐射特点有点累了，懒得写了。
+$$\vec A^{(0)}(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')dV'$$ , $$\displaystyle\langle S_p\rangle=\frac{1}{32\pi^2\epsilon_0c^3}\frac{\omega^4 p^2}{R^2}\sin^2\theta\vec n$$. 
 
-磁偶极辐射和电四极辐射得功率要远小于电偶极辐射。
+- 可以传播很远并伴随有能量的传输；
+- 短波长的辐射功率药远于长波长辐射 -> **天空为什么是蓝色**（电动力学课件 5.3）。
+
+#### 有加速度的点电荷的辐射
+
+详见 Griffiths 11.2。
+
+大二下学近代物理的时候我就特别蒙蔽，玻尔原子模型的问题在于如果电子围绕原子核运动就会不断向外辐射能量。我咋就不知道会向外辐射能量呢？
+
+于是，我们在推迟势部分已经导出运动电荷产生的电磁势和电磁场，现在我们可以进一步导出坡印廷矢量。注意，当考虑向外辐射的能量时，我们只考虑坡印廷矢量与距离成平方反比的项。经过冗长推导，得到辐射功率的 Larmor formula：$$\displaystyle P=\frac{\mu_0q^2a^2}{6\pi c}$$，其中 $$a$$​ 是电荷运动的加速度。
+
+由于此时点电荷会向外辐射能量，根据能量守恒，如果给一个力让中性粒子和带电粒子加速运动，带电粒子会以更小的加速度作为代价。详见 Griffiths。
 
 ## 狭义相对论
 
@@ -381,4 +376,10 @@ $$
 
 ### 多普勒效应和光行差现象
 
-> 多普勒效应指的是在不同的参考系中观察到的频率存在差异。光行差现象指的是光源运动是，光的传播方向亦发生变化。——电动力学课件 6.4
+> 多普勒效应指的是在不同的参考系中观察到的频率存在差异。光行差现象指的是光源运动时，光的传播方向亦发生变化。——电动力学课件 6.4
+
+## Relativistic Mechanics
+
+This part comes from Griffiths chap 12.
+
+### 4-Vector
