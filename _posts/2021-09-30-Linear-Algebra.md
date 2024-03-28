@@ -199,3 +199,7 @@ $$\vec x^T\hat A\vec x=\vec y^T\hat P^T\hat A\hat P\vec y=\vec y^T\hat P^{-1}\ha
 
 其中行列式的微分详见[行列式微分形式的推导](https://zhuanlan.zhihu.com/p/144255438)——知乎用户 [genekiller](https://www.zhihu.com/people/jiahao-lee-73) 的文章，结论为：可逆情形下的行列式微分形式：$$d\vert\hat A\vert=\vert\hat A\vert tr(\hat{A^{-1}}d\hat A)$$。
 
+## 对偶空间
+
+终于从知乎上找到了一个能看懂的讲义 [The Dual of a Vector Space: From the Concrete to the Abstract to the Concrete (In Four Lectures)](https://people.math.osu.edu/gerlach.1/math5101/DualOfAVectorSpace.pdf)（对偶空间与**固体物理 - 晶体衍射劳厄公式**、对偶空间与[信息论 - 采样定理](https://shi200005.github.io/2023/10/03/Information-Theory/#sampling-theorem)）。
+

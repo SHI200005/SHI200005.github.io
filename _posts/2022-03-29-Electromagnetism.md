@@ -41,6 +41,10 @@ The author wrote an physics article that pointed out a mathematical flaw of "Ans
 
 正交曲线坐标系（直角坐标系、球坐标系、柱坐标系）与场论见[微积分 - 矢量微分算符](https://shi200005.github.io/2021/09/30/Calculus/#%E7%9F%A2%E9%87%8F%E5%BE%AE%E5%88%86%E7%AE%97%E7%AC%A6)。
 
+### 场点与源点
+
+在场论中，常常需要区分**场点** $$\vec x$$ 和**源点** $$\vec x'$$ 。定义算符对场点微分 $$\nabla=\vec e_i\displaystyle\frac{\partial}{\partial x_i}$$，对源点微分 $$\nabla'=\vec e_i\displaystyle\frac{\partial}{\partial x_i'}$$，具体关于**相对位矢** $$\vec r=\vec x-\vec x'$$ 的运算律见电动力学课件。  
+
 ### 并矢与张量
 
 **三维欧氏空间**中，零阶张量——标量，一阶张量——三维矢量，二阶张量——张量 $$\overleftrightarrow T$$ 3 阶矩阵。
@@ -131,7 +135,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 问：参照电场概念的建立，安培定律能否写成 $$\vec F_{12}=\vec J_1dV_1\times\vec B$$？答：电流源产生的磁场**磁感应强度** $$\vec B$$：$$d\vec B(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{Id\vec l\times\vec r}{r^3}=\displaystyle\frac{\mu_0}{4\pi}\frac{\vec J(\vec x')\times\vec r}{r^3}$$，广延形式 $$\vec B(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\int\frac{\vec J(\vec x')\times\vec r}{r^3}dV'$$。
 
-### 高斯定理、环路定理
+### 高斯定理、环路定理/安培定理
 
 高斯定理积分形式：$$\displaystyle\oint_S\vec B\cdot d\vec S=0$$，微分形式：$$\nabla\cdot \vec B(\vec x)=0$$ 。**无源场**（磁场线闭合、无自由磁荷）。
 
@@ -501,7 +505,7 @@ $$W_M=\displaystyle\frac{1}{2}\displaystyle\int_{\infty}\vec B\cdot\vec HdV=\dis
 
 磁场对电流源施加的安培力：$$d\vec F=Id\vec l\times\vec B$$，广延形式 $$\vec F=\displaystyle\int_V\vec J(\vec x')\times\vec B_edV'$$。
 
-- 推论：环线电流线在**均匀磁场**中所受力之和为 0；**磁矩** $$\vec m=\frac{1}{2}(\displaystyle\oint_C\vec r\times d\vec l)$$, $$d\vec m=\frac{1}{2}\vec r\times \vec JdV$$，所受力矩为 $$\vec\tau=\vec m\times\vec B$$。
+- 推论：环线电流线在**均匀磁场**中所受力之和为 0（$\vec F=I\displaystyle(\oint_{l}d\vec l)\times\vec B$）；**磁矩** $$\vec m=\frac{1}{2}(\displaystyle\oint_C\vec r\times d\vec l)$$, $$d\vec m=\frac{1}{2}\vec r\times \vec JdV$$，所受力矩为 $$\vec\tau=\vec m\times\vec B$$。
   - 若规定 $$\vec m$$ 与 $$\vec B$$ 相互垂直时**磁势能** $$U_m$$ 为 0 ，则 $$U_m=-\vec m·\vec B$$。(2022.8.2更新：啊，突然发现刘老师课件上力矩用的字母是 $$L$$，一般物理上不是约定俗成 $$τ$$ 是力矩 $$L$$ 是角动量吗？是不是需要勘误一下呢？)
 - 在不均匀磁场中，磁场总是将稳态平衡的 $$\vec m$$ 从磁场小处移向大处，同时力矩将磁矩转向与磁场平行方向。受力 $$F=-\nabla U_m$$。
 

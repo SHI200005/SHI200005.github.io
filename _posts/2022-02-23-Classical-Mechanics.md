@@ -270,10 +270,12 @@ Morin 书上相关内容整理成的教学材料[力学-质心参考系-柯尼�
 
 事实上，这一部分的数学还是蛮重要的，因为这是我们第一次入门常微分方程。对于 homogeneous linear differential equations 的求解，我们可以利用猜解法：$$\ddot{x}=ax$$，猜 $$x=Ae^{\alpha t}$$，然后带入方程求解$$\alpha$$，例如这里我们求出$$\alpha=±\sqrt{a}$$。此方法求解阻尼振动也很有用！
 
-- 谐振动（简谐振动（
+- 谐振动（简谐振动）
 
  - 阻尼振动：欠阻尼、过阻尼、临界阻尼
-   推荐阅读；D. Morin Introduction to Classical Mechanics 3.3 Damped harmonic motion
+   推荐阅读：D. Morin Introduction to Classical Mechanics 3.3 Damped harmonic motion
+   
+   临界阻尼可以让系统最快地找到新稳态。
    
  - 受迫振动 -> 共振（共振频率、共振振幅，如何推导的）
    推荐阅读；梁昆淼《力学》 48.3节 或 D. Morin Introduction to Classical Mechanics 3.4 Driven (and damped) harmonic motion
