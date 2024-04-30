@@ -13,14 +13,6 @@ mathjax: true
 
 参考文献：[Mehta P et. al., Phys Rep. 2019 May 30;810:1-124.](https://www.sciencedirect.com/science/article/pii/S0370157319300766)
 
-## 概率与统计基础补充
-
-### Multivariate Gaussian Distribution
-
-$$G(\mathbf {x})=\displaystyle (2\pi )^{-k/2}\det({\boldsymbol {\Sigma }})^{-1/2}\,\exp \left(-{\frac {1}{2}}(\mathbf {x} -{\boldsymbol {\mu }})^{\!{\mathsf {T}}}{\boldsymbol {\Sigma }}^{-1}(\mathbf {x} -{\boldsymbol {\mu }})\right)$$
-
-其中 $$\mathbf {x}$$ 是 $$k$$ 维随机变量摞成的一个列向量。问题：为什么指数部分取协方差矩阵的逆？其实不用太繁琐的数学推导——Hint: 协方差矩阵是实对称矩阵，能够合同对角化（[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)），然后请自行对随机变量进行基变换，你会明白。
-
 ## 有监督的 (Supervised)
 
 给定数据集，以及每个数据点的标签。如果拿到一个新的数据点，它的标签将是什么？
