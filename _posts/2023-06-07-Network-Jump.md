@@ -7,8 +7,6 @@ keywords: fluctuations, Markov, Master Equation
 mathjax: true
 ---
 
-There is "fluctuation dissipation theorem". Porf Hilfinger reminded me to be cautious of this term in physics context. To have a taste of it, you can check [Linear Response - Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/#linear-response).
-
 The content of this post is closely linked to the research conducted by [A. Hilfinger](https://www.hilfinger.group/), [J. Paulsson](https://paulsson.med.harvard.edu/), and [J. Elf](https://elflab.icm.uu.se/), etc. As a mathematical rookie, I will introduce the models and mathematics in the most accessible way. You need a second-year undergrad level of mathematics to read this. 
 
 At the starting point, [3](https://shi200005.github.io/2023/06/07/Network-Jump/#references), [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references) and [10](https://shi200005.github.io/2023/06/07/Network-Jump/#references) in the references are three papers can be read in details.
@@ -105,7 +103,7 @@ Well, I base the above derivation on [5](https://shi200005.github.io/2023/06/07/
 
 #### From Langevin Equation
 
-For the linear case, the Lyapunov equation, or the fluctuation dissipation theorem, can also be derived from the Langevin equation $$\frac{d \vec{a}}{dt}=H\vec{a}+\vec{\tilde{f}}$$, where $$\vec{\tilde f}(t)$$ is a white noise vector. The steps can be found on chapter1.8 from [12](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can also find my note [Network_Langevin_Lyapunov](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) here.
+For the linear case, the Lyapunov equation, or the fluctuation dissipation theorem, can also be derived from the Langevin equation $$\frac{d \vec{a}}{dt}=H\vec{a}+\vec{\tilde{f}}$$, where $$\vec{\tilde f}(t)$$ is a **white noise** vector. The steps can be found on chapter1.8 from [12](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can also find my note [Network_Langevin_Lyapunov](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) here.
 
 The relationship between master equation, Fokker-Planck approximation and Langevin approach will be discussed in the following part.
 

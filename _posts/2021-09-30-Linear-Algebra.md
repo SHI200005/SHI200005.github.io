@@ -7,12 +7,6 @@ keywords: linear algebra
 mathjax: true
 ---
 
----
-
-**矩阵是线性变换。**
-
-<span style="color: red;">我们学的关于各种形形色色特殊方阵和行列式，都是为了解决一个在物理空间的度量问题。度量，多么重要的概念！遗憾的是，我没有在课堂上受到这方面的明确启发。</span>
-
 如无特殊说明，本篇在实数域讨论。作为时间顺序上的第一篇，我在此规定整个网站的符号规范：标量用 $$a$$，矢量用 $$\vec a$$（并且是物理学家喜欢的列矢量），矩阵用 $$\hat a$$，二阶张量用 $$\overleftrightarrow{a}$$。此处 hat 单纯表示数学上矩阵，和量子力学中的算符无关！但是，如果只是出现了 $$a$$，可能是广义上的张量，不一定是标量。区分的原因：笨人太笨，经常连谈论的是几阶张量都想不清除。
 
 ---
@@ -63,7 +57,7 @@ mathjax: true
 
 ## 行列式
 
-行列式几何意义的定义（来自Garrity）<span style="color: red;">度量</span>
+行列式几何意义的定义（来自Garrity）
 
 > Definition 1.5.4 The *determinant* of the matrix $$A$$ is the signed volume of the image of the unit cube.
 
@@ -132,7 +126,7 @@ $$n×n$$ 方阵可对角化的充要条件是有 $$n$$ 个线性无关的特征�
 
 【GRAD-UPDATE】为啥要对角化？因为对角化后的矩阵可能很方便我们处理。闲话不多说，相似对角化的一个优秀品格就是 $$\hat A^n=\hat P\hat\Lambda^n\hat{P^{-1}}$$。这玩意学的时候不觉得有什么意思，性质穿脑过，佛祖心中留。直到需要解矩阵形式的微分方程组时，才知道这玩意在 [Matrix exponential](https://en.wikipedia.org/wiki/Matrix_exponential) 里是多么重要啊！参见 [Diagonalizable case](https://en.wikipedia.org/wiki/Matrix_exponential#Computing_the_matrix_exponential)。
 
-遇到 $$\frac{\partial}{\partial t}\vec X=\hat A\vec X$$ 的问题，解的形式是 $$\vec X=e^{\hat At}\vec X_0$$. 哈哈，注意不是 $$\vec X=\vec X_0e^{\hat At}$$，因为矩阵相乘不 guarantee 交换律。对于满秩或非满秩的 $$\hat A$$，用相似变换变成约尔当标准型（要是对角就太好了），然后就可以参考 [Differential Equations - Systems of Equations](https://math24.net/method-matrix-exponential.html) 求解了。不知道谁写的，写得还挺好。
+遇到 $$\displaystyle\frac{\partial}{\partial t}\vec X=\hat A\vec X$$ 的问题，解的形式是 $$\vec X=e^{\hat At}\vec X_0$$. 哈哈，注意不是 $$\vec X=\vec X_0e^{\hat At}$$，因为矩阵相乘不 guarantee 交换律。对于满秩或非满秩的 $$\hat A$$，用相似变换变成约尔当标准型（要是对角就太好了），然后就可以参考 [Differential Equations - Systems of Equations](https://math24.net/method-matrix-exponential.html) 求解了。不知道谁写的，写得还挺好。
 
 ## 二次型
 
@@ -158,7 +152,7 @@ $$
 
 
 
-定义了**内积**的线性空间叫**欧氏空间**，于是欧几里得可以度量几何对象。在教学中，**内积空间**相关部分被省去，我认为极不合理。我们要理解度量矩阵的作用是协调内积在不同基下算出的内积不同。<span style="color: red;">度量</span>
+定义了**内积**的线性空间叫**欧氏空间**，于是欧几里得可以度量几何对象。在教学中，**内积空间**相关部分被省去，我认为极不合理。我们要理解度量矩阵的作用是协调内积在不同基下算出的内积不同。
 
 二次型可以看作是内积的推广。如果对二次型进行的是**合同变换**，$$\vec x=\hat P\vec y, f(\vec x)=\vec x^T\hat A\vec x=\vec y^T(\hat P^T\hat A\hat P)\vec y$$），目的便是在于使二次型的函数值保持不变！我们还发现了好东西：**实对称矩阵** $$\hat A$$。
 
@@ -203,3 +197,6 @@ $$\vec x^T\hat A\vec x=\vec y^T\hat P^T\hat A\hat P\vec y=\vec y^T\hat P^{-1}\ha
 
 终于从知乎上找到了一个能看懂的讲义 [The Dual of a Vector Space: From the Concrete to the Abstract to the Concrete (In Four Lectures)](https://people.math.osu.edu/gerlach.1/math5101/DualOfAVectorSpace.pdf)（对偶空间与**固体物理 - 晶体衍射劳厄公式**、对偶空间与[信息论 - 采样定理](https://shi200005.github.io/2023/10/03/Information-Theory/#sampling-theorem)）。
 
+$$n$$ 维线性空间 $$V$$ 的基为 $$\{\vec e_1,\vec e_2,...,\vec e_n\}$$。其 $$n$$ 维对偶空间 $$V^*$$ 是一个线性空间，其元素为可以把 $$V$$ 中向量映射到实数域的函数，这些函数的基为 $$\{\omega^1,\omega^2,...,\omega^n\}$$。满足 $$\langle\underline{\omega}^i\vert\vec e_j\rangle=\delta_j^i$$，或写为 $$\underline{\omega}^i(\vec e_j)=\delta_j^i$$。
+
+如何建立线性空间中的元素向其对偶空间元素的映射？如果线性空间中定义了内积，记求内积操作为 $$g$$，向量 $$\vec x$$ 和 $$\vec y$$ 的内积则为 $$g(\vec x,\vec y)$$。记 $$\vec x=x^i\vec e_i$$ (ESC)，$$g_{ij}=g(\vec e_i,\vec e_j)=\vec e_i\cdot\vec e_j$$，则 $$g(\vec x,\vec y)=x^iy^jg_{ij}$$ (ESC)...... $$\underline{x}=g(\vec x,\quad)$$，其中 $$g(\vec x,\vec y)=g_{ij}\omega^i(\vec x)\otimes\omega^j(\vec y)$$。$$g$$ 把 $$V$$ 里的 $$\vec x$$ 映射到了 $$V^*$$ 里的 $$\underline x$$。

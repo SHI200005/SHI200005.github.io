@@ -38,7 +38,7 @@ mathjax: true
 $$\displaystyle P(A|B)=\frac{P(A,B)}{P(B)}$$ 很重要！
 ### 全概率公式与Bayes 公式
 
-1. $$\displaystyle P(B_i|A)=\frac{P(A|B_i)P(B_i)}{\sum_{j=1}^{n}P(A|B_j)P(B_j)}$$
+1. $$\displaystyle P(B_i|A)=\frac{P(A|B_i)P(B_i)}{\displaystyle\sum_{j=1}^{n}P(A|B_j)P(B_j)}$$
 
 2. 可用于求解**后验概率**（在得到信息之后再重新加以修正的概率），利用**条件概率**公式联系**后验概率**和**先验概率**
    
