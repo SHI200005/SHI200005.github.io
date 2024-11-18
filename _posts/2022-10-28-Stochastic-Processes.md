@@ -55,7 +55,7 @@ For Stokes flow where $$f=6\pi\eta Rv$$ (small round particles in honey), we get
 
 $$...-2\leftrightharpoons-1\leftrightharpoons0\leftrightharpoons1\leftrightharpoons2...$$ with all transition prob as $$1/2$$.
 
-$$P(n,N\vert n_0=0,0)$$ obeys a symmetric binomial distribution. For large $$N$$, use Stirling's approximation, it becomes Gaussian distribution. Then, in the continuous limit, we associate the diffusion coefficient.
+$$P(n,N\vert n_0=0,0)$$ obeys a **symmetric binomial distribution**. For large $$N$$, use **Stirling's approximation**, it becomes **Gaussian distribution** ([De Moivre-Laplace theorem](https://shi200005.github.io/2022/02/17/Probability/#de-moivre-laplace-%E5%AE%9A%E7%90%86) in Probability). Then, in the continuous limit, we associate the diffusion coefficient.
 
 #### Asymmetric prob
 
