@@ -11,6 +11,8 @@ mathjax: true
 
 事实上，这门课可能是最为重要的一门课（尤其是日后转到其他定量科学领域）。作为9-11节的晚间专业选修课，这门课也是一门绝对的水课。如果我早点意识到这门课对我的重要性和修读课程的水性，早点开始自学，就不会走这么多弯路了。[TED演讲：先教统计学再教微积分!](https://www.bilibili.com/video/BV1W7411E7JF?p=2)
 
+符号说明：$$X$$ —— 随机变量，$$x$$ —— 随机变量的取值；常把 $$X=x$$ 简写为 $$x$$。$$X_i$$ —— 随机变量的一个样本，$$x_i$$ —— 该样本取值。
+
 | 学习时间                                   | 大二上                                   |
 | 周学时                                       | 3                                             |
 | 本人成绩                                   | 94                                           |
@@ -30,7 +32,7 @@ mathjax: true
 
 ### 条件概率
 
-$$\displaystyle P(A|B)=\frac{P(A,B)}{P(B)}$$, $$P(\text{老板不回你邮件}\vert\text{你被老板开除})$$ 接近于 $$1$$，$$P(\text{你被老板开除}\vert\text{老板不回你邮件})$$ 并不大。
+$$\displaystyle P(A\vert B)=\frac{P(A,B)}{P(B)}$$, $$P(\text{老板不回你邮件}\vert\text{你被老板开除})$$ 接近于 $$1$$，$$P(\text{你被老板开除}\vert\text{老板不回你邮件})$$ 并不大。
 
 ### 全概率公式与Bayes 公式
 
@@ -104,9 +106,9 @@ $$X$$~$$N(μ,σ^2)$$
 - 通过[傅里叶变换](https://shi200005.github.io/2022/02/15/Complex-Functions/#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)，分析特征函数的渐近行为。例：求解 Fokker-Planck 近似下的小偏差（$$p$$ 接近于 $$1/2$$）的概率偏微分方程，详见**随机过程**。
 - 通过 **Stirling 近似**。
 
-#### Gamma Distribution
+#### Gamma 分布
 
-以后再说
+以后再说  泊松过程第 $$n$$ 次事件出现的时间服从 Gamma 分布
 
 ### 随机变量和的分布
 
@@ -157,7 +159,7 @@ $$G(\mathbf {x})=\displaystyle (2\pi )^{-k/2}\det({\boldsymbol {\Sigma }})^{-1/2
 
 ### 条件分布
 
-$$p(y\vert x)=\displaystyle\frac{p(x,y)}{p(x)}$$.
+$$P(y\vert x)=\displaystyle\frac{P(x,y)}{P(x)}$$.
 
 ### 相互独立与两两独立
 

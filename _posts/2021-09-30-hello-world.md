@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello World
-categories: Others
+categories: Other
 description: 建立个人网站的初衷
 keywords: 无
 ---
