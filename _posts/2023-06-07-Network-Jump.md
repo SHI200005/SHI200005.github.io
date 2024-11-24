@@ -19,7 +19,7 @@ More about the model construction, see **Appendix of [3](https://shi200005.githu
 
 ## One-Variable Case
 
-Always start from the simplest! Let's consider a molecule $$X$$'s probability (per unit time) of production  and degradation are $$f(x)$$ and $$g(x)$$ (also refer to transition rates). As a Markovian process, we take the transition rates merely depends on where the current state is. We write it as
+Always start from the simplest. Let's consider a molecule $$X$$'s probability (per unit time) of production  and degradation are $$f(x)$$ and $$g(x)$$ (also refer to transition rates). As a Markovian process, we take the transition rates merely depends on where the current state is. We write it as
 
 
 $$
@@ -28,13 +28,13 @@ x \stackrel{g(x)}{\longrightarrow} x-1
 $$
 
 
-which the probability distribution on different grids is $$P(x,t)$$. The time evolution of the probability distribution $$\frac{dP(x,t)}{dt}$$ is described by a **master equation**, which can be interpreted as "plus the probability in and minus the probability out that state". From $$\frac{dP(x,t)}{dt}$$, using the "index shift" trick, we can get the evolution of statistical quantities of $$X$$ (average over the ensemble). (This is from Hilfinger's lecture note of PHY2707, and I don't know whether there is copyright. If there is, I will sincerely すみません...)
+which the probability distribution on different grids is $$P(x,t)$$. The time evolution of the probability distribution $$\displaystyle\frac{dP(x,t)}{dt}$$ is described by a **master equation**, which can be interpreted as "plus the probability in and minus the probability out of that state". It should be conditioned on the initial state, but we'll drop it, because we're interested in the stationary state, which all initial states will evolve to. From $$\displaystyle\frac{dP(x,t)}{dt}$$, using the "index shift" trick, we can get the evolution of statistical quantities of $$X$$ (average over the ensemble). (This is from Hilfinger's lecture note of PHY2707, and I don't know whether there is a copyright. If there is, I will sincerely すみません...)
 
 <img src="\images\blog\Network_Jump_1var.jpg" alt="Network_Jump_1var" style="zoom:50%;" />
 
 ### Special case: constant birth and first-order degradation
 
-Now let's look at a intuitive and simple case where the molecule has a constant production rate and a first-order degradation rate. The steady state (also detailed balance in this case) of the probability distribution on grids forms a **Poisson distribution**. (from Hilfinger's lecture note...)
+Now, let's look at an intuitive and simple case where the molecule has a constant production rate and a first-order degradation rate. The steady-state (also detailed balance in this case) of the probability distribution on grids forms a **Poisson distribution**. (from Hilfinger's lecture note...)
 
 
 $$
@@ -42,8 +42,9 @@ x \stackrel{\lambda}{\longrightarrow} x+1 \\
 x \stackrel{\beta x}{\longrightarrow} x-1
 $$
 
-
 <img src="\images\blog\Network_Jump_1var_Special.jpg" alt="Network_Jump_1var_Special" style="zoom:50%;" />
+
+Note that for the stationary state, for each $$x>0$$ grid, the two ways in and two ways out should sum up to zero. while for the $$x=0$$ grid, there is only one way in and out from/to $$x=1$$ grid. Then we know ways $$x=m$$ to $$x=m+1$$ should equal $$x=m+1$$ to $$x=m$$. 
 
 ## Multi-variable Case
 
@@ -55,9 +56,9 @@ x(t) \stackrel{W_i(x(t))}{\longrightarrow} x(t)+r_i, \quad i=1,2,...,m
 $$
 
 
-For this network, also using the "index shift" trick to calculate mean, variances and covariances with master equation. **The detailed steps can be found in [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references)**, equation (1)-(3). I don't bother to type the results here.
+For this network, use the "index shift" trick to calculate mean, variances, and covariances with the master equation. **The detailed steps are in [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references)**, equation (1)-(3). I don't bother to type the results here.
 
-In these jump models, the **diffusion** and **drift** coefficients are related, by means of a **Lyapunov equation** [6](https://shi200005.github.io/2023/06/07/Network-Jump/#references), to the **steady-state covariance** matrix [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references). If all the transition rates are **linear** functions, the Lyapunov equation is an *exact* result from the master equation and **no** Gaussian approximation is needed. If the transition rates are **nonlinear**, **van Kampen's $$\Omega$$ expansion** (leads to **linear noise approximation**) is needed to derive the equation.
+In these jump models, the **diffusion** and **drift** coefficients are related, using a **Lyapunov equation** [6](https://shi200005.github.io/2023/06/07/Network-Jump/#references), to the **steady-state covariance** matrix [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references). If all the transition rates are **linear** functions, the Lyapunov equation is the *exact* result of the master equation and **no** Gaussian approximation is needed. If the transition rates are **nonlinear**, **van Kampen's $$\Omega$$ expansion** (leads to **linear noise approximation**) is needed to derive the equation.
 
 We follow the content in [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references). Define the vector of transition rate as $$f(x):=\sum_ir_iW_i(x)$$.
 
@@ -67,19 +68,19 @@ We can write the transition rate as $$f(x(t))=Ax(t)+f_0$$, where $$A$$ is an n*n
 
 Define the **covariance** matrix $$\Sigma(t):=\langle x(t)x^T(t)\rangle-\langle x(t)\rangle\langle x^T(t)\rangle$$, **autocorrelation** $$R_{xx}(t_1,t_2):=\langle x(t_1)x^T(t_2)\rangle-\langle x(t_1)\rangle\langle x^T(t_2)\rangle$$. **Following [4](https://shi200005.github.io/2023/06/07/Network-Jump/#references)**, there are some important *exact* results.
 
-$$\frac{d\Sigma(t)}{dt}=A\Sigma(t)+\Sigma A(t)^T+D(t)$$. (5 in text, where $$D(t):=\sum_ir_iW_i(\langle x(t)\rangle)r_i(t)$$)
+$$\displaystyle\frac{d\Sigma(t)}{dt}=A\Sigma(t)+\Sigma A(t)^T+D(t)$$. (5 in text, where $$D(t):=\sum_ir_iW_i(\langle x(t)\rangle)r_i(t)$$)
 
-$$\frac{\partial R_{xx}(t_1,t_2)}{\partial t_1}=AR_{xx}(t_1,t_2)$$. (7 in text)
+$$\displaystyle\frac{\partial R_{xx}(t_1,t_2)}{\partial t_1}=AR_{xx}(t_1,t_2)$$. (7 in text)
 
 For steady state, 
 
-$$AR_{xx}(0)+R_{xx}(0)A^T+D=0$$. (9 in text) This is the **Lyapunov equation**, and often called the **fluctuation dissipation** theorem, a balance between the tendency of particles to diffuse and mechanisms such as negative feedback that bring them back to equilibrium (Remark 3 in text).
+$$AR_{xx}(0)+R_{xx}(0)A^T+D=0$$. (9 in text) This is the **Lyapunov equation**, and often called the **fluctuation-dissipation** theorem, a balance between the tendency of particles to diffuse and mechanisms such as negative feedback that bring them back to equilibrium (Remark 3 in text).
 
-$$\frac{\partial R_{xx}(\tau)}{\partial\tau}=AR_{xx}(\tau)$$. (10 in text) And how to solve this systems of ODEs? Use **matrix exponential**, which involves **diagonalizing** the matrix, see Linear Algebra ([线性代数 - Matrix Exponential](https://shi200005.github.io/2021/09/30/Linear-Algebra/#matrix-exponential)).
+$$\displaystyle\frac{\partial R_{xx}(\tau)}{\partial\tau}=AR_{xx}(\tau)$$. (10 in text) And how to solve this system of ODEs? Use **matrix exponential**, which involves **diagonalizing** the matrix; see Linear Algebra ([线性代数 - Matrix Exponential](https://shi200005.github.io/2021/09/30/Linear-Algebra/#matrix-exponential)).
 
 #### The Classical Model of mRNA and Protein
 
-This is an example of linear case with the classical mRNA-protein model [3](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can regard $$X_1$$ as the mRNA and $$X_2$$ as the protein. (In many case, the protein degradation rate is very small compared with cell growth [7](https://shi200005.github.io/2023/06/07/Network-Jump/#references), and the dilution effects are often described as first-order degradation.) You will come across this model from time to time when you are reading Paulsson group related things... For example, model [4] in [8](https://shi200005.github.io/2023/06/07/Network-Jump/#references), and equation [7] is the exact result of this linear rates model. See below how to derive.
+This is an example of a linear case with the classical mRNA-protein model [3](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can regard $$X_1$$ as the mRNA and $$X_2$$ as the protein. (In many cases, the protein degradation rate is very small compared with cell growth [7](https://shi200005.github.io/2023/06/07/Network-Jump/#references), and the dilution effects are often described as first-order degradation.) You will come across this model from time to time when you are reading Paulsson Group related things... For example, model [4] in [8](https://shi200005.github.io/2023/06/07/Network-Jump/#references), and equation [7] is the exact result of this linear rates model. See below how to derive.
 
 
 $$
@@ -91,7 +92,7 @@ $$
 
 #### The Classical Model with Additional Complex Formation and Disassociation
 
-In [9](https://shi200005.github.io/2023/06/07/Network-Jump/#references), the role of miRNA-mRNA complex in regulating noise in protein level was considered. In the following figure I showed the matrix $$D$$ of the reaction involves more than one species. 
+In [9](https://shi200005.github.io/2023/06/07/Network-Jump/#references), the role of the miRNA-mRNA complex in regulating noise at the protein level was considered. In the following figure, I showed the matrix $$D$$ of the reaction involving more than one species. 
 
 ![Network_Jump_Complex](\images\blog\Network_Jump_Complex.jpg)
 
@@ -103,53 +104,53 @@ Well, I base the above derivation on [5](https://shi200005.github.io/2023/06/07/
 
 #### From Langevin Equation
 
-For the linear case, the Lyapunov equation, or the fluctuation dissipation theorem, can also be derived from the Langevin equation $$\frac{d \vec{a}}{dt}=H\vec{a}+\vec{\tilde{f}}$$, where $$\vec{\tilde f}(t)$$ is a **white noise** vector. The steps can be found on chapter1.8 from [12](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can also find my note [Network_Langevin_Lyapunov](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) here.
+For the linear case, the Lyapunov equation, or the fluctuation-dissipation theorem, can also be derived from the Langevin equation $$\displaystyle\frac{d \vec{a}}{dt}=\hat H\vec{a}+\vec{\tilde{f}}$$, where $$\vec{\tilde f}(t)$$ is a **white noise** vector. The steps can be found in chapter 1.8 from [12](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can also find my note [Network_Langevin_Lyapunov](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) here.
 
-The relationship between master equation, Fokker-Planck approximation and Langevin approach will be discussed in the following part.
+The relationship between the master equation, the Fokker-Planck approximation, and the Langevin approach will be discussed in the following part.
 
 ### Nonlinear Case
 
-In the nonlinear case, we cannot simply drag the drift matrix $$A$$ out as $$f(x(t))-\langle f(x(t))\rangle=A(x(t)-\langle x(t)\rangle)$$ (above equation 5 in [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), and get the nice Lyapunov equation. To quantify the variances and covariances (second moment properties), we need to do some approximation...
+In the nonlinear case, we cannot simply drag the drift matrix $$A$$ out as $$f(x(t))-\langle f(x(t))\rangle=A(x(t)-\langle x(t)\rangle)$$ (above equation 5 in [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), and get the nice Lyapunov equation. To quantify the variances and covariances (second-moment properties), we must make some approximations...
 
-#### van Kampen's $$\Omega$$ expansion and Linear Noise Approximation
+#### Van Kampen's $$\Omega$$ expansion and Linear Noise Approximation
 
-The $$\Omega$$-expansion means that the Master equation is Taylor expanded **near macroscopic system trajectories** or **stationary solutions** in powers of $$1/\sqrt{\Omega}$$ , where $$\Omega$$ is the system volume. When the Master equation is approximated near a macroscopically stable stationary solution, terms of first order in $$1/\sqrt{\Omega}$$ give the macroscopic rate equations, and terms of second order in $$1/\sqrt{\Omega}$$  give the Linear Noise Approximation (LNA). The rationale behind this approach is that for constant average concentrations, relative fluctuations will tend to decrease with the inverse of the square root of the volume [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
+The $$\Omega$$-expansion means the Master equation is Taylor expanded **near macroscopic system trajectories** or **stationary solutions** in powers of $$1/\sqrt{\Omega}$$, where $$\Omega$$ is the system volume. When the Master equation is approximated near a macroscopically stable stationary solution, terms of first order in $$1/\sqrt{\Omega}$$ give the macroscopic rate equations, and terms of second order in $$1/\sqrt{\Omega}$$  give the **Linear Noise Approximation (LNA)**. The rationale behind this approach is that relative fluctuations will tend to decrease for constant average concentrations with the inverse of the square root of the volume [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
 
 P.S. In most papers, researchers look at the stationary properties. A **cyclostationary** case (not stationary) case where Linear Noise Approximation is applied **near macroscopic system trajectories** can be found in [14](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
 
-You can find a formal explanation, check chapter X of [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references). If you are looking for a shorter and closely related to gene regulatory network text, check **the supplementary material of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references) ** (after "Derivation of the LNA", go to "Example 3: Coupled fluctuations in a two component systems" starting from page 6).
+You can find a formal explanation in chapter X of [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references). If you are looking for a shorter and closely related to gene regulatory network text, check **the supplementary material of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references) ** (after "Derivation of the LNA," go to "Example 3: Coupled fluctuations in a two-component system" starting from page 6).
 
-I would like to explain it as "changing the variables from number of species to the rescaled fluctuations of species". We start from the nonlinear master equation and the corresponding joint probability distribution of species (equation A3 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). After approximation, we end at the **linear Fokker-Planck equation** about the joint probability distributions of the fluctuations $$\frac{\partial\Pi(\xi,t)}{\partial t}=-\displaystyle\sum_{ik}A_{ik}\frac{\partial}{\partial \xi_i}\xi_k\Pi(\xi)+\frac{1}{2}\displaystyle\sum_{ik}[BB^T]_{ik}\frac{\partial^2\Pi(\xi)}{\partial\xi_i\partial\xi_k}$$ (equation A9 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). 
+I would like to explain it as "changing the variables from several species to the rescaled fluctuations of species." We start from the nonlinear master equation and species' corresponding joint probability distribution (equation A3 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). After approximation, we end at the **linear Fokker-Planck equation** about the joint probability distributions of the fluctuations $$\displaystyle\frac{\partial\Pi(\xi,t)}{\partial t}=-\sum_{ik}A_{ik}\frac{\partial}{\partial \xi_i}\xi_k\Pi(\xi)+\frac{1}{2}\sum_{ik}[BB^T]_{ik}\frac{\partial^2\Pi(\xi)}{\partial\xi_i\partial\xi_k}$$ (equation A9 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). 
 
-**P.S.** An alternative perspective of LNA can be found in Section A.3 of the Supplemental Information in [15](https://shi200005.github.io/2023/06/07/Network-Jump/#references), which is $$R_i^+(x)\approx R_i^+(\langle x\rangle)+\nabla R_i^+(\langle x\rangle)\cdot(x-\langle x\rangle)$$. Clearly, the physical meaning is expand **near macroscopic system trajectories** or **stationary solutions**. Where matrix $$\nabla R_i^+(\langle x\rangle)$$ can be used as the rate matrix as in the linear case.
+**P.S.** An alternative perspective of **LNA** can be found in Section A.3 of the Supplemental Information in [15](https://shi200005.github.io/2023/06/07/Network-Jump/#references), which is $$R_i^+(x)\approx R_i^+(\langle x\rangle)+\nabla R_i^+(\langle x\rangle)\cdot(x-\langle x\rangle)$$. Clearly, the physical meaning is expanded **near macroscopic system trajectories** or **stationary solutions** where matrix $$\nabla R_i^+(\langle x\rangle)$$ can be used as the rate matrix as in the linear case.
 
 #### Solution of Linear Fokker-Planck Equation
 
-The stationary solution is equation A11(in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), **the multidimensional Normal/Gaussian distribution**, and the detailed steps can be found in chapter 6.5 Ornstein-Uhlenbeck Process from [16](https://shi200005.github.io/2023/06/07/Network-Jump/#references). Generally speaking, **Fourier transform** will be applied to solve this multivariable PDE. First have a taste by my note [Biophysics_Diffusion](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) (diffusion equation from [Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/) on the simplest case and see how Fourier transform works).
+The stationary solution is equation A11(in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), **the multidimensional Normal/Gaussian distribution**, and the detailed steps in chapter 6.5 Ornstein-Uhlenbeck Process from [16](https://shi200005.github.io/2023/06/07/Network-Jump/#references). Generally speaking, the **Fourier transform** will be applied to solve this multivariable PDE. First have a taste by my note [Biophysics_Diffusion](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) (diffusion equation from [Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/) on the simplest case and see how Fourier transform works).
 
 #### Lyapunov Equation of Linear Fokker-Planck Equation
 
-From $$\frac{\partial\Pi(\xi,t)}{\partial t}=-\displaystyle\sum_{ik}A_{ik}\frac{\partial}{\partial \xi_i}\xi_k\Pi(\xi)+\frac{1}{2}\displaystyle\sum_{ik}[BB^T]_{ik}\frac{\partial^2\Pi(\xi)}{\partial\xi_i\partial\xi_k}$$, simply multiply by $$\xi_j\xi_l$$ and integrate over the whole phase space, and we will get the Lyapunov equation $$\frac{\partial \Xi(\xi,t)}{\partial t}=A\Xi+\Xi A+BB^T$$, where the covariance matrix $$\Xi=\langle \xi\xi^T\rangle$$ is the covariance matrix of rescaled fluctuations. In stationary, $$0=A\Xi+\Xi A+BB^T$$
+From $$\displaystyle\frac{\partial\Pi(\xi,t)}{\partial t}=-\sum_{ik}A_{ik}\frac{\partial}{\partial \xi_i}\xi_k\Pi(\xi)+\frac{1}{2}\sum_{ik}[BB^T]_{ik}\frac{\partial^2\Pi(\xi)}{\partial\xi_i\partial\xi_k}$$, multiply by $$\xi_j\xi_l$$ and integrate over the whole phase space, and we will get the Lyapunov equation $$\displaystyle\frac{\partial \Xi(\xi,t)}{\partial t}=A\Xi+\Xi A+BB^T$$, where the covariance matrix $$\Xi=\langle \xi\xi^T\rangle$$ is the covariance matrix of rescaled fluctuations. In stationary, $$0=A\Xi+\Xi A+BB^T$$
 
-The hint is from VIII.6 [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references), and I am writing down the formal steps. If you have problems in these steps, I highly recommend you to take PHY2315, [(En) Advanced Statistical Mechanics](https://shi200005.github.io/2023/05/07/Advanced-Statistical-Mechanics/) (my lecturer is Prof Dennis Dalidovich and he wrote excellent notes!). After that, you will have better sense of related math.
+The hint is from VIII.6 [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
 
 ![Network_Jump_2var_Linear](\images\blog\Network_Jump_Lyapunov.jpg)
 
 #### Example of Nonlinear Case
 
-Check "Example 3: Coupled fluctuations in a two component systems" in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
+Check "Example 3: Coupled fluctuations in a two-component system" in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
 
-The method of using the Lyapunov equation to compute the variance and  covariance of species is frequently employed in the research of A.  Hilfinger, J. Paulsson, J. Elf, etc. You can read [9](https://shi200005.github.io/2023/06/07/Network-Jump/#references), the famous paper by J. Paulsson where the Lyapunov equation is presented intuitively (and my post derived Equation (S4) in a complete and rigorous way). 
+Using the Lyapunov equation to compute the variance and covariance of species is frequently employed in the research of A. Hilfinger, J. Paulsson, J. Elf, etc. You can read [9](https://shi200005.github.io/2023/06/07/Network-Jump/#references), the famous paper by J. Paulsson where the Lyapunov equation is presented intuitively (and my post derived Equation (S4) rigorously). 
 
-### Master Equation, Fokker-Planck Approximation and Langevin Approach
+### Master Equation, Fokker-Planck Approximation, and Langevin Approach
 
-We describe the stochastic process by Master equation $$\frac{\partial P(y,t)}{\partial t}=\int\{W(y\vert y^\prime P(y^\prime,t)-W(y^\prime \vert y) P(y,t)\}$$, corresponding to a stationary joint statistical properties (mean, variances, covariances...). However, it is unusually impossible to solve the statistical properties directly from the master equation, unless the transition rates are linear.
+We describe the stochastic process by the master equation $$\displaystyle\frac{\partial P(y,t)}{\partial t}=\int\{W(y\vert y^\prime P(y^\prime,t)-W(y^\prime \vert y) P(y,t)\}$$, corresponding to a stationary joint statistical properties (mean, variances, covariances...). However, it is impossible to solve the statistical properties directly from the master equation unless the transition rates are linear.
 
-To solve it approximately, Fokker-Planck equation is based on the assumption that the jumps are relatively very small. N. G. van Kampen's $$\Omega$$ expansion is a formal method when the system is large (jumps are relatively small). Intuitively, we get a solvable linear Fokker-Planck from the expansion. The Langevin approach is mathematically equivalent to Fokker-Planck equation. In the linear case, I derived the Lyapunov equation from Langevin approach. To read more, check chapter V. VII. and VIII. from [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
+To solve it approximately, the Fokker-Planck equation is based on the assumption that the jumps are relatively very small. N. G. van Kampen's $$\Omega$$ expansion is a formal method when the system is large (jumps are relatively small). Intuitively, we get a solvable linear Fokker-Planck from the expansion. The Langevin approach is mathematically equivalent to the linear Fokker-Planck equation (the former is a continuous system). I derived the Lyapunov equation from the Langevin approach in the linear case. To read more, check chapters V. VII. and VIII. from [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
 
 ## Wrap up
 
-I sincerely thank **everyone** in my group, especially B Kell and A. Hilfinger. You can regard this post as my first-year progress in theory, although in fact it should not take that long.... I feel like just crossing the critical point. I completed a phase transition of "being defeated by the equations from the beginning of papers" to "understand the basic math and have better sense of deriving statistical properties".
+I sincerely thank **everyone** in my group, especially B Kell and A. Hilfinger. You can regard this post as my first-year progress in theory, although it should not have taken that long.... I feel like I'm just crossing the critical point. I completed a phase transition of "being defeated by the equations from the beginning of papers" to "understand the basic math and have a better sense of deriving statistical properties."
 
 ## References
 

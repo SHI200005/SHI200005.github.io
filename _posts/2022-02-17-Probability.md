@@ -75,7 +75,7 @@ $$X\sim π(λ)$$
 
 【GRAD-UPDATE】从一个泊松过程中随机选取一些事件（选取的概率是常数 $$r$$），这些事件依然构成泊松过程。泊松过程的适用条件：试想一个任意的过程，从该过程中随机地选取极少的事件。事件之间的相关性随时间衰减，如果选的事件足够稀少（相关性小），那么选出的事件可以近似地用泊松过程描述。
 
-【GRAD-UPDATE】本科阶段只讨论了事件发生概率是常数 $$r$$ 的情况，结论是一段时间 $$T$$ 内发生事件的计数 $$N$$ 满足 $$\langle N\rangle=rt$$，$$\langle N^2\rangle=\langle N\rangle$$. 考虑更一般的情况，事件发生概率 $$r(t)$$ 随时间变化，但是各个事件的发生没有关联，有结论 $$\displaystyle\langle N\rangle=\int_0^Tdt r(t)$$，$$\langle N^2\rangle=\langle N\rangle$$。文章详见[泊松分布与泊松分布(II)](https://zhuanlan.zhihu.com/p/603123138)，推导过程详见[概率论-一般的泊松过程与泊松分布](https://shi200005.github.io/download_file/Pobability_Poisson_Inhomo.pdf)。
+【GRAD-UPDATE】本科阶段只讨论了事件发生概率是常数 $$r$$ 的情况，结论是一段时间 $$T$$ 内发生事件的计数 $$N$$ 满足 $$\langle N\rangle=rt$$，$$\langle N^2\rangle=\langle N\rangle$$. 考虑更一般的情况，事件发生概率 $$r(t)$$ 随时间变化，但是各个事件的发生没有关联，有结论 $$\displaystyle\langle N\rangle=\int_0^Tdt*r(t)$$，$$\langle N^2\rangle=\langle N\rangle$$。文章详见[泊松分布与泊松分布(II)](https://zhuanlan.zhihu.com/p/603123138)，推导过程详见[概率论-一般的泊松过程与泊松分布](https://shi200005.github.io/download_file/Pobability_Poisson_Inhomo.pdf)。
 
 【GRAD-UPDATE】**一维随机游走**（birth-and-death）过程中，细致平衡给出稳态时系统在稳态“格点”附近的分布也是泊松分布。
 
@@ -243,21 +243,11 @@ $$D(X+Y)=D(X)+D(Y)+2E\{[(X)-E(X)][(Y)-E(Y)]\}$$.
 
 性质：[协方差矩阵是半正定矩阵](https://blog.csdn.net/qcyfred/article/details/71598815)，参见[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5)。
 
-### 相关与独立
+### 相关系数
 
 相关系数描述的是**线性**相关程度。性质是$$\vertρ_{XY}\vert≤1$$，当且仅当 $$Y=a+bX$$ 时取等号。若$$X,Y$$ 独立，则相关系数一定为零；若相关系数为零，不一定独立。感觉这个名字有点误导性。
 
-补充：概念：*statistical independence* 和 *uncorrelated*。
-
-uncorrelated: $$ρ_{XY}=0$$ (weaker than *statistical independence*)
-
-statistical independence: expressed by any one of the three criteria:
-
-1. All moments factorize: $$\langle X_1^{m_1}X_2^{m_2}\rangle=\langle X_1^{m_1}\rangle\langle X_2^{m_2}\rangle$$.
-2. The characteristic function factorizes: $$G(k_1,k_2)=G_1(k_1)G_2(k_2)$$.
-3. The cumulants $$\langle\langle X_1^{m_1}X_2^{m_2}\rangle \rangle$$ vanish when both $$m_1$$ and $$m_2$$ differ from zero. 
-
-The reason why this property has a special name is that in many applications the first and second moments alone provide an adequate description (i.e. Gaussian distribution).
+随机变量独立意味着 $$P(x,y)=P(x)P(y)$$。描述两个随机变量是否独立：**互信息**，详见 [(En) Information Theory](https://shi200005.github.io/2023/10/03/Information-Theory/)。
 
 ## 大数定理
 
