@@ -23,7 +23,6 @@ mathjax: true
 ## External References
 
 1. Kardar, Mehran. *Statistical physics of particles*. Cambridge University Press, 2007.
-2. Van Kampen, Nicolaas Godfried. *Stochastic processes in physics and chemistry*. Vol. 1. Elsevier, 1992.
 3. Leonard Mlodinow. *The Drunkard's Walk*: How Randomness Rules Our Lives. Vintage Books, 2008.
 
 ## 概率论的基本概念
@@ -71,7 +70,7 @@ $$X\sim π(λ)$$
 
 泊松分布作为泊松过程的“某时段内发生事件数”的分布。泊松过程**无记忆性**，事件发生的等待时间间隔服从**指数分布**，参见[泊松分布与指数分布的联系](https://zhuanlan.zhihu.com/p/261961315)。从泊松过程推出泊松分布：[泊松分布与泊松过程](https://zhuanlan.zhihu.com/p/431389631)。
 
-泊松分布作为**二项分布**的近似：$$n$$ 很大而 $$p$$ 很小 -> $$X\sim b(n,p)$$-> $$X\sim π(λ)$$, $$λ=np$$。证明很简单，详见[概率论-泊松分布作为二项分布的近似](https://shi200005.github.io/download_file/Probability_Binomial_Poisson.pdf)。【Intuition】用泊松过程推导泊松分布的时候，就是从一件事发生还是不发生出发，取时间间隔的极限小，也就是考虑极限情况下做伯努利试验成不成功，所以是二项分布的极限情况。
+泊松分布作为**二项分布**的近似：$$n$$ 很大而 $$p$$ 很小 -> $$X\sim b(n,p)$$-> $$X\sim π(λ)$$, $$λ=np$$。证明详见[概率论-泊松分布作为二项分布的近似](https://shi200005.github.io/download_file/Probability_Binomial_Poisson.pdf)。【Intuition】用泊松过程推导泊松分布的时候，就是从一件事发生还是不发生出发，取时间间隔的极限小，也就是考虑极限情况下做伯努利试验成不成功，所以是二项分布的极限情况。
 
 【GRAD-UPDATE】从一个泊松过程中随机选取一些事件（选取的概率是常数 $$r$$），这些事件依然构成泊松过程。泊松过程的适用条件：试想一个任意的过程，从该过程中随机地选取极少的事件。事件之间的相关性随时间衰减，如果选的事件足够稀少（相关性小），那么选出的事件可以近似地用泊松过程描述。
 
@@ -101,10 +100,10 @@ $$X\sim U(a,b)$$
 
 $$X$$~$$N(μ,σ^2)$$
 
-正态分布作为**二项分布**的近似：$$n$$ 很大，$$p$$ 接近 $$1/2$$ -> $$X\sim b(n,p)$$ ->  $$X\sim N(μ,σ^2)$$。【GRAD-UPDATE】求解方法：
+正态分布作为**二项分布**的近似：$$n$$ 很大，$$p$$ 接近 $$1/2$$ -> $$X\sim b(n,p)$$ ->  $$X\sim N(μ,σ^2)$$。【GRAD-UPDATE】求解方法（注意，两种方法近似出来的方差略有不同）：
 
-- 通过[傅里叶变换](https://shi200005.github.io/2022/02/15/Complex-Functions/#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2)，分析特征函数的渐近行为。例：求解 Fokker-Planck 近似下的小偏差（$$p$$ 接近于 $$1/2$$）的概率偏微分方程，详见**随机过程**。
-- 通过 **Stirling 近似**。
+- 例：biased random walk 求解 Fokker-Planck 近似下的小偏差（$$p$$ 接近于 $$1/2$$）的概率偏微分方程，详见[随机过程-随机游走与二项分布](https://shi200005.github.io/download_file/Probability_Binomial_Normal_Fourier.pdf)。
+- 通过[Stirling 近似](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula)再取连续极限，[概率论-二项分布近似为正态分布](https://shi200005.github.io/download_file/Probability_Binomial_Normal.pdf)。
 
 #### Gamma 分布
 
@@ -263,7 +262,7 @@ The weak law of large number: for i.i.d. samples $$X_i$$, $$\displaystyle\bar X=
 
 ### De Moivre-Laplace 定理 
 
-前面正态分布部分讲过，$$n$$ 很大，$$p$$ 接近 $$1/2$$ 时，**二项分布**近似为**正态分布**，也就是伯努利实验成功事件的总数服从正态分布。
+前面正态分布部分讲过，$$n$$ 很大，$$p$$ 接近 $$1/2$$ 时，**二项分布**近似为**正态分布**。
 
 ### Lyapunov 定理
 
@@ -271,7 +270,7 @@ The weak law of large number: for i.i.d. samples $$X_i$$, $$\displaystyle\bar X=
 
 Sum $$X=\displaystyle\sum_{i=1}^{N}x_i$$, $$x_i$$ are i.i.d. from a distribution. We have $$\langle X^n\rangle_c=N\langle x^n\rangle_c$$. Construct $$\displaystyle y=\frac{X-N\langle x\rangle_c}{\sqrt N}$$, so $$\langle y^n\rangle_c\propto N^{1-n/2}$$. As $$N\rightarrow\infty$$, **only the second cumulant survives**, and the PDF for $$y$$ converges to the **normal distribution**, $$\displaystyle\lim_{N→\infty}p(y=\frac{\displaystyle\sum_{i=1}^N x_i-N\langle x \rangle_c}{\sqrt N})=\frac{1}{\sqrt{2\pi\langle x^2\rangle_c}}\exp(-\frac{y^2}{2\langle x^2\rangle_c})$$. 
 
-根据上面的 De Moivre-Laplace 定理，可以把抽取样本看成**伯努利实验**，把所有样本或多或少偏离均值的总和加起来，总量偏离的分布就是**正态分布**。
+- 特例（学 Lyapunov 之前用这个引出）：伯努利试验次数很多时，成功次数总和 $$S_n$$ 的分布符合正态分布，归一化变量 $$\displaystyle S_n=\frac{S_n-E(S_n)}{\sqrt{\text{Var}(S_n)}}$$~$$N(0,1)$$。证明详见 Garrity, All the math you need to know... chapter 18.5，因为试验次数多，处理大阶乘时用到了 [Stirling's Approximation]().
 
 ## 后记
 

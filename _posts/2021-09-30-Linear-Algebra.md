@@ -7,13 +7,7 @@ keywords: linear algebra
 mathjax: true
 ---
 
-如无特殊说明，本篇在实数域讨论。作为时间顺序上的第一篇，我在此规定整个网站的符号规范：标量用 $$a$$，矢量用 $$\vec a$$（并且是物理学家喜欢的列矢量），矩阵用 $$\hat a$$，二阶张量用 $$\overleftrightarrow{a}$$。此处 hat 单纯表示数学上矩阵，和量子力学中的算符无关！但是，如果只是出现了 $$a$$，可能是广义上的张量，不一定是标量。区分的原因：笨人太笨，经常连谈论的是几阶张量都想不清除。
-
----
-
-很多数理理解像我一样差的同学学完（虽然成绩可能比我高不少），仍不知道自己学了什么。
-
-更新记录 2021.09.30 Ver 0.1, 2021.09.30 Ver 0.11, 2023.01.01 Ver0.12, 2023.01.07 Ver1.0, 2023.09.18 Ver1.1 相似对角化 约尔当标准型 Matrix exponential, 2023.12.24 Ver2.0 
+如无特殊说明，本篇在实数域讨论。作为时间顺序上的第一篇，我在此规定整个网站的符号规范：标量用 $$a$$，矢量用 $$\vec a$$（并且是物理学家喜欢的列矢量），矩阵用 $$\hat a$$，二阶张量用 $$\overleftrightarrow{a}$$。此处 hat 单纯表示数学上矩阵，和量子力学中的算符无关！但是，如果只是出现了 $$a$$，可能是广义上的张量，不一定是标量。区分的原因：笨人太笨，经常连谈论的是几阶张量都想不清楚。
 
 | 学习时间                 | 线性代数(第一层次)：大一上                                                                |
 | 周课时                     | 4                                                                                                              |
@@ -32,15 +26,22 @@ mathjax: true
 
 线性 $$f$$：$$f(ax_1+bx_2)=af(x_1)+bf(x_2)$$。可叠加的。
 
-概念的数学定义请参见任意一本相关教科书。**线性空间**。
+概念的数学定义请参见任意一本相关教科书。**线性空间**。以一定的标准（一组**基**）描述某个范围（**线性空间**）内的事物（**向量**）。基的数量：线性空间的维数 $$\dim(V)$$。
 
-以一定的标准（一组**基**）描述（**向量**）某个范围（**线性空间**）内的事物。
+核 kernel  $$T:V\to W$$, $$\ker(T)=\{v\in V:T(v)=0\}$$
 
-基的数量：线性空间的维数（$$\dim(V)$$）。核（kernel）、像（image，见行列式定义）。
+像 image  $$T$$, $$\text{Im}(T)=\{w\in W:\text{there exists a }v\in V\text{with }T(v)=0\}$$.
+
+### 直和、直积
+
+给定两个向量空间 $$V$$ 和 $$W$$ 定义在同一个域 $$F$$ 上，$$V \oplus W$$ 是一个新的向量空间，其中元素是形式为有序对 $$(v,w)$$ 的元素，其中 $$v \in V$$ 和 $$w \in W$$，$$V \oplus W$$ 满足向量空间的性质。直和要求 $$V∩W=\{0\}$$，直积无需。
+
+- 对于有限维线性空间，如果 $$V$$ 和 $$W$$ 不重合，则直积和直和概念相同。例： $$\mathbb{R}^3 = \mathbb{R}^2 \oplus \mathbb{R}$$。
+- 对于无限维线性空间，直和允许有限多分量非零，直积允许无限多分量非零。
 
 ## 矩阵 - 线性变换
 
-**矩阵**代表**线性变换**（$$T:V\rightarrow W$$）在给定基下的描述（在教学中竟然完全没有被强调）。
+**矩阵**代表**线性变换** $$T:V\rightarrow W$$ 在给定基下的描述（在教学中竟然完全没有被强调）。
 
 - 《线性代数的几何意义》任广千等 5.5 矩阵与线性变换关系的几何意义。
 
@@ -61,22 +62,24 @@ mathjax: true
 
 > Definition 1.5.4 The *determinant* of the matrix $$A$$ is the signed volume of the image of the unit cube.
 
-应用：[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6)中多元积分换元的**雅可比矩阵** -> 雅可比矩阵及其**行列式**的几何意义（其实也是为了解决在不同坐标系下积分的<span style="color: red;">度量</span>问题——不同坐标系下积分值应保持一致！）
+应用：[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E5%AD%A6)中多元积分换元的**雅可比矩阵** -> 雅可比矩阵及其**行列式**的几何意义（不同坐标系下积分值应保持一致）
 
  - 《线性代数的几何意义》任广千等 5.11 雅可比矩阵及其行列式的几何意义。
  - 《数学分析新讲II》张筑生 第十三章 5.a 注记。
 
-[Adjugate matrix](https://en.wikipedia.org/wiki/Adjugate_matrix). 用于一种定义方阵行列式的方式。$$\det(A)=\displaystyle\sum_{k=1}^n(-1)^{k+1}a_{1k}\det(A_{1k})$$（来自Garrity）。
+行列式的计算
 
-作为考察重点但实际上没用的：诡异行列式的计算。评价：行列式只要记住基本计算方法即可，任何复杂计算在以后的课程中不会用到，却占到期中考试巨大分值，实属不解。
+- [Adjugate matrix](https://en.wikipedia.org/wiki/Adjugate_matrix). 用于一种定义方阵行列式的方式。$$\det(A)=\displaystyle\sum_{k=1}^n(-1)^{k+1}a_{1k}\det(A_{1k})$$（来自Garrity），对于物理空间的描述（例如变换），绝大部分都是三维方阵，考场手算方法：
 
-就我目前遇到的情况而言，对于物理空间的描述（例如变换），绝大部分都是三维方阵，对于计算物理中的数据处理，矩阵一般比较大，但是不可能让你算矩阵的行列式，因为它们大部分是 sparse matrices。对于三维方阵对应的三阶行列式的计算，在不使用计算软件的情况下，下面的方法最高效（实际中会用到！）
+  ![](/images/blog/Linear_Algebra_3D_Determinant.jpg)
 
-![](/images/blog/Linear_Algebra_3D_Determinant.jpg)
+- 对于计算物理中的数据处理，矩阵一般比较大，但是不可能让你算矩阵的行列式，因为它们大部分是 sparse matrices。
 
-行列式的计算在后续徒手解矩阵**特征值**时是必要的。
+- 行列式的计算在后续徒手解矩阵**特征值**时是必要的。
 
 ## 特征值和特征向量
+
+$$\hat A\vec v=\lambda\vec v$$  对 $$\vec v$$ 这种向量做线性变换 $$\hat A$$ 后，向量的方向居然没变，长度变为原来的特征值 $$\lambda$$ 倍。
 
 示例：[线性代数-求解特征值和特征向量](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)。你需要在[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)考场上**徒手**完成以上操作。在**非线性动力学**（链接在以后会写的**系统生物学**）中，特征值实部的正负决定了**不动点的稳定性**。
 
@@ -86,10 +89,6 @@ mathjax: true
 复数特征值及特征向量的几何意义，我在**系统生物学**的 fixed point analysis 会 revisit，看
 
 - 《线性代数的几何意义》任广千等 5.8.5 矩阵相似的几何意义。
-
-### 矩阵的迹
-
-迹是特征值的和，行列式是特征值的积。[Geometric interpretation of trace](https://mathoverflow.net/questions/13526/geometric-interpretation-of-trace) 先放着，以后revisit。
 
 ### 相似矩阵
 
@@ -117,6 +116,10 @@ mathjax: true
 $$n×n$$ 方阵可对角化的充要条件是有 $$n$$ 个线性无关的特征向量（满秩）。
 
 如果需要在考场上徒手对角化矩阵，步骤和下面[线性代数-实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)是一样的，只不过基变换矩阵不一定是正交化矩阵罢了。
+
+### 矩阵的迹
+
+迹是特征值的和，行列式是特征值的积。因为相似变换是同一个变换在不同基下的表示，所以这个变换对于任何基下特征向量的变化都是一样的，所以相似变换不改变特征值，也就不改变迹和行列式。
 
 ### 约尔当标准型
 
@@ -154,7 +157,7 @@ $$
 
 定义了**内积**的线性空间叫**欧氏空间**，于是欧几里得可以度量几何对象。在教学中，**内积空间**相关部分被省去，我认为极不合理。我们要理解度量矩阵的作用是协调内积在不同基下算出的内积不同。
 
-二次型可以看作是内积的推广。如果对二次型进行的是**合同变换**，$$\vec x=\hat P\vec y, f(\vec x)=\vec x^T\hat A\vec x=\vec y^T(\hat P^T\hat A\hat P)\vec y$$），目的便是在于使二次型的函数值保持不变！我们还发现了好东西：**实对称矩阵** $$\hat A$$。
+二次型可以看作是内积的推广。如果对二次型进行的是**合同变换**，$$\vec x=\hat P\vec y, f(\vec x)=\vec x^T\hat A\vec x=\vec y^T(\hat P^T\hat A\hat P)\vec y$$，目的便是在于使二次型的函数值保持不变！我们还发现了好东西：**实对称矩阵** $$\hat A$$。
 
 重要概念：正定、半正定、惯性指数等。及其几何意义。
 
@@ -191,7 +194,7 @@ $$\vec x^T\hat A\vec x=\vec y^T\hat P^T\hat A\hat P\vec y=\vec y^T\hat P^{-1}\ha
 
 系统性总结参见 [矩阵求导术（上）](https://zhuanlan.zhihu.com/p/24709748)& [矩阵求导术（下）](https://zhuanlan.zhihu.com/p/24709748)——知乎用户[长躯鬼侠](https://www.zhihu.com/people/chang-qu-gui-xia)的文章。写得挺循循善诱的，也有和机器学习（[(En) Machine Learning](https://shi200005.github.io/2022/12/05/Machine-Learning/)）中相关运算的结合。
 
-其中行列式的微分详见[行列式微分形式的推导](https://zhuanlan.zhihu.com/p/144255438)——知乎用户 [genekiller](https://www.zhihu.com/people/jiahao-lee-73) 的文章，结论为：可逆情形下的行列式微分形式：$$d\vert\hat A\vert=\vert\hat A\vert tr(\hat{A^{-1}}d\hat A)$$。
+其中行列式的微分详见[行列式微分形式的推导](https://zhuanlan.zhihu.com/p/144255438)——知乎用户 [genekiller](https://www.zhihu.com/people/jiahao-lee-73) 的文章，结论为：可逆情形下的行列式微分形式：$$d\vert\hat A\vert=\vert\hat A\vert tr(\hat{A^{-1}}d\hat A)$$。Jacobi's formula
 
 ## 对偶空间
 
