@@ -28,7 +28,7 @@ $$
 $$
 
 
-detailed steps of derivations, please refer to the handwritten [note](https://shi200005.github.io/download_file/Hil11Sep_Supp.pdf), which covers
+detailed steps of derivations, please refer to the handwritten [note](https://shi200005.github.io/download_file/Hilfinger2011Separating_Supp.pdf), which covers
 
 -  The conditional mean $\langle x\vert z\rangle$; variance of the conditional average of $X$ given $Z$, $\sigma^2_{\langle x\vert z\rangle}$;
 - the variance of $X_t$ in a group of cells sharing an environmental history $\vec Z[0,t]$ averaged over all possible histories $\langle\sigma^2_{X_t\vert\vec Z[0,t]}\rangle$.

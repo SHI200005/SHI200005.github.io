@@ -30,9 +30,9 @@ Therefore, the default language for the blogs is Chinese. Bilingual blogs have a
 
 I am L Shi. I never do the things I should do. I have neither expertise in a particular thing nor a broad knowledge of everything. Contact me: <slnsinlangmc@sina.com>
 
-L Shi 是北京人，2018-2022在南京大学完成本科学习（并作为[优秀毕业生](https://physics.nju.edu.cn/xgyd/ggtz/20220329/i220215.html)毕业（但是绩点不高）），专业为物理学（本来想拿个生物科学的辅修但是物理都学不会还敢想辅修呢？）。2022秋季起在多伦多大学攻读物理学博士学位。
+L Shi 是北京人，2018-2022在南京大学完成本科学习（并作为[优秀毕业生](https://physics.nju.edu.cn/xgyd/ggtz/20220329/i220215.html)毕业，虽然并不优秀），专业为物理学（本来想拿个生物科学的辅修但是物理都学不会还敢想辅修呢？）。2022秋季起在多伦多大学攻读物理学博士学位。
 
-L Shi came from [Beijing](https://en.wikipedia.org/wiki/Beijing) and got a bachelor's degree in science from [Nanjing University](https://en.wikipedia.org/wiki/Nanjing_University) (and graduated as an [outstanding graduate](https://physics.nju.edu.cn/xgyd/ggtz/20220329/i220215.html) (but with a *not high* GPA)), majoring in Physics (the author wanted to get a minor in Biological Sciences but **how dare** the author think about a minor when could not even learn Physics?) The author is pursuing a PhD in Physics at the University of Toronto starting Fall 2022.
+L Shi came from [Beijing](https://en.wikipedia.org/wiki/Beijing) and got a bachelor's degree in science from [Nanjing University](https://en.wikipedia.org/wiki/Nanjing_University) (and graduated as an [outstanding graduate](https://physics.nju.edu.cn/xgyd/ggtz/20220329/i220215.html), but I was not outstanding), majoring in Physics (the author wanted to get a minor in Biological Sciences but **how dare** the author think about a minor when could not even learn Physics?) The author is pursuing a PhD in Physics at the University of Toronto starting Fall 2022.
 
 这是现在我在哪：[Shi, Linan - physics.utoronto.ca](https://www.physics.utoronto.ca/members/shi-linan/)。如果需要联系我，即使是学术问题，如果和我现在在 UofT 的工作无关，也请不要用我的工作邮箱。请用我的私人邮箱。谢谢！
 
