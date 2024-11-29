@@ -270,7 +270,7 @@ The weak law of large number: for i.i.d. samples $$X_i$$, $$\displaystyle\bar X=
 
 Sum $$X=\displaystyle\sum_{i=1}^{N}x_i$$, $$x_i$$ are i.i.d. from a distribution. We have $$\langle X^n\rangle_c=N\langle x^n\rangle_c$$. Construct $$\displaystyle y=\frac{X-N\langle x\rangle_c}{\sqrt N}$$, so $$\langle y^n\rangle_c\propto N^{1-n/2}$$. As $$N\rightarrow\infty$$, **only the second cumulant survives**, and the PDF for $$y$$ converges to the **normal distribution**, $$\displaystyle\lim_{N→\infty}p(y=\frac{\displaystyle\sum_{i=1}^N x_i-N\langle x \rangle_c}{\sqrt N})=\frac{1}{\sqrt{2\pi\langle x^2\rangle_c}}\exp(-\frac{y^2}{2\langle x^2\rangle_c})$$. 
 
-- 特例（学 Lyapunov 之前用这个引出）：伯努利试验次数很多时，成功次数总和 $$S_n$$ 的分布符合正态分布，归一化变量 $$\displaystyle S_n=\frac{S_n-E(S_n)}{\sqrt{\text{Var}(S_n)}}$$~$$N(0,1)$$。证明详见 Garrity, All the math you need to know... chapter 18.5，因为试验次数多，处理大阶乘时用到了 [Stirling's Approximation]().
+- 特例（学 Lyapunov 之前用这个引出）：伯努利试验次数很多时，成功次数总和 $$S_n$$ 的分布符合正态分布，归一化变量 $$\displaystyle S_n=\frac{S_n-E(S_n)}{\sqrt{\text{Var}(S_n)}}$$~$$N(0,1)$$。证明详见 Garrity, All the math you need to know... chapter 18.5，因为试验次数多，处理大阶乘时用到了 [Stirling's Approximation](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula).
 
 ## 后记
 
