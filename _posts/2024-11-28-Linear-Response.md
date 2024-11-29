@@ -30,7 +30,7 @@ With this transform, the problem $$\ddot x+2\gamma\dot x+\omega_0^2x=f(t)$$ is c
 Now solve $$\displaystyle\frac{\partial^2\chi(t)}{\partial t^2}+2\gamma\frac{\partial\chi(t)}{\partial t}+\omega_0^2\chi(t)=\delta(t)$$ with natural boundary conditions.
 
 1. From causality, $$\chi(t)=0$$ when $$t<0$$.
-2. If $$F(t)=\delta(t)$$, then $$x(t)=\chi(t)$$. Since $$x(t)$$ is continuous, then $$\chi(t)$$ is continuous. Therefore, $$\displaystyle\lim_{t\to 0}\chi(0)=0$$.
+2. If $$F(t)=\delta(t)$$, then $$x(t)=\chi(t)$$. Since $$x(t)$$ is continuous, then $$\chi(t)$$ is continuous. Therefore, $$\displaystyle\lim_{t\to 0}\chi(t)=0$$.
 3. Finding $$\displaystyle\frac{\partial\chi(t)}{\partial t}$$ when $$t\to 0$$. For $$\epsilon>0$$ and take $$\epsilon\to 0$$, integrate the second-order PDE with $$t$$ from $$-\epsilon$$ to $$\epsilon$$ and we get $$\displaystyle [\frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}-0] + \gamma[0-0] + \omega_0^2[0-0] =1$$, which is just $$\displaystyle \frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}=1$$.
 
 Having exercised to solve the PDE for $$t>0$$ in our first year (look above), the solution is $$\displaystyle \chi(t)=e^{-\gamma t}(Ae^{i\omega't}+Be^{-i\omega't})$$, where $$\omega'=\sqrt{\omega_0^2-\gamma^2}$$. Plugging in $$\chi(\epsilon)=0$$ and $$\displaystyle\frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}=1$$, we can solve $$A$$ and $$B$$. The final answer is $$\displaystyle\chi(t)=e^{-\gamma t/2}\frac{\sin(\omega't)}{\omega'}$$. Then $$\displaystyle x(t)=\int_{-\infty}^t e^{-\gamma (t-t')}\frac{\sin(\omega'(t-t'))}{\omega'}f(t')dt^\prime$$.
