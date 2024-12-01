@@ -17,27 +17,7 @@ mathjax: true
 | 个人建议参考教材 | 那还用问 当然是詹老师的课件             |
 | 先修课程                | 微积分 电磁学 力学                                |
 
-版本 2024.01.05 Ver0.1 
-
 本文主要参考詹老师的课件，markdown 引用体内为直接引用原文。
-
-## 波动方程
-
-此部分主要来自 Hecht Optics 第二章，我决定先介绍麦克斯韦方程组，然后把对光的描述作为电磁波的特殊形式。真空中电磁波传播满足的微分方程是**波动方程**。
-
-一维波见[力学 - 一维波](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E4%B8%80%E7%BB%B4%E6%B3%A2)。
-
-### 三维波
-
-三维波动方程的解，长啥样难说，要参考对称性，一般来说传播过程中波形是会改变的（例如振幅改变）。如 Hecht 2.9 就导出了球对称波的波函数。
-
-#### 平面波
-
-波前：相位相等的面。普通波的波前太诡异，我们先来看最简单的平面波。
-
-平面波作为波动方程一种很特殊的解的良好品质之一是可以实现传播过程中波形不变，等相面就是相互平行的平面往前匀速跑。由解析几何，与 $$\vec k$$ 垂直的向量 $$\vec r$$ 所在平面满足 $$\vec k\cdot\vec r=\text{const}=a$$​，描述了平面波的一个波前。于是平面波满足 $$\psi(\vec r,t)=G(\vec k\cdot\vec r,t)$$。
-
-我们可以用简谐振动激发这种波，得到**简谐**平面波，波函数：$$\psi(\vec r,t)=Ae^{i\vec k\cdot\vec r\mp\omega t}$$。矢量 $$\vec k$$ 满足 $$k=\displaystyle\frac{2\pi}{\lambda}$$，称作波矢量。homogeneous 的简谐平面波满足 $$A$$ 处处相等。波前的奔跑速度是相速度，和上文一维情况一致。
 
 ## 电磁波的传播
 
@@ -87,9 +67,9 @@ $$
 
 ##### 时谐平面波
 
-定义**阻抗** $$Z=\displaystyle\frac{E_0}{H_0}=\displaystyle\sqrt{\frac{\mu}{\epsilon}}$$  还记得[力学](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E4%B8%80%E7%BB%B4%E6%B3%A2)中的阻抗在一维波传播中的物理意义吗？这里阻抗之后菲涅耳定律用。
+定义**阻抗** $$\displaystyle Z=\frac{E_0}{H_0}=\sqrt{\frac{\mu}{\epsilon}}$$  还记得[力学](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E5%8F%8D%E5%B0%84%E4%B8%8E%E9%80%8F%E5%B0%84)中的阻抗在一维波传播中的物理意义吗？这里阻抗之后菲涅耳定律用。
 
-能量密度 $$\langle w\rangle=\displaystyle\frac{1}{2}\epsilon E_0^2=\displaystyle\frac{1}{2\mu}B_0^2$$，能流密度 $$\langle\vec S\rangle=\displaystyle\frac{1}{2}\sqrt{\displaystyle\frac{\epsilon}{\mu}} E_0^2\vec e_k$$。
+能量密度 $$\displaystyle\langle w\rangle=\frac{1}{2}\epsilon E_0^2=\frac{1}{2\mu}B_0^2$$，能流密度 $$\langle\vec S\rangle=\displaystyle\frac{1}{2}\sqrt{\displaystyle\frac{\epsilon}{\mu}} E_0^2\vec e_k$$。
 
 ### 反射定律和折射定律
 
@@ -117,9 +97,7 @@ $$
 
 描述无极分子构成的介质的介电常数的电子极化而引起的色散模型（回忆[电磁学 - 电介质的行为](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E8%A1%8C%E4%B8%BA)）。有人要问，电子被束缚着，只能原地挣扎，电磁波怎么传播？当然，电磁波的传播不是通过电子像信鸽一样送信传播出去的，传播的是一种运动的形式，电磁波强迫电子极化振荡，这种振荡就是电磁波的体现。
 
-物理模型：用**阻尼谐振子**近似表征电子在振荡的电磁场中被束缚下的运动，电子振荡有个本征频率 $$\omega_0$$。求解[力学 - 受迫振动](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E4%B8%80%E4%B8%AA%E8%87%AA%E7%94%B1%E5%BA%A6%E7%9A%84%E6%8C%AF%E5%8A%A8)方程，得到相对介电常数的解为 $$\epsilon_r(\omega)=1+\chi=1+\displaystyle\frac{\omega_p^2}{\omega_0^2-\omega^2-i\gamma\omega}$$，其中 $$\gamma$$ 为受迫振动方程里的“阻尼系数”，$$\omega_p^2=\displaystyle\frac{Ne^2}{m\epsilon_0}$$ 为介质的等离子体频率。
-
-介电常数的解为复数，其实，我们对它的分析完全可以参照受迫振动的振幅分析，对实部和虚部的物理意义分析可以参见 [David Tong: Lectures on Kinetic Theory - Linear Response](http://www.damtp.cam.ac.uk/user/tong/kintheory/four.pdf)。
+物理模型：忽略电子之间的相互作用力，用**阻尼谐振子**近似表征电子在振荡的电磁场中被束缚下的运动，电子振荡有个本征频率 $$\omega_0$$。求解受迫振动方程 $$\displaystyle\ddot x+\gamma\dot x+eE_0\cos(\omega t)/m=0$$，得到相对介电常数的解为 $$\epsilon_r(\omega)=1+\chi=1+\displaystyle\frac{\omega_p^2}{\omega_0^2-\omega^2-i\gamma\omega}$$，其中 $$\gamma$$ 为受迫振动方程里的“阻尼系数”，$$\omega_p^2=\displaystyle\frac{Ne^2}{m\epsilon_0}$$ 为介质的等离子体频率。介电常数的解为复数，参见 [(En) Linear Response](https://shi200005.github.io/2024/11/28/Linear-Response/)。
 
 如果频率接近共振频率，介电常数存在一个比较大的虚部（dissipative part），介质存在显著的吸收损耗，此区域随着频率增加，折射率反而减小，称为**反常色散**。如果频率远离共振区域，只需要去介电常数的实部，忽略虚部，电磁波传播时的损耗可以忽略。关于此模型中电磁波转播时振幅的衰减、损耗和反常色散区光速超过 $$c$$ 的现象，详见 Griffiths 9.4.3。
 
@@ -291,11 +269,11 @@ $$
 
 该 $$\vec J(\vec x',t)$$ 产生 $$\vec A(\vec x,t)=\vec A(\vec x)e^{-i\omega t}$$，其中 $$\vec A(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\int_{V'}\frac{\vec J(\vec x')}{r}e^{ikr}dV'$$，其中 $$e^{ikr}$$ 时推迟作用因子。
 
-将电荷（源）存在的小区域放置到坐标原点，记 $$R=\vert\vec x\vert$$，$$\vec n=\vec x/R$$。我们通过对 $$r\approx R-\vec n\cdot \vec x'$$ 的近似展开 $$\vec A$$，注意，坟墓中的距离可以扔掉后面的相位项，但分子中关于相位的振荡项不能扔掉相位项。进一步展开结果中的指数因子 $$e^{-ik\vec n\cdot\vec x'}=1-ik\vec n\cdot\vec x'+...$$，得 $$\vec A(\vec x)=\vec A^{(0)}(\vec x)+\vec A^{(1)}(\vec x)+...$$，其中 $$\vec A^{(0)}(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')dV'$$ 称为电偶极辐射，后一项 $$\vec A^{(1)}(\vec x)=-ik\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')\vec n\cdot\vec x'dV'$$ 又可以分解为磁偶极辐射和电四极辐射 $$\vec A^{(1)}(\vec x)=\vec A_m^{(1)}(\vec x)+\vec A_D^{(1)}(\vec x)$$。磁偶极辐射和电四极辐射得功率要远小于电偶极辐射。
+将电荷（源）存在的小区域放置到坐标原点，记 $$R=\vert\vec x\vert$$，$$\vec n=\vec x/R$$。我们通过对 $$r\approx R-\vec n\cdot \vec x'$$ 的近似展开 $$\vec A$$，注意，坟墓中的距离可以扔掉后面的相位项，但分子中关于相位的振荡项不能扔掉相位项。进一步展开结果中的指数因子 $$e^{-ik\vec n\cdot\vec x'}=1-ik\vec n\cdot\vec x'+...$$，得 $$\vec A(\vec x)=\vec A^{(0)}(\vec x)+\vec A^{(1)}(\vec x)+...$$，其中 $$\displaystyle\vec A^{(0)}(\vec x)=\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\int_{V'}\vec J(\vec x')dV'$$ 称为电偶极辐射，后一项 $$\displaystyle\vec A^{(1)}(\vec x)=-ik\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\int_{V'}\vec J(\vec x')\vec n\cdot\vec x'dV'$$ 又可以分解为磁偶极辐射和电四极辐射 $$\vec A^{(1)}(\vec x)=\vec A_m^{(1)}(\vec x)+\vec A_D^{(1)}(\vec x)$$。磁偶极辐射和电四极辐射得功率要远小于电偶极辐射。
 
 #### 电偶极辐射
 
-$$\vec A^{(0)}(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displaystyle\int_{V'}\vec J(\vec x')dV'$$ , $$\displaystyle\langle S_p\rangle=\frac{1}{32\pi^2\epsilon_0c^3}\frac{\omega^4 p^2}{R^2}\sin^2\theta\vec n$$. 
+$$\displaystyle\vec A^{(0)}(\vec x)=\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\int_{V'}\vec J(\vec x')dV'$$ , $$\displaystyle\langle S_p\rangle=\frac{1}{32\pi^2\epsilon_0c^3}\frac{\omega^4 p^2}{R^2}\sin^2\theta\vec n$$. 
 
 - 可以传播很远并伴随有能量的传输；
 - 短波长的辐射功率药远于长波长辐射 -> **天空为什么是蓝色**（电动力学课件 5.3）。
@@ -306,7 +284,7 @@ $$\vec A^{(0)}(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\displays
 
 大二下学近代物理的时候我就特别蒙蔽，玻尔原子模型的问题在于如果电子围绕原子核运动就会不断向外辐射能量。我咋就不知道会向外辐射能量呢？
 
-于是，我们在推迟势部分已经导出运动电荷产生的电磁势和电磁场，现在我们可以进一步导出坡印廷矢量。注意，当考虑向外辐射的能量时，我们只考虑坡印廷矢量与距离成平方反比的项。经过冗长推导，得到辐射功率的 Larmor formula：$$\displaystyle P=\frac{\mu_0q^2a^2}{6\pi c}$$，其中 $$a$$​ 是电荷运动的加速度。
+我们在推迟势部分已经导出运动电荷产生的电磁势和电磁场，现在我们可以进一步导出坡印廷矢量。注意，当考虑向外辐射的能量时，我们只考虑坡印廷矢量与距离成平方反比的项。经过冗长推导，得到辐射功率的 Larmor formula：$$\displaystyle P=\frac{\mu_0q^2a^2}{6\pi c}$$，其中 $$a$$​ 是电荷运动的加速度。
 
 由于此时点电荷会向外辐射能量，根据能量守恒，如果给一个力让中性粒子和带电粒子加速运动，带电粒子会以更小的加速度作为代价。详见 Griffiths。
 
@@ -417,3 +395,4 @@ This part comes from Griffiths chap 12.2.
 
 ### 相对论电磁学
 
+未完待续

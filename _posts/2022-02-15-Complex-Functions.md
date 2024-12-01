@@ -115,6 +115,8 @@ $$\displaystyle\oint_{l,ac}f(z)dz=\displaystyle\sum_{i=1}^n\oint_{l_i,ac}f(z)dz$
 
 上面我们可以看成满足迪里希利条件的函数$$f(x)$$ 在不同频率三角函数的基上展开。这些基相互正交且有无穷多维。如果 $$f(x)$$ 这样展开前后是等效的，且展开系数是唯一的，那么这些基构成的空间就是完备的，是希尔伯特空间。在[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/)中，不同边界条件下用不同基展开，这些基也构成希尔伯特空间。
 
+完备性关系：对于一组完备的标准正交基，有$$\displaystyle\sum_n\vert\phi_n\rangle\langle\phi_n\vert=\boldsymbol{1}$$。概念可参见 Griffiths Quantum Mechanics 3.2.3。应用可参见**一维伊辛模型严格解**（详见以后会有的**高等统计物理**），还是**矩阵 SVD 分解**（详见[机器学习](https://shi200005.github.io/2022/12/05/Machine-Learning/)）。
+
 ### 傅里叶积分
 
 对于**非周期**且满足迪里希利条件的函数$$f(x)$$，可以将其视作**周期为无穷大**的周期函数，且在 $$-\infty<x<\infty$$ **绝对可积**，傅里叶级数也就转化成为傅里叶积分（如果不能满足，请见**拉普拉斯变换**）。
@@ -149,9 +151,7 @@ $$δ$$ 函数即狄拉克函数，用于研究物理学中的质点、点电荷�
 
 详见[复变函数-拉普拉斯变换及其应用](https://shi200005.github.io/download_file/Complex_Functions_Laplace.pdf)。和傅里叶变换一样，傅里叶变换和微分方程的求解联系也在于**导数定理**——傅里叶变换的基本性质中应用最多的便是**导数定理**和**卷积定理**。
 
-求解偏微分方程，详见[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E6%B3%95)。
-
-解**线性响应**的问题—— [(En) fan2023effect](https://shi200005.github.io/2023/10/30/fan2023effect/) 和 [Linear Response - (En) Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/#linear-response)（后者我还没写）。
+常用于求解非齐次偏微分方程，详见[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E6%B3%95)。
 
 把微分方程做拉普拉斯变换求解后怎么变回去？没傅里叶变换那么容易，一般运用各种定理，然后查表，我一般就直接问 ChatGPT 了。
 

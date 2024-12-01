@@ -32,7 +32,7 @@ mathjax: true
 
 注意：鞠老师的习题解与课本习题在序号上并不是对应的，还请看具体指出是课本习题序号还是习题解序号。
 
-版本 2022.03.16 Ver0.1, 2022.03.18 Ver0.2, 2023.12.20 Ver1.0
+课外阅读：理论力学与机器学习——[Lagrangian Neural Networks](https://greydanus.github.io/2020/03/10/lagrangian-nns/), [Hamiltonian Neural Networks](https://greydanus.github.io/2019/05/15/hamiltonian-nns/). 我自个儿还没看，有机会看看。
 
 ## 虚功原理 达朗贝尔原理
 
@@ -40,7 +40,7 @@ mathjax: true
 
 - 概念：几何约束、运动约束、（非）完整约束、（非）定常约束、约束力、主动力。
 
-  **完整约束**：可积分的运动约束与几何约束在物理实质上没有区别，合称为完整约束，e.g. 无滑动的滚动。
+  **完整约束**：可积分的运动约束与几何约束在物理实质上没有区别，合称为完整约束，e.g., 无滑动的滚动。
 
 - 带有约束的力学问题，按“牛顿方式”来求解时，未知数增多，方程个数相应地增多。
 
@@ -66,9 +66,8 @@ mathjax: true
 
 约束力的求解——[拉格朗日乘子法](https://shi200005.github.io/2021/09/30/Calculus/#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95)（虚功原理中约束力被甩掉了，如果要求怎么办？）
 
-- 一开始可以不承认相应的约束条件。换句话说，在选取广义坐标时，可以暂不考虑相应的约束条件。这样选取的广义坐标实际上并不独立，他们之间有相应的约束条件相联系。具体见相关笔记。
+- 一开始可以不承认相应的约束条件。换句话说，在选取广义坐标时，可以暂不考虑相应的约束条件。这样选取的广义坐标实际上并不独立，他们之间有相应的约束条件相联系。具体见相关笔记。实操起来计算量巨大，我没有一次能独立算对的（逃
 
-  评论：实操起来计算量巨大，我没有一次能独立算对的（逃
 
 ### 达朗贝尔原理
 
@@ -123,7 +122,7 @@ mathjax: true
   
   - $$\displaystyle\frac{\partial L}{\partial q_\beta}=0$$（$$q_\beta$$ 是可遗坐标）-> $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial \dot q_\beta}=0$$ -> 广义动量守恒 $$p_\beta=\text{const}$$ 成为广义动量积分
   
-  - 拉格朗日系统并不以牛顿第三定律为先决条件，而是根据某广义坐标是否为可遗坐标，也可以处理电磁场问题（其中质点机械运动动量并不守恒，在拉格朗日函数中计入广义势之后，广义动量包括电磁场的动量，广义动量守恒）。
+  - 拉格朗日系统并不以牛顿第三定律为先决条件，而是根据某广义坐标是否为可遗坐标，也可以处理电磁场问题（其中质点机械运动动量并不守恒，在拉格朗日函数中计入广义势之后，广义动量包括[电磁场的动量](https://shi200005.github.io/2022/03/29/Electromagnetism/#momentum)，广义动量守恒）。
   
   [广义能量积分](https://shi200005.github.io/download_file/ACM_Generalized_Energy.pdf) $$H=\displaystyle\sum_{\alpha=1}^sp_\alpha\dot q_\alpha-L$$
   
@@ -157,12 +156,12 @@ mathjax: true
 
 我们关心**两体问题**，因为三体问题是邪恶的（见下文哈密顿力学-泊松括号-泊松定理）。如何在拉格朗日动力学的框架下简化两题问题？重点：理解《力学》中讨论过的[质心系](https://shi200005.github.io/2021/10/02/Classical-Mechanics/#%E8%B4%A8%E7%82%B9%E7%B3%BB%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9A%84%E8%BF%90%E5%8A%A8%E5%AE%9A%E7%90%86)。
 
-> 采用直角坐标系研究质心的运动，采用极坐标系研究第二个质点相对于第一个质点的相对运动......得到拉格朗日函数 $$L=\frac{1}{2}m_0(\dot x_0^2+\dot y_0^2+\dot z_0^2)+\frac{1}{2}m^\prime(\dot\rho^2+\rho^2\dot\varphi^2)-V(\rho)$$.  其中 $$m_0$$ 是质心质量，$$m^\prime$$ 是约化质量。
+> 采用直角坐标系研究质心的运动，采用极坐标系研究第二个质点相对于第一个质点的相对运动......得到拉格朗日函数 $$\displaystyle L=\frac{1}{2}m_0(\dot x_0^2+\dot y_0^2+\dot z_0^2)+\frac{1}{2}m^\prime(\dot\rho^2+\rho^2\dot\varphi^2)-V(\rho)$$.  其中 $$m_0$$ 是质心质量，$$m^\prime$$ 是约化质量。
 
 观察拉格朗日函数，显然质心动量能量守恒，甩掉。相对运动具有
 
 - $$\varphi$$ 是可遗坐标，质点相对于极点的角动量守恒 $$h=\rho^2\dot\varphi$$.
-- $$L$$ 不显含时间，机械能守恒 $$E^\prime=\frac{1}{2}m^\prime\dot\rho^2+\frac{1}{2}m^\prime\frac{h^2}{\rho^2}+V(\rho)$$. 通常称 $$V_{\text{eff}}(\rho)=\frac{1}{2}m^\prime\frac{h^2}{\rho^2}+V(\rho)$$ 为有效势能，用于研究相对径向的运动。
+- $$L$$ 不显含时间，机械能守恒 $$\displaystyle E^\prime=\frac{1}{2}m^\prime\dot\rho^2+\frac{1}{2}m^\prime\frac{h^2}{\rho^2}+V(\rho)$$. 通常称 $$\displaystyle V_{\text{eff}}(\rho)=\frac{1}{2}m^\prime\frac{h^2}{\rho^2}+V(\rho)$$ 为有效势能，用于研究相对径向的运动。
 
 > 与可遗坐标对应的广义动量守恒，给解算带来不少方便，可遗坐标的个数越多，自然就越方便。同一个问题，由于广义坐标选取方法不同，可遗坐标的有无或个数随之就不同。例如，研究有心力问题时，如果选用直角坐标，那就没有一个可遗坐标，但如果变化到平面极坐标系，则极角 $$\varphi$$ 就是可遗坐标。（9.1.1 正则变换的条件）
 
@@ -172,31 +171,17 @@ mathjax: true
 
 ### 引力 开普勒行星运动定律
 
-著名平方反比引力：万有引力。引力情况离心率大于还是小于 1 对应相对运动机械能是正还是负。轨道方程 $$\rho=\frac{p}{1+\epsilon\text{cos}(\sigma+C)}$$，其中离心率 $$\epsilon=\sqrt{1+\frac{2E^\prime h^2m^\prime}{m^2k^4}}$$
+著名平方反比引力：万有引力。引力情况离心率大于还是小于 1 对应相对运动机械能是正还是负。轨道方程 $$\displaystyle \rho=\frac{p}{1+\epsilon\text{cos}(\sigma+C)}$$，其中离心率 $$\displaystyle \epsilon=\sqrt{1+\frac{2E^\prime h^2m^\prime}{m^2k^4}}$$
 
-平方反比引力下的椭圆轨道：半长轴 $$a=\frac{mk^2}{2\vert E^\prime\vert}$$、半短轴 $$b=h\sqrt{\frac{m^\prime}{2\vert E^\prime\vert}}$$、能量 $$E^\prime=-\frac{mk^2}{2a}$$。
+平方反比引力下的椭圆轨道：半长轴 $$\displaystyle a=\frac{mk^2}{2\vert E^\prime\vert}$$、半短轴 $$\displaystyle b=h\sqrt{\frac{m^\prime}{2\vert E^\prime\vert}}$$、能量 $$\displaystyle E^\prime=-\frac{mk^2}{2a}$$。
 
-引力下的圆轨道：稳定性 $$\frac{F^\prime(r_0)}{F(r_0)}+\frac{3}{r_0}>0$$ -> 稳定。星际航行怎么行。
+引力下的圆轨道：稳定性 $$\displaystyle \frac{F^\prime(r_0)}{F(r_0)}+\frac{3}{r_0}>0$$ -> 稳定。星际航行怎么行。
 
 ### 斥力 散射问题
 
 斥力情况（由于在两题问题中规定距离无穷远相互作用势能为 0）相对运动机械能必为正，离心率必大于 1，也就对应双曲线轨道。
 
-卢瑟福 α 粒子散射实验：先用套路在质心系求解相对运动散射角 $$\theta$$，然后转化到静止（实验室）坐标系求散射角 $$\Theta$$。关于散射后的例子关于散射角 $$\theta$$ 的分布，导出**散射截面**的**卢瑟福公式** $$\sigma(\theta)=\frac{1}{4}(\frac{ZZ^\prime e^2}{2eE^\prime})\frac{1}{\text{sin}^4\frac{\theta}{2}}$$。然后问题来了，怎么转化成实验室坐标系下的散射截面 $$\sigma(\Theta)$$？太复杂了！不过别担心，卢瑟福的实验里金原子核和 $$\alpha$$ 粒子的质量差别很大，来个近似。
-
-### 位力定理（Virial Theorem）
-
-> The word **virial** for the right-hand side of the equation derives from *vis*, the [Latin](https://en.wikipedia.org/wiki/Latin) word for "force" or "energy", and was given its technical definition by [Rudolf Clausius](https://en.wikipedia.org/wiki/Rudolf_Clausius) in 1870.[[1\]](https://en.wikipedia.org/wiki/Virial_theorem#cite_note-1) ---[Wikipedia](https://en.wikipedia.org/wiki/Virial_theorem)
-
-梁老师书中把这个定理放在哈密顿力学刘维尔定理之后，但我不是很明白和哈密顿动力学有什么关联，我个人把它放在这里。
-
-$$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_i$$ 指动量），取 $$\displaystyle\lim_{\tau\rightarrow\infty}\langle\frac{dS}{dt}\rangle$$，得 $$\langle T\rangle=-\frac{1}{2}\langle\displaystyle\sum_{i=1}^n\mathbf F_i\cdot\mathbf r_i\rangle$$。
-
-【GRAD-UPDATE】研究随机过程统计量的系综平均用到的数学手段也很像，详见 [(En) hilfinger2011separating](https://shi200005.github.io/2023/10/02/hilfinger2011separating/)。
-
-例：两粒子有心力 $$r^n$$ 作用，势能满足 $$V=kr^{n+1}$$，位力定理给出 $$\langle T\rangle=\frac{n+1}{2}\langle V\rangle$$。对于平方反比有心力，$$T=-\frac{1}{2}\langle V\rangle$$。解答了我高中时代的疑惑。
-
-例：推导[理想气体压强方程](https://shi200005.github.io/2022/02/24/Thermodynamics/#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E9%9B%B6%E5%AE%9A%E5%BE%8B) $$pV=nkT$$。
+卢瑟福 α 粒子散射实验：先用套路在质心系求解相对运动散射角 $$\theta$$，然后转化到静止（实验室）坐标系求散射角 $$\Theta$$。关于散射后的例子关于散射角 $$\theta$$ 的分布，导出**散射截面**的**卢瑟福公式** $$\displaystyle \sigma(\theta)=\frac{1}{4}(\frac{ZZ^\prime e^2}{2eE^\prime})\frac{1}{\text{sin}^4\frac{\theta}{2}}$$。然后问题来了，怎么转化成实验室坐标系下的散射截面 $$\sigma(\Theta)$$？太复杂了！不过别担心，卢瑟福的实验里金原子核和 $$\alpha$$ 粒子的质量差别很大，来个近似。
 
 ## 小振动
 
@@ -214,20 +199,17 @@ $$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_
 
 ### 哈密顿正则方程
 
-<span style="color: red;">此部分下文均讨论只有**完整约束**，并且**主动力**都是**具有势能或广义势能**的，</span>即拉格朗日方程为 $$\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha}=0$$。
+<span style="color: red;">此部分下文均讨论只有**完整约束**，并且**主动力**都是**具有势能或广义势能**的，</span>即拉格朗日方程为 $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha}=0$$。
 
-**勒让德变换**：利用复合函数微分法则（参见[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6)），$$L(q,\dot q,t)$$ -> $$\bar L(q,p,t)$$，运动规律微分方程（原为拉格朗日方程）如何改变？构造 $$H=\displaystyle\sum_{\beta=1}^sp_\beta\dot q_\beta-L$$，这个 $$H$$ 我们曾在“运动积分”见过的，然而独立变量的选择发生了改变。运动规律成为看起来很好看的**哈密顿正则方程**。哈密顿力学中，以广义动量、广义坐标、时间为变量的系统中，运动规律由哈密顿正则方程给出。
+[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)：，$$L(q,\dot q,t)$$ -> $$\bar L(q,p,t)$$，运动规律微分方程（原为拉格朗日方程）如何改变？构造 $$H=\displaystyle\sum_{\beta=1}^sp_\beta\dot q_\beta-L$$，这个 $$H$$ 我们曾在“运动积分”见过的，然而独立变量的选择发生了改变。运动规律成为看起来很好看的**哈密顿正则方程**。哈密顿力学中，以广义动量、广义坐标、时间为变量的系统中，运动规律由哈密顿正则方程给出。例：[哈密顿力学](https://shi200005.github.io/download_file/ACM_Hamiltonian.pdf)。
 $$
 \begin{cases}
-\frac{\partial H}{\partial q_\alpha}=-\dot p_\alpha \\
-\frac{\partial H}{\partial p_\alpha}=\dot q_\alpha	\quad(\alpha=1,2,...,s).
+\displaystyle\frac{\partial H}{\partial q_\alpha}=-\dot p_\alpha \\
+\displaystyle\frac{\partial H}{\partial p_\alpha}=\dot q_\alpha	\quad(\alpha=1,2,...,s).
 \end{cases}
 $$
 
 - P.S. “正则”的意思是形式简单而对称。对称到打字靠复制粘贴再改改都很方便。
-- 勒让德变换请见教材 7.1.2，在[热力学 - 麦克斯韦关系](https://shi200005.github.io/2022/02/24/Thermodynamics/#%E5%9D%87%E5%8C%80%E7%B3%BB%E7%9A%84%E5%B9%B3%E8%A1%A1%E6%80%A7%E8%B4%A8)的推导中很重要。
-
-例：[哈密顿力学](https://shi200005.github.io/download_file/ACM_Hamiltonian.pdf)。
 
 ### 刘维尔定理
 
@@ -235,17 +217,31 @@ $$
 
 [统计物理 - 统计系综理论](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/#%E7%BB%9F%E8%AE%A1%E7%B3%BB%E7%BB%BC%E7%90%86%E8%AE%BA)（刘维尔定理）。把广义坐标和广义动量当作直角坐标而构成 $$2s$$ 维的空间叫做相空间。哈密顿正则方程的重要性：刘维尔定理是 $$2s$$ 维的相空间中的定理，在普通空间或 $$s$$ 维的位形空间中并不存在类似的定理。
 
+### 位力定理（Virial Theorem）
+
+> The word **virial** for the right-hand side of the equation derives from *vis*, the [Latin](https://en.wikipedia.org/wiki/Latin) word for "force" or "energy", and was given its technical definition by [Rudolf Clausius](https://en.wikipedia.org/wiki/Rudolf_Clausius) in 1870.[[1\]](https://en.wikipedia.org/wiki/Virial_theorem#cite_note-1) ---[Wikipedia](https://en.wikipedia.org/wiki/Virial_theorem)
+
+梁老师书中把这个定理放在哈密顿力学刘维尔定理之后，但我不是很明白和哈密顿动力学有什么关联，我个人把它放在这里。
+
+$$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_i$$ 指动量），取 $$\displaystyle\lim_{\tau\rightarrow\infty}\langle\frac{dS}{dt}\rangle$$，得 $$\displaystyle\langle T\rangle=-\frac{1}{2}\langle\sum_{i=1}^n\mathbf F_i\cdot\mathbf r_i\rangle$$。
+
+【GRAD-UPDATE】研究随机过程统计量的系综平均用到的数学手段也很像，详见 [(En) hilfinger2011separating](https://shi200005.github.io/2023/10/02/hilfinger2011separating/)。
+
+例：两粒子有心力 $$r^n$$ 作用，势能满足 $$V=kr^{n+1}$$，位力定理给出 $$\displaystyle\langle T\rangle=\frac{n+1}{2}\langle V\rangle$$。对于平方反比有心力，$$\displaystyle T=-\frac{1}{2}\langle V\rangle$$。解答了我高中时代的疑惑。
+
+例：推导[理想气体压强方程](https://shi200005.github.io/2022/02/24/Thermodynamics/#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E9%9B%B6%E5%AE%9A%E5%BE%8B) $$pV=nkT$$。
+
 ### 泊松括号
 
 把任意力学量用广义坐标和广义动量表示，$$\varphi(p,q,t)$$。两个力学量的**泊松括号**为 $$[\varphi,\psi]=\displaystyle\sum_{\alpha=1}^s(\frac{\partial\varphi}{\partial q_\alpha}\frac{\partial\psi}{\partial p_\alpha}-\frac{\partial\varphi}{\partial p_\alpha}\frac{\partial\psi}{\partial q_\alpha})$$。
 
-于是，力学量随时间变化率 $$\frac{d\varphi}{dt}=\frac{\partial\varphi}{\partial t}+[\varphi,H]$$。
+于是，力学量随时间变化率 $$\displaystyle\frac{d\varphi}{dt}=\frac{\partial\varphi}{\partial t}+[\varphi,H]$$。
 
 基本泊松括号 $$[q_\alpha,q_\beta]=0$$，$$[p_\alpha,p_\beta]=0$$，$$[q_\alpha,p_\beta]=\delta_{\alpha\beta}$$。
 
 #### 泊松定理 可积系统
 
-运动积分 $$\varphi$$ 满足 $$\frac{d\varphi}{dt}=0$$ 即 $$[\varphi,H]=-\frac{\partial\varphi}{\partial t}$$。
+运动积分 $$\varphi$$ 满足 $$\displaystyle\frac{d\varphi}{dt}=0$$ 即 $$\displaystyle[\varphi,H]=-\frac{\partial\varphi}{\partial t}$$。
 
 雅可比恒等式 $$[\varphi,[\psi,\theta]]+[\psi,[\theta,\varphi]]+[\theta,[\varphi,\psi]]=0$$。
 
@@ -265,23 +261,17 @@ $$
 
 #### 量子力学  量子泊松括号（对易子）
 
-正则量子化 $$[X,Y]\rightarrow\frac{1}{i\hbar}[\hat X,\hat Y]=\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$。
+正则量子化 $$\displaystyle[X,Y]\rightarrow\frac{1}{i\hbar}[\hat X,\hat Y]=\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$。
 
-[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)中的两个力学量 $$\hat X$$ 和 $$\hat Y$$ 是否可以同时具有确定的值就看它们的量子泊松括号 $$\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$ 是否为零。
+[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)中的两个力学量 $$\hat X$$ 和 $$\hat Y$$ 是否可以同时具有确定的值就看它们的量子泊松括号 $$\displaystyle\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$ 是否为零。
 
 ## 力学变分原理
 
 Significance: 见梁老师本章引言。
 
-### 变分法初步
-
-一般地说，一个变量 $$J$$，如果其取值取决于函数关系 $$y=y(x)$$，就叫做函数 $$y(x)$$ 的**泛函**，记作 $$J[y(x)]$$。求泛函的极值问题就叫做**变分**问题。把变分问题转化为求解微分方程——**欧拉方程**。欧拉方程是变分问题所必须满足的**必要条件**。需要满足约束条件时，用拉格朗日乘子法处理欧拉方程。
-
-一个简单的例子：$$J[y(x)]=\displaystyle\int_a^bF(x,y,y^\prime)dx$$，假设边界不变 $$\delta y\vert_a^b=0$$，则 $$J[y(x)]$$ 取极值（$$\delta J[y]=\displaystyle\int_a^b[\frac{\partial F}{\partial y}-\frac{d}{dx}(\frac{\partial F}{\partial y^\prime})]\delta ydx=0$$）的必要条件是 $$\frac{\partial F}{\partial y}-\frac{d}{dx}(\frac{\partial F}{\partial y^\prime})=0$$，或 $$\frac{\partial F}{dx}+\frac{d}{dx}(y^\prime\frac{\partial F}{\partial y^\prime}-F)=0$$。详情请见[力学变分原理](https://shi200005.github.io/download_file/ACM_Functional.pdf)。多变量推广、高阶导推广、有约束推广......
-
 ### 哈密顿原理
 
-哈密顿原理：力学系统的动力学归结为一个变分原理：力学系统从时刻 $$t_1$$ 到时刻 $$t_2$$ 的一切可能运动之中，使**哈密顿作用量** $$S=\displaystyle\int_{t_1}^{t_2}L(t,q,\dot q)dt$$ 取极值的运动才是实际发生的运动。
+哈密顿原理：力学系统的动力学归结为一个[变分原理](https://shi200005.github.io/2021/09/30/Calculus/#%E5%8F%98%E5%88%86%E6%B3%95%E5%88%9D%E6%AD%A5)：力学系统从时刻 $$t_1$$ 到时刻 $$t_2$$ 的一切可能运动之中，使**哈密顿作用量** $$S=\displaystyle\int_{t_1}^{t_2}L(t,q,\dot q)dt$$ 取极值的运动才是实际发生的运动。
 
 - 位形空间的哈密顿原理：$$\delta \displaystyle\int_{t_1}^{t_2}L(q,\dot q,t)dt=0$$ <-> $$\displaystyle\int_{t_1}^{t_2}\displaystyle\sum_{\alpha=1}^s(\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha})\delta q_\alpha=0$$（拉格朗日方程）.
 
@@ -289,21 +279,21 @@ Significance: 见梁老师本章引言。
 
 - 位形世界的哈密顿原理
 
-  将时间 $$t$$ 看作和广义坐标 $$q$$ 地位平等的变量，$$t$$ 相当于第 $$s+1$$ 个广义坐标，这 $$s+1$$ 个广义坐标构成了推广的**位形世界**。......**参数** $$\tau$$，$$\dot q_\alpha=\frac{q_\alpha^\prime}{t^\prime}$$......
+  将时间 $$t$$ 看作和广义坐标 $$q$$ 地位平等的变量，$$t$$ 相当于第 $$s+1$$ 个广义坐标，这 $$s+1$$ 个广义坐标构成了推广的**位形世界**。......**参数** $$\tau$$，$$\displaystyle\dot q_\alpha=\frac{q_\alpha^\prime}{t^\prime}$$......
 
-  修改的拉格朗日函数 $$\Lambda=L(q,t,\frac{q^\prime}{t^\prime})t=\Lambda(q,t,q^\prime,t^\prime)$$，于是哈密顿原理成为 $$\delta\int\Lambda d\tau=0$$。
+  修改的拉格朗日函数 $$\displaystyle\Lambda=L(q,t,\frac{q^\prime}{t^\prime})t=\Lambda(q,t,q^\prime,t^\prime)$$，于是哈密顿原理成为 $$\delta\int\Lambda d\tau=0$$。
 
 ### 最小作用量原理
 
 > 实际上，还有其他形式的最小作用量原理和哈密顿原理相似，最小作用量的名称并不意味着真是运动的作用量永远是最小，而只说明，真实运动的作用量稳定值。只有当积分长度是一个相当小的有限量时，真实运动的作用量才取极小值。
 
-如果拉格朗日函数 $$L$$ 不显含时间（保守系统），修改后的拉格朗日函数 $$\Lambda$$ 中 $$t$$ 是可遗坐标......-> $$\Delta\int\displaystyle\sum_{\alpha=1}^sp_\alpha\dot q_\alpha dt=0$$ **雅可比最小作用量原理**
+如果拉格朗日函数 $$L$$ 不显含时间（保守系统），修改后的拉格朗日函数 $$\Lambda$$ 中 $$t$$ 是可遗坐标......-> $$\displaystyle\Delta\int\sum_{\alpha=1}^sp_\alpha\dot q_\alpha dt=0$$ **雅可比最小作用量原理**
 
 > 在 $$\Delta$$ 的变分中，考虑的时哈密顿函数 $$H$$ 守恒的一切可能的运动（但它们的 $$H$$ 各不相同）。这样，$$t$$ 不再可以任意给定，时间 $$t$$ 的变分 $$\Delta t$$ 不为零，特别是在两端点。
 
 对于一般的力学系统 $$\Delta\int vds=\Delta\int\sqrt{2(E-V)}ds=0$$。
 
-力学以外的变分原理：[几何光学](https://shi200005.github.io/2022/02/25/Optics/)中也有条变分原理，即费马原理 $$\delta\int\frac{1}{u}ds=\frac{1}{c}\delta\int nds=0$$。几何光学是波动光学的短波长极限，这就启发我们也可以把经典力学当作某种波动力学的短波长极限。
+力学以外的变分原理：[几何光学](https://shi200005.github.io/2022/02/25/Optics/)中也有条变分原理，即费马原理 $$\displaystyle\delta\int\frac{1}{u}ds=\frac{1}{c}\delta\int nds=0$$。几何光学是波动光学的短波长极限，这就启发我们也可以把经典力学当作某种波动力学的短波长极限。
 
 ## 正则变换 哈密顿-雅可比方程
 
@@ -351,7 +341,7 @@ $$
 
 如何找到上文中能把正则变量都变成常数（初始值）的正则变换？我们希望 $$K(P,Q,t)=0$$，正则方程就保证了正则变量是常数作为变换后的“动量”。在哈密顿函数代入 $$K=0$$ 的条件，把原来的一阶 linear system of ODEs 变换为一阶 a nonlinear PDE，这就是**哈密顿-雅可比方程**，方程的解叫做**哈密顿主函数** $$S$$，其实就是拉格朗日函数 $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$。
 
-当 $$H$$ 不显含时间，可以把哈密顿-雅可比方程的控件变量与 $$t$$ 分离，令 $$S(q,P,t)=W(q,P)+f(t)$$，得到 $$H(q,\frac{\partial W}{\partial t})=-f^\prime(t)=E$$。也称前面这个方程为**哈密顿-雅可比方程**，$$W(q,P)$$ 为**哈密顿特征函数**。
+当 $$H$$ 不显含时间，可以把哈密顿-雅可比方程的控件变量与 $$t$$ 分离，令 $$S(q,P,t)=W(q,P)+f(t)$$，得到 $$\displaystyle H(q,\frac{\partial W}{\partial t})=-f^\prime(t)=E$$。也称前面这个方程为**哈密顿-雅可比方程**，$$W(q,P)$$ 为**哈密顿特征函数**。
 
 一种特殊的可积系统（见[泊松定理](https://shi200005.github.io/2022/03/30/Advanced-Classical-Mechanics/#%E6%B3%8A%E6%9D%BE%E5%AE%9A%E7%90%86)）：完全可分离的系统，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$。
 
@@ -361,23 +351,23 @@ $$
 
 ### 作用量变量与角变量
 
-物理学中的**周期性运动**中，我们关注其**频率**。分为**天平动**和**转动**（回忆单摆相图）。现只讨论哈密顿特征函数 $$W$$ 可分离为 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;E,C_2,...,C_s)$$ 的情况。变换后的“动量”常数取为**作用量** $$J_\alpha=\oint p_\alpha dq_\alpha$$（对一个周期积分），$$J_\alpha$$ 只是积分常数 $$E,C_2,...,C_s$$ 的函数，于是 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;J_1,J_2,...,J_s)$$。把 $$J_\alpha$$ 的共轭变量 $$\omega_\alpha$$ 叫做**角变量**满足 $$\dot\omega_\alpha=\frac{\partial E}{\partial J_\alpha}$$，是 $$q_\alpha$$ 周期运动的频率。
+物理学中的**周期性运动**中，我们关注其**频率**。分为**天平动**和**转动**（回忆单摆相图）。现只讨论哈密顿特征函数 $$W$$ 可分离为 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;E,C_2,...,C_s)$$ 的情况。变换后的“动量”常数取为**作用量** $$J_\alpha=\oint p_\alpha dq_\alpha$$（对一个周期积分），$$J_\alpha$$ 只是积分常数 $$E,C_2,...,C_s$$ 的函数，于是 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;J_1,J_2,...,J_s)$$。把 $$J_\alpha$$ 的共轭变量 $$\omega_\alpha$$ 叫做**角变量**满足 $$\displaystyle\dot\omega_\alpha=\frac{\partial E}{\partial J_\alpha}$$，是 $$q_\alpha$$ 周期运动的频率。
 
-例：一维谐振子。$$E=(\frac{1}{2\pi}\sqrt{\frac{k}{m}})J$$。**量子力学过渡**：量子化作用量 $$J=nh(n=0,1,2,...)$$，则 $$E=n\frac{h}{2\pi}\omega$$。
+例：一维谐振子。$$\displaystyle E=(\frac{1}{2\pi}\sqrt{\frac{k}{m}})J$$。**量子力学过渡**：量子化作用量 $$J=nh(n=0,1,2,...)$$，则 $$\displaystyle E=n\frac{h}{2\pi}\omega$$。
 
 例：平方反比有心力吸引下的质点周期运动频率。延申：各个坐标周期运动如果有不同的运动频率......
 
 ### 正则微扰理论
 
-> 在力学中，有许许多多的问题是无法精确求解的。但是经常遇见这样的情况，这些无法精确求解的问题与能够严格求解的问题之间，仅有微笑的差别，因而可以在后者严格解的基础上近似求解前者，这就是**微扰理论**。建立在正则变换基础上的正则微扰理论就是微扰理论的一种。
+> 在力学中，有许许多多的问题是无法精确求解的。但是经常遇见这样的情况，这些无法精确求解的问题与能够严格求解的问题之间，仅有微小的差别，因而可以在后者严格解的基础上近似求解前者，这就是**微扰理论**。建立在正则变换基础上的正则微扰理论就是微扰理论的一种。
 
-$$H=H_0+\epsilon H^\prime$$。蒙上眼睛不看微扰，解 $$H_0$$ 假定可以按哈密顿-雅可比方程求解出主函数 $$S(q_1,q_2,...,q_s;\frac{\partial S}{\partial q_1},\frac{\partial S}{\partial q_2},\frac{\partial S}{\partial q_s};t)$$，解出 $$S(q_1,q_2,...,q_s;\alpha_1,\alpha_2,...,\alpha_s;t)=0$$ 一堆积分常数 $$\alpha_\alpha,\beta_\alpha$$ 满足 $$\frac{\partial S}{\partial \alpha_\alpha}=\beta_\alpha$$。现在考虑微扰，这些常数就不在是常数，但是以 $$S$$ 为母函数，正则变换的关系不变，原来求出来的常量是正则变量，满足正则方程 
+$$H=H_0+\epsilon H^\prime$$。蒙上眼睛不看微扰，解 $$H_0$$ 假定可以按哈密顿-雅可比方程求解出主函数 $$\displaystyle S(q_1,q_2,...,q_s;\frac{\partial S}{\partial q_1},\frac{\partial S}{\partial q_2},\frac{\partial S}{\partial q_s};t)$$，解出 $$S(q_1,q_2,...,q_s;\alpha_1,\alpha_2,...,\alpha_s;t)=0$$ 一堆积分常数 $$\alpha_\alpha,\beta_\alpha$$ 满足 $$\displaystyle\frac{\partial S}{\partial \alpha_\alpha}=\beta_\alpha$$。现在考虑微扰，这些常数就不再是常数，但是以 $$S$$ 为母函数，正则变换的关系不变，原来求出来的常量是正则变量，满足正则方程 
 
 
 $$
 \begin{cases}
-\dot\alpha_\alpha=-\frac{\partial(\epsilon H^\prime)}{\partial\beta_\alpha},\\
-\dot\beta_\alpha=-\frac{\partial(\epsilon H^\prime)}{\partial\alpha_\alpha}.
+\displaystyle\dot\alpha_\alpha=-\frac{\partial(\epsilon H^\prime)}{\partial\beta_\alpha},\\
+\displaystyle\dot\beta_\alpha=-\frac{\partial(\epsilon H^\prime)}{\partial\alpha_\alpha}.
 \end{cases}
 $$
 

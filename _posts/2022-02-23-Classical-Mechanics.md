@@ -273,7 +273,7 @@ Morin 书上相关内容整理成的教学材料[力学-质心参考系-柯尼�
 
 ### 波动方程
 
-绳子拉紧，放 $$x$$ 轴上，拉紧。某一段产生了形变（但绳子本身不沿自身方向移动）。通过列解绳子横向位移恢复原状的**经典力学牛顿方程**，做小量近似，绳上微扰传播的波动方程：$$\displaystyle\frac{\partial^2\psi}{\partial x^2}=\frac{1}{v^2}\frac{\partial ^2 \psi}{\partial t^2}$$，其中 $$v=\sqrt{\displaystyle\frac{T}{\mu}}$$，其中 $$T$$ 是绳中张力，$$\mu$$ 是绳子线密度。讲解的文本很多，例如梁昆淼老师的数学物理方法和 Griffiths 电动力学第九章。参照[光学 - 一维波](https://shi200005.github.io/2022/02/25/Optics/#%E4%B8%80%E7%BB%B4%E6%B3%A2)，如果描述一个以一定速度传播，波形不变的行波。此处 $$v$$ 就是行波的波速。[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/)的重点之一就是求解这种线性偏微分方程。
+绳子拉紧，放 $$x$$ 轴上，拉紧。某一段产生了形变（但绳子本身不沿自身方向移动）。通过列解绳子横向位移恢复原状的**经典力学牛顿方程**，做小量近似，绳上微扰传播的波动方程：$$\displaystyle\frac{\partial^2\psi}{\partial x^2}=\frac{1}{v^2}\frac{\partial ^2 \psi}{\partial t^2}$$，其中 $$v=\sqrt{\displaystyle\frac{T}{\mu}}$$，其中 $$T$$ 是绳中张力，$$\mu$$ 是绳子线密度。讲解的文本很多，例如梁昆淼老师的数学物理方法和 Griffiths 电动力学第九章。描述一个以一定速度传播，波形不变的行波，此处 $$v$$ 就是行波的波速。[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/)的重点之一就是求解这种线性偏微分方程。
 
 考虑以一定速度 $$v$$ 传播，传播时波形不变的一维绳上波，$$\psi(x,t)\vert_{t=0}=f(x)$$，其中 $$f(x)$$ 是 $$t=0$$ 时的波形，$$\psi(x,t)$$ 是绳上各点在某时某地的振动情况，显然 $$\psi(x,t)=f(x-vt)$$。参照 Hecht 2.1.1，$$\psi(x,t)=f(x-vt)$$ 对应的偏微分波动方程为 $$\displaystyle\frac{\partial^2\psi}{\partial x^2}=\frac{1}{v^2}\frac{\partial ^2\psi}{\partial t^2}$$。 $$\psi(x,t)=f(x+vt)$$ 也是波动方程的解，对应以 $$-v$$​ 传播的波形。波动方程是**线性** PDE，我们可以把几个波线性**叠加**起来。
 

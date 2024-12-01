@@ -15,49 +15,7 @@ The author wrote an physics article that pointed out a mathematical flaw of "Ans
 | 本人成绩                | 93                                                                                                    |
 | 课程教材                | 徐游《电磁学》科学出版社                                                          |
 | 个人建议参考教材 | 张之翔《电磁学千题解》科学出版社  詹鹏老师电动力学课件  |
-| 先修课程                | 微积分 线性代数   复变函数                                                          |
-
-版本 2021.11.20 Ver0.1, 2022.07.27 Ver0.1.1, 2024.01.05 Ver1.0
-
-本篇为结合熟练的矢量分析、PDE 求解等数学手段后的行文。
-
-第零部分：数学准备
-
-## 矢量与张量运算预备知识
-
-矢量的标积（做功）、矢积（平行四边形有向面积）、混合积（平行六面体体积）。
-
-轴矢量与极矢量
-
- - 极矢量：镜面垂直量反向  e.g., 空间位矢、电场、电偶极矩等。
- - 轴矢量：镜面平行量反向  e.g., 磁矩、磁感应强度等。
- - 极矢量 $$\times$$ 极矢量 $$=$$ 轴矢量。
-
-立体角
-
-- $$dΩ=\frac{dScosθ}{r^2}$$  
-
-  如同平面角转完整个平面是 $$2\pi$$，不难从定义中看出，立体角转完整个空间是 $$4\pi$$。
-
-正交曲线坐标系（直角坐标系、球坐标系、柱坐标系）与场论见[微积分 - 矢量微分算符](https://shi200005.github.io/2021/09/30/Calculus/#%E7%9F%A2%E9%87%8F%E5%BE%AE%E5%88%86%E7%AE%97%E7%AC%A6)。
-
-### 场点与源点
-
-在场论中，常常需要区分**场点** $$\vec x$$ 和**源点** $$\vec x'$$ 。定义算符对场点微分 $$\nabla=\vec e_i\displaystyle\frac{\partial}{\partial x_i}$$，对源点微分 $$\nabla'=\vec e_i\displaystyle\frac{\partial}{\partial x_i'}$$，具体关于**相对位矢** $$\vec r=\vec x-\vec x'$$ 的运算律见电动力学课件。  
-
-### 并矢与张量
-
-**三维欧氏空间**中，零阶张量——标量，一阶张量——三维矢量，二阶张量——张量 $$\overleftrightarrow T$$ 3 阶矩阵。
-
-并矢：把两个矢量两两配对相乘列成矩阵，并不做什么。并矢与矢量的点乘、叉乘。张量与矢量的点乘 -> 并矢与矢量的点乘。并矢与并矢点乘、双点积、叉乘。
-
-矢量空间中的泰勒展开：$$f(\vec x+\vec\delta)=f(\vec x)+\delta_i\displaystyle\frac{\partial}{\partial x_i}f(\vec x)+\displaystyle\frac{1}{2}\delta_i\delta_j\displaystyle\frac{\partial}{\partial x_i}\displaystyle\frac{\partial}{\partial x_j}f(\vec x)+...$$
-
-$$=f(\vec x)+\vec\delta\cdot\nabla f(\vec x)+\displaystyle\frac{1}{2}(\vec\delta\cdot\nabla)(\vec\delta\cdot\nabla)f(\vec x)+...$$
-
-$$=f(\vec x)+\vec\delta\cdot\nabla f(\vec x)+\displaystyle\frac{1}{2}\vec\delta\vec\delta:\nabla\nabla f(\vec x)+...$$
-
----
+| 先修课程                | 微积分 线性代数  复变函数                                                          |
 
 第一部分：建立麦克斯韦方程组
 $$
@@ -81,22 +39,22 @@ $$
 
 ### 固定点电荷——库仑定律
 
-$$\vec F_{12}=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{r_{21}^3}\vec r_{12}$$ 中学的时候学的系数是 $$k$$，现在为啥变成 $$\frac{1}{4\pi\epsilon_0}$$？方便后面高斯定理积分。满足**叠加原理**。
+$$\displaystyle \vec F_{12}=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{r_{21}^3}\vec r_{12}$$ 中学的时候学的系数是 $$k$$，现在为啥变成 $$\displaystyle \frac{1}{4\pi\epsilon_0}$$？方便后面高斯定理积分。满足**叠加原理**。
 
 空间中的电荷源产生电场，试探电荷 $$q$$ 泡在这种电场里，受到的力有一种之和电荷源有关的关系：电荷源在空间中产生了电场 $$\vec E=\displaystyle\frac{1}{4\pi\epsilon_0}\displaystyle\int_{V'}\displaystyle\frac{\vec r}{r^3}\rho(\vec x')dV'$$。对应标量势 $$\varphi(\vec x)=\displaystyle\frac{1}{4\pi\epsilon_0}\displaystyle\int_{V'}\displaystyle\frac{\rho(\vec x')}{r}dV'$$，$$\vec E(\vec x)=-\nabla\varphi(\vec x)$$，完全可以通过矢量分析联系起来。
 
 - 适用条件
   - 真空、点电荷、静止。点电荷相对静止，且相对观察者也静止。可以拓宽到静源 & 动电荷，不能延拓到动源 & 静电荷。
-  - 作为动源，有推迟效，与牛顿第三定律矛盾？这啥玩意来着？见 Ver 0.2 补充吧。或者说见电动力学，笔者将阅读朗道《场论》。（没毕业的我在说什么？毕业的时候还没看，书早送人了。。。）看作一个电荷泡在另一个电荷的场里。如果场源电荷在动，则要考虑场动量。pending！！！！！！
+  - 作为动源，[有推迟效](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E6%8E%A8%E8%BF%9F%E5%8A%BF)。一动一不动的两个点电荷之间的相互作用力与牛顿第三定律矛盾。
 
 **电偶极矩**：等量异号点电荷对 $$q$$，负电荷指向正电荷适量 $$\vec l$$，电偶极矩为 $$\vec p=q\vec l$$。后续我们研究电偶极子在空间产生的电场特点。
 
 ### 高斯定理、环路定理
 
-高斯定理积分形式：电通量 $$\oint_S\vec{E}·d\vec{S}=\frac{1}{\epsilon_0}\displaystyle\sum_{S内}Q$$ (discrete version) $$=\frac{1}{\epsilon_0}\displaystyle\int_{S内}\rho d\tau$$ (continuous version) ；微分形式：$$\nabla\cdot\vec E(\vec x)=\frac{1}{\epsilon_0}{\rho(\vec x)}$$。**有源场**。
+高斯定理积分形式：电通量 $$\displaystyle\oint_S\vec{E}·d\vec{S}=\frac{1}{\epsilon_0}\sum_{S内}Q$$ (discrete version) $$\displaystyle=\frac{1}{\epsilon_0}\int_{S内}\rho d\tau$$ (continuous version) ；微分形式：$$\displaystyle\nabla\cdot\vec E(\vec x)=\frac{1}{\epsilon_0}{\rho(\vec x)}$$。**有源场**。
 
 - 微分形式联想记忆：$$\nabla^2\displaystyle\frac{1}{r}=-4\pi\delta(\vec r)$$。
-- 可以推广到非稳态的动态场，$$\nabla\cdot\vec E(\vec x,t)=\frac{1}{\epsilon_0}{\rho(\vec x,t)}$$。
+- 可以推广到非稳态的动态场，$$\displaystyle\nabla\cdot\vec E(\vec x,t)=\frac{1}{\epsilon_0}{\rho(\vec x,t)}$$。
 
 环路定理积分形式：$$\displaystyle\oint_l\vec E\cdot d\vec l=0$$；微分形式：$$\nabla\times \vec E=0$$。**无旋场**（保守场、有心力场）。
 
@@ -112,28 +70,28 @@ $$\vec F_{12}=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{r_{21}^3}\vec r_{12}$$ 中�
 
 #### 电荷守恒、连续性方程
 
-电流 $$I=\frac{\Delta Q}{\Delta t}=\displaystyle\int_S\vec J\cdot d\vec S$$，其中 $$\vec j$$ 是电流密度矢量  -- **电荷守恒**  -->  电荷-电流连续性方程 $$\nabla\cdot\vec J=-\frac{\partial\rho}{\partial t}$$
+电流 $$\displaystyle I=\frac{\Delta Q}{\Delta t}=\int_S\vec J\cdot d\vec S$$，其中 $$\vec J$$ 是电流密度矢量  -- **电荷守恒**  -->  电荷-电流连续性方程 $$\displaystyle\nabla\cdot\vec J=-\frac{\partial\rho}{\partial t}$$
 
 #### 欧姆定律
 
-$$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$$。微分形式：$$\vec E=\rho\vec j$$, $$\vec j=\sigma \vec E$$。经典模型：Drude 模型。
+$$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\frac{1}{\rho}$$。微分形式：$$\vec E=\rho\vec j$$, $$\vec j=\sigma \vec E$$。经典模型：Drude 模型。
 
 - 千题解链接 [4.2.41] 漏电电容器。
 
 ## 真空中运动带电粒子产生的磁场
 
-**奥斯特**实验：长直载流导线与之平行放置的磁针受力偏转——**电流的磁效应** one .of the significances: 突破了非接触物体之间只存在有心力的观念。
+**奥斯特**实验：长直载流导线与之平行放置的磁针受力偏转——**电流的磁效应** one of the significances: 突破了非接触物体之间只存在有心力的观念。
 
 ### 安培定律
 
-电流元对电流元施加的作用力：$$\vec F_{12}=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\frac{I_1I_2d\vec l_2\times(d\vec l_1\times\vec r_{12})}{r_{12}^3}=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\frac{\vec J_1dV_1\times(\vec J_2dV_2\times\vec r_{12})}{r_{12}^3}$$。原始形式不好用。
+电流元对电流元施加的作用力：$$\displaystyle\vec F_{12}=\frac{\mu_0}{4\pi}\frac{I_1I_2d\vec l_2\times(d\vec l_1\times\vec r_{12})}{r_{12}^3}=\frac{\mu_0}{4\pi}\frac{\vec J_1dV_1\times(\vec J_2dV_2\times\vec r_{12})}{r_{12}^3}$$。原始形式不好用。
 
 - 电流单位“安培”的定义：放在真空中的两条无限长平行导线，通有相等的稳恒电流，若两导线相距 $$1m$$，而每一导线每米长度上所受另一导线对它的作用力为 $$2\times10^{-7}N$$，则导线上的电流定义为 $$1A$$。
 - 除非是闭合回路，否则不服从作用力与反作用力定律。
 
 ### 毕奥-萨筏尔定律
 
-问：参照电场概念的建立，安培定律能否写成 $$\vec F_{12}=\vec J_1dV_1\times\vec B$$？答：电流源产生的磁场**磁感应强度** $$\vec B$$：$$d\vec B(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\frac{Id\vec l\times\vec r}{r^3}=\displaystyle\frac{\mu_0}{4\pi}\frac{\vec J(\vec x')\times\vec r}{r^3}$$，广延形式 $$\vec B(\vec x)=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\int\frac{\vec J(\vec x')\times\vec r}{r^3}dV'$$。
+问：参照电场概念的建立，安培定律能否写成 $$\vec F_{12}=\vec J_1dV_1\times\vec B$$？答：电流源产生的磁场**磁感应强度** $$\vec B$$：$$\displaystyle d\vec B(\vec x)=\frac{\mu_0}{4\pi}\frac{Id\vec l\times\vec r}{r^3}=\frac{\mu_0}{4\pi}\frac{\vec J(\vec x')\times\vec r}{r^3}$$，广延形式 $$\displaystyle\vec B(\vec x)=\frac{\mu_0}{4\pi}\int\frac{\vec J(\vec x')\times\vec r}{r^3}dV'$$。
 
 ### 高斯定理、环路定理/安培定理
 
@@ -153,9 +111,9 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 前文说过，电流会产生磁场。这个由给定回路磁通变化产生的磁场有什么特点？**楞次定律**：当回路磁通变化时，感应电流所产生的感应磁通总是力图阻止原磁通的变化（能量守恒的必然结果）。
 
-定义**磁通量** $$\Phi_B=\displaystyle\int_S\vec B\cdot d\vec S$$。**感应电动势**：$$\varepsilon=-\displaystyle\frac{d\Phi_B}{dt}=-\displaystyle\int_S(\displaystyle\frac{\partial\vec B}{\partial t})\cdot d\vec S+\displaystyle\oint_l(\vec v\times\vec B)\cdot d\vec l$$，感生电动势 + 动生电动势。注意，这里**感应电场不再是保守场了**。**变化的磁场激发电场**。动生电动势和感生电动势对于参考系是不对称的，我们需要狭义相对论消除。
+定义**磁通量** $$\displaystyle\Phi_B=\int_S\vec B\cdot d\vec S$$。**感应电动势**：$$\displaystyle\varepsilon=-\frac{d\Phi_B}{dt}=-\int_S(\frac{\partial\vec B}{\partial t})\cdot d\vec S+\oint_l(\vec v\times\vec B)\cdot d\vec l$$，感生电动势 + 动生电动势。注意，这里**感应电场不再是保守场了**。**变化的磁场激发电场**。动生电动势和感生电动势对于参考系是不对称的，我们需要狭义相对论消除（pending！！！）。
 
-考虑感生场，积分形式为 $$\varepsilon=\displaystyle\oint_l\vec E\cdot d\vec l=-\displaystyle\int_S\displaystyle\frac{\partial\vec B}{\partial t}\cdot d\vec S$$  微分形式为 $$\nabla\times\vec E=-\displaystyle\frac{\partial \vec B}{\partial t}$$。
+考虑感生场，积分形式为 $$\displaystyle\varepsilon=\oint_l\vec E\cdot d\vec l=-\int_S\frac{\partial\vec B}{\partial t}\cdot d\vec S$$  微分形式为 $$\displaystyle\nabla\times\vec E=-\frac{\partial \vec B}{\partial t}$$。
 
 ### 位移电流
 
@@ -163,11 +121,11 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 ### 自感与互感
 
-**自感**：用于线圈时，回路可能有外来电流、或回路形状及周围磁介质发生变化，此时穿过回路自身的磁通量随之改变，从而在回路中激发感应电动势。$$\Sigma=-L\frac{dI}{dt}$$ 自感电动势将反抗回路中电流的改变。
+**自感**：用于线圈时，回路可能有外来电流、或回路形状及周围磁介质发生变化，此时穿过回路自身的磁通量随之改变，从而在回路中激发感应电动势。$$\displaystyle\Sigma=-L\frac{dI}{dt}$$ 自感电动势将反抗回路中电流的改变。
 
-**互感**：一对相互靠近的感应线圈，因一个或两个载流线圈的电流变化而在对方线圈中激起感应电动势。$$M_{12}=\frac{\Phi_{12}}{I_2}$$，$$M_{21}=\frac{\Phi_{21}}{I_1}$$，若互感问题不涉及铁磁质，从做功角度切入，可以证明 $$M_{21}=M_{12}=M$$。
+**互感**：一对相互靠近的感应线圈，因一个或两个载流线圈的电流变化而在对方线圈中激起感应电动势。$$\displaystyle M_{12}=\frac{\Phi_{12}}{I_2}$$，$$\displaystyle M_{21}=\frac{\Phi_{21}}{I_1}$$，若互感问题不涉及铁磁质，从做功角度切入，可以证明 $$M_{21}=M_{12}=M$$。
 
-无铁磁质感应电路能量 $$L=\frac{1}{2}LI_0^2$$。
+无铁磁质感应电路能量 $$\displaystyle L=\frac{1}{2}LI_0^2$$。
 
 ## 电介质和磁介质
 
@@ -197,9 +155,9 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 #### 极化强度、极化电荷、电位移矢量和极化电流
 
-**极化强度** $$\vec P$$ （单位体积电偶极矩 $$\vec p$$ 代数和）和**极化电荷** $$\rho_P$$..
+**极化强度** $$\vec P$$ （单位体积电偶极矩 $$\vec p$$ 代数和）和**极化电荷** $$\rho_P$$.
 
-- 考虑因为极化而从封闭曲面跑出去的电荷和留在曲面内的 $$\rho_P$$......，得到积分形式 $$\displaystyle\int_V\rho_Pd=-\displaystyle\oint_S\vec P\cdot d\vec S$$；微分形式 $$\rho_P=-\nabla\cdot\vec P$$。均匀介质被均匀极化，内部 $$\rho_P=0$$，只有表面有极化电荷。
+- 考虑因为极化而从封闭曲面跑出去的电荷和留在曲面内的 $$\rho_P$$......，得到积分形式 $$\displaystyle\int_V\rho_Pd=-\oint_S\vec P\cdot d\vec S$$；微分形式 $$\rho_P=-\nabla\cdot\vec P$$。均匀介质被均匀极化，内部 $$\rho_P=0$$，只有表面有极化电荷。
 - 两种介质分界面，微分形式失效，**通过积分形式推出**分界面极化电荷分布 $$\sigma_P=-(\vec P_2-\vec P_1)\cdot\mathbf{\hat{n}}_{21}$$。
 
 **电位移矢量**（**电感应强度**） $$\vec D$$（辅助物理量）
@@ -222,7 +180,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 #### 分子环形电流模型
 
-安培的**分子电流图像**：分子被旋转的电子环绕，是个小磁体。分子电流整齐排列产生宏观磁化。形成**磁矩** $$\vec m=i\vec S=\pi ia^2\vec n$$。也叫**磁偶极矩**，因为其在在很远处激发的磁场满足 $$\vec B=\frac{\mu_0}{4\pi}(-\frac{\vec m}{r^3}+\frac{3(\vec m\cdot\vec r)\vec r}{r^5})$$，和电偶极矩形式一样。
+安培的**分子电流图像**：分子被旋转的电子环绕，是个小磁体。分子电流整齐排列产生宏观磁化。形成**磁矩** $$\vec m=i\vec S=\pi ia^2\vec n$$。也叫**磁偶极矩**，因为其在在很远处激发的磁场满足 $$\displaystyle\vec B=\frac{\mu_0}{4\pi}(-\frac{\vec m}{r^3}+\frac{3(\vec m\cdot\vec r)\vec r}{r^5})$$，和电偶极矩形式一样。
 
 #### 磁介质的行为
 
@@ -237,7 +195,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
    来源；在外磁场作用下，原子/离子磁矩取向与外磁场平行（磁化产生的磁矩大于电子附加磁矩）；无外场时，热涨落与外磁场效应对抗，无法形成有序磁矩
 
- - 铁磁介质（由永久磁铁的分子电流激发，磁滞曲线） （PS. 刘俊明老师，英文名 Ising，英文读爱辛，但德文读伊辛）
+ - 铁磁介质（由永久磁铁的分子电流激发，磁滞曲线） 
 
  - 其实还有反铁磁、亚铁磁等，但本课程范围不涉及
 
@@ -252,7 +210,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 **磁场强度** $$\vec H$$ （辅助物理量）
 
-- 由于我们一般能动地给系统加上 $$\vec J_f$$，然后通过物理学规律求解磁化情况，所以构造关于 $$\vec J_f$$ 的辅助物理量 $$\vec H=\frac{\vec B}{\mu_0}-\vec M$$，于是 $$\nabla\times\vec H=\vec J_f+\displaystyle\frac{\partial\vec D}{\partial t}$$（环路定理），**没有高斯定理**（见下面永久磁铁的 $$\vec H$$ 图）。$$\vec J_f=0$$ 不等于 $$\vec H=0$$。
+- 由于我们一般能动地给系统加上 $$\vec J_f$$，然后通过物理学规律求解磁化情况，所以构造关于 $$\vec J_f$$ 的辅助物理量 $$\displaystyle\vec H=\frac{\vec B}{\mu_0}-\vec M$$，于是 $$\nabla\times\vec H=\vec J_f+\displaystyle\frac{\partial\vec D}{\partial t}$$（环路定理），**没有高斯定理**（见下面永久磁铁的 $$\vec H$$ 图）。$$\vec J_f=0$$ 不等于 $$\vec H=0$$。
 
 <span style="color: red;">于是，我们得到介质中的麦克斯韦方程组之一</span>：$$\nabla\times\vec H=\vec J_f+\displaystyle\frac{\partial\vec D}{\partial t}$$。两种介质分界面，微分形式失效。通过**积分形式**，环路定理给出分界面极化电荷分布 $$\mathbf{\hat{n}}_{21}\times(\vec H_2-\vec H_1)=\alpha_f$$，若分界面没有自由电荷则界面两侧**切向**分量相等；高斯定理给出 $$\mathbf{\hat{n}}_{21}\cdot(\vec B_2-\vec B_1)=0$$，两侧**法向**分量相等。
 
@@ -288,7 +246,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 > 电磁场对带电体系统作用遵守洛伦兹力，这种作用力使得带点系统的机械能发生变化，......，带点系统的机械能增加量应该等于电磁场能量的减少量。......描述电磁场的能量：电磁场的能量密度 $$w$$ 和电磁场能流密度矢量（**坡印亭矢量**） $$\vec s$$。
 
-孤立体系中的电磁场能量和机械能相互转化 $$\displaystyle\int_{\infty}\vec f\cdot\vec vdV=-\displaystyle\frac{d}{dt}\displaystyle\int_{\infty}wdV$$，$$\nabla\cdot\vec s+\displaystyle\frac{\partial w}{\partial t}+\vec f\cdot\vec v=0$$。由于洛伦兹力不做功，$$\vec f\cdot\vec v=\vec J_f\cdot\vec E$$，...，凑出 $$\vec s=\vec E\times\vec H$$, $$\displaystyle\frac{\partial w}{\partial t}=\vec E\cdot\displaystyle\frac{\partial\vec D}{\partial t}+\vec H\cdot\displaystyle\frac{\partial\vec B}{\partial t}$$。并不严格？
+孤立体系中的电磁场能量和机械能相互转化 $$\displaystyle\int_{\infty}\vec f\cdot\vec vdV=-\frac{d}{dt}\int_{\infty}wdV$$，$$\nabla\cdot\vec s+\displaystyle\frac{\partial w}{\partial t}+\vec f\cdot\vec v=0$$。由于洛伦兹力不做功，$$\vec f\cdot\vec v=\vec J_f\cdot\vec E$$，...，凑出 $$\vec s=\vec E\times\vec H$$, $$\displaystyle\frac{\partial w}{\partial t}=\vec E\cdot\frac{\partial\vec D}{\partial t}+\vec H\cdot\frac{\partial\vec B}{\partial t}$$。
 
 经观察，容易发现对于各向同性线性介质 $$w=\displaystyle\frac{1}{2}\epsilon E^2+\displaystyle\frac{1}{2}\mu H^2$$​。电场能 + 磁场能。
 
@@ -296,13 +254,13 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\sigma=\frac{1}{\rho}$
 
 **This part mainly comes from Griffiths 8.2.**
 
-Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation with Newton's third law.
+Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation of Newton's third law.
 
 ###  Momentum
 
 Consider the total electromagnetic force on the charges in volume $$\mathscr V$$  ->  the force per unit $$\vec f=\rho\vec E+\vec J\times\vec B$$. Now transform $$\rho$$, $$\vec J$$ into $$\vec E$$, $$\vec B$$. 
 
-Introduce the **Maxwell stress tensor** $$T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$​.
+Introduce the **Maxwell stress tensor** $$\displaystyle T_{ij}=\epsilon(E_iE_j-\frac{1}{2}\delta_{ij}E^2)+\frac{1}{\mu_0}(B_iB_j-\frac{1}{2}\delta_{ij}B^2)$$.
 
 > Physically, $$\overleftrightarrow T$$ is the force per unit area (or **stress** acting on the surface). More precisely, $$T_{ij}$$ is the force (per unit area) in the $$i$$th direction acting on an element of surface oriented in the $$j$$th direction--"diagonal" elements ($$T_{xx},T_{yy},T_{zz}$$) represents *pressures*, and "off-diagonal" elements ($$T_{xy},T_{xz}$$,etc.) are *shears*.
 
@@ -320,7 +278,7 @@ The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec 
 
 ---
 
-第二部分：一些简单的问题
+第二部分：静电场与静磁场问题
 
 ## 静电场问题
 
@@ -348,28 +306,28 @@ $$
 
 以上便是 PDE 的定解问题，学过数学物理方法，很自然知道求解套路：
 
-- 1.2.29 电荷以 $$cosθ$$ 的电荷密度分布于球面，则球内部为匀强电场。这个场景在[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E8%BD%B4%E5%AF%B9%E7%A7%B0%E7%90%83%E5%87%BD%E6%95%B0---%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%87%BD%E6%95%B0)中会再次出现 -> 勒让德多项式。
+- 1.2.29 电荷以 $$\cosθ$$ 的电荷密度分布于球面，则球内部为匀强电场。这个场景在[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E8%BD%B4%E5%AF%B9%E7%A7%B0%E7%90%83%E5%87%BD%E6%95%B0---%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%87%BD%E6%95%B0)中会再次出现 -> 勒让德多项式。
 
  - 例：[均匀介质球](https://shi200005.github.io/download_file/PDE_Electric.pdf)。重要结论：**介质球内部的极化场是均匀的**。数学工具见[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E8%BD%B4%E5%AF%B9%E7%A7%B0%E7%90%83%E5%87%BD%E6%95%B0---%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%87%BD%E6%95%B0)。
 
 ### 静电边值问题唯一性定理
 
-边界条件可将静电场的空间分布唯一地确定下来。即给定边界条件后，不可能存在不同的静电场分布。19 - 20 秋 期中试题。静电学泊松方程唯一性定理可以看南大现工院李涛老师[课件](https://dsl.nju.edu.cn/litao/electrodynamics/Ch2-b.pdf)，李涛老师也是学物理出身的。
+边界条件可将静电场的空间分布唯一地确定下来。即给定边界条件后，不可能存在不同的静电场分布。19 - 20 秋 期中试题。静电学泊松方程唯一性定理可以看南大现工院李涛老师[课件](https://dsl.nju.edu.cn/litao/electrodynamics/Ch2-b.pdf)。
 
 **电像法**/**镜像法**（Justified by 静电边值问题唯一性定理）
 
 - 经常边界条件没有直接给定，让人头疼。但某些很幸运的情况下，空间电场等效于边界上的电荷被像电荷替代。要求像电荷出于所求解区域之外。
-
  - 例：无限大接地导体板对点电荷产生感应电荷的面电荷分布和空间电场分布。千题解 2.1.45 的答案错误，笨人已用论文严谨论述。
- - 例：均匀带电球面。结论：球内电场为 0，球外电场如同点电荷在球心（可直接用库仑定律求解，开头笨人获奖论文的建模依据）。
+   - 该论文的一个推论：均匀带电球面：球内电场为 0，球外电场如同点电荷在球心（可直接用库仑定律求解）。
+ - 例：在点电荷的电场中放置接地导体球，**就导体球外的静电场而论**，好像不存在导体球，而存在一个特定位置特定电量的点电荷。详见梁老师 10.1 (七) 母函数 例6。
 
 ### 静电场能量
 
-$$W=\displaystyle\frac{1}{2}\displaystyle\int_{\infty}\vec E\cdot\vec DdV=\displaystyle\frac{1}{2}\displaystyle\int_{\infty}\varphi\rho_fdV-\displaystyle\frac{1}{2}\displaystyle\oint_{S}\varphi\vec D\cdot d\vec S$$ 对孤立体系后一项趋向于零。
+$$\displaystyle W=\frac{1}{2}\int_{\infty}\vec E\cdot\vec DdV=\frac{1}{2}\int_{\infty}\varphi\rho_fdV-\frac{1}{2}\oint_{S}\varphi\vec D\cdot d\vec S$$ 对孤立体系后一项趋向于零。
 
-- 真空中 $$W=\displaystyle\frac{1}{2}\displaystyle\int_V\rho Ud\tau+\frac{1}{2}\displaystyle\int_S\sigma UdS$$，从移动电荷静电力做功的功能转化角度，$$\frac{1}{2}$$ 来自静电力做功对称性。 
+- 真空中 $$\displaystyle W=\frac{1}{2}\int_V\rho Ud\tau+\frac{1}{2}\int_S\sigma UdS$$，从移动电荷静电力做功的功能转化角度，$$\displaystyle \frac{1}{2}$$ 来自静电力做功对称性。 
 
-- 例：**平行板电容器**能量  $$W=\frac{1}{2}CU^2$$。
+- 例：**平行板电容器**能量  $$\displaystyle W=\frac{1}{2}CU^2$$。
 
   例（徐游老师书P118）：保持平行板电容器电压，将平行板电容器插入液体电介质中，液面会在电容器中上升（原因：电容器边缘效应）。比较液体重力势能增加和电场能增量。
 
@@ -395,17 +353,17 @@ $$
 $$
 
 
- - 利用高斯定理导出导体表面电场与电荷分布。重要习题：千题解 [2.1.37] $$E=\frac{σ}{ε_0}$$，千题解 [2.1.38] 导体单位面积所受的力 $$\vec f=\frac{σ^2}{2ε_0}\mathbf{\hat{n}}$$。静电场所施加在导体上的压力始终是负压力，驱使导体被拉向电场存在的区域。
+ - 利用高斯定理导出导体表面电场与电荷分布。重要习题：千题解 [2.1.37] $$\displaystyle E=\frac{σ}{ε_0}$$，千题解 [2.1.38] 导体单位面积所受的力 $$\displaystyle\vec f=\frac{σ^2}{2ε_0}\mathbf{\hat{n}}$$。静电场所施加在导体上的压力始终是负压力，驱使导体被拉向电场存在的区域。
 
  - 例：**平行板电容器**
 
-   可直接用库仑定律求解。均匀带电圆环/圆面等轴方向电场 -> 无限大均匀带电圆面产生匀强电场 $$E=\frac{\sigma}{2\epsilon_0}$$，其中 $$\sigma$$ 是带正电圆面的面电荷密度 -> 利用叠加原理，无限大**平行板电容器**板间电场 $$E=\frac{\sigma}{\epsilon_0}$$，其余电场是 0，只要够大，中间就可以看成匀强电场。
+   可直接用库仑定律求解。均匀带电圆环/圆面等轴方向电场 -> 无限大均匀带电圆面产生匀强电场 $$\displaystyle E=\frac{\sigma}{2\epsilon_0}$$，其中 $$\sigma$$ 是带正电圆面的面电荷密度 -> 利用叠加原理，无限大**平行板电容器**板间电场 $$\displaystyle E=\frac{\sigma}{\epsilon_0}$$，其余电场是 0，只要够大，中间就可以看成匀强电场。
 
-   confusion：为啥导体表面电场强度是 $$E=\frac{σ}{ε_0}$$，前文用库仑定律推无限大带电圆面在空间中电场强度 $$E=\frac{σ}{2ε_0}$$？请想，无限大带电圆面两侧电场强度都是 $$E=\frac{σ}{2ε_0}$$，但是导体电荷都在表面，外侧有垂直于表面的电场，内侧电场强度是 0。也就是说，可以把无限大带电导体圆面看成两侧表面面电荷密度都是 $$\frac{\sigma}{2}$$，就没问题了。
+   confusion：为啥导体表面电场强度是 $$\displaystyle E=\frac{σ}{ε_0}$$，前文用库仑定律推无限大带电圆面在空间中电场强度 $$\displaystyle E=\frac{σ}{2ε_0}$$？请想，无限大带电圆面两侧电场强度都是 $$\displaystyle E=\frac{σ}{2ε_0}$$，但是导体电荷都在表面，外侧有垂直于表面的电场，内侧电场强度是 0。也就是说，可以把无限大带电导体圆面看成两侧表面面电荷密度都是 $$\displaystyle\frac{\sigma}{2}$$，就没问题了。
 
    徐游 P77  P.S. 当两个极板所带电量的绝对值不等时，公式中的 $$Q$$ 应为用导线将两极板相连时自正极板流向负极板的电荷。
 
- - 应用：[范德格拉夫起电机](https://en.wikipedia.org/wiki/Van_de_Graaff_generator#Description)。注意，这是范德格拉夫，不是热力学里的范德瓦尔斯，更不是范德格瓦斯。
+ - 应用：[范德格拉夫起电机](https://en.wikipedia.org/wiki/Van_de_Graaff_generator#Description)。
 
 ### 格林函数
 
@@ -415,17 +373,17 @@ $$
 
 #### 电偶极子
 
-推导中，所求点与两电荷距离远大于两电荷间距离，因此我们可以使用一些**泰勒展开**的近似处理库仑定律的分母项~ 结论：电偶极子产生的电势是 $$\Phi(\vec{r})=\frac{1}{4\pi\epsilon_0}\frac{\vec{p}·\vec{r}}{r^3}$$. 梯度是电场 $$\vec E=\frac{1}{4\pi\epsilon_0}(-\frac{\vec p}{r^3}+\frac{3(\vec p\cdot\vec r)\vec r}{r^5})$$.
+推导中，所求点与两电荷距离远大于两电荷间距离，因此我们可以使用一些**泰勒展开**的近似处理库仑定律的分母项~ 结论：电偶极子产生的电势是 $$\displaystyle\Phi(\vec{r})=\frac{1}{4\pi\epsilon_0}\frac{\vec{p}·\vec{r}}{r^3}$$. 梯度是电场 $$\displaystyle\vec E=\frac{1}{4\pi\epsilon_0}(-\frac{\vec p}{r^3}+\frac{3(\vec p\cdot\vec r)\vec r}{r^5})$$.
 
 极坐标求解：见课件 01-P147 附近。或数学物理方法教材。
 
-研究一个小区域内分布的电荷体系，在空间很远处产生的电场。对电荷体系产生电场势函数在三维空间进行高阶泰勒展开。零级——电荷集中于一点产生的电势 $$\propto\frac{1}{R}$$，一级——系统电偶极矩 $$\propto\frac{1}{R^2}$$、二级——系统电四极矩 $$\propto\frac{1}{R^3}$$、三级——系统电八极矩 $$\propto\frac{1}{R^4}$$......
+研究一个小区域内分布的电荷体系，在空间很远处产生的电场。对电荷体系产生电场势函数在三维空间进行[高阶泰勒展开]()。零级——电荷集中于一点产生的电势 $$\displaystyle\propto\frac{1}{R}$$，一级——系统电偶极矩 $$\displaystyle\propto\frac{1}{R^2}$$、二级——系统电四极矩 $$\displaystyle\propto\frac{1}{R^3}$$、三级——系统电八极矩 $$\displaystyle\propto\frac{1}{R^4}$$......
 
 > 电偶极矩考量的是体系是否具有镜面对称性破缺；电四极矩则考量体系是否有球对称破缺。——电动力学讲义
 
 ## 静磁场问题
 
-特殊情况：对于稳恒电流所激发的稳恒电场，本质上是静电场，满足无旋性，因此同样可以引入电势进行描述。注：仅仅靠静电场是无法维持恒定电流的，必须有非静电力的存在。**稳恒电流场** $$\nabla\cdot\vec J(\vec x)=-\frac{\partial\rho}{\partial t}=0$$。注意到此时**没有位移电流**。对于均匀线性各向同性磁性介质，$$\nabla\times\vec B(\vec x)=\nabla\times(\mu\vec H)=\mu\vec J$$。
+特殊情况：对于稳恒电流所激发的稳恒电场，本质上是静电场，满足无旋性，因此同样可以引入电势进行描述。注：仅仅靠静电场是无法维持恒定电流的，必须有非静电力的存在。**稳恒电流场** $$\displaystyle\nabla\cdot\vec J(\vec x)=-\frac{\partial\rho}{\partial t}=0$$。注意到此时**没有位移电流**。对于均匀线性各向同性磁性介质，$$\nabla\times\vec B(\vec x)=\nabla\times(\mu\vec H)=\mu\vec J$$。
 
 
 
@@ -458,14 +416,14 @@ $$
 
 ### 磁矢势
 
-回想[微积分 - 斯托克斯定理](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F) $$\displaystyle\oint_{l}\vec A\cdot d\vec l=\displaystyle\int_{S}(\nabla\times\vec A)\cdot d\vec S=\displaystyle\int_{S}\vec B\cdot d\vec S$$，不难猜到 $$\vec B=\nabla\times\vec A$$ 即为所求。但是，这样，$$\vec B$$ 对应的 $$\vec A$$ 不唯一，加上任何一个标量势的梯度仍满足 $$\vec B=\nabla\times(\vec A+\nabla\phi)$$（根据[矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#多元函数积分学#矢量分析)，任何标量场的梯度场都是无旋场）。
+回想[微积分 - 斯托克斯定理](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F) $$\displaystyle\oint_{l}\vec A\cdot d\vec l=\int_{S}(\nabla\times\vec A)\cdot d\vec S=\int_{S}\vec B\cdot d\vec S$$，不难猜到 $$\vec B=\nabla\times\vec A$$ 即为所求。但是，这样，$$\vec B$$ 对应的 $$\vec A$$ 不唯一，加上任何一个标量势的梯度仍满足 $$\vec B=\nabla\times(\vec A+\nabla\phi)$$（根据[矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#多元函数积分学#矢量分析)，任何标量场的梯度场都是无旋场）。
 
 在静磁学中，我们一般取**库伦规范**势，满足 $$\nabla\cdot\vec A=0$$。P.S. 在随时间变化的磁场中，我们一般取**洛伦兹规范**势，见[电动力学](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2%E4%B8%8E%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7)。
 
-这样的磁矢势怎么找？见电动力学课件 1.2。利用 $$\nabla\displaystyle\frac{1}{r}=-\displaystyle\frac{\vec r}{r^3}$$，难运算，我们最终得到符合条件的 $$\vec A(\vec x)=\displaystyle\frac{\mu}{4\pi}\displaystyle\int\frac{\vec J(\vec x')}{r}dV'$$  ->  $$\nabla\cdot\vec B(\vec x)=\nabla\cdot(\nabla\times\vec A)=0$$  **无源场**。在稳恒电流场条件下，难证明上述磁矢势满足
+这样的磁矢势怎么找？见电动力学课件 1.2。利用 $$\displaystyle\nabla\frac{1}{r}=-\frac{\vec r}{r^3}$$，难运算，我们最终得到符合条件的 $$\displaystyle\vec A(\vec x)=\frac{\mu}{4\pi}\int\frac{\vec J(\vec x')}{r}dV'$$  ->  $$\nabla\cdot\vec B(\vec x)=\nabla\cdot(\nabla\times\vec A)=0$$  **无源场**。在稳恒电流场条件下，难证明上述磁矢势满足
 
-- Eq(1.2.31-1.2.41) $$\nabla\cdot\vec A=0$$. 欢呼！
-- Eq(1.2.30-1.2.46)$$\nabla\times\vec B(\vec x)=-\nabla^2\vec A(\vec x)=\mu_0\vec J(\vec x)$$  ->  **安培环路定理**（电磁学里给的几何方法也很难，当然这里也很难）这个解的形式 $$\nabla^2 A_i(\vec x)=-\mu J_i(\vec x)$$ 于静电势泊松方程颇为相似。
+- Eq (1.2.31-1.2.41) $$\nabla\cdot\vec A=0$$. 欢呼！
+- Eq (1.2.30-1.2.46)$$\nabla\times\vec B(\vec x)=-\nabla^2\vec A(\vec x)=\mu_0\vec J(\vec x)$$  ->  **安培环路定理**（电磁学里给的几何方法也很难，当然这里也很难）这个解的形式 $$\nabla^2 A_i(\vec x)=-\mu J_i(\vec x)$$ 于静电势泊松方程颇为相似。
 
 例：均匀磁场的矢势、均匀带电球壳匀速绕轴转动的矢势。
 
@@ -479,7 +437,7 @@ $$
 
 ### 静磁场能量
 
-$$W_M=\displaystyle\frac{1}{2}\displaystyle\int_{\infty}\vec B\cdot\vec HdV=\displaystyle\frac{1}{2}\displaystyle\int_{\infty}\nabla\cdot(\vec A\times\vec H)dV+\displaystyle\frac{1}{2}\displaystyle\int_{V}\vec A\cdot\vec J_fd\vec V$$  只需考虑后一项对有电流分布区域的积分。
+$$\displaystyle W_M=\frac{1}{2}\int_{\infty}\vec B\cdot\vec HdV=\frac{1}{2}\int_{\infty}\nabla\cdot(\vec A\times\vec H)dV+\frac{1}{2}\int_{V}\vec A\cdot\vec J_fd\vec V$$  只需考虑后一项对有电流分布区域的积分。
 
 - 某电流分布在给定外磁场中的相互作用能......
 
@@ -495,7 +453,7 @@ $$W_M=\displaystyle\frac{1}{2}\displaystyle\int_{\infty}\vec B\cdot\vec HdV=\dis
 
 ### 磁多级矩
 
-和电多极矩一样，可以把磁矢势在三维空间做泰勒展开。注意，零级展开项总是 0，因为目前还没有磁单极子存在的证据。对于一级展开项，我们有 $$\vec A^{(1)}=\displaystyle\frac{\mu_0}{4\pi}\displaystyle\frac{\vec m\times\vec R}{R^3}$$, $$\varphi_m^{(1)}=\displaystyle\frac{\vec m\cdot\vec R}{4\pi R^3}$$。
+和电多极矩一样，可以把磁矢势在三维空间做泰勒展开。注意，零级展开项总是 0，因为目前还没有磁单极子存在的证据。对于一级展开项，我们有 $$\displaystyle\vec A^{(1)}=\frac{\mu_0}{4\pi}\frac{\vec m\times\vec R}{R^3}$$, $$\varphi_m^{(1)}=\displaystyle\frac{\vec m\cdot\vec R}{4\pi R^3}$$。
 
 ### 小区域电流在外磁场
 
@@ -505,7 +463,7 @@ $$W_M=\displaystyle\frac{1}{2}\displaystyle\int_{\infty}\vec B\cdot\vec HdV=\dis
 
 磁场对电流源施加的安培力：$$d\vec F=Id\vec l\times\vec B$$，广延形式 $$\vec F=\displaystyle\int_V\vec J(\vec x')\times\vec B_edV'$$。
 
-- 推论：环线电流线在**均匀磁场**中所受力之和为 0（$\vec F=I\displaystyle(\oint_{l}d\vec l)\times\vec B$）；**磁矩** $$\vec m=\frac{1}{2}(\displaystyle\oint_C\vec r\times d\vec l)$$, $$d\vec m=\frac{1}{2}\vec r\times \vec JdV$$，所受力矩为 $$\vec\tau=\vec m\times\vec B$$。
+- 推论：环线电流线在**均匀磁场**中所受力之和为 0（$\vec F=I\displaystyle(\oint_{l}d\vec l)\times\vec B$）；**磁矩** $$\displaystyle\vec m=\frac{1}{2}(\oint_C\vec r\times d\vec l)$$, $$d\vec m=\frac{1}{2}\vec r\times \vec JdV$$，所受力矩为 $$\vec\tau=\vec m\times\vec B$$。
   - 若规定 $$\vec m$$ 与 $$\vec B$$ 相互垂直时**磁势能** $$U_m$$ 为 0 ，则 $$U_m=-\vec m·\vec B$$。(2022.8.2更新：啊，突然发现刘老师课件上力矩用的字母是 $$L$$，一般物理上不是约定俗成 $$τ$$ 是力矩 $$L$$ 是角动量吗？是不是需要勘误一下呢？)
 - 在不均匀磁场中，磁场总是将稳态平衡的 $$\vec m$$ 从磁场小处移向大处，同时力矩将磁矩转向与磁场平行方向。受力 $$F=-\nabla U_m$$。
 

@@ -13,7 +13,7 @@ mathjax: true
 
 $$\ddot x+2\gamma\dot x+\omega_0^2x=f(t)$$. The $$f(t)$$ is the driving force, the **input**. We can observe $$x$$, the **output**. The left-hand side is a linear operator of $$x$$. This is an inhomogeneous linear system. We would like to know how the output $$x$$ responds to the input $$f(t)$$. Since $$\gamma$$ and $$\omega_0$$ are constants invariant in time, the system is invariant under time variance, so it is a **time-invariant system**.
 
-First suppose $$f(t)$$ is a harmonic oscillation term $$C_0e^{i\omega t}$$. The question boils down to solving the particular solution of LHS=$$C_0e^{i\omega t}$$ and the general solution of LHS=$$0$$. The former is solved by guessing $$x(t)=Ae^{i\omega t}$$, or solving the characteristic function. The latter is the damped harmonic motion. Then we have 
+First suppose $$f(t)$$ is a harmonic oscillation term $$C_0e^{i\omega t}$$. The question boils down to solving the general solution of LHS=$$0$$ and the particular solution of LHS=$$C_0e^{i\omega t}$$.  The former is the damped harmonic motion. The latter is solved by guessing $$x(t)=Ae^{i\omega t}$$, or say, solving the characteristic function. Then we have 
 
 $$\displaystyle x(t)=e^{-\gamma t}(Ae^{t\sqrt{\gamma^2-\omega_0^2}}+Be^{-t\sqrt{\gamma^2-\omega_0^2}})+(\frac{1}{-\omega^2+2i\gamma\omega+\omega_0^2})C_0e^{i\omega t}$$
 
@@ -31,11 +31,11 @@ Now solve $$\displaystyle\frac{\partial^2\chi(t)}{\partial t^2}+2\gamma\frac{\pa
 
 1. From causality, $$\chi(t)=0$$ when $$t<0$$.
 2. If $$F(t)=\delta(t)$$, then $$x(t)=\chi(t)$$. Since $$x(t)$$ is continuous, then $$\chi(t)$$ is continuous. Therefore, $$\displaystyle\lim_{t\to 0}\chi(t)=0$$.
-3. Finding $$\displaystyle\frac{\partial\chi(t)}{\partial t}$$ when $$t\to 0$$. For $$\epsilon>0$$ and take $$\epsilon\to 0$$, integrate the second-order PDE with $$t$$ from $$-\epsilon$$ to $$\epsilon$$ and we get $$\displaystyle [\frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}-0] + \gamma[0-0] + \omega_0^2[0-0] =1$$, which is just $$\displaystyle \frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}=1$$.
+3. Finding $$\displaystyle\frac{\partial\chi(t)}{\partial t}$$ when $$t\to 0$$. For $$\epsilon>0$$ and take $$\epsilon\to 0$$, integrate the second-order PDE with $$t$$ from $$-\epsilon$$ to $$\epsilon$$ and we get $$\displaystyle [\frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}-0] + \gamma[0-0] + \omega_0^2\cdot 0 =1$$, which is just $$\displaystyle \frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}=1$$.
 
 Having exercised to solve the PDE for $$t>0$$ in our first year (look above), the solution is $$\displaystyle \chi(t)=e^{-\gamma t}(Ae^{i\omega't}+Be^{-i\omega't})$$, where $$\omega'=\sqrt{\omega_0^2-\gamma^2}$$. Plugging in $$\chi(\epsilon)=0$$ and $$\displaystyle\frac{\partial\chi(t)}{\partial t}\vert_{t=\epsilon}=1$$, we can solve $$A$$ and $$B$$. The final answer is $$\displaystyle\chi(t)=e^{-\gamma t/2}\frac{\sin(\omega't)}{\omega'}$$. Then $$\displaystyle x(t)=\int_{-\infty}^t e^{-\gamma (t-t')}\frac{\sin(\omega'(t-t'))}{\omega'}f(t')dt^\prime$$.
 
-Cross check: take $$\displaystyle x(t)=\int_{-\infty}^t e^{-\gamma (t-t')}\frac{\sin(\omega'(t-t'))}{\omega'}F(t')dt^\prime$$, using [Leibniz integral rule](https://en.wikipedia.org/wiki/Leibniz_integral_rule), we'll get back $$\ddot x+2\gamma\dot x+\omega_0^2x=f(t)$$ for sure.
+Cross check: take $$\displaystyle x(t)=\int_{-\infty}^t e^{-\gamma (t-t')}\frac{\sin(\omega'(t-t'))}{\omega'}f(t')dt^\prime$$, using [Leibniz integral rule](https://en.wikipedia.org/wiki/Leibniz_integral_rule), we'll get back $$\ddot x+2\gamma\dot x+\omega_0^2x=f(t)$$ for sure.
 
 ### Fourier Transform
 
