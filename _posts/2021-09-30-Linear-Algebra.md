@@ -179,7 +179,7 @@ $$\vec x^T\hat A\vec x=\vec y^T\hat P^T\hat A\hat P\vec y=\vec y^T\hat P^{-1}\ha
 
 ### 实对称矩阵
 
-如果矩阵 $$\hat A $$ 是**实对称矩阵**，则其一定能**正交对角化**：$$\hat P^T\hat A\hat P=\hat\Lambda$$，对角矩阵对角元为 $$\hat A$$ 的特征值（**!!ACHTUNG!!**能正交对角化是极端美好的品质，**不管是不是满秩的**）。示例：[线性代数-实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)。几何直观：想象 $$g(\vec x')=\frac{1}{4}x_1'^2-\frac{5}{4}x_2'^2+\frac{\sqrt{3}}{2}x_1'x_2'=\vec x'^T\hat A\vec x'$$，是一个定义在 $$xOy$$ 平面上的函数，其函数值可以用 $$xOy$$ 之上的**马鞍**表示（二次型 -> 马鞍面）。你总能移动一下这张坐标纸，让轴落在对称的位置，得到 $$f(\vec x)=x_1^2-2x_2^2=\vec x^T\Lambda\vec x$$。这里基变换矩阵是顺时针旋转 60° 的刚性变换矩阵！同时也请注意到特征值和矩阵的迹的关系！
+如果矩阵 $$\hat A $$ 是**实对称矩阵**，则其一定能**正交对角化**：$$\hat P^T\hat A\hat P=\hat\Lambda$$，对角矩阵对角元为 $$\hat A$$ 的特征值（能正交对角化是极端美好的品质，**不管是不是满秩的**）。示例：[线性代数-实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)。几何直观：想象 $$g(\vec x')=\frac{1}{4}x_1'^2-\frac{5}{4}x_2'^2+\frac{\sqrt{3}}{2}x_1'x_2'=\vec x'^T\hat A\vec x'$$，是一个定义在 $$xOy$$ 平面上的函数，其函数值可以用 $$xOy$$ 之上的**马鞍**表示（二次型 -> 马鞍面）。你总能移动一下这张坐标纸，让轴落在对称的位置，得到 $$f(\vec x)=x_1^2-2x_2^2=\vec x^T\Lambda\vec x$$。这里基变换矩阵是顺时针旋转 60° 的刚性变换矩阵！同时也请注意到特征值和矩阵的迹的关系！
 
 实对称矩阵典型例子
 

@@ -109,11 +109,11 @@ $$
 
 ## 运动定律与非惯性参考系
 
-非惯性参考系 -> 惯性力：1. translation 2. centrifugal 3. Coriolis 4. azimuthal
+参见 D. Morin Introduction to Classical Mechanics Chapter 9 Accelerated Frames of Reference。设 $$\displaystyle\frac{d}{dt}$$ 是 $$\vec A$$ 在一个坐标系中的变化率，$$\displaystyle\frac{\partial}{\partial t}$$ 是 $$\vec A$$ 在另一个与前面坐标系有相对运动的坐标系。
 
-参见 D. Morin Introduction to Classical Mechanics Chapter 9 Accelerated Frames of Reference
+$$\displaystyle\frac{d\vec A}{dt}=\frac{\partial\vec A}{\partial t}+\vec\omega\times\vec A$$, therefore, $$\displaystyle\frac{d^2\vec A}{dt^2}=\frac{\partial^2\vec A}{\partial t^2}+\vec\omega\times(\vec\omega\times\vec A)+2\vec\omega\times\frac{\partial\vec A}{\partial t}+\frac{d\vec\omega}{dt}\times\vec A$$
 
-前面”质点动力学“那部分矢量微分运算搞清楚了，这部分不是问题。
+非惯性参考系 -> $$\vec R$$ 是两个坐标系的相对位移，惯性力：1. translation $$\displaystyle-m\frac{\partial^2\vec R}{\partial t^2}$$ 2. centrifugal $$-m\vec\omega\times(\vec\omega\times\vec R)$$ 3. Coriolis $$\displaystyle-2m\vec\omega\times\frac{\partial\vec R}{\partial t}$$ 4. azimuthal $$\displaystyle-m\frac{d\vec\omega}{dt}\times\vec R$$
 
 ## 质点动力学的运动定理
 
@@ -121,7 +121,17 @@ $$
 
 ### 动量矩（角动量）定理
 
-$$\displaystyle \vec{L}=\vec{r}×\vec{p}, \vec{\tau}=\vec{r}×\vec{F}, \vec{\tau}=\frac{d\vec{L}}{dt}$$. 跟动量定理类比就行。
+$$\displaystyle \vec{L}=\vec{r}×\vec{p}$$, $$\displaystyle\vec{M}=\vec{r}×\vec{F}$$, $$\displaystyle\vec{M}=\frac{d\vec{L}}{dt}$$. 跟动量定理类比就行。
+
+#### 拉莫尔进动
+
+> **进动**（precession）是[自转](https://zh.wikipedia.org/wiki/自轉)物体之自转轴又绕着另一轴旋转的现象，又可称作**旋进**。在[天文学](https://zh.wikipedia.org/wiki/天文學)上，又称为“[岁差](https://zh.wikipedia.org/wiki/歲差)现象”。常见的例子为[陀螺](https://zh.wikipedia.org/wiki/陀螺)。当其自转轴的轴线不再呈[铅直](https://zh.wikipedia.org/wiki/鉛直)时，即自转轴与对称轴不重合不平行时，会发现自转轴会沿着铅直线作旋转，此即“旋进”现象。另外的例子是[地球](https://zh.wikipedia.org/wiki/地球)的自转。自旋的进动现象主要出现在[核磁共振](https://zh.wikipedia.org/wiki/核磁共振)与[磁振造影](https://zh.wikipedia.org/wiki/磁振造影)上。其中的例子包括了[稳定态自由旋进（进动）造影](https://zh.wikipedia.org/wiki/穩定態自由旋進造影)。 --Wiki_zh
+
+介绍一下进动的意思，之后在[理论力学 - 刚体力学]()的陀螺中研究。然而拉莫尔进动特别简单，因为我们并不考虑电子的自转动力学，只是考虑其磁矩在匀强磁场中的转动。在均匀磁场中力矩垂直于角动量，不改变角动量的大小，只改变角动量的方向，造成角动量 $$\vec{L}$$ 和轨道磁矩 $$\vec{μ_l}$$ 绕磁场 $$\vec{B}$$ 以恒定的角频率 $$ω$$ 做**拉莫尔进动**。
+
+参见梁老师理论力学 6.6，首先根据[磁矩的定义](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%88%86%E5%AD%90%E7%8E%AF%E5%BD%A2%E7%94%B5%E6%B5%81%E6%A8%A1%E5%9E%8B)导出电子磁矩 $$\vec\mu=g\vec L$$, 其中$$g=e/2m$$ 为旋磁比。[匀强磁场中](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%B0%8F%E5%8C%BA%E5%9F%9F%E7%94%B5%E6%B5%81%E5%9C%A8%E5%A4%96%E7%A3%81%E5%9C%BA)力矩 $$\vec M=\vec\mu\times\vec B$$，于是 $$\displaystyle\frac{d\vec L}{dt}=-g\vec B\times\vec L$$。进动频率为 $$\omega=gB$$。
+
+![Classical_Mechanics_Larmor](\images\blog\Classical_Mechanics_Larmor.jpg)
 
 ### 有心力
 
@@ -152,7 +162,7 @@ P.S. 一点关于质点/质点系动力学的助教 note： 1. 弹性碰撞前�
 > 2. 因为质心相对于惯性参考系可以有加速度，质心参考系一般而言并不是惯性参考系。相对于质心系，角动量定理和功能原理等具有与惯性参考系中完全相同的形式，其中不出现与惯性力有关的部分。
 > 3. 相对于质心参考系系统的总动量总等于零。
 
-对于 1. 的解释：角动量：**平行轴定理**（见下一节 刚体力学-刚体的平面平行运动）；动能：**柯尼希定理**（见本节下文）。参考阅读：D. Morin Introduction to Classical Mechanics 4.6 The CM Frame
+对于 1. 的解释：角动量：**平行轴定理**；动能：**柯尼希定理**（都见本节下文）。参考阅读：D. Morin Introduction to Classical Mechanics 4.6 The CM Frame
 
 对于 2. 的解释：参见梁昆淼《力学》5.41 动量矩定理。事实上，凡是选取**平动**参考系统时，物体所受惯性力系得合力总是作用于质心。
 
@@ -178,15 +188,13 @@ Morin 书上相关内容整理成的教学材料[力学-质心参考系-柯尼�
 
 知识掌握自测：关于滚动的自行车或汽车轮胎受地面摩擦力的方向。
 
-### 施于刚体的力系的简化
+施于刚体的力可以沿着其作用线滑移，其所引起的力学作用完全不因此而改变。选取某一个参考点，计算主矢 $$\displaystyle \vec{S}=\sum_i{\vec{F_i}}$$ 决定刚体质心的运动，$$m\ddot{\mathbf r_0}=\mathbf F$$；主矩$$\vec{M}=\sum_i{\vec{M_i}}$$ 决定刚体相对于参考点的运动，$$\dot{\mathbf L}=\mathbf M$$。若主矢和对任意一点的主矩都为零，则刚体处于**动平衡**。
 
-施于刚体的力可以沿着其作用线滑移，其所引起的力学作用完全不因此而改变。
-
-选取某一个参考点 $$O$$，计算$$\displaystyle \vec{S}=\sum_i{\vec{F_i}},\vec{M}=\sum_i{\vec{M_i}}$$. 前者决定刚体质心的运动，后者决定刚体相对于 $$O$$ 点的运动。
+为确定刚体在空间中的位置，只要指出刚体中任选的一点（**基点**）的位置以及刚体对于该点的取向就可以了。刚体的任意运动可以归结为基点的平移和刚体绕基点做定点运动（下文解释定点运动是一种定点转动）。参见梁老师 6.1.4，任选基点定点转动角速度 $$\omega$$ 相同。既然基点的选取任意，则不妨选择**质心**。
 
 ### 刚体的定轴转动
 
-绕 $$z$$ 轴的转动：$$L_z=I_zw$$，其中$$\displaystyle I_z=\sum_i{m_ir_i^2}$$ 称为**转动惯量**，转动动能 $$\displaystyle T=\frac{I_z\omega^2}{2}$$.
+有一个自由度。绕 $$z$$ 轴的转动：$$L_z=I_zw$$，其中$$\displaystyle I_z=\sum_i{m_ir_i^2}$$ 称为**转动惯量**，转动动能 $$\displaystyle T=\frac{I_z\omega^2}{2}$$.
 
 知识点：不同几何物体关于不同轴转动的转动惯量。参考阅读：D. Morin Introduction to Classical Mechanics Chapter 7 Angular Momentum, Part I
 
@@ -194,11 +202,11 @@ Morin 书上相关内容整理成的教学材料[力学-质心参考系-柯尼�
 
 ### 刚体的平面平行运动
 
-求解刚体动力学的一般步骤：1. 找到”作为一个整体研究的对象“。2. 将运动分解为该对象**质心**的运动和绕质心的旋转。3. 考虑我在”质点动力学的运动定理“中提到过的那4个方面。
+ 有三个自由度。将运动分解为该对象**质心**的运动和绕过质心 $$z$$ 轴的定轴转动。
 
-对于第 2. 点：$$\vec{L}=M\vec{R}×\vec{V}+(I_z^{CM}\omega\prime)\hat{z}, T=\frac{1}{2}MV^2+\frac{1}{2}I_z^{CM}\omega\prime^2$$.
+$$\vec{L}=M\vec{R}×\vec{V}+(I_z^{CM}\omega\prime)\hat{z}$$, $$T=\frac{1}{2}MV^2+\frac{1}{2}I_z^{CM}\omega\prime^2$$.
 
-由此得出  $$L_z=(MR^2+I_z^{CM})\omega, T=\frac{1}{2}(MR^2+I_z^{CM})\omega^2$$.
+由此得出  $$L_z=(MR^2+I_z^{CM})\omega$$, $$T=\frac{1}{2}(MR^2+I_z^{CM})\omega^2$$.
 
 - **平行轴定理**：不妨记 $$I_z=MR^2+I_z^{CM}$$. 质点系的动量矩 = 质心的动量矩 + 质点系相对于质心的相对运动动量矩。
 
@@ -206,50 +214,42 @@ Morin 书上相关内容整理成的教学材料[力学-质心参考系-柯尼�
 
 之前讨论动量矩 $$\vec{L}$$ 的方向都保持不变，接下来讨论更一般的情况，动量矩的方向可以改变。
 
-> Consider a rigid body undergoing arbitrary motion. Pick any point $$P$$ in the body. Then at any instant, the motion of the body may be written as the sum of the translational motion of $$P$$, plus a rotation around some axis, $$\omega$$, through $$P$$ (the axis $$\omega$$ may change with time).
+#### 欧拉定理和欧拉角
+
+**欧拉定理**（见梁老师理论力学 6.1.2）：定点运动刚体的任何一个位置移动都可以通过绕着此顶点的某一轴旋转一个角度达到。和定轴转动不同的是，这个轴会变化。
 
 由此我们可以看到，经典力学中“轨道”和“自旋”之间的分别其实是很模糊的，但是到了量子力学，虽然我们用经典力学中的“自旋”类比，但是粒子的自旋是内禀性质，是不可以和“轨道”相互转化的。
 
-1. 惯量张量
+见梁老师理论力学 6.1.7 图6.8 ：空间坐标系、本体坐标系。**欧拉角**：进动角 $$\varphi$$（空间坐标系 $$xOy$$ 平面上转的）、章动角 $$\theta$$（$$z$$ 轴转的）、自转角 $$\psi$$（本体坐标系 $$x'Oy'$$ 平面上转的）。
 
-   考虑刚体绕轴旋转，其中**旋转轴过参考系原点**的情况。惯量张量 
+三个欧拉角和基点的坐标可以视为刚体的**六个自由度**。欧拉角和刚体定点转动角速度 $$\omega$$ 的关系为**欧拉运动学方程**。
 
-   $$\hat {I}=\pmatrix{\int(y^2+z^2)&-\int xy&-\int zx\\-\int xy& \int(z^2+x^2)&-\int yz\\-\int xz&-\int yz&\int(x^2+y^2)}$$,
+#### 惯量张量与惯量主轴
 
-   $$\vec{L}=\hat{I}\vec{\omega}$$ ，而 $$T=\frac{1}{2}\vec{\omega}\cdot\vec{L}$$。好的，我看到了一个实对称矩阵，在[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)里提到过，实对称矩阵是一定可以合同对角化且特征向量互相**正交**（**拥有一切实对称矩阵该有的美好品德**）！如果我们把惯量张量对角化，就可以得到惯量主轴。
+惯量张量（取定点运动的点为原点建立直角坐标系） 
 
-2. 惯量主轴
+$$\hat {I}=\pmatrix{\int(y^2+z^2) dm & -\int (xy) dm &-\int (zx) dm \\ -\int (xy) dm & \int(z^2+x^2) dm & -\int (yz) dm \\ -\int (xz) dm & -\int (yz) dm & \int(x^2+y^2) dm}$$,
 
-   对角化惯量张量得到 $$\hat {I}=\pmatrix{I_1&0&0\\0& I_2&0\\0&0&I_3}$$ ，在以惯量主轴为基的坐标系中，$$\vec{L}=(I_1\omega_1,I_2\omega_2,I_3\omega_3)$$。
+$$\vec{L}=\hat{I}\vec{\omega}$$ ，而 $$T=\frac{1}{2}\vec{\omega}\cdot\vec{L}$$。好的，我看到了一个实对称矩阵，在[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)里提到过，实对称矩阵是一定可以合同对角化且特征向量互相**正交**（**拥有一切实对称矩阵该有的美好品德**）！如果我们把惯量张量对角化，就可以得到惯量主轴。
 
-   在力学上又有什么妙处呢？The principle axes are the axes around which the object can rotate with constant speed, without the need for any torque. (So in some sense, the object is "happy" to spin around a principle axis.)
+惯量主轴：对角化惯量张量得到 $$\hat {I}=\pmatrix{I_1&0&0\\0& I_2&0\\0&0&I_3}$$ 。选取本体坐标系，以惯量主轴为基时，$$\vec{L}=(I_1\omega_1,I_2\omega_2,I_3\omega_3)$$。当刚体绕某一惯量主轴匀速转动时，处于**动平衡**。
 
-3. 利用惯量主轴不难求解的两类刚体力学问题
+#### 惯量主轴坐标系下欧拉动力学方程
 
-   不要忘了灵活使用在“质点系”部分详细讨论过的质心系性质并运用在题目中！
+在惯性坐标系下刚体动力学公式之一是 $$\dot{\mathbf L}=\mathbf M$$。但是我们希望研究坐标系原点在刚体质心，以惯量主轴为坐标轴的本体坐标系（可能是非惯性系）。参见**运动定律与非惯性参考系**，动力学方程应改为 $$\dot{\mathbf L}=\mathbf M+\mathbf L\times\omega$$。
+$$
+\begin{cases}
+I_1\dot\omega_1=M_1+(I_2-I_3)\omega_2\omega_3\\
+I_2\dot\omega_1=M_2+(I_3-I_1)\omega_3\omega_1\\
+I_3\dot\omega_1=M_3+(I_1-I_2)\omega_1\omega_2
+\end{cases}
+$$
+利用惯量主轴不难求解的两类刚体力学问题
 
-   > - Strike a rigid object with an impulsive (that is, quick) blow. What is the motion of the object immediately after the blow?
-   > - An object rotates around a fixed axis. A given torque is applied. What is the frequency of the rotation? (Or conversely, given the frequency, what is the required torque?)
-
-   具体解题过程不赘述。
-
-4. 欧拉公式
-
-   如何在惯量主轴的基下表示动量矩定理？Projecting $$d\vec{L}/{dt}$$ onto the instantaneous principle axes, we have $$\tau_1=I_1\dot{\omega_1}+(I_3-I_2)\omega_2\omega_3$$ and two more.
-
-5. 欧拉公式的应用：进动
-
-   > **进动**（precession）是[自转](https://zh.wikipedia.org/wiki/自轉)物体之自转轴又绕着另一轴旋转的现象，又可称作**旋进**。在[天文学](https://zh.wikipedia.org/wiki/天文學)上，又称为“[岁差](https://zh.wikipedia.org/wiki/歲差)现象”。
-   >
-   > 常见的例子为[陀螺](https://zh.wikipedia.org/wiki/陀螺)。当其自转轴的轴线不再呈[铅直](https://zh.wikipedia.org/wiki/鉛直)时，即自转轴与对称轴不重合不平行时，会发现自转轴会沿着铅直线作旋转，此即“旋进”现象。另外的例子是[地球](https://zh.wikipedia.org/wiki/地球)的自转。
-   >
-   > 自旋的进动现象主要出现在[核磁共振](https://zh.wikipedia.org/wiki/核磁共振)与[磁振造影](https://zh.wikipedia.org/wiki/磁振造影)上。其中的例子包括了[稳定态自由旋进（进动）造影](https://zh.wikipedia.org/wiki/穩定態自由旋進造影)。
-   >
-   > **进动**是转动中的物体自转轴的指向变化。在物理学中，有两种类型的进动，自由力矩和诱导力矩，此处对后者的讨论会比较详细。在某些文章中，“进动”可能会提到地球经验的岁差，这是进动在天文观测上造成的效应，或是物体在轨道上的进动。 --Wiki_zh
+> - Strike a rigid object with an impulsive (that is, quick) blow. What is the motion of the object immediately after the blow?
+> - An object rotates around a fixed axis. A given torque is applied. What is the frequency of the rotation? (Or conversely, given the frequency, what is the required torque?)
 
 ## 振动和波
-
-学不好这章，电动力学和量子力学都会死亡。
 
 机械波三要素：形变、恢复力、介质中的传播。谐振动的合成：1.方向相同，频率相同（简单）。 2. 方向相同，频率不同（拍频）。 3. 方向垂直，频率相同。 4. 方向垂直，频率不同（李萨如图形）。波分为横波（有偏振现象）和纵波，让我们以绳上一维横波的传播为例导出波动方程。
 

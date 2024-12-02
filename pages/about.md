@@ -14,15 +14,15 @@ permalink: /About/
 
 不是每一个进行学术写作的人都是巨佬。作者的本质是**学渣**，学不会物理，专业膜大佬。这个网站**大约**（“大约”是物理学家喜爱的词语）是 0% 的原创度，全靠拜读大佬杰作并**降维**为学渣的理解。此网站完全属于**非盈利**项目，尽管作者努力避免侵权，仍可能有做得不得当之处。如有侵权，可以联系我，我将改正。
 
-Not everyone who writes academical articles is a nerd. The author is **unfortunately innately a dull guy** and not able to learn physics... Note that this website is approximately (a word especially liked by physicist, although I am not a physicist yet) 0% of my original material. It is built on what I've learnt from scholars and  I **reduce** it to a form I **can understand**. This website is a completely **non-profit** project, and although the author strives to avoid copyright infringement, there may still be inappropriate things. If there is any, you can contact me and I will correct it.
+Not everyone who writes academic articles is a nerd. The author is **unfortunately innately a dull guy** and not able to learn physics... their major is not physics, but hailing to the pro... Note that this website is approximately (a word especially liked by physicists, although I am not a physicist) 0% of my original material. It is built on what I've learned from scholars, and I **reduce** it to a form I **can understand**. This website is a completely **non-profit** project, and although the author strives to avoid copyright infringement, there may still be inappropriate things. If there is any, you can contact me, and I will correct it.
 
 作者如此年轻有为(?)，以至于在还没有考虑凹人设时就建立了这个网站，那时根本没有想过用英文网站在国际舞台凹人设，所以就用中文写了好多东西。不过此网站的很多文章的特征是，把数学、物理、生物...等课程的内容联系起来，那么用一篇全中文联系一篇全英文就会有些僵硬。此外，作者还引用了很多有趣的中文网络资料，这也增加了语言转换的难度。
 
-Note that the author started this website at such a young age that didn't consider writing in English. One of the properties of those articles is that the author has always been trying to connect the knowledge in math, physics, biology courses etc. That makes it difficult to write this blog in Chinese while the others are in English and connect them... The author also cited many interesting Chinese web sources, making the language switch more difficult...
+Note that the author started this website at such a young age that didn't consider writing in English. One of the properties of those articles is that the author has always tried to connect knowledge in math, physics, biology courses, etc. That makes it difficult to write this blog in Chinese while the others are in English and connect them... The author also cited many interesting Chinese web sources, making the language switch more difficult...
 
-因此，博客的默认语言是中文。双语博客的前缀是"(Zh&En)"，而英语博客的前缀是"(En)"。中文的语言风格夹带过多整活，英文收敛点er。“(Zh-En)” 则指文章前半部分为按照本科（应）所学以中文为基础写了前半部分，后半部分为研究生阶段的补充，以英文为基础。
+因此，博客的默认语言是中文，而英语博客的前缀是"(En)"。中文的语言风格夹带过多整活，英文收敛点er。
 
-Therefore, the default language for the blogs is Chinese. Bilingual blogs have a "(Zh&En)" prefix, and English blogs have a "(En)" prefix. The Chinese is in a casual style but the English is more formal. "(Zh-En)" means that the first half of the article is written in Chinese based on what the author (should) have learned as an undergrad, and the second half is a supplement for the grad school self-learning and is based on English.
+Therefore, the default language for the blogs is Chinese, and English blogs have a "(En)" prefix. The Chinese language is casual, but the English language is more formal. 
 
 ## 关于我 About Me
 
@@ -36,7 +36,7 @@ L Shi came from [Beijing](https://en.wikipedia.org/wiki/Beijing) and got a bache
 
 这是现在我在哪：[Shi, Linan - physics.utoronto.ca](https://www.physics.utoronto.ca/members/shi-linan/)。如果需要联系我，即使是学术问题，如果和我现在在 UofT 的工作无关，也请不要用我的工作邮箱。请用我的私人邮箱。谢谢！
 
-About my current position: [Shi, Linan - physics.utoronto.ca](https://www.physics.utoronto.ca/members/shi-linan/). Try not to contact me by my working email if it is not about UofT work, even it is something about academic. Try to contact me by my personal email. Thanks!
+About my current position: [Shi, Linan - physics.utoronto.ca](https://www.physics.utoronto.ca/members/shi-linan/). Try not to contact me by my working email if it is not about UofT work, even if it is something about academics. Try to contact me by my personal email. Thanks!
 
 ## 社交帐号 Social
 

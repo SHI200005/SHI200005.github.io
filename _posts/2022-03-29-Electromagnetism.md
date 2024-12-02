@@ -180,7 +180,9 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
 #### 分子环形电流模型
 
-安培的**分子电流图像**：分子被旋转的电子环绕，是个小磁体。分子电流整齐排列产生宏观磁化。形成**磁矩** $$\vec m=i\vec S=\pi ia^2\vec n$$。也叫**磁偶极矩**，因为其在在很远处激发的磁场满足 $$\displaystyle\vec B=\frac{\mu_0}{4\pi}(-\frac{\vec m}{r^3}+\frac{3(\vec m\cdot\vec r)\vec r}{r^5})$$，和电偶极矩形式一样。
+环形电流产生**磁矩** $$\displaystyle\vec m=i\vec S=\frac{1}{2}I(\oint_C\vec r\times d\vec l)=\frac{1}{2}\oint_C\vec r\times\vec jd\tau$$。
+
+安培的**分子电流图像**：分子被旋转的电子环绕，是个小磁体。分子电流整齐排列产生宏观磁化。形成磁矩 $$\vec m=i\vec S=\pi ia^2\vec n$$。也叫**磁偶极矩**，因为其在在很远处激发的磁场满足 $$\displaystyle\vec B=\frac{\mu_0}{4\pi}(-\frac{\vec m}{r^3}+\frac{3(\vec m\cdot\vec r)\vec r}{r^5})$$，和电偶极矩形式一样。
 
 #### 磁介质的行为
 
@@ -463,7 +465,7 @@ $$\displaystyle W_M=\frac{1}{2}\int_{\infty}\vec B\cdot\vec HdV=\frac{1}{2}\int_
 
 磁场对电流源施加的安培力：$$d\vec F=Id\vec l\times\vec B$$，广延形式 $$\vec F=\displaystyle\int_V\vec J(\vec x')\times\vec B_edV'$$。
 
-- 推论：环线电流线在**均匀磁场**中所受力之和为 0（$\vec F=I\displaystyle(\oint_{l}d\vec l)\times\vec B$）；**磁矩** $$\displaystyle\vec m=\frac{1}{2}(\oint_C\vec r\times d\vec l)$$, $$d\vec m=\frac{1}{2}\vec r\times \vec JdV$$，所受力矩为 $$\vec\tau=\vec m\times\vec B$$。
-  - 若规定 $$\vec m$$ 与 $$\vec B$$ 相互垂直时**磁势能** $$U_m$$ 为 0 ，则 $$U_m=-\vec m·\vec B$$。(2022.8.2更新：啊，突然发现刘老师课件上力矩用的字母是 $$L$$，一般物理上不是约定俗成 $$τ$$ 是力矩 $$L$$ 是角动量吗？是不是需要勘误一下呢？)
+- 推论：环线电流线在**均匀磁场**中所受力之和为 0（$$\vec F=I\displaystyle(\oint_{l}d\vec l)\times\vec B$$）；所受力矩为 $$\vec\tau=\vec m\times\vec B$$。
+  - 若规定 $$\vec m$$ 与 $$\vec B$$ 相互垂直时**磁势能** $$U_m$$ 为 0 ，则 $$U_m=-\vec m·\vec B$$。
 - 在不均匀磁场中，磁场总是将稳态平衡的 $$\vec m$$ 从磁场小处移向大处，同时力矩将磁矩转向与磁场平行方向。受力 $$F=-\nabla U_m$$。
 

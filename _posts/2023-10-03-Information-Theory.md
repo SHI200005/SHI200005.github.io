@@ -8,8 +8,8 @@ mathjax: true
 ---
 
 > The math you get used to and the math you understand are different. You may first get used to some math, and then it may take years to understand. --Prof Frank Kschischang 
->
-> This is an informal oral statement from our lectures. I relate to this statement so much that I would like to put it down here.
+
+This is an informal oral statement from our lectures. I relate to this statement so much that I would like to put it down here.
 
 ## Entropy, Relative entropy, and Mutual Information
 
