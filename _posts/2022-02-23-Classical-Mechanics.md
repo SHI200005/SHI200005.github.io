@@ -133,6 +133,8 @@ $$\displaystyle \vec{L}=\vec{r}×\vec{p}$$, $$\displaystyle\vec{M}=\vec{r}×\vec
 
 ![Classical_Mechanics_Larmor](\images\blog\Classical_Mechanics_Larmor.jpg)
 
+[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)中，玻尔磁子 $$μ_B$$ 是轨道磁矩的最小单元，$$μ_B=e\hbar/2m_e$$。$$μ_l=\sqrt{l(l+1)}μ_B$$。$$μ_{lz}=-m_lμ_B$$。
+
 ### 有心力
 
 这部分内容在[电磁学](https://shi200005.github.io/2021/11/20/Electromagnetism/)保守场部分还将继续讨论。有心力的形式：$$\displaystyle \vec{F}(\vec{r})=-\nabla{V(r)}=-\frac{dV}{dr}\hat{r}$$. 举例：电场力、万有引力（**开普勒**三大定律）。参考阅读：D. Morin Introduction to Classical Mechanics Chapter 6 Central Force

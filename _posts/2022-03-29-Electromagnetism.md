@@ -127,13 +127,11 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
 无铁磁质感应电路能量 $$\displaystyle L=\frac{1}{2}LI_0^2$$。
 
-## 电介质和磁介质
+## 电介质
 
 介质的存在会使内部电荷分布对外界产生响应，在考虑麦克斯韦方程组时，电荷和电流密度不仅仅只有施加的自由电荷和电流，还有因为介质响应所产生的极化电荷和磁化电流。麦克斯韦方程组中的电荷 $$\rho_0$$ 和电流 $$\vec J_0$$ 将改为 $$\rho=\rho_f+\rho_p$$, $$\vec J=\vec J_f+\vec J_P+\vec J_M$$，其中 f 角标为自由电荷和电流。
 
-### 电介质
-
-#### 电介质的行为
+### 电介质的行为
 
 如果物体内部电子不能像导体里面那样自由移动，而是**束缚**在一定范围内，会怎么样？
 
@@ -153,7 +151,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
    ![Electromagnetism_Dielectric_Ball](\images\blog\Electromagnetism_Dielectric_Ball.JPG)
 
-#### 极化强度、极化电荷、电位移矢量和极化电流
+### 极化强度、极化电荷、电位移矢量和极化电流
 
 **极化强度** $$\vec P$$ （单位体积电偶极矩 $$\vec p$$ 代数和）和**极化电荷** $$\rho_P$$.
 
@@ -176,15 +174,15 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
 - 当 $$\displaystyle\frac{\partial\rho_p}{\partial t}\neq 0$$ 时，根据**连续性方程**，得到**极化电流** $$\vec J_P$$ 满足 $$\vec J_P=\displaystyle\frac{\partial\vec P}{\partial t}$$。
 
-### 磁介质
+## 磁介质
 
-#### 分子环形电流模型
+### 分子环形电流模型
 
 环形电流产生**磁矩** $$\displaystyle\vec m=i\vec S=\frac{1}{2}I(\oint_C\vec r\times d\vec l)=\frac{1}{2}\oint_C\vec r\times\vec jd\tau$$。
 
 安培的**分子电流图像**：分子被旋转的电子环绕，是个小磁体。分子电流整齐排列产生宏观磁化。形成磁矩 $$\vec m=i\vec S=\pi ia^2\vec n$$。也叫**磁偶极矩**，因为其在在很远处激发的磁场满足 $$\displaystyle\vec B=\frac{\mu_0}{4\pi}(-\frac{\vec m}{r^3}+\frac{3(\vec m\cdot\vec r)\vec r}{r^5})$$，和电偶极矩形式一样。
 
-#### 磁介质的行为
+### 磁介质的行为
 
  - 抗磁介质（所有物质都具有）
 
@@ -201,7 +199,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
  - 其实还有反铁磁、亚铁磁等，但本课程范围不涉及
 
-#### 磁化强度与磁化电流密度
+### 磁化强度与磁化电流密度
 
 我们之前学了分子磁矩可以看作环形电流磁矩 $$\vec m$$，**磁化强度** $$\vec M$$ 是单位体积内分子磁矩代数和。
 
