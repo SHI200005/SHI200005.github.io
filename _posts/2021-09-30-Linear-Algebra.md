@@ -53,7 +53,7 @@ mathjax: true
 
 应用：利用**高斯消元法**求解线性方程组 $$\hat A\vec x=\vec b$$。
 
-- 技能：行简化梯形矩阵、齐次以及非齐次方程组解的结构。示例：[线性代数-求解线性方程组](https://shi200005.github.io/download_file/Linear_Algebra_Solve_Eqs.pdf)。高斯消元法求解线性方程组在后续徒手解矩阵特征值对应的**特征向量**时是必要的。
+- 技能：行简化梯形矩阵、齐次以及非齐次方程组解的结构。示例：[线性代数 - 求解线性方程组](https://shi200005.github.io/download_file/Linear_Algebra_Solve_Eqs.pdf)。高斯消元法求解线性方程组在后续徒手解矩阵特征值对应的**特征向量**时是必要的。
 - 知识链接：计算物理导论-最小二乘法，参见《线性代数的几何意义》任广千等 6.7 **超定方程组**的最小二乘解的几何意义。
 
 ## 行列式
@@ -81,7 +81,7 @@ mathjax: true
 
 $$\hat A\vec v=\lambda\vec v$$  对 $$\vec v$$ 这种向量做线性变换 $$\hat A$$ 后，向量的方向居然没变，长度变为原来的特征值 $$\lambda$$ 倍。
 
-示例：[线性代数-求解特征值和特征向量](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)。你需要在[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)考场上**徒手**完成以上操作。在**非线性动力学**（链接在以后会写的**系统生物学**）中，特征值实部的正负决定了**不动点的稳定性**。
+示例：[线性代数 - 求解特征值和特征向量](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)。你需要在[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)考场上**徒手**完成以上操作。在**非线性动力学**（链接在以后会写的**系统生物学**）中，特征值实部的正负决定了**不动点的稳定性**。
 
 > 几何意义：如果矩阵对某一个向量或某些向量只发生伸缩变换，不对这些向量产生旋转效果，那么这些向量就称为这个矩阵的特征向量，伸缩的比例就是特征值。特征向量在一个矩阵的作用下作伸缩运动，伸缩的幅度由特征值确定。
 >
@@ -100,7 +100,7 @@ $$\hat A\vec v=\lambda\vec v$$  对 $$\vec v$$ 这种向量做线性变换 $$\ha
 
 - 《线性代数的几何意义》任广千等 4.2.4 基变换的几何意义。
 
-说白了就比如，在基 1 下，变换矩阵 $$\hat A$$ 把向量 $$\vec x$$ 变成了 $$\vec x^\prime$$，也就是 $$\hat A\vec x=\vec x^\prime$$；在基 2 下，变换矩阵 $$\hat B$$ 把向量 $$\vec y$$ 变成了向量 $$\vec y^\prime$$，也就是 $$\hat B\vec y=\vec y^\prime$$。这两组基之间的变换关系是 $$\hat P\vec y=\vec x$$ 以及 $$\hat P\vec y^\prime=\vec x^\prime$$（向量在不同基之下都是用 $$\hat P$$ 变换，也就是 $$\hat A$$ 和 $$\hat B$$ 是同一个线性变换）。那么很显然，$$\hat B=\hat{P^{-1}}\hat A\hat P$$，相似！！！
+说白了就比如，在基 1 下，变换矩阵 $$\hat A$$ 把向量 $$\vec x$$ 变成了 $$\vec x^\prime$$，也就是 $$\hat A\vec x=\vec x^\prime$$；在基 2 下，变换矩阵 $$\hat B$$ 把向量 $$\vec y$$ 变成了向量 $$\vec y^\prime$$，也就是 $$\hat B\vec y=\vec y^\prime$$。这两组基之间的变换关系是 $$\hat P\vec y=\vec x$$ 以及 $$\hat P\vec y^\prime=\vec x^\prime$$（向量在不同基之下都是用 $$\hat P$$ 变换，也就是 $$\hat A$$ 和 $$\hat B$$ 是同一个线性变换）。那么很显然，$$\hat B=\hat{P^{-1}}\hat A\hat P$$，相似！
 
 这里 $$\vec x$$ 和 $$\vec y$$ 是不同坐标系下的同一个向量的坐标，基向量不同，坐标就不同。若该向量在基 1 下的坐标是 $$\vec x$$，在基 2 下的坐标就是 $$\vec y=\hat{P}^{-1}\vec{x}$$，反之 $$\hat{P}\vec y=\vec{x}$$。
 
@@ -115,7 +115,7 @@ $$\hat A\vec v=\lambda\vec v$$  对 $$\vec v$$ 这种向量做线性变换 $$\ha
 
 $$n×n$$ 方阵可对角化的充要条件是有 $$n$$ 个线性无关的特征向量（满秩）。
 
-如果需要在考场上徒手对角化矩阵，步骤和下面[线性代数-实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)是一样的，只不过基变换矩阵不一定是正交化矩阵罢了。
+如果需要在考场上徒手对角化矩阵，步骤和下面[线性代数 - 实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)是一样的，只不过基变换矩阵不一定是正交化矩阵罢了。
 
 ### 矩阵的迹
 
@@ -157,7 +157,7 @@ $$
 
 定义了**内积**的线性空间叫**欧氏空间**，于是欧几里得可以度量几何对象。在教学中，**内积空间**相关部分被省去，我认为极不合理。我们要理解度量矩阵的作用是协调内积在不同基下算出的内积不同。
 
-二次型可以看作是内积的推广。如果对二次型进行的是**合同变换**，$$\vec x=\hat P\vec y, f(\vec x)=\vec x^T\hat A\vec x=\vec y^T(\hat P^T\hat A\hat P)\vec y$$，目的便是在于使二次型的函数值保持不变！我们还发现了好东西：**实对称矩阵** $$\hat A$$。
+二次型可以看作是内积的推广。如果对二次型进行的是**合同变换**，$$\vec x=\hat P\vec y$$, $$f(\vec x)=\vec x^T\hat A\vec x=\vec y^T(\hat P^T\hat A\hat P)\vec y$$，目的便是在于使二次型的函数值保持不变！我们还发现了好东西：**实对称矩阵** $$\hat A$$。
 
 重要概念：正定、半正定、惯性指数等。及其几何意义。
 
@@ -179,14 +179,14 @@ $$\vec x^T\hat A\vec x=\vec y^T\hat P^T\hat A\hat P\vec y=\vec y^T\hat P^{-1}\ha
 
 ### 实对称矩阵
 
-如果矩阵 $$\hat A $$ 是**实对称矩阵**，则其一定能**正交对角化**：$$\hat P^T\hat A\hat P=\hat\Lambda$$，对角矩阵对角元为 $$\hat A$$ 的特征值（能正交对角化是极端美好的品质，**不管是不是满秩的**）。示例：[线性代数-实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)。几何直观：想象 $$g(\vec x')=\frac{1}{4}x_1'^2-\frac{5}{4}x_2'^2+\frac{\sqrt{3}}{2}x_1'x_2'=\vec x'^T\hat A\vec x'$$，是一个定义在 $$xOy$$ 平面上的函数，其函数值可以用 $$xOy$$ 之上的**马鞍**表示（二次型 -> 马鞍面）。你总能移动一下这张坐标纸，让轴落在对称的位置，得到 $$f(\vec x)=x_1^2-2x_2^2=\vec x^T\Lambda\vec x$$。这里基变换矩阵是顺时针旋转 60° 的刚性变换矩阵！同时也请注意到特征值和矩阵的迹的关系！
+如果矩阵 $$\hat A $$ 是**实对称矩阵**，则其一定能**正交对角化**：$$\hat P^T\hat A\hat P=\hat\Lambda$$，对角矩阵对角元为 $$\hat A$$ 的特征值（能正交对角化是极端美好的品质，**不管是不是满秩的**）。示例：[线性代数 - 实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)。几何直观：想象 $$g(\vec x')=\frac{1}{4}x_1'^2-\frac{5}{4}x_2'^2+\frac{\sqrt{3}}{2}x_1'x_2'=\vec x'^T\hat A\vec x'$$，是一个定义在 $$xOy$$ 平面上的函数，其函数值可以用 $$xOy$$ 之上的**马鞍**表示（二次型 -> 马鞍面）。你总能移动一下这张坐标纸，让轴落在对称的位置，得到 $$f(\vec x)=x_1^2-2x_2^2=\vec x^T\Lambda\vec x$$。这里基变换矩阵是顺时针旋转 60° 的刚性变换矩阵！同时也请注意到特征值和矩阵的迹的关系！
 
 实对称矩阵典型例子
 
 - 惯量张量（[力学](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E5%88%9A%E4%BD%93%E7%9A%84%E5%AE%9A%E7%82%B9%E8%BF%90%E5%8A%A8)）。
 - [证明：协方差矩阵是半正定矩阵](https://blog.csdn.net/qcyfred/article/details/71598815)（[概率论](https://shi200005.github.io/2022/02/17/Probability/#%E5%8D%8F%E6%96%B9%E5%B7%AE)，直观地想象，将高维变量空间做刚性变换，使互相垂直（独立）的新变量方差主元都落在变换后的坐标轴上，协方差为 0，新变量各个维度的方差就是矩阵的特征值们，都是非负的）。
 
-在后续的[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)中，引入了**厄米矩阵**，其实**实对称矩阵**就是厄米矩阵元素都是实数的特殊形式。而正交矩阵就是**酉矩阵**元素都是实数的特殊形式。
+在后续的[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/#%E5%8E%84%E7%B1%B3%E5%8F%98%E6%8D%A2%E5%92%8C%E5%8E%84%E7%B1%B3%E5%85%B1%E8%BD%AD)中，引入了**厄米矩阵**，其实**实对称矩阵**就是厄米矩阵元素都是实数的特殊形式。而正交矩阵就是**酉矩阵**元素都是实数的特殊形式。
 
 ## 矩阵求导
 
@@ -198,7 +198,7 @@ $$\vec x^T\hat A\vec x=\vec y^T\hat P^T\hat A\hat P\vec y=\vec y^T\hat P^{-1}\ha
 
 ## 对偶空间
 
-终于从知乎上找到了一个能看懂的讲义 [The Dual of a Vector Space: From the Concrete to the Abstract to the Concrete (In Four Lectures)](https://people.math.osu.edu/gerlach.1/math5101/DualOfAVectorSpace.pdf)（对偶空间与**固体物理 - 晶体衍射劳厄公式**、对偶空间与[信息论 - 采样定理](https://shi200005.github.io/2023/10/03/Information-Theory/#sampling-theorem)）。
+[The Dual of a Vector Space: From the Concrete to the Abstract to the Concrete (In Four Lectures)](https://people.math.osu.edu/gerlach.1/math5101/DualOfAVectorSpace.pdf)（对偶空间与**固体物理 - 晶体衍射劳厄公式**、对偶空间与[信息论 - 采样定理](https://shi200005.github.io/2023/10/03/Information-Theory/#sampling-theorem)）。
 
 $$n$$ 维线性空间 $$V$$ 的基为 $$\{\vec e_1,\vec e_2,...,\vec e_n\}$$。其 $$n$$ 维对偶空间 $$V^*$$ 是一个线性空间，其元素为可以把 $$V$$ 中向量映射到实数域的函数，这些函数的基为 $$\{\omega^1,\omega^2,...,\omega^n\}$$。满足 $$\langle\underline{\omega}^i\vert\vec e_j\rangle=\delta_j^i$$，或写为 $$\underline{\omega}^i(\vec e_j)=\delta_j^i$$。
 

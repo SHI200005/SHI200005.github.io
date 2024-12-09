@@ -64,7 +64,7 @@ mathjax: true
 - 虚位移有很大任意性 -> 甩掉虚位移  -> 虚位移不独立 换成广义坐标 -> 广义坐标的虚位移 $$\delta\mathbf r_i=\displaystyle\sum_{\alpha=1}^s\frac{\partial\mathbf r_i}{\partial q_\alpha}\delta q_\alpha$$ -> 广义坐标下的虚功原理 -> 广义力（广义力对应广义坐标，而非单个主动力） $$Q_\alpha=\displaystyle\sum_{i=1}^n\mathbf F_i\cdot\frac{\partial\mathbf r_i}{\partial q_\alpha}=0$$ -> 完整约束广义虚位移相互独立 $$Q_\alpha=0$$.
 - 解题步骤：判断是否满足理想约束，识别主动力，确定自由度和广义坐标。列所有主动力的虚功为 $$0$$（真实坐标微分），用广义坐标表示真实坐标，算出用广义坐标微分表示的真实坐标微分。若广义坐标相互独立，则令每个广义坐标微分的系数为 $$0$$，解方程。
 
-约束力的求解——[拉格朗日乘子法](https://shi200005.github.io/2021/09/30/Calculus/#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95)（虚功原理中约束力被甩掉了，如果要求怎么办？）
+约束力的求解——[拉格朗日乘子法](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)（虚功原理中约束力被甩掉了，如果要求怎么办？）
 
 - 一开始可以不承认相应的约束条件。换句话说，在选取广义坐标时，可以暂不考虑相应的约束条件。这样选取的广义坐标实际上并不独立，他们之间有相应的约束条件相联系。具体见相关笔记。实操起来计算量巨大，我没有一次能独立算对的（逃
 
@@ -74,7 +74,7 @@ mathjax: true
 - 以上研究的是静力学问题，现在转到动力学问题。代入牛顿第二定律，
 - 在理想约束作用下，主动力和达朗贝尔力的虚功之总和为零。$$\displaystyle\sum_{i=1}^n(\mathbf F_i-m_i\ddot{\mathbf r}_i)\cdot\delta \mathbf r_i=0$$.
 
-例：[虚功原理 达朗贝尔原理](https://shi200005.github.io/download_file/ACM_dAlembert.pdf)。
+例：[虚功原理 - 达朗贝尔原理](https://shi200005.github.io/download_file/ACM_dAlembert.pdf)。
 
 ## 拉格朗日动力学
 
@@ -127,7 +127,7 @@ mathjax: true
   [广义能量积分](https://shi200005.github.io/download_file/ACM_Generalized_Energy.pdf) $$H=\displaystyle\sum_{\alpha=1}^sp_\alpha\dot q_\alpha-L$$
   
   - $$\displaystyle\frac{dH}{dt}=\frac{\partial L}{\partial t}=0$$.
-  - 若 $$\displaystyle\frac{\partial\mathbf r_i}{\partial t}=0$$（定常约束）-> 动能是广义速度的二次齐次式 -> $$H$$ 就是机械能  （齐次函数的欧拉定理参见[多元函数微分学-微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6)）
+  - 若 $$\displaystyle\frac{\partial\mathbf r_i}{\partial t}=0$$（定常约束）-> 动能是广义速度的二次齐次式 -> $$H$$ 就是机械能  （齐次函数的欧拉定理参见[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)）
   - 关于矢量力学和拉格朗日力学关于机械能守恒条件的区别，见教材 73-74 页。
 
 **诺特定理**
@@ -144,7 +144,7 @@ mathjax: true
 
 ### 拉格朗日力学的推广
 
-例：带电粒子在电磁场中受洛伦兹力 $$\vec F=q(\vec E+\vec v\times\vec B)$$。在[洛伦兹规范](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E8%BE%90%E5%B0%84)下，$$\vec E+\displaystyle\frac{\partial\vec A}{\partial t}=-\nabla V$$, $$\vec B=\nabla\times\vec A$$。于是 $$\vec F=q[\displaystyle-\nabla V-\vec v\times(\nabla\times\vec A)]$$...... -> $$\displaystyle\frac{d}{dt}(\vec p+q\vec A)=\nabla[q(V-\vec v\cdot\vec A)]$$, $$\displaystyle\frac{d}{dt}(T+qV)=\frac{\partial}{\partial t}[q(V-\vec v\cdot\vec A)]$$。详见 Griffiths 10.1.4.
+例：带电粒子在电磁场中受洛伦兹力 $$\vec F=q(\vec E+\vec v\times\vec B)$$。在[洛伦兹规范](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2%E4%B8%8E%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7)下，$$\vec E+\displaystyle\frac{\partial\vec A}{\partial t}=-\nabla V$$, $$\vec B=\nabla\times\vec A$$。于是 $$\vec F=q[\displaystyle-\nabla V-\vec v\times(\nabla\times\vec A)]$$...... -> $$\displaystyle\frac{d}{dt}(\vec p+q\vec A)=\nabla[q(V-\vec v\cdot\vec A)]$$, $$\displaystyle\frac{d}{dt}(T+qV)=\frac{\partial}{\partial t}[q(V-\vec v\cdot\vec A)]$$。详见 Griffiths 10.1.4.
 
 从而定义广义势能 $$U(q,\dot q,t)=e\varphi-e\vec A\cdot\vec v$$，拉格朗日函数成为 $$L=T-U$$​，原来的拉格朗日方程仍成立。此时，研究的守恒量，如广义动量守恒，是不以牛顿第三定律为基础的。
 
@@ -152,9 +152,9 @@ mathjax: true
 
 ## 有心力 散射问题
 
-关于有心力作用下运动的性质，见[力学 - 有心力](https://shi200005.github.io/2021/10/02/Classical-Mechanics/#%E6%9C%89%E5%BF%83%E5%8A%9B)。
+关于有心力作用下运动的性质，见[力学 - 有心力](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E6%9C%89%E5%BF%83%E5%8A%9B)。
 
-我们关心**两体问题**，因为三体问题是邪恶的（见下文哈密顿力学-泊松括号-泊松定理）。如何在拉格朗日动力学的框架下简化两题问题？重点：理解《力学》中讨论过的[质心系](https://shi200005.github.io/2021/10/02/Classical-Mechanics/#%E8%B4%A8%E7%82%B9%E7%B3%BB%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9A%84%E8%BF%90%E5%8A%A8%E5%AE%9A%E7%90%86)。
+我们关心**两体问题**，因为三体问题是邪恶的（见下文哈密顿力学-泊松括号-泊松定理）。如何在拉格朗日动力学的框架下简化两题问题？重点：理解《力学》中讨论过的[质心系](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E8%B4%A8%E5%BF%83%E5%8F%82%E8%80%83%E7%B3%BB)。
 
 > 采用直角坐标系研究质心的运动，采用极坐标系研究第二个质点相对于第一个质点的相对运动......得到拉格朗日函数 $$\displaystyle L=\frac{1}{2}m_0(\dot x_0^2+\dot y_0^2+\dot z_0^2)+\frac{1}{2}m^\prime(\dot\rho^2+\rho^2\dot\varphi^2)-V(\rho)$$.  其中 $$m_0$$ 是质心质量，$$m^\prime$$ 是约化质量。
 
@@ -206,12 +206,16 @@ mathjax: true
 <span style="color: red;">此部分下文均讨论只有**完整约束**，并且**主动力**都是**具有势能或广义势能**的，</span>即拉格朗日方程为 $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha}=0$$。
 
 [勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)：，$$L(q,\dot q,t)$$ -> $$\bar L(q,p,t)$$，运动规律微分方程（原为拉格朗日方程）如何改变？构造 $$H=\displaystyle\sum_{\beta=1}^sp_\beta\dot q_\beta-L$$，这个 $$H$$ 我们曾在“运动积分”见过的，然而独立变量的选择发生了改变。运动规律成为看起来很好看的**哈密顿正则方程**。哈密顿力学中，以广义动量、广义坐标、时间为变量的系统中，运动规律由哈密顿正则方程给出。例：[哈密顿力学](https://shi200005.github.io/download_file/ACM_Hamiltonian.pdf)。
+
+
 $$
 \begin{cases}
 \displaystyle\frac{\partial H}{\partial q_\alpha}=-\dot p_\alpha \\
 \displaystyle\frac{\partial H}{\partial p_\alpha}=\dot q_\alpha	\quad(\alpha=1,2,...,s).
 \end{cases}
 $$
+
+
 
 - P.S. “正则”的意思是形式简单而对称。对称到打字靠复制粘贴再改改都很方便。
 
@@ -233,7 +237,7 @@ $$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_
 
 例：两粒子有心力 $$r^n$$ 作用，势能满足 $$V=kr^{n+1}$$，位力定理给出 $$\displaystyle\langle T\rangle=\frac{n+1}{2}\langle V\rangle$$。对于平方反比有心力，$$\displaystyle T=-\frac{1}{2}\langle V\rangle$$。解答了我高中时代的疑惑。
 
-例：推导[理想气体压强方程](https://shi200005.github.io/2022/02/24/Thermodynamics/#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E9%9B%B6%E5%AE%9A%E5%BE%8B) $$pV=nkT$$。
+例：推导[理想气体压强方程](https://shi200005.github.io/2022/02/24/Thermodynamics/#%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%89%A9%E6%80%81%E6%96%B9%E7%A8%8B) $$pV=nkT$$。
 
 ### 泊松括号
 
@@ -267,7 +271,7 @@ $$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_
 
 正则量子化 $$\displaystyle[X,Y]\rightarrow\frac{1}{i\hbar}[\hat X,\hat Y]=\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$。
 
-[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)中的两个力学量 $$\hat X$$ 和 $$\hat Y$$ 是否可以同时具有确定的值就看它们的量子泊松括号 $$\displaystyle\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$ 是否为零。
+[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/#%E5%AF%B9%E6%98%93)中的两个力学量 $$\hat X$$ 和 $$\hat Y$$ 是否可以同时具有确定的值就看它们的量子泊松括号 $$\displaystyle\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$ 是否为零。
 
 ## 力学变分原理
 
@@ -331,7 +335,7 @@ $$
 
 如何实现？按照上面的说法，$$(\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H)-(\displaystyle\sum_{\alpha=1}^s P_\alpha\dot Q_\alpha-K)=\frac{dU}{dt}$$，即 $$\displaystyle\sum_{\alpha=1}^s p_\alpha dq_\alpha-\displaystyle\sum_{\alpha=1}^s P_\alpha dQ_\alpha+(K-H)=dU$$ 即可，这就是**正则变换**。<span style="color: red;">我们希望经过这个变换，能变换出来尽可能多的可遗坐标和相应守恒的“广义动量”。</span>
 
-怎么变？书上例子已经很清楚了。应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6)把宗量给变了。概念：母函数。
+怎么变？书上例子已经很清楚了。应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)把宗量给变了。概念：母函数。
 
 **泊松括号不变性**：在正则变换下，$$[\varphi,\psi]_{pq}=[\varphi,\psi]_{PQ}$$。
 
@@ -341,17 +345,17 @@ $$
 2. $$dH=\epsilon[H,G]$$. 检查哈密顿函数在哪些变换下不变，就能确定力学系统的所有运动积分！
 3. 例子：有心力作用下的哈密顿量 $$H$$ 取绕某轴转动的角动量为母函数 $$G$$，算得 $$[H,G]=0$$。
 
-### 哈密顿-雅可比方程
+### 哈密顿 - 雅可比方程
 
 如何找到上文中能把正则变量都变成常数（初始值）的正则变换？我们希望 $$K(P,Q,t)=0$$，正则方程就保证了正则变量是常数作为变换后的“动量”。在哈密顿函数代入 $$K=0$$ 的条件，把原来的一阶 linear system of ODEs 变换为一阶 a nonlinear PDE，这就是**哈密顿-雅可比方程**，方程的解叫做**哈密顿主函数** $$S$$，其实就是拉格朗日函数 $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$。
 
 当 $$H$$ 不显含时间，可以把哈密顿-雅可比方程的控件变量与 $$t$$ 分离，令 $$S(q,P,t)=W(q,P)+f(t)$$，得到 $$\displaystyle H(q,\frac{\partial W}{\partial t})=-f^\prime(t)=E$$。也称前面这个方程为**哈密顿-雅可比方程**，$$W(q,P)$$ 为**哈密顿特征函数**。
 
-一种特殊的可积系统（见[泊松定理](https://shi200005.github.io/2022/03/30/Advanced-Classical-Mechanics/#%E6%B3%8A%E6%9D%BE%E5%AE%9A%E7%90%86)）：完全可分离的系统，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$。
+一种特殊的可积系统（泊松定理）：完全可分离的系统，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$。
 
-书中给出了一些用哈密顿-雅可比方程对力学系统进行正则变换求解然后再变回去的例子。其中谐振子的问题很有意思。早在高中学量子力学初步时，我们记忆了“速度和动量不可同时测准，能量和时间不可同时测准”，到[近代物理](https://shi200005.github.io/2022/07/15/Modern-Physics/)，谈论到为什么能量和时间也是一对共轭变量时，用的是光衍射条纹说明。这个打发高中生可以，打发本科生就不太行了。在这个例子里我们发现，能量和时间其实就是对系统做正则变换后的一对共轭变量，其实就是变换后的哈密顿函数的一对“动量”和“坐标”。也就给了我们一点点 taste。
+书中给出了一些用哈密顿-雅可比方程对力学系统进行正则变换求解然后再变回去的例子。其中谐振子的问题很有意思。在这个例子里我们发现，能量和时间其实就是对系统做正则变换后的一对共轭变量，其实就是变换后的哈密顿函数的一对“动量”和“坐标”。
 
-在平方反比有心吸引力的例子里，提到哈密顿-雅可比方法总是直接给出轨道。
+在平方反比有心吸引力的例子里，提到哈密顿 - 雅可比方法总是直接给出轨道。
 
 ### 作用量变量与角变量
 

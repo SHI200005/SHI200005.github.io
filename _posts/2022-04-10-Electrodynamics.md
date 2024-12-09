@@ -32,7 +32,7 @@ $$
 $$
 
 
-计算 $$\nabla\times(\nabla\times\vec E)$$  -> $$\nabla^2\vec E(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec E(\vec x,t)$$，同理 $$\nabla^2\vec B(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec B(\vec x,t)$$。这就是**波动方程**，波速为 $$c=\displaystyle\frac{1}{\sqrt{\mu_0\epsilon_0}}$$，即为真空中光速。于是，波动方程写为......
+计算 $$\nabla\times(\nabla\times\vec E)$$  -> $$\nabla^2\vec E(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec E(\vec x,t)$$，同理 $$\nabla^2\vec B(\vec x,t)-\mu_0\epsilon_0\displaystyle\frac{\partial^2}{\partial t^2}\vec B(\vec x,t)$$。这就是[波动方程](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E6%B3%A2%E5%8A%A8%E6%96%B9%E7%A8%8B)，波速为 $$c=\displaystyle\frac{1}{\sqrt{\mu_0\epsilon_0}}$$，即为真空中光速。
 
 #### 时谐电磁波（单色波）
 
@@ -67,7 +67,7 @@ $$
 
 ##### 时谐平面波
 
-定义**阻抗** $$\displaystyle Z=\frac{E_0}{H_0}=\sqrt{\frac{\mu}{\epsilon}}$$  还记得[力学](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E5%8F%8D%E5%B0%84%E4%B8%8E%E9%80%8F%E5%B0%84)中的阻抗在一维波传播中的物理意义吗？这里阻抗之后菲涅耳定律用。
+定义**阻抗** $$\displaystyle Z=\frac{E_0}{H_0}=\sqrt{\frac{\mu}{\epsilon}}$$  还记得力学中的[阻抗](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E6%B3%A2%E5%8A%A8%E6%96%B9%E7%A8%8B)在一维波传播中的物理意义吗？这里阻抗之后菲涅耳定律用。
 
 能量密度 $$\displaystyle\langle w\rangle=\frac{1}{2}\epsilon E_0^2=\frac{1}{2\mu}B_0^2$$，能流密度 $$\langle\vec S\rangle=\displaystyle\frac{1}{2}\sqrt{\displaystyle\frac{\epsilon}{\mu}} E_0^2\vec e_k$$。
 
@@ -128,7 +128,7 @@ $$
   $$
   
 
-  这不就是[阻尼振动](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E4%B8%80%E4%B8%AA%E8%87%AA%E7%94%B1%E5%BA%A6%E7%9A%84%E6%8C%AF%E5%8A%A8)方程，解得 $$\tilde{\vec E}(z,t)=\tilde{\vec E}_0e^{-\kappa z}e^{i(kz-\omega z)}$$，磁场长得一样。于是我们看到电磁场在导体内部传播时是怎么随着穿透深度指数衰减的。穿透深度 $$d=1/\kappa$$。对于理想导体，$$\sigma→\infty$$，$$\kappa→0$$。
+  这不就是[阻尼振动](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E6%8C%AF%E5%8A%A8%E5%92%8C%E6%B3%A2)方程，解得 $$\tilde{\vec E}(z,t)=\tilde{\vec E}_0e^{-\kappa z}e^{i(kz-\omega z)}$$，磁场长得一样。于是我们看到电磁场在导体内部传播时是怎么随着穿透深度指数衰减的。穿透深度 $$d=1/\kappa$$。对于理想导体，$$\sigma→\infty$$，$$\kappa→0$$。
 
 - 进一步，导体内部的衰减波是横波，见 Griffiths。
 

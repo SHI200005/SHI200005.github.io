@@ -31,7 +31,7 @@ mathjax: true
 
 ### 条件概率
 
-$$\displaystyle P(A\vert B)=\frac{P(A,B)}{P(B)}$$, $$P(\text{老板不回你邮件}\vert\text{你被老板开除})$$ 接近于 $$1$$，$$P(\text{你被老板开除}\vert\text{老板不回你邮件})$$ 并不大。
+$$\displaystyle P(A\vert B)=\frac{P(A,B)}{P(B)}$$, $$P(\text{老板不回你邮件}\vert\text{你被老板开除})$$ 接近于 $$1$$， $$P(\text{你被老板开除}\vert\text{老板不回你邮件})$$ 并不大。
 
 ### 全概率公式与Bayes 公式
 
@@ -103,7 +103,7 @@ $$X$$~$$N(μ,σ^2)$$
 正态分布作为**二项分布**的近似：$$n$$ 很大，$$p$$ 接近 $$1/2$$ -> $$X\sim b(n,p)$$ ->  $$X\sim N(μ,σ^2)$$。【GRAD-UPDATE】求解方法（注意，两种方法近似出来的方差略有不同）：
 
 - 例：biased random walk 求解 Fokker-Planck 近似下的小偏差（$$p$$ 接近于 $$1/2$$）的概率偏微分方程，详见[随机过程 - 随机游走与二项分布](https://shi200005.github.io/download_file/Probability_Binomial_Normal_Fourier.pdf)。
-- 通过[Stirling 近似](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula)再取连续极限，[概率论 - 二项分布近似为正态分布](https://shi200005.github.io/download_file/Probability_Binomial_Normal.pdf)。
+- 通过 [Stirling 近似](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula)再取连续极限，[概率论 - 二项分布近似为正态分布](https://shi200005.github.io/download_file/Probability_Binomial_Normal.pdf)。
 
 #### Gamma 分布
 
@@ -127,7 +127,7 @@ $$X$$~$$N(μ,σ^2)$$
 
   Example in biophysics: analytical continuous model solution of protein distribution when produced in bursts, and the burst size obeys the exponential distribution. Reference: Friedman, N., Cai, L., & Xie, X. S. (2006). Linking stochastic dynamics to population distribution: an analytical framework of gene expression. *Physical review letters*, *97*(16), 168302. Note that Laplace transform (see [复变函数](https://shi200005.github.io/2022/02/15/Complex-Functions/#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2)) was applied to solve it. [online](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.97.168302)
 
-  The [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution), [Erlang distribution](https://en.wikipedia.org/wiki/Erlang_distribution), and [chi-squared distribution](https://en.wikipedia.org/wiki/Chi-squared_distribution) ([数理统计](https://shi200005.github.io/2022/02/18/Statistics/#%E6%A0%B7%E6%9C%AC%E5%8F%8A%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83)) are special cases of the [gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution).
+  The [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution), [Erlang distribution](https://en.wikipedia.org/wiki/Erlang_distribution), and [chi-squared distribution](https://en.wikipedia.org/wiki/Chi-squared_distribution) ([数理统计](https://shi200005.github.io/2022/02/18/Statistics/#%E5%B8%B8%E7%94%A8%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83)) are special cases of the [gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution).
 
 - 已知一个随机变量为指数分布，与另一个随机变量的和为指数分布，另一个随机变量是指数分布吗？**不是**。见 Thomas & Cover Elements of Information Theory 习题 9.3。
 
@@ -146,7 +146,7 @@ $$X$$~$$N(μ,σ^2)$$
 
 $$G(\mathbf {x})=\displaystyle (2\pi )^{-k/2}\det({\boldsymbol {\Sigma }})^{-1/2}\,\exp \left(-{\frac {1}{2}}(\mathbf {x} -{\boldsymbol {\mu }})^{\!{\mathsf {T}}}{\boldsymbol {\Sigma }}^{-1}(\mathbf {x} -{\boldsymbol {\mu }})\right)$$
 
-其中 $$\mathbf {x}$$ 是 $$k$$ 维随机变量摞成的一个列向量。问题：为什么指数部分取协方差矩阵的逆？其实不用太繁琐的数学推导——Hint: 协方差矩阵是**实对称矩阵**，能够合同对角化（[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)），然后请自行对随机变量进行基变换，你会明白。
+其中 $$\mathbf {x}$$ 是 $$k$$ 维随机变量摞成的一个列向量。问题：为什么指数部分取协方差矩阵的逆？其实不用太繁琐的数学推导——Hint: 协方差矩阵是**实对称矩阵**，能够合同对角化（[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5)），然后请自行对随机变量进行基变换，你会明白。
 
 ### 边缘分布
 

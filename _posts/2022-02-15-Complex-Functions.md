@@ -18,7 +18,7 @@ mathjax: true
 
 ## 复变函数
 
-详见[复变函数-引言](https://shi200005.github.io/download_file/Complex_Functions_Intro.pdf)。
+详见[复变函数 - 引言](https://shi200005.github.io/download_file/Complex_Functions_Intro.pdf)。
 
 ### 复数与复数的运算
 
@@ -39,7 +39,7 @@ $$z=x+iy, f(z)=u(x,y)+iv(x,y)$$
 若函数 $$f(z)=u+iv$$ 在区域上解析，则 $$u$$ 和 $$v$$ 是两组正交曲线族，且均为区域上的**调和函数**（满足拉普拉斯方程 $$\nabla^2u=0,\nabla^2v=0$$，由 C-R 条件再求导得到）、虚实可互求。
 
 - 补充：数学上可以证明，如果调和函数在区域内不恒为常数，则函数在区域内没有极值。例：如果试探电荷放入纯净电力电场，则不可能稳定平衡，否则将违背高斯定律。
-- 调和函数举例：电势。 [复变函数-平面标量场](https://shi200005.github.io/download_file/Complex_Functions_Field.pdf)。电场线与等势线可互求。
+- 调和函数举例：电势。 [复变函数 - 平面标量场](https://shi200005.github.io/download_file/Complex_Functions_Field.pdf)。电场线与等势线可互求。
 
 ### 多值函数
 没用（至少目前）。
@@ -78,7 +78,7 @@ $$\displaystyle\oint_{l,ac}f(z)dz=\displaystyle\sum_{i=1}^n\oint_{l_i,ac}f(z)dz$
 ### 洛朗级数展开
 当所研究的区域上**存在函数的奇点**时，就需要考虑在去除奇点的**环域**上的展开。求洛朗展开系数有个公式，但一般不用那个公式，而是通过**拆拆凑凑**的方法。请注意在哪个环域上展开！
 
-例题也放[复变函数-平面标量场](https://shi200005.github.io/download_file/Complex_Functions_Field.pdf)里了。得到[数学物理方程-m 阶贝塞尔函数](https://shi200005.github.io/download_file/Mat_Phy_Bessel.pdf)的洛朗展开（[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E8%B4%9D%E5%A1%9E%E5%B0%94%E5%87%BD%E6%95%B0)）。
+例题也放[复变函数 - 平面标量场](https://shi200005.github.io/download_file/Complex_Functions_Field.pdf)里了。得到[数学物理方程 - m 阶贝塞尔函数](https://shi200005.github.io/download_file/Mat_Phy_Bessel.pdf)的洛朗展开（[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E8%B4%9D%E5%A1%9E%E5%B0%94%E5%87%BD%E6%95%B0)）。
 
 概念：**可去奇点**、**极点**和**本性奇点**。对于可去奇点，例如 $$f(z)=\sin(z)/z$$ 在 $$z=0$$，若补充定义 $$f(z)=1$$，则 $$f(z)$$ 在整个平面上又是解析函数了。
 
@@ -88,7 +88,7 @@ $$\displaystyle\oint_{l,ac}f(z)dz=\displaystyle\sum_{i=1}^n\oint_{l_i,ac}f(z)dz$
 如果被积复变函数在回路所围闭区域上是解析的，则回路积分等于零。如果回路包围奇点，在鼓励几点附近展为**洛朗级数，-1 次幂的系数叫做留数**。设复变函数在回路多为区域上除了有限个孤立奇点外解析，在闭区域上除孤立奇点外连续，则$$\displaystyle \oint_lf(z)dz=2\pi i \sum_{j=1}^n \text{Res} f(b_j)$$. 求留数时，展成洛朗级数得到 -1 次幂项，或者善用**洛必达法则**。
 
 ### 应用留数定理计算实变函数定积分
-有用，在 [(En)Advanced Statistical Mechanics](https://shi200005.github.io/2023/05/07/Advanced-Statistical-Mechanics/) 就用了。一般来说就是把实变函数延拓成一个单位圆（三角函数有理式，积分上下限0到$$2\pi$$，欧拉公式换元），或者一个无限大的半圆加上实轴上的横线。适用条件是可以证明解析延拓的复数圆弧积分为 0，也就把实变函数定积分归结为区域内留数问题。详见[复变函数-应用留数定理计算实变函数定积分](https://shi200005.github.io/download_file/Complex_Functions_Integral.pdf)。
+有用，在 [(En)Advanced Statistical Mechanics](https://shi200005.github.io/2023/05/07/Advanced-Statistical-Mechanics/) 就用了。一般来说就是把实变函数延拓成一个单位圆（三角函数有理式，积分上下限0到$$2\pi$$，欧拉公式换元），或者一个无限大的半圆加上实轴上的横线。适用条件是可以证明解析延拓的复数圆弧积分为 0，也就把实变函数定积分归结为区域内留数问题。详见[复变函数 - 应用留数定理计算实变函数定积分](https://shi200005.github.io/download_file/Complex_Functions_Integral.pdf)。
 
 ---
 
@@ -127,7 +127,7 @@ $$\displaystyle\oint_{l,ac}f(z)dz=\displaystyle\sum_{i=1}^n\oint_{l_i,ac}f(z)dz$
 
   在此节给出一些例子，如**矩形函数**和**有限正弦波列**的傅里叶变换结果。
 
-- 复数形式的傅里叶积分，详见[复变函数-复数形式的傅里叶积分](https://shi200005.github.io/download_file/Complex_Functions_Fourier.pdf)。
+- 复数形式的傅里叶积分，详见[复变函数 - 复数形式的傅里叶积分](https://shi200005.github.io/download_file/Complex_Functions_Fourier.pdf)。
 
 - 矩形函数 <-> sinc 函数在数字信号处理的应用 rect <-> sinc in digital signal processing
 
@@ -135,7 +135,7 @@ $$\displaystyle\oint_{l,ac}f(z)dz=\displaystyle\sum_{i=1}^n\oint_{l_i,ac}f(z)dz$
 
 ### 基本性质
 
-傅里叶变换的基本性质：导数定理、积分定理、相似性定理、延迟定理、位移定理、卷积定理（[傅里叶变换的性质及基本应用](https://zhuanlan.zhihu.com/p/78775455)）。用于**微分方程求解**（详见[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/)）。傅里叶变换和微分方程的求解联系何在？在于**导数定理**——对于给定初始值的偏微分方程或常微分方程，可以转化为常微分方程或者普通的方程。傅里叶变换的基本性质中应用最多的便是**导数定理**和**卷积定理**（应用详见 [(En) Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/) 扩散方程和线性响应）。
+傅里叶变换的基本性质：导数定理、积分定理、相似性定理、延迟定理、位移定理、卷积定理（[傅里叶变换的性质及基本应用](https://zhuanlan.zhihu.com/p/78775455)）。用于**微分方程求解**（详见[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E6%B3%95)）。傅里叶变换和微分方程的求解联系何在？在于**导数定理**——对于给定初始值的偏微分方程或常微分方程，可以转化为常微分方程或者普通的方程。傅里叶变换的基本性质中应用最多的便是**导数定理**和**卷积定理**。
 
 ### $$δ$$ 函数
 
@@ -149,9 +149,9 @@ $$δ$$ 函数即狄拉克函数，用于研究物理学中的质点、点电荷�
 
 条件：(1) 在$$0≤t<\infty$$ 的任一有限区间上，除了有限个第一类间断点外，函数 $$f(t)$$ 及其导数是处处连续的，(2) 存在常数 $$M>0$$ 和 $$\sigma>0$$，使对于任何 $$t$$ 值 ($$0≤t<\infty$$)，有 $$\vert f(t)\vert<Me^{\sigma t}$$。
 
-详见[复变函数-拉普拉斯变换及其应用](https://shi200005.github.io/download_file/Complex_Functions_Laplace.pdf)。和傅里叶变换一样，傅里叶变换和微分方程的求解联系也在于**导数定理**——傅里叶变换的基本性质中应用最多的便是**导数定理**和**卷积定理**。
+详见[复变函数 - 拉普拉斯变换及其应用](https://shi200005.github.io/download_file/Complex_Functions_Laplace.pdf)。和傅里叶变换一样，傅里叶变换和微分方程的求解联系也在于**导数定理**——傅里叶变换的基本性质中应用最多的便是**导数定理**和**卷积定理**。
 
-常用于求解非齐次偏微分方程，详见[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E6%B3%95)。
+常用于求解非齐次偏微分方程，详见[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0%E6%B3%95)。
 
 把微分方程做拉普拉斯变换求解后怎么变回去？没傅里叶变换那么容易，一般运用各种定理，然后查表，我一般就直接问 ChatGPT 了。
 

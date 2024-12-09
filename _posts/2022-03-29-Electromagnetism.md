@@ -18,6 +18,8 @@ The author wrote an physics article that pointed out a mathematical flaw of "Ans
 | 先修课程                | 微积分 线性代数  复变函数                                                          |
 
 第一部分：建立麦克斯韦方程组
+
+
 $$
 \text{微分方程}\\
 \nabla\times\vec E=-\frac{\partial\vec B}{\partial t}\\
@@ -33,6 +35,7 @@ $$
 \vec D=\vec D(\vec E,\vec B)\\
 \vec H=\vec H(\vec E,\vec B)\\
 $$
+
 
 
 ## 真空中点电荷产生的电场
@@ -285,6 +288,7 @@ The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec 
 电场与磁场脱耦，问题简化为
 
 
+
 $$
 \text{微分方程}\\
 \nabla\times\vec E=0\\
@@ -297,11 +301,15 @@ $$
 $$
 
 
+
 均匀、各向同性、线性介质有**静电势微分方程** $$\nabla^2\varphi(\vec x)=-\displaystyle\frac{\rho_f}{\epsilon}$$（一个泊松方程）。从静电势函数考虑，边界条件成为
+
+
 $$
 \varphi_2=\varphi_1\\
 \epsilon_2\frac{\partial \phi_2}{\partial n_{21}}-\epsilon_1\frac{\partial \phi_1}{\partial n_{12}}=-\sigma_f
 $$
+
 
 
 以上便是 PDE 的定解问题，学过数学物理方法，很自然知道求解套路：
@@ -367,7 +375,7 @@ $$
 
 ### 格林函数
 
-见[数学物理方程 - 格林函数](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0)，例题见电动力学课件。
+见[数学物理方程 - 格林函数](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0%E6%B3%95-1)，例题见电动力学课件。
 
 ### 电多极矩
 
@@ -377,7 +385,7 @@ $$
 
 极坐标求解：见课件 01-P147 附近。或数学物理方法教材。
 
-研究一个小区域内分布的电荷体系，在空间很远处产生的电场。对电荷体系产生电场势函数在三维空间进行[高阶泰勒展开]()。零级——电荷集中于一点产生的电势 $$\displaystyle\propto\frac{1}{R}$$，一级——系统电偶极矩 $$\displaystyle\propto\frac{1}{R^2}$$、二级——系统电四极矩 $$\displaystyle\propto\frac{1}{R^3}$$、三级——系统电八极矩 $$\displaystyle\propto\frac{1}{R^4}$$......
+研究一个小区域内分布的电荷体系，在空间很远处产生的电场。对电荷体系产生电场势函数在三维空间进行[高阶泰勒展开](https://shi200005.github.io/2021/09/30/Calculus/#%E5%B9%B6%E7%9F%A2%E4%B8%8E%E5%BC%A0%E9%87%8F)。零级——电荷集中于一点产生的电势 $$\displaystyle\propto\frac{1}{R}$$，一级——系统电偶极矩 $$\displaystyle\propto\frac{1}{R^2}$$、二级——系统电四极矩 $$\displaystyle\propto\frac{1}{R^3}$$、三级——系统电八极矩 $$\displaystyle\propto\frac{1}{R^4}$$......
 
 > 电偶极矩考量的是体系是否具有镜面对称性破缺；电四极矩则考量体系是否有球对称破缺。——电动力学讲义
 
@@ -416,7 +424,7 @@ $$
 
 ### 磁矢势
 
-回想[微积分 - 斯托克斯定理](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F) $$\displaystyle\oint_{l}\vec A\cdot d\vec l=\int_{S}(\nabla\times\vec A)\cdot d\vec S=\int_{S}\vec B\cdot d\vec S$$，不难猜到 $$\vec B=\nabla\times\vec A$$ 即为所求。但是，这样，$$\vec B$$ 对应的 $$\vec A$$ 不唯一，加上任何一个标量势的梯度仍满足 $$\vec B=\nabla\times(\vec A+\nabla\phi)$$（根据[矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#多元函数积分学#矢量分析)，任何标量场的梯度场都是无旋场）。
+回想[微积分 - 斯托克斯定理](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F) $$\displaystyle\oint_{l}\vec A\cdot d\vec l=\int_{S}(\nabla\times\vec A)\cdot d\vec S=\int_{S}\vec B\cdot d\vec S$$，不难猜到 $$\vec B=\nabla\times\vec A$$ 即为所求。但是，这样，$$\vec B$$ 对应的 $$\vec A$$ 不唯一，加上任何一个标量势的梯度仍满足 $$\vec B=\nabla\times(\vec A+\nabla\phi)$$（根据[矢量分析](https://shi200005.github.io/2021/09/30/Calculus/#%E9%AB%98%E6%96%AF%E5%85%AC%E5%BC%8F%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F)，任何标量场的梯度场都是无旋场）。
 
 在静磁学中，我们一般取**库伦规范**势，满足 $$\nabla\cdot\vec A=0$$。P.S. 在随时间变化的磁场中，我们一般取**洛伦兹规范**势，见[电动力学](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2%E4%B8%8E%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7)。
 
