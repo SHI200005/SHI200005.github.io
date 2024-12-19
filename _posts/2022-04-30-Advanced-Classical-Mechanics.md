@@ -207,7 +207,6 @@ mathjax: true
 
 [勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)：，$$L(q,\dot q,t)$$ -> $$\bar L(q,p,t)$$，运动规律微分方程（原为拉格朗日方程）如何改变？构造 $$H=\displaystyle\sum_{\beta=1}^sp_\beta\dot q_\beta-L$$，这个 $$H$$ 我们曾在“运动积分”见过的，然而独立变量的选择发生了改变。运动规律成为看起来很好看的**哈密顿正则方程**。哈密顿力学中，以广义动量、广义坐标、时间为变量的系统中，运动规律由哈密顿正则方程给出。例：[哈密顿力学](https://shi200005.github.io/download_file/ACM_Hamiltonian.pdf)。
 
-
 $$
 \begin{cases}
 \displaystyle\frac{\partial H}{\partial q_\alpha}=-\dot p_\alpha \\
@@ -285,11 +284,10 @@ Significance: 见梁老师本章引言。
 
 - 相空间的哈密顿原理：$$\delta \displaystyle\int_{t_1}^{t_2}[\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H(p,q,t)]dt=0$$ <-> $$\displaystyle\int_{t_1}^{t_2}\displaystyle\sum_{\alpha=1}^s [(\dot q_\alpha-\frac{\partial H}{\partial p_\alpha})\delta p_\alpha-(\dot p_\alpha-\frac{\partial H}{\partial q_\alpha})\delta q_\alpha]dt=0$$（哈密顿正则方程）.
 
-- 位形世界的哈密顿原理
+- 变分原理的**等价**：如果上面两个哈密顿原理里的被积函数加上某个函数 $$U$$ 对时间的全导数 $$\displaystyle \frac{dU}{dt}$$，如果代表点的初始和终末位形是给定的，则 $$\delta U\vert_{t_1}=\delta U\vert_{t_2}=0$$，不改变动力学方程。（后面哈密顿 - 雅可比方程要用）
 
-  将时间 $$t$$ 看作和广义坐标 $$q$$ 地位平等的变量，$$t$$ 相当于第 $$s+1$$ 个广义坐标，这 $$s+1$$ 个广义坐标构成了推广的**位形世界**。......**参数** $$\tau$$，$$\displaystyle\dot q_\alpha=\frac{q_\alpha^\prime}{t^\prime}$$......
+- 位形世界的哈密顿原理：将时间 $$t$$ 看作和广义坐标 $$q$$ 地位平等的变量，$$t$$ 相当于第 $$s+1$$ 个广义坐标，这 $$s+1$$ 个广义坐标构成了推广的**位形世界**。......**参数** $$\tau$$，$$\displaystyle\dot q_\alpha=\frac{q_\alpha^\prime}{t^\prime}$$......修改的拉格朗日函数 $$\displaystyle\Lambda=L(q,t,\frac{q^\prime}{t^\prime})t=\Lambda(q,t,q^\prime,t^\prime)$$，于是哈密顿原理成为 $$\delta\int\Lambda d\tau=0$$。
 
-  修改的拉格朗日函数 $$\displaystyle\Lambda=L(q,t,\frac{q^\prime}{t^\prime})t=\Lambda(q,t,q^\prime,t^\prime)$$，于是哈密顿原理成为 $$\delta\int\Lambda d\tau=0$$。
 
 ### 最小作用量原理
 
@@ -335,21 +333,30 @@ $$
 
 如何实现？按照上面的说法，$$(\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H)-(\displaystyle\sum_{\alpha=1}^s P_\alpha\dot Q_\alpha-K)=\frac{dU}{dt}$$，即 $$\displaystyle\sum_{\alpha=1}^s p_\alpha dq_\alpha-\displaystyle\sum_{\alpha=1}^s P_\alpha dQ_\alpha+(K-H)=dU$$ 即可，这就是**正则变换**。<span style="color: red;">我们希望经过这个变换，能变换出来尽可能多的可遗坐标和相应守恒的“广义动量”。</span>
 
-怎么变？书上例子已经很清楚了。应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)把宗量给变了。概念：母函数。
+怎么变？应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)把宗量给变了。见[例子](https://shi200005.github.io/download_file/ACM_Hamiltonian_Jacobi.pdf)：用 $$U_3(q,P,t)$$ 作为**母函数**。
 
 **泊松括号不变性**：在正则变换下，$$[\varphi,\psi]_{pq}=[\varphi,\psi]_{PQ}$$。
 
-**无限小正则变换**我还没想好怎么概括比较好，先把梁老师的黑体结论扔上来。
+**无限小正则变换**：选母函数 $$\displaystyle U_3(q,P,t)=\sum_{\alpha=1}^sq_\alpha P_\alpha+\epsilon G(q,P)$$，正则方程变为
 
-1. 力学系统的正则变量在时刻 $$t$$ 的值，可由其初始值（常数）通过正则变换得出，这正则变换是时间 $$t$$ 的函数。
-2. $$dH=\epsilon[H,G]$$. 检查哈密顿函数在哪些变换下不变，就能确定力学系统的所有运动积分！
+
+$$
+\begin{cases}
+\displaystyle dq_\alpha=\epsilon\frac{\partial G}{\partial p_\alpha}\\
+\displaystyle dp_\alpha=-\epsilon\frac{\partial G}{\partial q_\alpha}\quad(\alpha=1,2,...,s).
+\end{cases}
+$$
+
+
+1. 取 $$G=H$$，$$\epsilon=dt$$，则上面正则方程就是哈密顿正则方程。
+2. 若 $$H$$ 不显含时间，$$dH=\epsilon[H,G]$$. 根据上文泊松括号中力学量随时间的变化率，若 $$[H,G]=0$$ -> $$dH=0$$ -> $$G$$ 是运动积分。
 3. 例子：有心力作用下的哈密顿量 $$H$$ 取绕某轴转动的角动量为母函数 $$G$$，算得 $$[H,G]=0$$。
 
 ### 哈密顿 - 雅可比方程
 
 如何找到上文中能把正则变量都变成常数（初始值）的正则变换？我们希望 $$K(P,Q,t)=0$$，正则方程就保证了正则变量是常数作为变换后的“动量”。在哈密顿函数代入 $$K=0$$ 的条件，把原来的一阶 linear system of ODEs 变换为一阶 a nonlinear PDE，这就是**哈密顿-雅可比方程**，方程的解叫做**哈密顿主函数** $$S$$，其实就是拉格朗日函数 $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$。
 
-当 $$H$$ 不显含时间，可以把哈密顿-雅可比方程的控件变量与 $$t$$ 分离，令 $$S(q,P,t)=W(q,P)+f(t)$$，得到 $$\displaystyle H(q,\frac{\partial W}{\partial t})=-f^\prime(t)=E$$。也称前面这个方程为**哈密顿-雅可比方程**，$$W(q,P)$$ 为**哈密顿特征函数**。
+当 $$H$$ 不显含时间，可以把哈密顿-雅可比方程的空间变量与 $$t$$ 分离，令 $$S(q,P,t)=W(q,P)+f(t)$$，得到 $$\displaystyle H(q,\frac{\partial W}{\partial t})=-f^\prime(t)=E$$。也称前面这个方程为**哈密顿-雅可比方程**，$$W(q,P)$$ 为**哈密顿特征函数**。
 
 一种特殊的可积系统（泊松定理）：完全可分离的系统，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$。
 
@@ -361,7 +368,7 @@ $$
 
 物理学中的**周期性运动**中，我们关注其**频率**。分为**天平动**和**转动**（回忆单摆相图）。现只讨论哈密顿特征函数 $$W$$ 可分离为 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;E,C_2,...,C_s)$$ 的情况。变换后的“动量”常数取为**作用量** $$J_\alpha=\oint p_\alpha dq_\alpha$$（对一个周期积分），$$J_\alpha$$ 只是积分常数 $$E,C_2,...,C_s$$ 的函数，于是 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;J_1,J_2,...,J_s)$$。把 $$J_\alpha$$ 的共轭变量 $$\omega_\alpha$$ 叫做**角变量**满足 $$\displaystyle\dot\omega_\alpha=\frac{\partial E}{\partial J_\alpha}$$，是 $$q_\alpha$$ 周期运动的频率。
 
-例：一维谐振子。$$\displaystyle E=(\frac{1}{2\pi}\sqrt{\frac{k}{m}})J$$。**量子力学过渡**：量子化作用量 $$J=nh(n=0,1,2,...)$$，则 $$\displaystyle E=n\frac{h}{2\pi}\omega$$。
+例：一维谐振子。$$\displaystyle E=(\frac{1}{2\pi}\sqrt{\frac{k}{m}})J$$。**量子力学过渡**：量子化作用量 $$J=nh(n=0,1,2,...)$$，则 $$\displaystyle E=n\frac{h}{2\pi}\omega$$。不过，薛定谔氢原子量子力学解并不需要这种认为量子化。
 
 例：平方反比有心力吸引下的质点周期运动频率。延申：各个坐标周期运动如果有不同的运动频率......
 
@@ -380,7 +387,7 @@ $$
 $$
 
 
-满足以微扰函数 $$\epsilon H^\prime$$ 为哈密顿函数的正则方程。这个方程一般称为**微扰方程**。
+满足以微扰函数 $$\epsilon H^\prime$$ 为哈密顿函数的正则方程。这个方程一般称为**微扰方程**。例：[非线性振动](https://shi200005.github.io/download_file/ACM_Perturbation.pdf)一阶微扰的频率修正。
 
 ### 从“几何力学”到“波动力学”
 

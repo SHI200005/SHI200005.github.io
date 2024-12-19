@@ -46,11 +46,13 @@ $$\displaystyle \vec F_{12}=\frac{1}{4\pi\epsilon_0}\frac{Q_1Q_2}{r_{21}^3}\vec 
 
 空间中的电荷源产生电场，试探电荷 $$q$$ 泡在这种电场里，受到的力有一种之和电荷源有关的关系：电荷源在空间中产生了电场 $$\vec E=\displaystyle\frac{1}{4\pi\epsilon_0}\displaystyle\int_{V'}\displaystyle\frac{\vec r}{r^3}\rho(\vec x')dV'$$。对应标量势 $$\varphi(\vec x)=\displaystyle\frac{1}{4\pi\epsilon_0}\displaystyle\int_{V'}\displaystyle\frac{\rho(\vec x')}{r}dV'$$，$$\vec E(\vec x)=-\nabla\varphi(\vec x)$$，完全可以通过矢量分析联系起来。
 
-- 适用条件
-  - 真空、点电荷、静止。点电荷相对静止，且相对观察者也静止。可以拓宽到静源 & 动电荷，不能延拓到动源 & 静电荷。
-  - 作为动源，[有推迟效](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E6%8E%A8%E8%BF%9F%E5%8A%BF)。一动一不动的两个点电荷之间的相互作用力与牛顿第三定律矛盾。
+适用条件
+- 真空、点电荷、静止。点电荷相对静止，且相对观察者也静止。可以拓宽到静源 & 动电荷，不能延拓到动源 & 静电荷。
+- 作为动源，[有推迟效](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E6%8E%A8%E8%BF%9F%E5%8A%BF)。一动一不动的两个点电荷之间的相互作用力与牛顿第三定律矛盾。
 
 **电偶极矩**：等量异号点电荷对 $$q$$，负电荷指向正电荷适量 $$\vec l$$，电偶极矩为 $$\vec p=q\vec l$$。后续我们研究电偶极子在空间产生的电场特点。
+
+重要推论：无限大均匀带电金属板两侧为方向相反的匀强电场。匀强电场的产生 -> 无限大平行板电容器，内部为匀强电场，外部电场为 0。后续结合高斯定理理解。
 
 ### 高斯定理、环路定理
 
@@ -95,6 +97,8 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 ### 毕奥-萨筏尔定律
 
 问：参照电场概念的建立，安培定律能否写成 $$\vec F_{12}=\vec J_1dV_1\times\vec B$$？答：电流源产生的磁场**磁感应强度** $$\vec B$$：$$\displaystyle d\vec B(\vec x)=\frac{\mu_0}{4\pi}\frac{Id\vec l\times\vec r}{r^3}=\frac{\mu_0}{4\pi}\frac{\vec J(\vec x')\times\vec r}{r^3}$$，广延形式 $$\displaystyle\vec B(\vec x)=\frac{\mu_0}{4\pi}\int\frac{\vec J(\vec x')\times\vec r}{r^3}dV'$$。
+
+重要推论：[无限长均匀密绕通电螺线管轴向磁感应强度](http://www.phycai.sjtu.edu.cn/pub/webphy/content/ch08/sec0803.htm)。匀强磁场的产生 -> 无限长通电螺线管，内部为匀强磁场，外部磁场为 0。后续结合环路定理理解。
 
 ### 高斯定理、环路定理/安培定理
 
