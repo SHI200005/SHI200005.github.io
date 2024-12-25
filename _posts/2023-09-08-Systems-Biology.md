@@ -149,7 +149,7 @@ If nonlinear, there might be multiple fixed points in the system. For fixed poin
 
 ## Nonlinear Dynamics
 
-For details, check [(En-Zh) 非线性动力学 Nonlinear Dynamics](https://shi200005.github.io/2023/09/07/Nonlinear-Dynamics/).
+For details, check [(En) Nonlinear Dynamics](https://shi200005.github.io/2023/09/07/Nonlinear-Dynamics/).
 
 Example: bistable network (cooperative inhibition with balanced inhibition strength) in Ingalls' Model (4.2), the phase portrait as Figure 4.8 (B). In this example, the eigenvalues of the Jacobian at three fixed points are all real numbers.
 

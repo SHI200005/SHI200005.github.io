@@ -9,36 +9,20 @@ mathjax: true
 
 > Ludwig Boltzmann, who spent much of his life studying Statistical Mechanics, died in 1906,  by his own hand. Paul Ehrenfest, carrying on the work, died similarly in 1933. Now it is our  turn to study Statistical Mechanics. Perhaps it will be wise to approach the subject cautiously. --in *States of Matter*, by David. L. Goodstein, 1975, Dover N.Y. 
 
-2022.09.10 Ver0.0,  2023.01.18 Ver1.0, 2023.05.19 Ver2.0 *\*统计物理，还我青春！\*\*\*！
-
 | 学习时间                | 大三下                                                                        |
 | 周课时                    | 4                                                                                 |
 | 本人成绩                | 74 本来是61 :sweat_smile:                                                        |
 | 课程教材                | 汪志诚 《统计物理学》                                            |
 | 个人建议参考教材 | Mehran Kardar, Statistical Physics of Particles; R. K. Pathria, Statistical Mechanics 林宗涵《热力学与统计物理》 |
-| 先修课程                | 微积分 概率论 数理统计 热学 近代物理 量子力学  |
+| 先修课程                | 微积分 概率论 热学 量子力学  |
 
 > As we shall demonstrate, for discussing equilibrium properties of a macroscopic system, full knowledge of the behavior of its constituent particles is not necessary. All that is required is the *likelihood* that the particles are in a particular microscopic state.
 
 统计物理学从物体的微观组成和结构出发，把宏观的性质看成**微观性质的统计平均**，采用统计平均的方法。所以说，这门课的基础是[概率论](https://shi200005.github.io/2021/10/02/Probability/)，不幸的是，这门课上得太 crap。
 
-龚昇在《话说微积分》中说“高级的数学未必难，低级的数学未必容易”，统计物理也是同样的道理。这个道理给我的启示是：别看 crappy textbooksss，快去看 Kardar。
+## References
 
-## Rules for large numbers
-
-Important to check Kardar's 2.6 **Rules for large numbers**. （这一段特别精彩lol）
-
-- $$N$$ dependence encountered in the **thermodynamic limit** ($$N\rightarrow \infty$$ ): Intensive quantities: $$O(N^0)$$; Extensive quantities: $$O(N^1)$$; Exponential dependence $$O(\exp(N\phi))$$.
-
-- Simplifications of sums: 
-
-  Summation of exponential quantities: $$\mathscr{E}=\displaystyle\sum_{i=1}^\mathcal{N}\mathcal{E}_i$$, where each term is positive, $$\mathcal{N}$$ is some power of $$N$$,  $$0\leq\mathcal{E}_i\sim O(\exp(N\phi_i))$$, then $$\displaystyle\lim_{N\rightarrow\infty}\frac{\ln\mathscr{E}}{N}=\phi_{\max}$$.
-
-  **Saddle point integration**: $$\mathcal{J}=\int dx\exp(N\phi(x))\approx\sqrt{\frac{2\pi}{N\vert\phi''(x_{\max})}}e^{N\phi(x_{\max})}$$. **Stirling's approximation** for $$N!$$ comes from this, which is $$\ln N!=N\ln N-N+\frac{1}{2}\ln(2\pi N)+O(\frac{1}{N})$$.
-
-为啥统计物理里面我们这么关注指数分布呢？我感觉根源来自于 $$S=k_B\ln\Omega$$ 里面的对数关系。
-
----
+1. Kardar, Mehran. *Statistical physics of particles*. Cambridge University Press, 2007.
 
 ## 统计物理学的基本概念
 
@@ -389,10 +373,6 @@ $$\Eta(t)=\int d^3\vec pd^3\vec qf_1(\vec p,\vec q,t)lnf_1(\vec p,\vec q,t)$$,
 which is related to the **information content of the one-particle PDF** (for information of a distribution, see [Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/)). Proved by plugging in the Boltzmann equation.
 
 Key mathematical step for introducing time irreversibility: check Kardar Eq.(3.40). *The assumption of molecular chaos* (factorizing $$f_2$$ as the product of two $$f_1$$) is applied to the "before collision term", but not the "after collision term", since when out of equilibrium, after collision, the coordinates are likely to be more correlated!
-
-## References
-
-1. Kardar, Mehran. *Statistical physics of particles*. Cambridge University Press, 2007.
 
 ## 致谢
 

@@ -131,7 +131,7 @@ $$\displaystyle \vec{L}=\vec{r}×\vec{p}$$, $$\displaystyle\vec{M}=\vec{r}×\vec
 
 参见梁老师理论力学 6.6，首先根据[磁矩的定义](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%88%86%E5%AD%90%E7%8E%AF%E5%BD%A2%E7%94%B5%E6%B5%81%E6%A8%A1%E5%9E%8B)导出电子磁矩 $$\vec\mu=g\vec L$$, 其中$$g=e/2m$$ 为旋磁比。[匀强磁场中](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%B0%8F%E5%8C%BA%E5%9F%9F%E7%94%B5%E6%B5%81%E5%9C%A8%E5%A4%96%E7%A3%81%E5%9C%BA)力矩 $$\vec M=\vec\mu\times\vec B$$，于是 $$\displaystyle\frac{d\vec L}{dt}=-g\vec B\times\vec L$$。进动频率为 $$\omega=gB$$。
 
-![Classical_Mechanics_Larmor](\images\blog\Classical_Mechanics_Larmor.jpg)
+<img src="\images\blog\Classical_Mechanics_Larmor.jpg" alt="Classical_Mechanics_Larmor" width="400px;" />
 
 [量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)中，玻尔磁子 $$μ_B$$ 是轨道磁矩的最小单元，$$μ_B=e\hbar/2m_e$$。$$μ_l=\sqrt{l(l+1)}μ_B$$。$$μ_{lz}=-m_lμ_B$$。
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (En-Zh) Nonlinear Dynamics 非线性动力学
+title: (En) Nonlinear Dynamics
 categories: BS-NJU-Course-Review-Others
 description: 
 keywords: 
@@ -8,8 +8,6 @@ mhchem: true
 ---
 
 ...
-
-<span style="font-size: 25px;">(En) Part I: Basic</span>
 
 ## References
 
@@ -64,23 +62,3 @@ Check Strogatz's related sections.
 If we change the value of a parameter (parameters) in ODEs, the structure of the flow diagram can change. The number and the stability of fixed points can change. **Qualitative** changes in the dynamics are called **bifurcations**.
 
 Example: Saddle-node bifurcation, transcritical bifurcation and pitchfork bifurcation, hopf bifurcation...
-
-
-
-<span style="font-size: 25px;">(Zh) Part II: Intermediate</span>
-
-## References
-
-1. 梁昆淼，高等教育出版社《理论力学（第四版）》，第十章。
-
-线性 $f$：$f(ax_1+bx_2)=af(x_1)+bf(x_2)$。
-
-> 物理学中的叠加原理是系统具有线性性质的体现。在该情况下，系统的整体性质可以由组成该系统的所有子系统的性质叠加尔得到，这也表明各子系统之间是没有相互作用的，或者这种相互作用对所讨论的性质而言是可以忽略不计的。
-
-## 微扰法
-
-用小参数展开进行主机近似的方法。
-
-逐级近似—— e.g., 非线性振动的求解。求越来越高阶的振动方程，每次求解的时候舍弃更高阶小量，然后逐级求解。
-
-参数共振—— e.g., 秋千越荡越高。共振不是通过驱动力实现的，而是通过参数的变化而实现的。参数共振与受迫振动的不同。

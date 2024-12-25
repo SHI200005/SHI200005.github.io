@@ -31,7 +31,7 @@ mathjax: true
 
   德布罗意的自由粒子波函数 $$\Psi(\vec{r},t)=\psi_0e^{i(\vec{p}\cdot\vec{r}-Et)/\hbar}$$ 对时间微分  ->  拉普拉斯算子、非相对论动量能量替换  ->  自由粒子（质量 $$m$$）的运动所满足的薛定谔方程。
 
-  再推广到有外力作用的其概况：粒子 m 在势场 $$V(\vec r,t)$$ 中的运动所满足的薛定谔方程。$$V(\vec r,t)=V(r)$$ 的定态情况下，把波函数分离变量，得到**定态薛定谔方程**。
+  再推广到有外力作用的其概况：粒子在势场 $$V(\vec r,t)$$ 中的运动所满足的薛定谔方程。$$V(\vec r,t)=V(r)$$ 的定态情况下，把波函数分离变量，得到**定态薛定谔方程**。
 
 - **定态薛定谔**的另一种导出角度：参见梁昆淼老师《理论力学》9.6 - 从“几何力学”到“波动力学”
 
@@ -77,7 +77,7 @@ $$\displaystyle\langle x\rangle=\int_{-\infty}^{\infty}{x\vert\Psi(x,t)\vert^2dx
   2. 对于对称势场，可以证明（好像是 Griffiths 一道习题来着？）波函数要么是奇宇称，要么是偶宇称，所以可以先假定宇称再求解。
 - 散射态 $$E>V(\infty)$$：透射区没有反射波。可以计算**反射系数**和**透射系数**。
 
-例子见[量子力学 - 绪论](https://shi200005.github.io/download_file/Quantum_Mechanics_Wave_Functions.pdf)。一维无限高方势阱和零点能（波函数连续 -> 边界波函数是$$0$$）-> 基态能量，是不确定原理必然导致的结果。一维方势垒和隧道效应（波函数连续）。即使粒子能量低于势垒，一部分粒子讲穿透势垒达到另一边，称为隧道效应，俗称能穿墙的*崂山道士*。应用：扫描隧道电镜（STM）。
+例子见[量子力学 - 绪论](https://shi200005.github.io/download_file/Quantum_Mechanics_Wave_Functions.pdf)。一维无限高方势阱和零点能（波函数连续 -> 边界波函数是 $$0$$）-> 基态能量，是不确定原理必然导致的结果。一维方势垒和隧道效应（波函数连续）。即使粒子能量低于势垒，一部分粒子讲穿透势垒达到另一边，称为隧道效应，俗称能穿墙的*崂山道士*。应用：扫描隧道电镜（STM）。
 
 #### 谐振子 
 
@@ -89,7 +89,7 @@ $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\p
 
 简要介绍量子力学中特有的表示形式。向量：$$\vert\alpha\rangle$$，向量的内积（点乘）：$$\langle\beta\vert\alpha\rangle=\langle\alpha\vert\beta\rangle^*$$，向量的模长：$$ \|\alpha\|=\sqrt{\langle\alpha\vert\alpha\rangle}$$。
 
-[**Schwarz 不等式**](https://shi200005.github.io/2021/09/30/Calculus/) $$\vert\langle f\vert g\rangle\vert^2≤\langle f\vert f\rangle\langle g\vert g\rangle$$ 在**不确定性关系**的证明中用到，见下文。
+[**Schwarz 不等式**](https://shi200005.github.io/2021/09/30/Calculus/#常用不等式及其证明) $$\vert\langle f\vert g\rangle\vert^2≤\langle f\vert f\rangle\langle g\vert g\rangle$$ 在**不确定性关系**的证明中用到，见下文。
 
 线性变换
 
@@ -97,7 +97,7 @@ $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\p
 
 - 在基 $$\vert e_i\rangle$$ 下有线性变换  $$\vert\alpha\rangle\stackrel{\hat T}\longrightarrow\vert\alpha\prime\rangle$$，即$$\vec{a}^{e\prime}=\hat{T}^e\vec a^e$$，则不难推出 $$\vec{a}^{f\prime}=\hat{T}^f\vec a^f$$，其中 $$\hat{T}^f=\hat S\hat T^e\hat S^{-1}$$。
 
-请结合[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)理解“**相似矩阵**是同一个线性变换在两个不同基下的表示矩阵。”
+请结合[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#相似矩阵)理解“**相似矩阵**是同一个线性变换在两个不同基下的表示矩阵。”
 
 ### 厄米变换和厄米共轭
 
@@ -105,8 +105,7 @@ $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\p
 
 符号：矩阵上加波浪取转置，右上加星号取共轭，就是**厄米共轭**，即 $$\hat T^\dagger≡\hat{\tilde{T}}^*$$，向量同理。
 
-Hermitian 厄米矩阵:  $$\hat T^\dagger≡\hat{T}$$. Unitary [酉矩阵??(整活)](哪些专业名词翻译得特别烂？ - 源堡在逃灵之虫的回答 - 知乎
-https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\hat U^\dagger≡\hat{U}^{-1}$$.
+Hermitian 厄米矩阵:  $$\hat T^\dagger≡\hat{T}$$. Unitary [酉矩阵(??整活)](https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\hat U^\dagger≡\hat{U}^{-1}$$.
 
 厄米变换：如果 $$\hat{T}$$ 是厄米矩阵，则$$\langle\alpha\vert\hat{T}\beta\rangle=\langle \hat{T}^\dagger\alpha\vert\beta\rangle=\langle \hat{T}\alpha\vert\beta\rangle$$。厄米变换有几个很好的性质：
 
@@ -114,7 +113,7 @@ https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\hat 
 2. 不同特征值的特征向量正交。
 3. 特征向量张成线性空间。
 
-厄米变换的这些好性质承袭[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)中提及“实对称矩阵”的好性质。其实**实对称矩阵**就是**厄米矩阵**元素都是实数的特殊形式。而**正交矩阵**就是**酉矩阵**元素都是实数的特殊形式。
+厄米变换的这些好性质承袭[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#实对称矩阵)中提及“实对称矩阵”的好性质。其实**实对称矩阵**就是**厄米矩阵**元素都是实数的特殊形式。而**正交矩阵**就是**酉矩阵**元素都是实数的特殊形式。
 
 ### 统计表示
 
@@ -264,9 +263,9 @@ $$V(x+a)=V(x)$$ -> $$\psi(x+a)=e^{iKa}\psi(x)$$。晶体首尾相接，边界条
 $$
 n(\epsilon)=
 \begin{cases}
-\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}},\text{可分辨} \\
-\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}+1},\text{费米子} \\
-\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}-1} ,\text{玻色子}\\
+\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}},\text{可分辨粒子的麦克斯韦 - 玻尔兹曼分布} \\
+\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}+1},\text{费米子的费米 - 波色分布} \\
+\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}-1} ,\text{玻色子的波色 - 爱因斯坦分布}\\
 \end{cases}
 $$
 通过简单例子验证（没有根据更一般的情况说明），$$\beta=1/k_BT$$，$$\displaystyle e^{-\alpha}=\frac{N}{V}(\frac{2\pi\beta\hbar^2}{m})^{3/2}$$，定义化学势 $$\mu=-\alpha k_BT$$。

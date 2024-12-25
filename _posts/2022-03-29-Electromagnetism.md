@@ -231,7 +231,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
   - 永久磁铁的磁场纯系由永久磁铁的分子电流激发。例：沿轴均匀磁化圆柱形永久磁铁外部 $$\vec M=0$$，表面 $$\vec i'=\vec M$$......
 
-    <img src="\images\blog\Electromagnetism_Permanent.JPG" alt="Electromagnetism_Permanent" width="300px;" />
+    <img src="\images\blog\Electromagnetism_Permanent.JPG" alt="Electromagnetism_Permanent" width="400px;" />
 
   - 例：**磁介质分界面**问题：$$\vec H$$ 有**环路定理**，界面两侧**切向**分量相等，可导出 $$\vec B$$ 界面两侧切向分量的关系；假定界面无自由电流，$$\vec B$$ 用**高斯定理**，界面两侧**法向**分量相等，可导出 $$\vec B$$ 界面两侧法向分量的关系。
 
