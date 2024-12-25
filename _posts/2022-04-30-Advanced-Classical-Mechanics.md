@@ -266,12 +266,6 @@ $$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_
 
 > 可积系统的运动是确定论性的，即给定初始条件就可以知道系统过去和未来的运动情况；同时，如果初始条件有微笑得到变化，则系统的运动情况在变化前后的差别也是微小的，也就是运动轨道是稳定的；可积系统的运动限制在相空间的 $$s$$ 维环面上做规则运动。——10.5
 
-#### 量子泊松括号
-
-正则量子化 $$\displaystyle[X,Y]\rightarrow\frac{1}{i\hbar}[\hat X,\hat Y]=\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$。
-
-[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/#%E5%AF%B9%E6%98%93)中的两个力学量 $$\hat X$$ 和 $$\hat Y$$ 是否可以同时具有确定的值就看它们的量子泊松括号 $$\displaystyle\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$ 是否为零。
-
 ## 力学变分原理
 
 Significance: 见梁老师本章引言。

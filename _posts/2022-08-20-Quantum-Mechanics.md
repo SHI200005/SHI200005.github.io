@@ -87,15 +87,15 @@ $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\p
 
 主要引出量子力学中特有的表示形式、之前没怎么见过的**厄米共轭**、**力学量的期望**以及**动量表象**。
 
-简要介绍量子力学中特有的表示形式。向量：$$\vert\alpha\rangle$$，向量的内积（点乘）：$$\langle\beta\vert\alpha\rangle=\langle\alpha\vert\beta\rangle^*$$，向量的模长：$$\Vert\alpha\Vert=\sqrt{\langle\alpha\vert\alpha\rangle}$$。
+简要介绍量子力学中特有的表示形式。向量：$$\vert\alpha\rangle$$，向量的内积（点乘）：$$\langle\beta\vert\alpha\rangle=\langle\alpha\vert\beta\rangle^*$$，向量的模长：$$ \|\alpha\|=\sqrt{\langle\alpha\vert\alpha\rangle}$$。
 
 [**Schwarz 不等式**](https://shi200005.github.io/2021/09/30/Calculus/) $$\vert\langle f\vert g\rangle\vert^2≤\langle f\vert f\rangle\langle g\vert g\rangle$$ 在**不确定性关系**的证明中用到，见下文。
 
 线性变换
 
-- 两组基向量：$$\vert e_i\rangle, \vert f_i\rangle$$ ，基变换矩阵 $$\boldsymbol{S}$$ 也就是 $$\displaystyle\vert e_j\rangle=\sum_{i=1}^{n}S_{ij}\vert f_i\rangle$$。这两组基向量下向量分别表示为$$\boldsymbol{a^e}$$, $$\boldsymbol{a^f}$$，两组基下的向量分量关系为 $$\displaystyle a_i^f=\sum_{j=1}^{n}S_{ij}a_j^e$$，也就是 $$\boldsymbol{a}^f=\boldsymbol{Sa^e}$$。
+- 两组基向量：$$\vert e_i\rangle, \vert f_i\rangle$$ ，基变换矩阵 $$\hat{S}$$ 也就是 $$\displaystyle\vert e_j\rangle=\sum_{i=1}^{n}\hat S_{ij}\vert f_i\rangle$$。这两组基向量下向量分别表示为$$\boldsymbol{a^e}$$, $$\boldsymbol{a^f}$$，两组基下的向量分量关系为 $$\displaystyle a_i^f=\sum_{j=1}^{n}S_{ij}a_j^e$$，也就是 $$\vec{a}^f=\vec{S}\vec a^e$$。
 
-- 在基$$\vert e_i\rangle$$下有线性变换  $$\vert\alpha\rangle\stackrel{\hat T}\longrightarrow\vert\alpha\prime\rangle$$，即$$\boldsymbol{a}^{e\prime}=\boldsymbol{T^ea^e}$$，则不难推出 $$\boldsymbol{a}^{f\prime}=\boldsymbol{T^fa^f}$$，其中 $$\boldsymbol{T^f}=\boldsymbol{ST^eS^{-1}}$$。
+- 在基 $$\vert e_i\rangle$$ 下有线性变换  $$\vert\alpha\rangle\stackrel{\hat T}\longrightarrow\vert\alpha\prime\rangle$$，即$$\vec{a}^{e\prime}=\hat{T}^e\vec a^e$$，则不难推出 $$\vec{a}^{f\prime}=\hat{T}^f\vec a^f$$，其中 $$\hat{T}^f=\hat S\hat T^e\hat S^{-1}$$。
 
 请结合[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/)理解“**相似矩阵**是同一个线性变换在两个不同基下的表示矩阵。”
 
@@ -103,12 +103,12 @@ $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\p
 
 法语小知识：厄米 Hermitian 来自法语，H 不发音。
 
-符号：矩阵上加波浪取转置，右上加星号取共轭，就是**厄米共轭**，即 $$\boldsymbol{T^\dagger}≡\boldsymbol{\tilde{T}^*}$$，向量同理。
+符号：矩阵上加波浪取转置，右上加星号取共轭，就是**厄米共轭**，即 $$\hat T^\dagger≡\hat{\tilde{T}}^*$$，向量同理。
 
-Hermitian 厄米矩阵:  $$\boldsymbol{T^\dagger}≡\boldsymbol{T}$$. Unitary [酉矩阵??(整活)](哪些专业名词翻译得特别烂？ - 源堡在逃灵之虫的回答 - 知乎
-https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\boldsymbol{U^\dagger}≡\boldsymbol{U^{-1}}$$.
+Hermitian 厄米矩阵:  $$\hat T^\dagger≡\hat{T}$$. Unitary [酉矩阵??(整活)](哪些专业名词翻译得特别烂？ - 源堡在逃灵之虫的回答 - 知乎
+https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\hat U^\dagger≡\hat{U}^{-1}$$.
 
-厄米变换：如果 $$\boldsymbol{T}$$ 是厄米矩阵，则$$\langle\alpha\vert\hat{T}\beta\rangle=\langle \hat{T}^\dagger\alpha\vert\beta\rangle=\langle \hat{T}\alpha\vert\beta\rangle$$。厄米变换有几个很好的性质：
+厄米变换：如果 $$\hat{T}$$ 是厄米矩阵，则$$\langle\alpha\vert\hat{T}\beta\rangle=\langle \hat{T}^\dagger\alpha\vert\beta\rangle=\langle \hat{T}\alpha\vert\beta\rangle$$。厄米变换有几个很好的性质：
 
 1. 特征值为实数。意义：力学量都是厄米算符，测量值一定是实数（请不要告诉我你的坐标含有虚数单位
 2. 不同特征值的特征向量正交。
@@ -129,7 +129,9 @@ https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\bold
 
 ### 对易
 
-$$[\hat A,\hat B]=\hat A\hat B-\hat B\hat A$$ 是**算符对易式**。如果$$[\hat A,\hat B]=0$$ 则称它们**对易**。拓展阅读：[量子力学 对易关系](https://zhuanlan.zhihu.com/p/382891349)。
+经典对应：[泊松括号](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#泊松括号)。正则量子化 $$\displaystyle[X,Y]\rightarrow\frac{1}{i\hbar}[\hat X,\hat Y]=\frac{1}{i\hbar}(\hat X\hat Y-\hat Y\hat X)$$。
+
+$$[\hat A,\hat B]=\hat A\hat B-\hat B\hat A$$ 是**算符对易式**。如果 $$[\hat A,\hat B]=0$$ 则称它们**对易**。拓展阅读：[量子力学 对易关系](https://zhuanlan.zhihu.com/p/382891349)。
 
 可以证明：对角算符互相一定对易。如果两个算符对易，用同一个基变换矩阵对其进行相似变换后得到的矩阵仍然对易。因此可以同时对角化的两个算符一定对易。如果两个算符$$\hat A,\hat B$$ 对易，$$\vert\alpha\rangle$$ 是 $$\hat A$$ 的特征向量，且 $$\hat A$$ 的特征向量谱不简并，那么 $$\vert\alpha\rangle$$ 也是$$\hat B$$ 的特征向量。应用：[近代物理](https://shi200005.github.io/2022/07/15/Modern-Physics/)中 $$\hat L$$, $$\hat L_z$$ 就是同时把球谐函数作为特征向量的两个对易算符。
 
@@ -161,7 +163,7 @@ $$[\hat A,\hat B]=\hat A\hat B-\hat B\hat A$$ 是**算符对易式**。如果$$[
 
 如果用纯代数方法讨论特征值和特征向量，构造梯子算符 $$\hat L_±=\hat L_x±i\hat L_y$$， $$L_±f_l^m=\hbar\sqrt{l(l+1)-m(m±1)}L_±f_l^{m±1}$$，一顿操作猛如虎，得到结论：记特征向量为 $$f_l^m$$，则 $$\hat L^2f_l^m=\hbar l(l+1)f_l^m,\hat L_z^2f_l^m=\hbar mf_l^m$$，其中 $$l=0,1/2,1,3/2...,m=-l,-l+1,...,l-1,l$$。注意：利用纯代数方法解出的 $$l$$ 是半整数。为什么纯代数方法能解出半整数？我也不知道怎么解释。
 
-在[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E7%90%83%E5%87%BD%E6%95%B0)中已经讨论过，$$Y$$ 是球函数，本征函数是 $$Y_{lm}$$。$$Y$$ 为角动量平方算符作用在 $$Y$$上的本征方程，角动量平方的大小为 $$L^2=l(l+1)\hbar$$，其中 $$l=0,1,2...$$。把角动量在 $$z$$ 方向上的算符作用在 $$Y$$ 上得到角动量在 $$z$$ 方向分量的本征值 $$L_z=m\hbar$$。$$l$$：**角量子数**，$$z$$：**磁量子数**。
+在[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E7%90%83%E5%87%BD%E6%95%B0)中已经讨论过，$$Y$$ 是球函数，本征函数是 $$Y_l^m$$。$$Y$$ 为角动量平方算符作用在 $$Y$$上的本征方程，角动量平方的大小为 $$L^2=l(l+1)\hbar$$，其中 $$l=0,1,2...$$。把角动量在 $$z$$ 方向上的算符作用在 $$Y$$ 上得到角动量在 $$z$$ 方向分量的本征值 $$L_z=m\hbar$$。$$l$$：**角量子数**，$$z$$：**磁量子数**。
 
 【intuition】这里插播一个曾困扰我的点：为什么空间上有 $$x,y,z$$ 三个轴，我们偏偏就要选择讨论 **$$z$$ 方向上的分量**呢？我记得当时老师的解释是“3 个方向都是一样的，大家只是都选了 $$z$$ 方向”。我个人认为或许这样解释更好：三个方向在物理上是一样的，但是在球坐标的描述下，$$\theta$$ 正好是与 $$z$$ 轴的夹角，有特殊性，导致我们利用分离变数法求解微分方程时，$$z$$ 轴一定程度上能够独立出来（$$\hat L_z$$ 作用在球谐函数能得到简洁漂亮的结果）。如果我们的球坐标用与 $$x$$ 轴的夹角，和 $$yOz$$ 平面上投影和 $$y$$ 轴的夹角描述，或许我们就会转而讨论角动量的 $$x$$ 轴分量了。
 
@@ -181,13 +183,13 @@ $$\displaystyle V(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$$ 我们关注 $$E<0
 
 轨道磁矩在 $$z$$ 方向的分量如何观测？原子与外磁场相互作用。[电磁学](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%AE%89%E5%9F%B9%E5%8A%9B)中已经得到结论：在不均匀磁场中，受力 $$\vec{F}=-\nabla U_m$$。**斯特恩-盖拉赫实验**：使银原子束穿过 $$z$$ 方向有很大梯度的非均匀磁场，如果原子轨道磁矩 $$z$$ 方向上是量子化的，则探测屏上出现分立的斑束。不过分立斑束的位置和数量很出乎意料，以及原子光谱的精细结构和反常塞满分裂现象，暗示原子中除了轨道磁矩外还有其他形式的磁矩。例：量子力学表示见 Griffiths 4.2.2。
 
-为了解释各种轨道磁矩还不能解释的问题，1925 年两个荷兰青年提出了扯淡的**电子自旋**理论。$$S^2=s(s+1)\hbar^2$$, $$S_z=m_s\hbar$$, $$s=1/2$$, $$m_s=±1/2$$。其中 $$s$$ 是电子**自旋角动量**量子数，简称**自旋量子数**......用于解释**斯特恩-盖拉赫实验**的反常分裂结果。后来 1929 年狄拉克建立了相对论量子力学之后，从数学上可以自然地赋予电子自旋自由度。自旋是电子的**内禀**属性，是相对论量子力学特有的，不能做经典的对应。
+为了解释各种轨道磁矩还不能解释的问题，1925 年两个荷兰青年提出了扯淡的**电子自旋**理论。用于解释**斯特恩-盖拉赫实验**的反常分裂结果。后来 1929 年狄拉克建立了相对论量子力学之后，从数学上可以自然地赋予电子自旋自由度。自旋是电子的**内禀**属性，是相对论量子力学特有的，不能做经典的对应。$$\hat S^2\vert sm\rangle=\hbar^2s(s+1)\vert sm\rangle$$, $$\hat S_z\vert sm\rangle=\hbar m\vert sm\rangle$$, $$s=1/2$$, $$m_s=±1/2$$。其中 $$s$$ 是电子**自旋角动量**量子数，简称**自旋量子数**......
 
-自旋相关算符的特征值特征向量（也就是本征态）的建立完全类比上文角动量相关算符的代数算法。自旋是粒子的**内禀**属性，我们也不能用类似于球谐函数的坐标函数描述。本征值 $$s=0,1/2,1,3/2,...$$; $$m=-s,-s+1,...,s-1,s$$，由于没有关于本征值的先验知识，我们无法排除非整数的存在了。
+自旋相关算符的特征值特征向量（也就是本征态）的建立完全类比上文角动量相关算符的代数算法，$$\hat S_\pm\vert sm\rangle=\hbar\sqrt{s(s+1)-m(m\pm 1)}\vert s(m\pm 1)\rangle$$。自旋是粒子的**内禀**属性，我们也不能用类似于球谐函数的坐标函数描述。本征值 $$s=0,1/2,1,3/2,...$$; $$m=-s,-s+1,...,s-1,s$$，由于没有关于本征值的先验知识，我们无法排除非整数的存在了。
 
 #### 拥有 1/2 自旋的粒子
 
-考虑 $$\hat S$$, $$\hat S_z$$ 的共同本征态。设 $$s=1/2,m_s=1/2$$ 为 spin up 态  $$\chi_+=\pmatrix{1\\0}$$， $$s=1/2,m_s=-1/2$$ 为 spin down 态  $$\chi_-=\pmatrix{0\\1}$$。可以紧凑地由**泡利矩阵**表示：$$\vec{S}=\displaystyle\frac{\hbar}{2}\vec{\sigma}$$。
+考虑 $$\hat S$$, $$\hat S_z$$ 的共同本征态。设 $$s=1/2,m_s=1/2$$ 的 $$\displaystyle\vert\frac{1}{2}\frac{1}{2} \rangle$$ 为 spin up 态 $$\uparrow$$，$$\chi_+=\pmatrix{1\\0}$$。 $$s=1/2,m_s=-1/2$$ 为 spin down 态  $$\chi_-=\pmatrix{0\\1}$$。可以紧凑地由**泡利矩阵**表示：$$\vec{S}=\displaystyle\frac{\hbar}{2}\vec{\sigma}$$。
 
 例：若 $$\hat S_z$$ 的本征态 $$\chi_+=\pmatrix{1\\0}$$ (eigenvalue $$+\hbar/2$$), $$\chi_-=\pmatrix{0\\1}$$ (eigenvalue $$-\hbar/2$$). 则 $$\hat L_x$$ 的本征态则为 $$\chi_+^{(x)}=\pmatrix{\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}}$$ (eigenvalue $$+\hbar/2$$), $$\chi_-^{(x)}=\pmatrix{\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}}$$ (eigenvalue $$-\hbar/2$$). $$\hat S$$, $$\hat S_z$$ 对易，拥有共同本征态，$$\hat S_x$$, $$\hat S_z$$ 不对易，本征态不同。见 Griffiths 4.4.1。
 
@@ -269,24 +271,3 @@ n(\epsilon)=
 $$
 通过简单例子验证（没有根据更一般的情况说明），$$\beta=1/k_BT$$，$$\displaystyle e^{-\alpha}=\frac{N}{V}(\frac{2\pi\beta\hbar^2}{m})^{3/2}$$，定义化学势 $$\mu=-\alpha k_BT$$。
 
-## 不含时微扰理论
-
-
-
-## WKB 近似
-
-
-
-## 含时微扰理论
-
-
-
-## 散射
-
-
-
-
-
-麦克斯韦分布的来源（[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)）：麦克斯韦分布是气体分子质心运动的速度分布，它满足非简并条件（$$e^\alpha\gg1$$）的理想气体所遵从的麦克斯韦-玻尔兹曼分布的一种特殊情形。
-
-玻尔兹曼分布。能量均分定理 -> 不同种类分子的自由度 -> 理想气体热容。 不如直接去看[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)。固体热容不如直接去看**固体物理**但我还没打算写。
