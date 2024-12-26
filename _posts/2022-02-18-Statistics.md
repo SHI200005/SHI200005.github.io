@@ -9,7 +9,7 @@ mathjax: true
 
 > ... the fundamental difference between probability and statistics: the former concerns predictions based on fixed probabilities; the latter concerns the inference of those probabilities based on observed data. --The drunkard's walk, Leonard Mlodinow
 
-符号说明：$$\mu$$ —— 统计量（以均值为例），$$\hat\mu$$ —— 统计量的估计值。
+符号说明：$$\mu$$ —— 统计量（以均值为例），$$\hat\mu$$ —— 统计量的估计值（仅此篇）。
 
 | 学习时间                                   | 大二上                                |
 | 周学时                                       | 3                                         |

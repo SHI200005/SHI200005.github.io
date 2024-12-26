@@ -40,7 +40,7 @@ P.S. 复习过程中，我找到了几年来以为已经丢失的勘误表，因
 
 ### 直角坐标系
 
-直角坐标系是“最简单”的坐标系：在于基矢 $$\hat{i}, \hat{j}, \hat{k}$$ 对时间求导为零，因此用这些基矢表示的矢量对时间的导数形式简单；而在实际问题分析中，选择合适的坐标系是最简单的，而不是选择直角坐标系是最简单的。
+直角坐标系是“最简单”的坐标系：在于基矢 $$\vec e_i, \vec e_j, \vec e_k$$ 对时间求导为零，因此用这些基矢表示的矢量对时间的导数形式简单；而在实际问题分析中，选择合适的坐标系是最简单的，而不是选择直角坐标系是最简单的。
 
 速度和加速度在各个基矢上的分量：
 
@@ -51,7 +51,7 @@ P.S. 复习过程中，我找到了几年来以为已经丢失的勘误表，因
 
 ### 极坐标系
 
-**平面**问题中很常用的坐标系(空间是三维的，“平面”是否不够好用？参见下文 质点动力学)，但是感觉用的比较多的还是《数学物理方程》中，运动学什么的 explicitly 用的真的不太多。**径向**单位向量表示为 $$\hat{i}$$ 方向向外，**横向**单位向量表示为 $$\hat{j}$$ 方向逆时针。
+**平面**问题中很常用的坐标系(空间是三维的，“平面”是否不够好用？参见下文 质点动力学)，但是感觉用的比较多的还是《数学物理方程》中，运动学什么的 explicitly 用的真的不太多。**径向**单位向量表示为 $$\vec e_i$$ 方向向外，**横向**单位向量表示为 $$\vec e_j$$ 方向逆时针。
 
 - $$\rho=\rho(t), \varphi=\varphi(t)$$.
 
@@ -60,7 +60,7 @@ P.S. 复习过程中，我找到了几年来以为已经丢失的勘误表，因
 
 ### 自然“坐标系”
 
-**已知指点相对于参考系统的轨道时**，质点的位置用从某点算起的曲线距离表明，速度矢量就用速率表明，加速度就用**切向加速度**和**法向加速度**表明。似乎是中学阶段从来没有 explicitly 提出过的的坐标系，但是我们却很常用。例如，求解轨道最高点的向心力和对轨道的压力时，我们就是在运用自然坐标系。**切向**单位向量表示为 $$\hat{t}$$ 方向沿着速度方向，**法向**单位向量表示为 $$\hat{n}$$ 方向向着曲率半径圆心。
+**已知指点相对于参考系统的轨道时**，质点的位置用从某点算起的曲线距离表明，速度矢量就用速率表明，加速度就用**切向加速度**和**法向加速度**表明。似乎是中学阶段从来没有 explicitly 提出过的的坐标系，但是我们却很常用。例如，求解轨道最高点的向心力和对轨道的压力时，我们就是在运用自然坐标系。**切向**单位向量表示为 $$\vec{e_t}$$ 方向沿着速度方向，**法向**单位向量表示为 $$\vec e_n$$ 方向向着曲率半径圆心。
 
 - $$v_t(t)=\dot{s}, v_n(t)=0$$.
 - $$\displaystyle a_t(t)=\ddot{s}, a_n=\frac{\dot{s}^2}{R} \text{ or } v\dot{\theta}$$.
@@ -129,15 +129,13 @@ $$\displaystyle \vec{L}=\vec{r}×\vec{p}$$, $$\displaystyle\vec{M}=\vec{r}×\vec
 
 介绍一下进动的意思，之后在[理论力学 - 刚体力学](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E5%88%9A%E4%BD%93%E5%8A%9B%E5%AD%A6)的陀螺中研究。然而拉莫尔进动特别简单，因为我们并不考虑电子的自转动力学，只是考虑其磁矩在匀强磁场中的转动。在均匀磁场中力矩垂直于角动量，不改变角动量的大小，只改变角动量的方向，造成角动量 $$\vec{L}$$ 和轨道磁矩 $$\vec{μ_l}$$ 绕磁场 $$\vec{B}$$ 以恒定的角频率 $$ω$$ 做**拉莫尔进动**。
 
-参见梁老师理论力学 6.6，首先根据[磁矩的定义](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%88%86%E5%AD%90%E7%8E%AF%E5%BD%A2%E7%94%B5%E6%B5%81%E6%A8%A1%E5%9E%8B)导出电子磁矩 $$\vec\mu=g\vec L$$, 其中$$g=e/2m$$ 为旋磁比。[匀强磁场中](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%B0%8F%E5%8C%BA%E5%9F%9F%E7%94%B5%E6%B5%81%E5%9C%A8%E5%A4%96%E7%A3%81%E5%9C%BA)力矩 $$\vec M=\vec\mu\times\vec B$$，于是 $$\displaystyle\frac{d\vec L}{dt}=-g\vec B\times\vec L$$。进动频率为 $$\omega=gB$$。
+参见梁老师理论力学 6.6，首先根据[磁矩的定义](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%88%86%E5%AD%90%E7%8E%AF%E5%BD%A2%E7%94%B5%E6%B5%81%E6%A8%A1%E5%9E%8B)导出匀速圆周运动带电粒子磁矩 $$\vec\mu=g\vec L$$, 其中$$g=q/2m$$ 为旋磁比。[匀强磁场中](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%B0%8F%E5%8C%BA%E5%9F%9F%E7%94%B5%E6%B5%81%E5%9C%A8%E5%A4%96%E7%A3%81%E5%9C%BA)力矩 $$\vec M=\vec\mu\times\vec B$$，于是 $$\displaystyle\frac{d\vec L}{dt}=-g\vec B\times\vec L$$。进动频率为 $$\omega=gB$$。
 
 <img src="\images\blog\Classical_Mechanics_Larmor.jpg" alt="Classical_Mechanics_Larmor" width="400px;" />
 
-[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/)中，玻尔磁子 $$μ_B$$ 是轨道磁矩的最小单元，$$μ_B=e\hbar/2m_e$$。$$μ_l=\sqrt{l(l+1)}μ_B$$。$$μ_{lz}=-m_lμ_B$$。
-
 ### 有心力
 
-有心力的形式：$$\displaystyle \vec{F}(\vec{r})=-\nabla{V(r)}=-\frac{dV}{dr}\hat{r}$$. 举例：电场力、万有引力（**开普勒**三大定律）。参考阅读：D. Morin Introduction to Classical Mechanics Chapter 6 Central Force
+有心力的形式：$$\displaystyle \vec{F}(\vec{r})=-\nabla{V(r)}=-\frac{dV}{dr}\vec e_r$$. 举例：电场力、万有引力（**开普勒**三大定律）。参考阅读：D. Morin Introduction to Classical Mechanics Chapter 6 Central Force
 
 - 定理1：**角动量守恒定理**： If $$V(\vec{r})=V(r)$$, then $$\displaystyle \frac{d\vec{L}}{dt}=0$$.
 - 定理2： If a particle is subject to a central force only, then its motion takes place in a plane.
@@ -190,7 +188,7 @@ Morin 书上相关内容整理成的教学材料[力学 - 质心参考系 - 柯�
 
 知识掌握自测：关于滚动的自行车或汽车轮胎受地面摩擦力的方向。
 
-施于刚体的力可以沿着其作用线滑移，其所引起的力学作用完全不因此而改变。选取某一个参考点，计算主矢 $$\displaystyle \vec{S}=\sum_i{\vec{F_i}}$$ 决定刚体质心的运动，$$m\ddot{\mathbf r_0}=\mathbf F$$；主矩$$\vec{M}=\sum_i{\vec{M_i}}$$ 决定刚体相对于参考点的运动，$$\dot{\mathbf L}=\mathbf M$$。若主矢和对任意一点的主矩都为零，则刚体处于**动平衡**。
+施于刚体的力可以沿着其作用线滑移，其所引起的力学作用完全不因此而改变。选取某一个参考点，计算主矢 $$\displaystyle \vec{S}=\sum_i{\vec{F_i}}$$ 决定刚体质心的运动，$$m\ddot{\vec{r}}_0=\vec F$$；主矩$$\displaystyle\vec{M}=\sum_i{\vec{M_i}}$$ 决定刚体相对于参考点的运动，$$\dot{\vec L}=\vec M$$。若主矢和对任意一点的主矩都为零，则刚体处于**动平衡**。
 
 为确定刚体在空间中的位置，只要指出刚体中任选的一点（**基点**）的位置以及刚体对于该点的取向就可以了。刚体的任意运动可以归结为基点的平移和刚体绕基点做定点运动（下文解释定点运动是一种定点转动）。参见梁老师 6.1.4，任选基点定点转动角速度 $$\omega$$ 相同。既然基点的选取任意，则不妨选择**质心**。
 
@@ -206,9 +204,9 @@ Morin 书上相关内容整理成的教学材料[力学 - 质心参考系 - 柯�
 
  有三个自由度。将运动分解为该对象**质心**的运动和绕过质心 $$z$$ 轴的定轴转动。
 
-$$\vec{L}=M\vec{R}×\vec{V}+(I_z^{CM}\omega\prime)\hat{z}$$, $$T=\frac{1}{2}MV^2+\frac{1}{2}I_z^{CM}\omega\prime^2$$.
+$$\vec{L}=M\vec{R}×\vec{V}+(I_z^{CM}\omega\prime)\vec e_z$$, $$\displaystyle T=\frac{1}{2}MV^2+\frac{1}{2}I_z^{CM}\omega\prime^2$$.
 
-由此得出  $$L_z=(MR^2+I_z^{CM})\omega$$, $$T=\frac{1}{2}(MR^2+I_z^{CM})\omega^2$$.
+由此得出  $$L_z=(MR^2+I_z^{CM})\omega$$, $$\displaystyle T=\frac{1}{2}(MR^2+I_z^{CM})\omega^2$$.
 
 - **平行轴定理**：不妨记 $$I_z=MR^2+I_z^{CM}$$. 质点系的动量矩 = 质心的动量矩 + 质点系相对于质心的相对运动动量矩。
 
@@ -230,15 +228,15 @@ $$\vec{L}=M\vec{R}×\vec{V}+(I_z^{CM}\omega\prime)\hat{z}$$, $$T=\frac{1}{2}MV^2
 
 惯量张量（取定点运动的点为原点建立直角坐标系） 
 
-$$\hat {I}=\pmatrix{\int(y^2+z^2) dm & -\int (xy) dm &-\int (zx) dm \\ -\int (xy) dm & \int(z^2+x^2) dm & -\int (yz) dm \\ -\int (xz) dm & -\int (yz) dm & \int(x^2+y^2) dm}$$,
+$$\mathbf {I}=\pmatrix{\int(y^2+z^2) dm & -\int (xy) dm &-\int (zx) dm \\ -\int (xy) dm & \int(z^2+x^2) dm & -\int (yz) dm \\ -\int (xz) dm & -\int (yz) dm & \int(x^2+y^2) dm}$$,
 
-$$\vec{L}=\hat{I}\vec{\omega}$$ ，而 $$T=\frac{1}{2}\vec{\omega}\cdot\vec{L}$$。好的，我看到了一个实对称矩阵，在[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5)里提到过，实对称矩阵是一定可以合同对角化且特征向量互相**正交**（**拥有一切实对称矩阵该有的美好品德**）！如果我们把惯量张量对角化，就可以得到惯量主轴。
+$$\vec{L}=\mathbf{I}\vec{\omega}$$ ，而 $$T=\frac{1}{2}\vec{\omega}\cdot\vec{L}$$。好的，我看到了一个实对称矩阵，在[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5)里提到过，实对称矩阵是一定可以合同对角化且特征向量互相**正交**（**拥有一切实对称矩阵该有的美好品德**）！如果我们把惯量张量对角化，就可以得到惯量主轴。
 
-惯量主轴：对角化惯量张量得到 $$\hat {I}=\pmatrix{I_1&0&0\\0& I_2&0\\0&0&I_3}$$ 。选取本体坐标系，以惯量主轴为基时，$$\vec{L}=(I_1\omega_1,I_2\omega_2,I_3\omega_3)$$。当刚体绕某一惯量主轴匀速转动时，处于**动平衡**。
+惯量主轴：对角化惯量张量得到 $$\mathbf {I}=\pmatrix{I_1&0&0\\0& I_2&0\\0&0&I_3}$$ 。选取本体坐标系，以惯量主轴为基时，$$\vec{L}=(I_1\omega_1,I_2\omega_2,I_3\omega_3)$$。当刚体绕某一惯量主轴匀速转动时，处于**动平衡**。
 
 #### 惯量主轴坐标系下欧拉动力学方程
 
-在惯性坐标系下刚体动力学公式之一是 $$\dot{\mathbf L}=\mathbf M$$。但是我们希望研究坐标系原点在刚体质心，以惯量主轴为坐标轴的本体坐标系（可能是非惯性系）。参见**运动定律与非惯性参考系**，动力学方程应改为 $$\dot{\mathbf L}=\mathbf M+\mathbf L\times\omega$$。
+在惯性坐标系下刚体动力学公式之一是 $$\dot{\vec L}=\vec M$$。但是我们希望研究坐标系原点在刚体质心，以惯量主轴为坐标轴的本体坐标系（可能是非惯性系）。参见**运动定律与非惯性参考系**，动力学方程应改为 $$\dot{\vec L}=\vec M+\vec L\times\vec\omega$$。
 
 
 $$

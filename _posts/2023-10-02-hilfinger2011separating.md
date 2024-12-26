@@ -67,17 +67,17 @@ Note that the environment is dynamic. When using the law of total variances to d
 
 - When the **extrinsic** noise of the full system thus indeed equals the noise of the intrinsically deterministic system subjected to the fluctuating environment:
 
-  If the total fluxes follow $\hat R(\vec x,\vec z)=\vec a(\vec z)+\hat J(\vec z)\vec x$ (**linear in intrinsic variables**), denote $\vec{\bar x}(t)=\langle\vec  X_t\vert \vec Z[0,t]\rangle_e$, then we have $\frac{d }{dt}\vec{\bar x}(t)=\displaystyle\sum_k\vec s_k r_k(\vec{\bar x})$. 
+  If the total fluxes follow $\hat R(\vec x,\vec z)=\vec a(\vec z)+\mathbf J(\vec z)\vec x$ (**linear in intrinsic variables**), denote $\vec{\bar x}(t)=\langle\vec  X_t\vert \vec Z[0,t]\rangle_e$, then we have $\displaystyle\frac{d }{dt}\vec{\bar x}(t)=\sum_k\vec s_k r_k(\vec{\bar x})$. 
 
-  Since the covariance of the **dual-reporter** satisfies $\text{Cov}(X,Y)=\langle(\bar x(t))^2\rangle_{\vec Z\vert[0,t]}-\langle\bar x(t)\rangle_{\vec Z\vert[0,t]}^2=\sigma_{ext}^2$, then the extrinsic noise from the dual-reporter method can be rigorously analyzed using models that ignore intrinsic stochasticity. Note that there is a type in the last line of Eq.[8] in the paper!
+  Since the covariance of the **dual-reporter** satisfies $\text{Cov}(X,Y)=\langle(\bar x(t))^2\rangle_{\vec Z\vert[0,t]}-\langle\bar x(t)\rangle_{\vec Z\vert[0,t]}^2=\sigma_{\text{ext}}^2$, then the extrinsic noise from the dual-reporter method can be rigorously analyzed using models that ignore intrinsic stochasticity. Note that there is a type in the last line of Eq.[8] in the paper!
 
 - When the **intrinsic** noise can be rigorously analyzed using models that ignore extrinsic stochasticity: 
 
-  Although under some special cases, it might hold, but generally, it holds when the Jacobian matrix $\hat J(\vec z)$ is independent of $\vec z$ ($J_{ij}=\displaystyle\sum_k s_{ki}\frac{dr_k}{dx_j}$​), which was called "**additive noise**" model. 
+  Although under some special cases, it might hold, but generally, it holds when the Jacobian matrix $\mathbf J(\vec z)$ is independent of $\vec z$ ($J_{ij}=\displaystyle\sum_k s_{ki}\frac{dr_k}{dx_j}$​), which was called "**additive noise**" model. 
 
-  Explanation on "additive noise" and "multiplicative noise": Look at the total flux ODE, $\hat R(\vec x,\vec z)=\vec a(\vec z)+\hat J(\vec z)\vec x$. If there is noise in $\hat J(\vec z)$ times with $\vec x$, then the noise is called multiplicative. If $\hat J$ is a constant matrix and the noise is only in $\vec\alpha(\vec z)$ adds the $\vec x$ term, then the noise is additive.
+  Explanation on "additive noise" and "multiplicative noise": Look at the total flux ODE, $\mathbf R(\vec x,\vec z)=\vec a(\vec z)+\mathbf J(\vec z)\vec x$. If there is noise in $\mathbf J(\vec z)$ times with $\vec x$, then the noise is called multiplicative. If $\mathbf J$ is a constant matrix and the noise is only in $\vec\alpha(\vec z)$ adds the $\vec x$ term, then the noise is additive.
 
-  For the **Lyapunov equation** $\frac{d\hat c}{dt}=\hat J\hat C+(\hat J\hat C)^T+\hat B$, where the covariance matrix $C_{ij}=\langle X_{i,t}X_{j,t}\vert \vec Z[0,t]\rangle-\langle X_{i,t}\vert \vec Z[0,t]\rangle\langle X_{j,t}\vert \vec Z[0,t]\rangle$ and the diffusion matrix $B_{ij}=\displaystyle\sum_k r_k(\langle \vec X_t\vert \vec Z[0,t]\rangle,\vec z(t))s_{ki}s_{kj}$. Taking infinitely long time integral, we get $0=\hat J\langle\hat C\rangle+(\hat J\langle \hat C\rangle)^T+\langle\hat B\rangle$. Thus, $\sigma_{int}^2=\langle\hat C_{nn}\rangle$ (*this holds when the probability of a state is always a continuous time variable*, and my on-going research focus on segregation models).
+  For the **Lyapunov equation** $\displaystyle\frac{d\mathbf C}{dt}=\mathbf J\mathbf C+(\mathbf J\mathbf C)^T+\mathbf B$, where the covariance matrix $C_{ij}=\langle X_{i,t}X_{j,t}\vert \vec Z[0,t]\rangle-\langle X_{i,t}\vert \vec Z[0,t]\rangle\langle X_{j,t}\vert \vec Z[0,t]\rangle$ and the diffusion matrix $B_{ij}=\displaystyle\sum_k r_k(\langle \vec X_t\vert \vec Z[0,t]\rangle,\vec z(t))s_{ki}s_{kj}$. Taking infinitely long time integral, we get $0=\mathbf J\langle\mathbf C\rangle+(\mathbf J\langle \mathbf C\rangle)^T+\langle\mathbf B\rangle$. Thus, $\sigma_{\text{int}}^2=\langle\mathbf C_{nn}\rangle$ (*this holds when the probability of a state is always a continuous time variable*, and my on-going research focus on segregation models).
   
   Even if the species is driven by a periodically varying signal, for example
   

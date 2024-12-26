@@ -144,9 +144,9 @@ $$X$$~$$N(μ,σ^2)$$
 
 #### Multivariate Gaussian Distribution
 
-$$G(\mathbf {x})=\displaystyle (2\pi )^{-k/2}\det({\boldsymbol {\Sigma }})^{-1/2}\,\exp \left(-{\frac {1}{2}}(\mathbf {x} -{\boldsymbol {\mu }})^{\!{\mathsf {T}}}{\boldsymbol {\Sigma }}^{-1}(\mathbf {x} -{\boldsymbol {\mu }})\right)$$
+$$G(\vec {x})=\displaystyle (2\pi )^{-k/2}\det({\boldsymbol {\Sigma }})^{-1/2}\exp \left(-{\frac {1}{2}}(\vec {x} -{\vec {\mu }})^T{\boldsymbol {\Sigma }}^{-1}(\vec {x} -{\vec {\mu }})\right)$$
 
-其中 $$\mathbf {x}$$ 是 $$k$$ 维随机变量摞成的一个列向量。问题：为什么指数部分取协方差矩阵的逆？其实不用太繁琐的数学推导——Hint: 协方差矩阵是**实对称矩阵**，能够合同对角化（[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5)），然后请自行对随机变量进行基变换，你会明白。
+其中 $$\vec {x}$$ 是 $$k$$ 维随机变量摞成的一个列向量。问题：为什么指数部分取协方差矩阵的逆？其实不用太繁琐的数学推导——Hint: 协方差矩阵是**实对称矩阵**，能够合同对角化（[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5)），然后请自行对随机变量进行基变换，你会明白。
 
 ### 边缘分布
 

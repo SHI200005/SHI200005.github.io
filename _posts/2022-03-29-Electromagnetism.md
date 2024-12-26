@@ -163,13 +163,13 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 **极化强度** $$\vec P$$ （单位体积电偶极矩 $$\vec p$$ 代数和）和**极化电荷** $$\rho_P$$.
 
 - 考虑因为极化而从封闭曲面跑出去的电荷和留在曲面内的 $$\rho_P$$......，得到积分形式 $$\displaystyle\int_V\rho_Pd=-\oint_S\vec P\cdot d\vec S$$；微分形式 $$\rho_P=-\nabla\cdot\vec P$$。均匀介质被均匀极化，内部 $$\rho_P=0$$，只有表面有极化电荷。
-- 两种介质分界面，微分形式失效，**通过积分形式推出**分界面极化电荷分布 $$\sigma_P=-(\vec P_2-\vec P_1)\cdot\mathbf{\hat{n}}_{21}$$。
+- 两种介质分界面，微分形式失效，**通过积分形式推出**分界面极化电荷分布 $$\sigma_P=-(\vec P_2-\vec P_1)\cdot\vec e_{n21}$$。
 
 **电位移矢量**（**电感应强度**） $$\vec D$$（辅助物理量）
 
 - 由于我们一般能动地给系统加上自由电荷，然后通过物理学规律求解极化情况，所以构造关于自由电荷的辅助物理量 $$\vec D=\epsilon_0\vec E+\vec P$$，于是 $$\nabla\cdot\vec D=\rho_f$$（高斯定理），**没有环路定理**。
 
-<span style="color: red;">于是，我们得到介质中的麦克斯韦方程组之一</span>：$$\nabla\cdot\vec D=\rho_f$$。两种介质分界面，微分形式失效。通过**积分形式**，高斯定理给出分界面极化电荷分布 $$\mathbf{\hat{n}}_{21}\cdot(\vec D_2-\vec D_1)=\sigma_f$$，若分界面没有自由电荷则界面两侧**法向**分量相等；环路定理给出 $$\mathbf{\hat{n}}_{21}\times(\vec E_2-\vec E_1)=0$$，两侧**切向**分量相等。
+<span style="color: red;">于是，我们得到介质中的麦克斯韦方程组之一</span>：$$\nabla\cdot\vec D=\rho_f$$。两种介质分界面，微分形式失效。通过**积分形式**，高斯定理给出分界面极化电荷分布 $$\vec e_{n21}\cdot(\vec D_2-\vec D_1)=\sigma_f$$，若分界面没有自由电荷则界面两侧**法向**分量相等；环路定理给出 $$\vec e_{n21}\times(\vec E_2-\vec E_1)=0$$，两侧**切向**分量相等。
 
 - **本构关系** $$\vec D=\vec D(\vec E,\vec B)$$​，对于绝大部分材料，在弱场作用下为线性依赖关系。
 
@@ -187,7 +187,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
 环形电流产生**磁矩** $$\displaystyle\vec m=i\vec S=\frac{1}{2}I(\oint_C\vec r\times d\vec l)=\frac{1}{2}\oint_C\vec r\times\vec jd\tau$$。
 
-安培的**分子电流图像**：分子被旋转的电子环绕，是个小磁体。分子电流整齐排列产生宏观磁化。形成磁矩 $$\vec m=i\vec S=\pi ia^2\vec n$$。也叫**磁偶极矩**，因为其在在很远处激发的磁场满足 $$\displaystyle\vec B=\frac{\mu_0}{4\pi}(-\frac{\vec m}{r^3}+\frac{3(\vec m\cdot\vec r)\vec r}{r^5})$$，和电偶极矩形式一样。
+安培的**分子电流图像**：原子核被旋转的电子环绕，分子是个小磁体。分子电流整齐排列产生宏观磁化。形成磁矩 $$\vec m=i\vec S=\pi ia^2\vec n$$。也叫**磁偶极矩**，因为其在在很远处激发的磁场满足 $$\displaystyle\vec B=\frac{\mu_0}{4\pi}(-\frac{\vec m}{r^3}+\frac{3(\vec m\cdot\vec r)\vec r}{r^5})$$，和电偶极矩形式一样。
 
 ### 磁介质的行为
 
@@ -219,7 +219,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
 - 由于我们一般能动地给系统加上 $$\vec J_f$$，然后通过物理学规律求解磁化情况，所以构造关于 $$\vec J_f$$ 的辅助物理量 $$\displaystyle\vec H=\frac{\vec B}{\mu_0}-\vec M$$，于是 $$\nabla\times\vec H=\vec J_f+\displaystyle\frac{\partial\vec D}{\partial t}$$（环路定理），**没有高斯定理**（见下面永久磁铁的 $$\vec H$$ 图）。$$\vec J_f=0$$ 不等于 $$\vec H=0$$。
 
-<span style="color: red;">于是，我们得到介质中的麦克斯韦方程组之一</span>：$$\nabla\times\vec H=\vec J_f+\displaystyle\frac{\partial\vec D}{\partial t}$$。两种介质分界面，微分形式失效。通过**积分形式**，环路定理给出分界面极化电荷分布 $$\mathbf{\hat{n}}_{21}\times(\vec H_2-\vec H_1)=\alpha_f$$，若分界面没有自由电荷则界面两侧**切向**分量相等；高斯定理给出 $$\mathbf{\hat{n}}_{21}\cdot(\vec B_2-\vec B_1)=0$$，两侧**法向**分量相等。
+<span style="color: red;">于是，我们得到介质中的麦克斯韦方程组之一</span>：$$\nabla\times\vec H=\vec J_f+\displaystyle\frac{\partial\vec D}{\partial t}$$。两种介质分界面，微分形式失效。通过**积分形式**，环路定理给出分界面极化电荷分布 $$\vec e_{n21}\times(\vec H_2-\vec H_1)=\alpha_f$$，若分界面没有自由电荷则界面两侧**切向**分量相等；高斯定理给出 $$\vec e_{n21}\cdot(\vec B_2-\vec B_1)=0$$，两侧**法向**分量相等。
 
 - **本构关系** $$\vec H=\vec H(\vec E,\vec B)$$，对于绝大部分材料，在弱场作用下为线性依赖关系。
 
@@ -365,7 +365,7 @@ $$
 $$
 
 
- - 利用高斯定理导出导体表面电场与电荷分布。重要习题：千题解 [2.1.37] $$\displaystyle E=\frac{σ}{ε_0}$$，千题解 [2.1.38] 导体单位面积所受的力 $$\displaystyle\vec f=\frac{σ^2}{2ε_0}\mathbf{\hat{n}}$$。静电场所施加在导体上的压力始终是负压力，驱使导体被拉向电场存在的区域。
+ - 利用高斯定理导出导体表面电场与电荷分布。重要习题：千题解 [2.1.37] $$\displaystyle E=\frac{σ}{ε_0}$$，千题解 [2.1.38] 导体单位面积所受的力 $$\displaystyle\vec f=\frac{σ^2}{2ε_0}\mathbf{\vec e_n}$$。静电场所施加在导体上的压力始终是负压力，驱使导体被拉向电场存在的区域。
 
  - 例：**平行板电容器**
 

@@ -9,8 +9,6 @@ mathjax: true
 
 > 分析力学给出了力学系统在完全一般性的广义坐标下具有不变性是的动力学方程组，并突出了能量函数的意义。分析力学甚至概括了比牛顿力学广泛得多的系统，例如在电气系统、控制系统中的应用就是一个明显的例子。分析力学的数学形式有着极好的性质，它不仅提供了解决天体力学及一系列动力学问题的较佳途径，同时给量子力学的发展提供了启示，最适宜于成为引向现代物理的跳板。其最小作用量原理提供了建立相对论量子力学最简练而富有概括性的出发点。——梁昆淼
 
-才疏学浅的笔者认为这是本科物理学专业必修课中最晦涩的，远超《量子力学》《电动力学》等！
-
 | 学习时间                 | 大二上                                                                    |
 | 周课时                     | 3                                                                              |
 | 本人成绩                 | 83                                                                            |
@@ -46,7 +44,7 @@ mathjax: true
 
 自由度
 
-- 总结：$$n$$ 个质点（位矢为 $$\mathbf r_i$$）的力学系统，若存在着 $$m$$ 个完整约束和 $$k$$ 个非完整约束，那么，质点的直角坐标数 $$N=3n$$，**广义坐标** $$q_i(t)$$ 个数等于 $$s=N-m$$，自由度等于 $$N-m-k$$。对于只存在完整约束的系统（$$k=0$$），广义坐标的个数就是自由度。如果存在非完整约束（$$k>0$$），广义坐标的个数大于自由度。运用广义坐标后，不再需要考虑完整约束，但非完整约束仍需考虑，并应将它用相应的广义速度表示。
+- 总结：$$n$$ 个质点（位矢为 $$\vec r_i$$）的力学系统，若存在着 $$m$$ 个完整约束和 $$k$$ 个非完整约束，那么，质点的直角坐标数 $$N=3n$$，**广义坐标** $$q_i(t)$$ 个数等于 $$s=N-m$$，自由度等于 $$N-m-k$$。对于只存在完整约束的系统（$$k=0$$），广义坐标的个数就是自由度。如果存在非完整约束（$$k>0$$），广义坐标的个数大于自由度。运用广义坐标后，不再需要考虑完整约束，但非完整约束仍需考虑，并应将它用相应的广义速度表示。
 - 基础课处理重点：完整系统——约束全是完整约束的系统。
 
 虚位移
@@ -55,13 +53,13 @@ mathjax: true
 
 理想约束（以下处理的重点）
 
-- 满足系统**约束力**的**虚功**为 $$0$$（约束力针对系统所有约束力）。$$\delta W=\displaystyle\sum_{i=1}^n\mathbf N_i\cdot\delta \mathbf r_i=0$$.
+- 满足系统**约束力**的**虚功**为 $$0$$（约束力针对系统所有约束力）。$$\delta W=\displaystyle\sum_{i=1}^n\vec N_i\cdot\delta \vec r_i=0$$.
 - 举例：光滑性、刚性、不可伸长性。
 
 **虚功原理**
 
-- 当一个只有理想约束的力学系统处于**平衡**状态时，作用于该系统所有的**主动力**的虚功之总和为零。$$\delta W=\displaystyle\sum_{i=1}^n\mathbf F_i\cdot\delta \mathbf r_i=0$$
-- 虚位移有很大任意性 -> 甩掉虚位移  -> 虚位移不独立 换成广义坐标 -> 广义坐标的虚位移 $$\delta\mathbf r_i=\displaystyle\sum_{\alpha=1}^s\frac{\partial\mathbf r_i}{\partial q_\alpha}\delta q_\alpha$$ -> 广义坐标下的虚功原理 -> 广义力（广义力对应广义坐标，而非单个主动力） $$Q_\alpha=\displaystyle\sum_{i=1}^n\mathbf F_i\cdot\frac{\partial\mathbf r_i}{\partial q_\alpha}=0$$ -> 完整约束广义虚位移相互独立 $$Q_\alpha=0$$.
+- 当一个只有理想约束的力学系统处于**平衡**状态时，作用于该系统所有的**主动力**的虚功之总和为零。$$\delta W=\displaystyle\sum_{i=1}^n\vec F_i\cdot\delta \vec r_i=0$$
+- 虚位移有很大任意性 -> 甩掉虚位移  -> 虚位移不独立 换成广义坐标 -> 广义坐标的虚位移 $$\delta\vec r_i=\displaystyle\sum_{\alpha=1}^s\frac{\partial\vec r_i}{\partial q_\alpha}\delta q_\alpha$$ -> 广义坐标下的虚功原理 -> 广义力（广义力对应广义坐标，而非单个主动力） $$Q_\alpha=\displaystyle\sum_{i=1}^n\vec F_i\cdot\frac{\partial\vec r_i}{\partial q_\alpha}=0$$ -> 完整约束广义虚位移相互独立 $$Q_\alpha=0$$.
 - 解题步骤：判断是否满足理想约束，识别主动力，确定自由度和广义坐标。列所有主动力的虚功为 $$0$$（真实坐标微分），用广义坐标表示真实坐标，算出用广义坐标微分表示的真实坐标微分。若广义坐标相互独立，则令每个广义坐标微分的系数为 $$0$$，解方程。
 
 约束力的求解——[拉格朗日乘子法](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)（虚功原理中约束力被甩掉了，如果要求怎么办？）
@@ -72,7 +70,7 @@ mathjax: true
 ### 达朗贝尔原理
 
 - 以上研究的是静力学问题，现在转到动力学问题。代入牛顿第二定律，
-- 在理想约束作用下，主动力和达朗贝尔力的虚功之总和为零。$$\displaystyle\sum_{i=1}^n(\mathbf F_i-m_i\ddot{\mathbf r}_i)\cdot\delta \mathbf r_i=0$$.
+- 在理想约束作用下，主动力和达朗贝尔力的虚功之总和为零。$$\displaystyle\sum_{i=1}^n(\vec F_i-m_i\ddot{\vec r}_i)\cdot\delta \vec r_i=0$$.
 
 例：[虚功原理 - 达朗贝尔原理](https://shi200005.github.io/download_file/ACM_dAlembert.pdf)。
 
@@ -82,17 +80,17 @@ mathjax: true
 
 ### 拉格朗日方程 <span style="color: red;">甩掉虚位移</span>
 
-对于**静力学**问题，虚位移中的位矢不独立，我们引入与广义坐标相关的**广义力**。在**动力学**问题中，达朗贝尔原理带来的 $$\ddot{\mathbf{r}}_i$$ 怎么处理？
+对于**静力学**问题，虚位移中的位矢不独立，我们引入与广义坐标相关的**广义力**。在**动力学**问题中，达朗贝尔原理带来的 $$\ddot{\vec{r}}_i$$ 怎么处理？
 
-- 拉格朗日关系：对位矢 $$\mathbf r_i=\mathbf r_i(q_1,q_2,...,q_s,t)=\mathbf r_i(q,t)$$ 求导，得 
+- 拉格朗日关系：对位矢 $$\vec r_i=\vec r_i(q_1,q_2,...,q_s,t)=\vec r_i(q,t)$$ 求导，得 
   
   
   $$
-  \frac{\partial\mathbf{\dot{r}_i}}{\partial\dot q_\beta}=\frac{\partial\mathbf{r}_i}{\partial q_\beta}, \\
-  \frac{\partial}{\partial q_\beta}(\frac{d}{dt}\mathbf{r}_i)=\frac{d}{dt}(\frac{\partial\mathbf{\dot{r}_i}}{\partial q_\beta}).
+  \frac{\partial\dot{\vec r}_i}{\partial\dot q_\beta}=\frac{\partial\vec{r}_i}{\partial q_\beta}, \\
+  \frac{\partial}{\partial q_\beta}(\frac{d}{dt}\vec{r}_i)=\frac{d}{dt}(\frac{\partial\dot{\vec r}_i}{\partial q_\beta}).
   $$
   
-- 坐标变换带入达朗贝尔原理，再用拉格朗日关系做变换。对于**完整系统**，广义虚位移独立，每个广义坐标对应的方程为零，得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial T}{\partial\dot q_\alpha}-\frac{\partial T}{\partial q_\alpha}=Q_\alpha$$，其中 $$T=\displaystyle\sum_{i=1}^n \frac{1}{2}m_i\vert \mathbf{\dot{r}_i}\vert^2$$ 是动能。
+- 坐标变换带入达朗贝尔原理，再用拉格朗日关系做变换。对于**完整系统**，广义虚位移独立，每个广义坐标对应的方程为零，得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial T}{\partial\dot q_\alpha}-\frac{\partial T}{\partial q_\alpha}=Q_\alpha$$，其中 $$T=\displaystyle\sum_{i=1}^n \frac{1}{2}m_i\vert\vec r_i\vert^2$$ 是动能。
 
 - 把广义坐标、广义速度和 $$t$$ 当作**独立**变量，因为考虑的不是实际运动，而是虚幻的所有可能的运动。
 
@@ -127,7 +125,7 @@ mathjax: true
   [广义能量积分](https://shi200005.github.io/download_file/ACM_Generalized_Energy.pdf) $$H=\displaystyle\sum_{\alpha=1}^sp_\alpha\dot q_\alpha-L$$
   
   - $$\displaystyle\frac{dH}{dt}=\frac{\partial L}{\partial t}=0$$.
-  - 若 $$\displaystyle\frac{\partial\mathbf r_i}{\partial t}=0$$（定常约束）-> 动能是广义速度的二次齐次式 -> $$H$$ 就是机械能  （齐次函数的欧拉定理参见[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)）
+  - 若 $$\displaystyle\frac{\partial\vec r_i}{\partial t}=0$$（定常约束）-> 动能是广义速度的二次齐次式 -> $$H$$ 就是机械能  （齐次函数的欧拉定理参见[微积分](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)）
   - 关于矢量力学和拉格朗日力学关于机械能守恒条件的区别，见教材 73-74 页。
 
 **诺特定理**
@@ -183,7 +181,7 @@ mathjax: true
 
 原子的结构？ ->  卢瑟福 $$α$$ 粒子散射实验 ->  核式模型 
 
-卢瑟福 α 粒子散射实验：先用套路在质心系求解相对运动散射角 $$\theta$$，然后转化到静止（实验室）坐标系求散射角 $$\Theta$$。关于散射后的例子关于散射角 $$\theta$$ 的分布，导出**散射截面**的**卢瑟福公式** $$\displaystyle \sigma(\theta)=\frac{1}{4}(\frac{ZZ^\prime e^2}{2eE^\prime})\frac{1}{\text{sin}^4\frac{\theta}{2}}$$。然后问题来了，怎么转化成实验室坐标系下的散射截面 $$\sigma(\Theta)$$？太复杂了！不过别担心，卢瑟福的实验里金原子核和 $$\alpha$$ 粒子的质量差别很大，来个近似。
+卢瑟福 α 粒子散射实验：先用套路在质心系求解相对运动散射角 $$\theta$$，然后转化到静止（实验室）坐标系求散射角 $$\Theta$$。关于散射后的例子关于散射角 $$\theta$$ 的分布，导出**散射截面**的**卢瑟福公式** $$\displaystyle \sigma(\theta)=\frac{1}{4}(\frac{ZZ^\prime e^2}{2eE^\prime})\frac{1}{\text{sin}^4(\frac{\theta}{2})}$$。然后问题来了，怎么转化成实验室坐标系下的散射截面 $$\sigma(\Theta)$$？太复杂了！不过别担心，卢瑟福的实验里金原子核和 $$\alpha$$ 粒子的质量差别很大，来个近似。
 
 ## 小振动
 
@@ -191,7 +189,7 @@ mathjax: true
 
 概念：简正坐标、简正频率、模式。无需赘述。
 
-[小振动的一般理论 - 矩阵表述](https://shi200005.github.io/download_file/ACM_Oscillations.pdf)。其中教材 5.3.5 节写道，$$\hat M$$ 与 $$\hat K$$ 是两个对称矩阵，而且 $$\hat M$$ 是正定的，于是按照**矩阵理论**，一定可以找到一个实的非奇异满秩代换使 $$\hat M$$ 和 $$\hat K$$ 同时对角化。请问这个矩阵理论在哪？参见 Theorem 7.6.1, Horn, Roger A.; Johnson, Charles R. (2013). *Matrix Analysis, second edition*. Cambridge University Press。
+[小振动的一般理论 - 矩阵表述](https://shi200005.github.io/download_file/ACM_Oscillations.pdf)。其中教材 5.3.5 节写道，$$\mathbf M$$ 与 $$\mathbf K$$ 是两个对称矩阵，而且 $$\mathbf M$$ 是正定的，于是按照**矩阵理论**，一定可以找到一个实的非奇异满秩代换使 $$\mathbf M$$ 和 $$\mathbf K$$ 同时对角化。请问这个矩阵理论在哪？参见 Theorem 7.6.1, Horn, Roger A.; Johnson, Charles R. (2013). *Matrix Analysis, second edition*. Cambridge University Press。
 
 ## 刚体力学
 
@@ -230,7 +228,7 @@ $$
 
 梁老师书中把这个定理放在哈密顿力学刘维尔定理之后，但我不是很明白和哈密顿动力学有什么关联，我个人把它放在这里。
 
-$$S=\displaystyle\sum_{i=1}^n\mathbf K_i\cdot\mathbf r_i$$ 有界（$$\mathbf K_i$$ 指动量），取 $$\displaystyle\lim_{\tau\rightarrow\infty}\langle\frac{dS}{dt}\rangle$$，得 $$\displaystyle\langle T\rangle=-\frac{1}{2}\langle\sum_{i=1}^n\mathbf F_i\cdot\mathbf r_i\rangle$$。
+$$S=\displaystyle\sum_{i=1}^n\vec K_i\cdot\vec r_i$$ 有界（$$\vec K_i$$ 指动量），取 $$\displaystyle\lim_{\tau\rightarrow\infty}\langle\frac{dS}{dt}\rangle$$，得 $$\displaystyle\langle T\rangle=-\frac{1}{2}\langle\sum_{i=1}^n\vec F_i\cdot\vec r_i\rangle$$。
 
 【GRAD-UPDATE】研究随机过程统计量的系综平均用到的数学手段也很像，详见 [(En) hilfinger2011separating](https://shi200005.github.io/2023/10/02/hilfinger2011separating/)。
 

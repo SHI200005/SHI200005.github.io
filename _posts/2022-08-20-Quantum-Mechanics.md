@@ -19,6 +19,8 @@ mathjax: true
 
 注意：本文讨论**非相对论**量子力学。
 
+符号：$$\hat Q$$ 表示量子力学算符。
+
 对一个物理系统，当任何有作用量量纲的动力学变量具有可以与 $$\hbar$$ 相比的数值时，该系统的行为必须用量子理论描述。
 
 ## 波函数
@@ -44,15 +46,9 @@ mathjax: true
 
 ### 观测量的期望
 
-$$\displaystyle\langle x\rangle=\int_{-\infty}^{\infty}{x\vert\Psi(x,t)\vert^2dx}$$.
-
 > Rather, $$\langle x\rangle$$ is the average of measurments performed on particles all in the state $\Psi$, which means that either you must find some way of returning the particle to its original state after each measurement, or else you prepare a whole ensemble of particles, each in the same state $\Psi$, and measure the positions of all of them: $\lang x\rang$ is the average of these results.
 
-由$$\displaystyle\langle p\rangle=m\frac{d\langle x\rangle}{dt}$$，将薛定谔方程带入$$\displaystyle\frac{d\langle x\rangle}{dt}=\int{x\frac{\partial}{\partial t}\vert\Psi\vert^2dx}$$，推出$$\langle p\rangle$$。
-
-结论：$$\displaystyle\langle x\rangle=\int{\Psi^*(x)\Psi dx}, \langle p\rangle=\int{\Psi^*(\frac{\hbar}{i}\frac{\partial}{\partial x})\Psi dx}$$. 在坐标表象下，$$x$$ 的**算符**是 $$x$$，$$p$$ 的**算符**是 $$\displaystyle\frac{\hbar}{i}\frac{\partial}{\partial x}$$。
-
-对于其他力学量 $$Q(x,p)$$ 的期望，$$\displaystyle\langle Q(x,t)\rangle=\int{\Psi^*Q(x,\frac{\hbar}{i}\frac{\partial}{\partial x})\Psi dx}$$。形式理论那里会用到。
+$$\displaystyle\langle x\rangle=\int x\vert\Psi\vert^2 dx=\int{\Psi^*(x)\Psi dx}$$，由$$\displaystyle\langle p\rangle=m\frac{d\langle x\rangle}{dt}$$，将薛定谔方程带入$$\displaystyle\frac{d\langle x\rangle}{dt}=\int{x\frac{\partial}{\partial t}\vert\Psi\vert^2dx}$$，得 $$\displaystyle\langle p\rangle=\int{\Psi^*(\frac{\hbar}{i}\frac{\partial}{\partial x})\Psi dx}$$. 在坐标表象下，$$\hat x=x$$，$$\displaystyle\hat p=\frac{\hbar}{i}\frac{\partial}{\partial x}$$。对于其他力学量 $$Q(x,p)$$ 的期望，$$\displaystyle\langle Q(x,t)\rangle=\int{\Psi^*\hat Q(x,\frac{\hbar}{i}\frac{\partial}{\partial x})\Psi dx}$$。形式理论那里会用到。
 
 ### 定态薛定谔方程
 
@@ -62,7 +58,7 @@ $$\displaystyle\langle x\rangle=\int_{-\infty}^{\infty}{x\vert\Psi(x,t)\vert^2dx
 
 定态解的性质：
 
-1. $$\vert\Psi(x,t)\vert^2=\vert\psi(x)\vert^2$$, $$\displaystyle\langle Q(x,t)\rangle=\int{\psi^*Q(x,\frac{\hbar}{i}\frac{\partial}{\partial x})\psi dx}$$.
+1. $$\vert\Psi(x,t)\vert^2=\vert\psi(x)\vert^2$$, $$\displaystyle\langle Q(x,t)\rangle=\int{\psi^*\hat Q(x,\frac{\hbar}{i}\frac{\partial}{\partial x})\psi dx}$$.
 
 2. $$\langle\hat H\rangle=E, \langle\hat H^2\rangle=E^2$$ 有确定的能量。
 3. $$\displaystyle\Psi(x,t)=\sum_{n=1}^{\infty}c_n\psi_n(x)e^{-iE_nt/\hbar}$$（[施图姆-刘维尔本征值问题]()）。
@@ -91,11 +87,11 @@ $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\p
 
 [**Schwarz 不等式**](https://shi200005.github.io/2021/09/30/Calculus/#常用不等式及其证明) $$\vert\langle f\vert g\rangle\vert^2≤\langle f\vert f\rangle\langle g\vert g\rangle$$ 在**不确定性关系**的证明中用到，见下文。
 
-线性变换
+表象变换
 
-- 两组基向量：$$\vert e_i\rangle, \vert f_i\rangle$$ ，基变换矩阵 $$\hat{S}$$ 也就是 $$\displaystyle\vert e_j\rangle=\sum_{i=1}^{n}\hat S_{ij}\vert f_i\rangle$$。这两组基向量下向量分别表示为$$\boldsymbol{a^e}$$, $$\boldsymbol{a^f}$$，两组基下的向量分量关系为 $$\displaystyle a_i^f=\sum_{j=1}^{n}S_{ij}a_j^e$$，也就是 $$\vec{a}^f=\vec{S}\vec a^e$$。
+- 两组基向量：$$\vert e_i\rangle, \vert f_i\rangle$$ ，基变换矩阵 $$\mathbf{S}$$ 也就是 $$\displaystyle\vert e_j\rangle=\sum_{i=1}^{n}S_{ij}\vert f_i\rangle$$。这两组基向量下向量分别表示为$$\vec a^e$$, $$\vec a^f$$，两组基下的向量分量关系为 $$\displaystyle a_i^f=\sum_{j=1}^{n}S_{ij}a_j^e$$，也就是 $$\vec{a}^f=\mathbf{S}\vec a^e$$。
 
-- 在基 $$\vert e_i\rangle$$ 下有线性变换  $$\vert\alpha\rangle\stackrel{\hat T}\longrightarrow\vert\alpha\prime\rangle$$，即$$\vec{a}^{e\prime}=\hat{T}^e\vec a^e$$，则不难推出 $$\vec{a}^{f\prime}=\hat{T}^f\vec a^f$$，其中 $$\hat{T}^f=\hat S\hat T^e\hat S^{-1}$$。
+- 在基 $$\vert e_i\rangle$$ 下有线性变换  $$\vert\alpha\rangle\stackrel{\mathbf T}\longrightarrow\vert\alpha\prime\rangle$$，即$$\vec{a}^{e\prime}=\mathbf{T}^e\vec a^e$$，则不难推出 $$\vec{a}^{f\prime}=\mathbf{T}^f\vec a^f$$，其中 $$\mathbf{T}^f=\mathbf S\mathbf T^e\mathbf S^{-1}$$。
 
 请结合[线性代数](https://shi200005.github.io/2021/09/30/Linear-Algebra/#相似矩阵)理解“**相似矩阵**是同一个线性变换在两个不同基下的表示矩阵。”
 
@@ -103,13 +99,13 @@ $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\p
 
 法语小知识：厄米 Hermitian 来自法语，H 不发音。
 
-符号：矩阵上加波浪取转置，右上加星号取共轭，就是**厄米共轭**，即 $$\hat T^\dagger≡\hat{\tilde{T}}^*$$，向量同理。
+符号：矩阵上加波浪取转置，右上加星号取共轭，就是**厄米共轭**，即 $$\mathbf T^\dagger≡\tilde{\mathbf T}^*$$，向量同理。
 
-Hermitian 厄米矩阵:  $$\hat T^\dagger≡\hat{T}$$. Unitary [酉矩阵(??整活)](https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\hat U^\dagger≡\hat{U}^{-1}$$.
+Hermitian 厄米矩阵:  $$\mathbf T^\dagger≡\mathbf{T}$$. Unitary [酉矩阵(??整活)](https://www.zhihu.com/question/27192923/answer/3351513740)/幺正算符: $$\mathbf U^\dagger≡\mathbf{U}^{-1}$$. 满足厄米矩阵的矩阵算符是厄米算符。
 
-厄米变换：如果 $$\hat{T}$$ 是厄米矩阵，则$$\langle\alpha\vert\hat{T}\beta\rangle=\langle \hat{T}^\dagger\alpha\vert\beta\rangle=\langle \hat{T}\alpha\vert\beta\rangle$$。厄米变换有几个很好的性质：
+厄米变换：如果 $$\hat{T}$$ 是厄米算符，则$$\langle\alpha\vert\hat{T}\beta\rangle=\langle \hat{T}^\dagger\alpha\vert\beta\rangle=\langle \hat{T}\alpha\vert\beta\rangle$$。厄米变换有几个很好的性质：
 
-1. 特征值为实数。意义：力学量都是厄米算符，测量值一定是实数（请不要告诉我你的坐标含有虚数单位
+1. 特征值为实数。意义：力学量都是厄米算符，测量值一定是实数
 2. 不同特征值的特征向量正交。
 3. 特征向量张成线性空间。
 
@@ -146,7 +142,7 @@ $$[\hat A,\hat B]=\hat A\hat B-\hat B\hat A$$ 是**算符对易式**。如果 $$
 
 ### 可观测量随时间的演化
 
-不难推出 $$\displaystyle\frac{d}{dt}\langle\hat Q\rangle=\frac{i}{\hbar}\langle[\hat H,\hat Q]\rangle+\langle\frac{\partial \hat Q}{\partial t}\rangle$$（[经典对应](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7)）
+不难推出**海森堡方程** $$\displaystyle\frac{d}{dt}\langle\hat Q\rangle=\frac{i}{\hbar}\langle[\hat H,\hat Q]\rangle+\langle\frac{\partial \hat Q}{\partial t}\rangle$$（[经典对应](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7)）
 
 来自 Griffiths 3.4.3，感觉 sloppy：若 $$\hat Q$$ 不显含时间，若我们规定 $$\Delta E≡\sigma_H$$, $$\displaystyle\Delta t≡\frac{\sigma_Q}{\vert d\langle Q\rangle\vert}dt$$，则有 $$\displaystyle\Delta E\Delta  t≥\frac{\hbar}{2}$$。注意：在**非相对论量子力学**中，两对不确定关系是不可以互推的。时间 $$t$$ 在量子力学和经典力学中都是作为保持连续变化的外在参量，而非物理系统的力学量，因此不存在时间算符。（[经典对应](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B)）
 
@@ -160,7 +156,7 @@ $$[\hat A,\hat B]=\hat A\hat B-\hat B\hat A$$ 是**算符对易式**。如果 $$
 
 由 $$\vec{L}=\vec{r}\times\vec{p}$$ 得到 $$\displaystyle\hat L_x=\frac{\hbar}{i}(y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y})$$，不难证明 $$[\hat L_x,\hat L_y]=i\hbar L_z$$。以及设 $$\hat L=\hat L_x+\hat L_y+\hat L_z$$，不难证明 $$[\hat L,\hat L_i]=0$$，也就意味着 $$\hat L,\hat L_z$$ 对易，有共同的本征函数，能同时有确定的本征值或量子数。
 
-如果用纯代数方法讨论特征值和特征向量，构造梯子算符 $$\hat L_±=\hat L_x±i\hat L_y$$， $$L_±f_l^m=\hbar\sqrt{l(l+1)-m(m±1)}L_±f_l^{m±1}$$，一顿操作猛如虎，得到结论：记特征向量为 $$f_l^m$$，则 $$\hat L^2f_l^m=\hbar l(l+1)f_l^m,\hat L_z^2f_l^m=\hbar mf_l^m$$，其中 $$l=0,1/2,1,3/2...,m=-l,-l+1,...,l-1,l$$。注意：利用纯代数方法解出的 $$l$$ 是半整数。为什么纯代数方法能解出半整数？我也不知道怎么解释。
+如果用纯代数方法讨论特征值和特征向量，构造梯子算符 $$\hat L_±=\hat L_x±i\hat L_y$$， $$\hat L_±f_l^m=\hbar\sqrt{l(l+1)-m(m±1)}f_l^{m±1}$$，一顿操作猛如虎，得到结论：记特征向量为 $$f_l^m$$，则 $$\hat L^2f_l^m=\hbar l(l+1)f_l^m$$, $$\hat L_z^2f_l^m=\hbar mf_l^m$$，其中 $$l=0,1/2,1,3/2...,m=-l,-l+1,...,l-1,l$$。注意：利用纯代数方法解出的 $$l$$ 是半整数。为什么纯代数方法能解出半整数？我也不知道怎么解释。
 
 在[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E7%90%83%E5%87%BD%E6%95%B0)中已经讨论过，$$Y$$ 是球函数，本征函数是 $$Y_l^m$$。$$Y$$ 为角动量平方算符作用在 $$Y$$上的本征方程，角动量平方的大小为 $$L^2=l(l+1)\hbar$$，其中 $$l=0,1,2...$$。把角动量在 $$z$$ 方向上的算符作用在 $$Y$$ 上得到角动量在 $$z$$ 方向分量的本征值 $$L_z=m\hbar$$。$$l$$：**角量子数**，$$z$$：**磁量子数**。
 
@@ -174,7 +170,7 @@ $$[\hat A,\hat B]=\hat A\hat B-\hat B\hat A$$ 是**算符对易式**。如果 $$
 
 $$\displaystyle V(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$$ 我们关注 $$E<0$$ 的[束缚态](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E5%BC%95%E5%8A%9B-%E5%BC%80%E6%99%AE%E5%8B%92%E8%A1%8C%E6%98%9F%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B)，此时本征值是分立的，有分立能级。
 
-诡异的 $$R(r)$$ 方程采用[级数法](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%96%BD%E5%9B%BE%E5%A7%86-%E5%88%98%E7%BB%B4%E5%B0%94%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98)暴力求解（Griffiths 的量子力学第四章给出用 $$r$$ 为 $$0$$ 和无穷远的两种极限情况求解），与能量有关的参数只能取 $$n=1,2,3,...$$，$$l$$ 被限制为 $$l=0,1,2,...n-1$$，从此得到的能量本征值与玻尔理论 $$\displaystyle E_n=-[\frac{m}{2\hbar^2}(\frac{e^2}{4\pi\epsilon_0})^2]\frac{1}{n^2}$$ 中给出的相同。$$n$$：**主量子数**。
+诡异的 $$R(r)$$ 方程采用[级数法](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%96%BD%E5%9B%BE%E5%A7%86-%E5%88%98%E7%BB%B4%E5%B0%94%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98)暴力求解（Griffiths 的量子力学第四章给出用 $$r$$ 为 $$0$$ 和无穷远的两种极限情况求解），与能量有关的参数只能取 $$n=1,2,3,...$$，$$l$$ 被限制为 $$l=0,1,2,...n-1$$，从此得到的能量本征值与玻尔理论 $$\displaystyle E_n=-[\frac{m}{2\hbar^2}(\frac{e^2}{4\pi\epsilon_0})^2]\frac{1}{n^2}$$ 中给出的相同。$$n$$：**主量子数**。定义**精细结构常数**（后面会讲啥叫精细结构） $$\displaystyle\alpha=\frac{e^2}{4\pi\epsilon_0\hbar c}\approx\frac{1}{137}$$，氢原子能级表示为 $$\displaystyle E_n=-\frac{1}{2}m_ec^2\alpha^2\frac{1}{n^2}$$。
 
 由此可见，类氢原子体系的能量仅由量子数 $$n$$，直接来源于非相对论的薛定谔方程，无需任何人为量子化假设，只要存在束缚势阱就必然导致量子化。考虑自旋、相对论和多电子非中心力场等效应时，能级的简并会解除。
 
@@ -188,7 +184,7 @@ $$\displaystyle V(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$$ 我们关注 $$E<0
 
 #### 拥有 1/2 自旋的粒子
 
-考虑 $$\hat S$$, $$\hat S_z$$ 的共同本征态。设 $$s=1/2,m_s=1/2$$ 的 $$\displaystyle\vert\frac{1}{2}\frac{1}{2} \rangle$$ 为 spin up 态 $$\uparrow$$，$$\chi_+=\pmatrix{1\\0}$$。 $$s=1/2,m_s=-1/2$$ 为 spin down 态  $$\chi_-=\pmatrix{0\\1}$$。可以紧凑地由**泡利矩阵**表示：$$\vec{S}=\displaystyle\frac{\hbar}{2}\vec{\sigma}$$。
+考虑 $$\hat S$$, $$\hat S_z$$ 的共同本征态。设 $$s=1/2,m_s=1/2$$ 的 $$\displaystyle\vert\frac{1}{2}\frac{1}{2} \rangle$$ 为 spin up 态 $$\uparrow$$，$$\chi_+=\pmatrix{1\\0}$$。 $$s=1/2,m_s=-1/2$$ 为 spin down 态  $$\chi_-=\pmatrix{0\\1}$$。可以紧凑地由**泡利矩阵**表示：$$\mathbf{S}=\displaystyle\frac{\hbar}{2}\mathbf{\sigma}$$。
 
 例：若 $$\hat S_z$$ 的本征态 $$\chi_+=\pmatrix{1\\0}$$ (eigenvalue $$+\hbar/2$$), $$\chi_-=\pmatrix{0\\1}$$ (eigenvalue $$-\hbar/2$$). 则 $$\hat L_x$$ 的本征态则为 $$\chi_+^{(x)}=\pmatrix{\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}}$$ (eigenvalue $$+\hbar/2$$), $$\chi_-^{(x)}=\pmatrix{\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}}$$ (eigenvalue $$-\hbar/2$$). $$\hat S$$, $$\hat S_z$$ 对易，拥有共同本征态，$$\hat S_x$$, $$\hat S_z$$ 不对易，本征态不同。见 Griffiths 4.4.1。
 
@@ -220,7 +216,7 @@ $$\hat S_-\vert11\rangle=\hbar\sqrt2\vert10\rangle$$；$$\hat S_-\vert\uparrow\u
 
 全同粒子的交换对称性于粒子的内禀自旋有关，本科课纲不涉及此关系。自旋量子数为**半整数**的粒子组成的全同粒子体系（例如质子、中子和电子等实物粒子是 $$1/2$$）。自旋量子数为**整数**的粒子组成的全同粒子体系（例如pi 介子是 $$0$$，光子是 $$1$$）。
 
-更一般的表示：交换算符 $$\hat Pf(\vec r_1,\vec r_2)=f(\vec r_1,\vec r_2)$$，本征值为 $$\pm1$$。对于**全同粒子**哈密顿算符显然 $$[\hat P,\hat H]=0$$（**宇称守恒**）。$$\psi(\vec r_1,\vec r_2)=\pm\psi(\vec r_2,\vec r_1)$$。
+更一般的表示：交换算符 $$\hat Pf(\vec r_1,\vec r_2)=f(\vec r_2,\vec r_1)$$，本征值为 $$\pm1$$。对于**全同粒子**哈密顿算符显然 $$[\hat P,\hat H]=0$$（**宇称守恒**）。$$\psi(\vec r_1,\vec r_2)=\pm\psi(\vec r_2,\vec r_1)$$。
 
 #### 统计行为
 
@@ -237,7 +233,7 @@ $$\hat S_-\vert11\rangle=\hbar\sqrt2\vert10\rangle$$；$$\hat S_-\vert\uparrow\u
 在化学中，这几个量子数一般这样解释
 
 1. 主量子数 $$n$$：电子的能量、电子离核平均距离、电子层
-2. 角量子数 $$l$$：原子轨道形状 i.e. s-球，p-双球 多电子原子中影响原子能量 电子亚层
+2. 角量子数 $$l$$：原子轨道形状 e.g., s - 球，p - 双球  多电子原子中影响原子能量  电子亚层
 3. 磁量子数 $$m$$：原子各型状轨道（电子云）在空间延伸方向数
 4. 自旋量子数 $$m_s$$：是否有磁性
 

@@ -101,7 +101,7 @@ mathjax: true
 
 参考阅读《[从卡诺定理到熵增加原理](https://mp.weixin.qq.com/s/cReyM2-80XYFbwc_bB_sQg)》。
 
-补充：来自 Kardar，参见下面粒子数可变系统。$$dE=TdS+\boldsymbol{J}· d\boldsymbol{x}+\boldsymbol{\mu}·d\boldsymbol{N}$$（热力学基本方程）。被微分的都是广延量。数学操作广延性后，$$E=TS+\boldsymbol{J}· \boldsymbol{x}+\boldsymbol{\mu}\boldsymbol{N}$$（热力学基本方程更基本，广延性来自系统中相互作用是短程的假设）。联立得**约束条件** $$SdT+\boldsymbol{x}· d\boldsymbol{J}+\boldsymbol{N}·d\boldsymbol{\mu}=0$$。为啥提这个？回答**吉布斯相律** e.g., **水的三相点**为什么是个点（见[大学化学](https://shi200005.github.io/2023/02/10/General-Chemistry/)）。
+补充：来自 Kardar，参见下面粒子数可变系统。$$dE=TdS+\vec{J}· d\vec{x}+\vec{\mu}·d\vec{N}$$（热力学基本方程）。被微分的都是广延量。数学操作广延性后，$$E=TS+\vec{J}· \vec{x}+\vec{\mu}\vec{N}$$（热力学基本方程更基本，广延性来自系统中相互作用是短程的假设）。联立得**约束条件** $$SdT+\vec{x}· d\vec{J}+\vec{N}·d\vec{\mu}=0$$。为啥提这个？回答**吉布斯相律** e.g., **水的三相点**为什么是个点（见[大学化学](https://shi200005.github.io/2023/02/10/General-Chemistry/)）。
 
 温度、内能、熵是**基本热力学函数**。熵能够用于判定绝热过程不可逆方向。对于非绝热过程，可以构造一个更大的绝热系统。然而，从克劳修斯不等式出发构**造新的态函数**用于**判定不可逆方向**更方便（平衡时该热力学函数取极值）。对于等温等容过程可以构造自由能 $$F=U-TS$$（参见林书1.13.1），对于绝热等压过程可以构造焓 $$H=E-pV$$，对于等温等压过程可以构造吉布斯自由能 $$G=U-TS+pV=F+pV$$。**焓**、**自由能**、**吉布斯自由能**是辅助热力学函数。各自条件下，达到平衡时辅助热力学函数取极值（例：可逆等温过程系统**对外界所作功**为最大，它等于系统**自由能**的减少；如果为等容过程，则自由能无法增加）。体会一下“自由”二字的含义~
 
@@ -215,4 +215,4 @@ mathjax: true
 
 能斯特定理的实验证实。测量的过程和结果见[下图](https://shi200005.github.io/images/blog/Thermodynamics_Nerst.jpg)（Kardar Eq.1.79）。
 
-能斯特定理的一个推论：热容 $$\displaystyle\lim_{T\rightarrow 0} C_{\boldsymbol X}=0$$。事实上，热力学第三定律是量子效应的宏观体现。在[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)中的二能级系统中，就有这样的**肖特基热容行为**。
+能斯特定理的一个推论：热容 $$\displaystyle\lim_{T\rightarrow 0} C_{\vec X}=0$$。事实上，热力学第三定律是量子效应的宏观体现。在[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)中的二能级系统中，就有这样的**肖特基热容行为**。
