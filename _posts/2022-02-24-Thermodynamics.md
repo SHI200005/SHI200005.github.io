@@ -134,7 +134,7 @@ mathjax: true
 麦克斯韦关系的简单应用（见[热力学 - 均匀系统的热力学性质](https://shi200005.github.io/download_file/Thermodynamics_Maxwell.pdf)）
 
  - 导出用可测量量表示的物理量偏导，目前感觉没啥用，不讲。
- - 导出热辐射的热力学理论。特性：$$U(T,V)=u(T)V$$, $$p=(1/3)u$$ -热力学基本方程+麦克斯韦关系 -> 结论：$$u=aT^4$$, $$S=4/3AT^3v$$, $$G=0$$。物理意义：热辐射的化学势为零，微观上代表热辐射的光子数不守恒，完全是唯象热力学理论导出的（见下面 相变的热力学理论-热动平衡判据-平衡条件）。
+ - 导出热辐射的热力学理论。特性：$$U(T,V)=u(T)V$$, $$p=(1/3)u$$ -热力学基本方程+麦克斯韦关系+[黑体辐射压强](https://shi200005.github.io/2022/03/29/Electromagnetism/#momentum) -> 结论：$$u=aT^4$$, $$S=4/3AT^3v$$, $$G=0$$。物理意义：热辐射的化学势为零，微观上代表热辐射的光子数不守恒，完全是唯象热力学理论导出的（见下面 相变的热力学理论-热动平衡判据-平衡条件）。
  - 获得低温的方法：准静态实际气体的节流过程（需要 $$\displaystyle (\frac{\partial T}{\partial p})_H<0$$，因为理想气体=0）、绝热膨胀过程（$$\displaystyle(\frac{\partial T}{\partial p})_S>0$$）。顺磁性固体的磁冷却法（$$\displaystyle(\frac{\partial T}{\partial \mathscr{H}})_S>0$$）。
 
 ## 相变的热力学理论

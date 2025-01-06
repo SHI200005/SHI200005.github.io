@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 量子力学
+title: 量子力学 1.0
 categories: BS-NJU-Course-Review-Physics
 description: 薛定谔的猫猫
 keywords: quantum mechanics
@@ -24,6 +24,12 @@ mathjax: true
 对一个物理系统，当任何有作用量量纲的动力学变量具有可以与 $$\hbar$$ 相比的数值时，该系统的行为必须用量子理论描述。
 
 ## 波函数
+
+### 波粒二象性
+
+光子的粒子特性：普朗克的辐射不连续量子假说（[统计物理 - 玻尔兹曼统计的应用](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/#%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%BA%94%E7%94%A8)）、光电效应实验、康普顿实验。光子的波动性：干涉、衍射。
+
+电子的波动性：德布罗意波、电子的晶体衍射实验、电子双棱镜干涉实验。应用：低能单子衍射仪（LEED），电子显微镜，e.g., 透射电镜（TEM）、反射电镜（REM）、扫描电镜（SEM）。
 
 这一节讨论**坐标表象**、一维空间。
 
@@ -52,6 +58,8 @@ $$\displaystyle\langle x\rangle=\int x\vert\Psi\vert^2 dx=\int{\Psi^*(x)\Psi dx}
 
 ### 定态薛定谔方程
 
+**直到我指明非定态薛定谔方程之前，我们都将研究定态薛定谔方程。**
+
 如果 $$V$$ 与 时间无关，也就是 $$V(x,t)=V(x)$$，则可以将波函数分离变量为 $$\Psi(x,t)=\psi(x)f(t)$$，带入薛定谔方程，分离为空间部分 $$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V\psi=E\psi$$，和时间部分 $$f(t)=e^{-iEt/\hbar}$$。
 
 备注：在[理论力学](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E8%AF%BA%E7%89%B9%E5%AE%9A%E7%90%86)中，哈密顿量为 $$\displaystyle H(x,p)=\frac{p^2}{2m}+V(x)$$，在量子力学中，坐标表象下，把坐标和动量换成相应的算符，则得到哈密顿算符 $$\displaystyle\hat H=-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)$$。则定态薛定谔方程可以写作 $$\hat H\psi=E\psi$$。
@@ -65,19 +73,30 @@ $$\displaystyle\langle x\rangle=\int x\vert\Psi\vert^2 dx=\int{\Psi^*(x)\Psi dx}
 
 **测量公设**：......若微观粒子的状态有多个本征值，则测量值不确定，得到的是它的所有本征值中随机的某个值，测量后状态也不可逆转地坍缩到这个本征值对应地本征态，出现的概率是这个态地叠加系数的平方......
 
-波函数满足的条件：
+#### 波函数满足的条件
+
+例子见[量子力学 - 绪论](https://shi200005.github.io/download_file/Quantum_Mechanics_Wave_Functions.pdf)。
 
 - 一般情况下要求 $$\psi(x)$$ 连续——在 $$V(x)$$ 的衔接处使用。对于一维无限深方势阱，有两端 $$\psi(x)=0$$. 波函数的一阶导如何，请结合牛顿 - 莱布尼兹公式。
-- 束缚态 $$E<V(\infty)$$
-  1. 利用无限远处波函数有限的条件。
-  2. 对于对称势场，可以证明（好像是 Griffiths 一道习题来着？）波函数要么是奇宇称，要么是偶宇称，所以可以先假定宇称再求解。
-- 散射态 $$E>V(\infty)$$：透射区没有反射波。可以计算**反射系数**和**透射系数**。
 
-例子见[量子力学 - 绪论](https://shi200005.github.io/download_file/Quantum_Mechanics_Wave_Functions.pdf)。一维无限高方势阱和零点能（波函数连续 -> 边界波函数是 $$0$$）-> 基态能量，是不确定原理必然导致的结果。一维方势垒和隧道效应（波函数连续）。即使粒子能量低于势垒，一部分粒子讲穿透势垒达到另一边，称为隧道效应，俗称能穿墙的*崂山道士*。应用：扫描隧道电镜（STM）。
+- 束缚态 $$E<V(\infty)$$
+  
+  利用无限远处波函数有限的条件。
+  
+  对于对称势场，可以证明（好像是 Griffiths 一道习题来着？）波函数要么是奇宇称，要么是偶宇称，所以可以先假定宇称再求解。
+  
+- 散射态 $$E>V(\infty)$$
+
+  透射区没有反射波。可以计算**反射系数**和**透射系数**。
+
+  一维方势垒和隧道效应（波函数连续）。即使粒子能量低于势垒，一部分粒子将穿透势垒达到另一边，称为隧道效应，俗称能穿墙的*崂山道士*。应用：扫描隧道电镜（STM）。
+
+- 一维无限高方势阱和零点能（波函数连续 -> 边界波函数是 $$0$$）-> 基态能量非零，是不确定原理必然导致的结果。
+- 方势解：$$E<V$$, $$\psi(x)=Ae^{\pm\kappa x}$$, $$\kappa=\sqrt{2m(V-E)}/\hbar$$; $$E>V$$, $$\psi(x)=Ae^{\pm ikx}$$, $$k=\sqrt{2m(E-V)}/\hbar$$。
 
 #### 谐振子 
 
-$$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\psi=E\psi$$ 形式可以说来源于经典胡克定律。因为势能项是平方的，所以可以用复数分解一下，然后得到**梯子算符** $$\displaystyle a_±=\frac{1}{\sqrt{2m}}(\frac{\hbar}{i}\frac{d}{dx}±im\omega x)$$ ，省略很多很多数学，最终解得 $$\psi(x)=A_n(a_+)^ne^{-\frac{m\omega}{2\hbar}x^2}$$, $$E=(n+\frac{1}{2})\hbar\omega$$，其中 $$n=0,1,...$$。之所以把谐振子单拿出来说，是因为[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)气体热容那里用到了，但是那篇气体热容部分我好像没写这部分。
+$$\displaystyle-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\frac{1}{2}m\omega^2x^2\psi=E\psi$$ 形式可以说来源于经典胡克定律。因为势能项是平方的，所以可以用复数分解一下，然后得到**梯子算符** $$\displaystyle a_±=\frac{1}{\sqrt{2m}}(\frac{\hbar}{i}\frac{d}{dx}±im\omega x)$$ ，省略很多很多数学，最终解得 $$\psi(x)=A_n(a_+)^ne^{-\frac{m\omega}{2\hbar}x^2}$$, $$E=(n+\frac{1}{2})\hbar\omega$$，其中 $$n=0,1,...$$。注意：基态波函数是**高斯函数**。之所以把谐振子单拿出来说，是因为[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)气体热容那里用到了，但是那篇气体热容部分我好像没写这部分。
 
 ## 形式理论
 
@@ -173,6 +192,8 @@ $$\displaystyle V(r)=-\frac{e^2}{4\pi\epsilon_0}\frac{1}{r}$$ 我们关注 $$E<0
 诡异的 $$R(r)$$ 方程采用[级数法](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#%E6%96%BD%E5%9B%BE%E5%A7%86-%E5%88%98%E7%BB%B4%E5%B0%94%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98)暴力求解（Griffiths 的量子力学第四章给出用 $$r$$ 为 $$0$$ 和无穷远的两种极限情况求解），与能量有关的参数只能取 $$n=1,2,3,...$$，$$l$$ 被限制为 $$l=0,1,2,...n-1$$，从此得到的能量本征值与玻尔理论 $$\displaystyle E_n=-[\frac{m}{2\hbar^2}(\frac{e^2}{4\pi\epsilon_0})^2]\frac{1}{n^2}$$ 中给出的相同。$$n$$：**主量子数**。定义**精细结构常数**（后面会讲啥叫精细结构） $$\displaystyle\alpha=\frac{e^2}{4\pi\epsilon_0\hbar c}\approx\frac{1}{137}$$，氢原子能级表示为 $$\displaystyle E_n=-\frac{1}{2}m_ec^2\alpha^2\frac{1}{n^2}$$。
 
 由此可见，类氢原子体系的能量仅由量子数 $$n$$，直接来源于非相对论的薛定谔方程，无需任何人为量子化假设，只要存在束缚势阱就必然导致量子化。考虑自旋、相对论和多电子非中心力场等效应时，能级的简并会解除。
+
+氢原子基态：$$E_1=-13.6eV$$, $$\displaystyle\psi_{100}(r,\theta,\phi)=\frac{1}{\sqrt{\pi a^3}}e^{-r/a}$$。
 
 ### 自旋
 

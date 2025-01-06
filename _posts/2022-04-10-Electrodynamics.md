@@ -275,8 +275,7 @@ $$
 
 $$\displaystyle\vec A^{(0)}(\vec x)=\frac{\mu_0}{4\pi}\frac{e^{ikR}}{R}\int_{V'}\vec J(\vec x')dV'$$ , $$\displaystyle\langle S_p\rangle=\frac{1}{32\pi^2\epsilon_0c^3}\frac{\omega^4 p^2}{R^2}\sin^2\theta\vec n$$. 
 
-- 可以传播很远并伴随有能量的传输；
-- 短波长的辐射功率药远于长波长辐射 -> **天空为什么是蓝色**（电动力学课件 5.3）。
+可以传播很远并伴随有能量的传输；短波长的辐射功率药远于长波长辐射。
 
 #### 有加速度的点电荷的辐射
 

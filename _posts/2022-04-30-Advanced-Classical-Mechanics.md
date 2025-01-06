@@ -90,15 +90,15 @@ mathjax: true
   \frac{\partial}{\partial q_\beta}(\frac{d}{dt}\vec{r}_i)=\frac{d}{dt}(\frac{\partial\dot{\vec r}_i}{\partial q_\beta}).
   $$
   
-- 坐标变换带入达朗贝尔原理，再用拉格朗日关系做变换。对于**完整系统**，广义虚位移独立，每个广义坐标对应的方程为零，得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial T}{\partial\dot q_\alpha}-\frac{\partial T}{\partial q_\alpha}=Q_\alpha$$，其中 $$T=\displaystyle\sum_{i=1}^n \frac{1}{2}m_i\vert\vec r_i\vert^2$$ 是动能。
+- 坐标变换带入达朗贝尔原理，再用拉格朗日关系做变换。对于**完整系统**，广义虚位移独立，每个广义坐标对应的方程为零，得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial T}{\partial\dot q_\alpha}-\frac{\partial T}{\partial q_\alpha}=Q_\alpha$$，其中 $$T=\displaystyle\sum_{i=1}^n \frac{1}{2}m_i\vert\dot{\vec r_i}\vert^2$$ 是动能。
 
 - 把广义坐标、广义速度和 $$t$$ 当作**独立**变量，因为考虑的不是实际运动，而是虚幻的所有可能的运动。
 
 拉格朗日函数
 
-- 如果主动力全是**保守力**，存在**势能函数** $$V$$，与广义力的关系为 $$\displaystyle Q_\alpha=-\frac{\partial V}{\partial q_\alpha}$$。定义**拉格朗日函数**（不可观测量）$$L=T-V$$。得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha}=0$$（您要是实在学不会，把放进大脑 RAM 上考场，应该能混个总评及格）。
+- 如果主动力全是**保守力**，存在**势能函数** $$V$$，与广义力的关系为 $$\displaystyle Q_\alpha=-\frac{\partial V}{\partial q_\alpha}$$。定义**拉格朗日函数**（不可观测量）$$L=T-V$$。得到**拉格朗日方程** $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial\dot q_\alpha}-\frac{\partial L}{\partial q_\alpha}=0$$（您要是实在学不会，把它放进大脑 RAM 上考场，应该能混个总评及格）。
 
-  这种类型的拉格朗日方程还可以通过哈密顿原理得到，它是**哈密顿作用量** $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$ 取极值时的欧拉-拉格朗日方程。详见后文变分法。
+  这种类型的拉格朗日方程还可以通过哈密顿原理得到，它是**哈密顿作用量** $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$ 取极值时的欧拉 - 拉格朗日方程。详见后文变分法。
 
 - **[广义动量](https://shi200005.github.io/download_file/ACM_Generalized_Momentum.pdf)** $$\displaystyle p_\alpha=\frac{\partial L}{\partial\dot q_\alpha}$$ 
 
@@ -118,7 +118,7 @@ mathjax: true
   
   广义动量积分
   
-  - $$\displaystyle\frac{\partial L}{\partial q_\beta}=0$$（$$q_\beta$$ 是可遗坐标）-> $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial \dot q_\beta}=0$$ -> 广义动量守恒 $$p_\beta=\text{const}$$ 成为广义动量积分
+  - $$\displaystyle\frac{\partial L}{\partial q_\beta}=0$$（$$q_\beta$$ 是**可遗坐标**/**循环坐标**）-> $$\displaystyle\frac{d}{dt}\frac{\partial L}{\partial \dot q_\beta}=0$$ -> 广义动量守恒 $$p_\beta=\text{const}$$ 成为广义动量积分
   
   - 拉格朗日系统并不以牛顿第三定律为先决条件，而是根据某广义坐标是否为可遗坐标，也可以处理电磁场问题（其中质点机械运动动量并不守恒，在拉格朗日函数中计入广义势之后，广义动量包括[电磁场的动量](https://shi200005.github.io/2022/03/29/Electromagnetism/#momentum)，广义动量守恒）。
   
@@ -297,6 +297,10 @@ Significance: 见梁老师本章引言。
 
 **揭示了向量子力学的过渡......**
 
+> 哈密顿方程对于范围更广的变换（正则变换）具有不变性。因此可以借助于这种变换使哈密顿函数变得极简单（变为常数或零），以使求解变换后的哈密顿方程成为极简单的事。
+
+此章例子见[正则变换与谐振子](https://shi200005.github.io/download_file/ACM_Hamilton_Jacobi.pdf).
+
 ### 正则变换
 
 哈密顿原理 $$\delta \displaystyle\int_{t_1}^{t_2}L(q,\dot q,t)dt=0$$（位形空间中）或者 $$\delta \displaystyle\int_{t_1}^{t_2}[\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H(p,q,t)]dt=0$$（相空间中），被积函数如果加上初末值给定的一个时间全微分 $$U$$，则变分为 $$\delta\displaystyle\int_{t_1}^{t_2}\frac{dU}{dt}dt=0$$，并不改变动力学方程。
@@ -325,7 +329,7 @@ $$
 
 如何实现？按照上面的说法，$$(\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H)-(\displaystyle\sum_{\alpha=1}^s P_\alpha\dot Q_\alpha-K)=\frac{dU}{dt}$$，即 $$\displaystyle\sum_{\alpha=1}^s p_\alpha dq_\alpha-\displaystyle\sum_{\alpha=1}^s P_\alpha dQ_\alpha+(K-H)=dU$$ 即可，这就是**正则变换**。<span style="color: red;">我们希望经过这个变换，能变换出来尽可能多的可遗坐标和相应守恒的“广义动量”。</span>
 
-怎么变？应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)把宗量给变了。见[例子](https://shi200005.github.io/download_file/ACM_Hamiltonian_Jacobi.pdf)：用 $$U_3(q,P,t)$$ 作为**母函数**。
+怎么变？应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)把宗量给变了。见本章例子。
 
 **泊松括号不变性**：在正则变换下，$$[\varphi,\psi]_{pq}=[\varphi,\psi]_{PQ}$$。
 
@@ -350,25 +354,18 @@ $$
 
 当 $$H$$ 不显含时间，可以把哈密顿-雅可比方程的空间变量与 $$t$$ 分离，令 $$S(q,P,t)=W(q,P)+f(t)$$，得到 $$\displaystyle H(q,\frac{\partial W}{\partial t})=-f^\prime(t)=E$$。也称前面这个方程为**哈密顿-雅可比方程**，$$W(q,P)$$ 为**哈密顿特征函数**。
 
-一种特殊的可积系统（泊松定理）：完全可分离的系统，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$。
+- 对于自由度多于 $$1$$ 的系统，一种特殊的可积系统（泊松定理）：**完全可分离的系统**，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$......  哈密顿特征函数可写为 $$\displaystyle W=\sum_{\alpha=1}^sW_\alpha(q_\alpha,E,C_2,\ldots,C_s)$$，哈密顿 - 雅可比方程可以分离为 $$s$$ 个 $$\displaystyle\Phi_\alpha(q_\alpha,\frac{dW_\alpha}{dq_\alpha},E,C_2,\ldots,C_s)=0$$ 积分求解以得到特征函数。
 
-书中给出了一些用哈密顿-雅可比方程对力学系统进行正则变换求解然后再变回去的例子。其中谐振子的问题很有意思。在这个例子里我们发现，能量和时间其实就是对系统做正则变换后的一对共轭变量，其实就是变换后的哈密顿函数的一对“动量”和“坐标”。
+书中给出了一些用哈密顿-雅可比方程对力学系统进行正则变换求解然后再变回去的例子。其中**谐振子**的问题很有意思。变换后 $$\displaystyle K(P,X)=\frac{1}{2\pi}\sqrt{\frac{k}{m}}P$$。在这个例子里我们发现，能量和时间其实就是对系统做正则变换后的一对共轭变量，其实就是变换后的哈密顿函数的一对“动量”（能量守恒）和“坐标”（$$K$$ 中不显含 $$X$$，$$X$$ 是可遗坐标）。
 
 在平方反比有心吸引力的例子里，提到哈密顿 - 雅可比方法总是直接给出轨道。
-
-### 作用量变量与角变量
-
-物理学中的**周期性运动**中，我们关注其**频率**。分为**天平动**和**转动**（回忆单摆相图）。现只讨论哈密顿特征函数 $$W$$ 可分离为 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;E,C_2,...,C_s)$$ 的情况。变换后的“动量”常数取为**作用量** $$J_\alpha=\oint p_\alpha dq_\alpha$$（对一个周期积分），$$J_\alpha$$ 只是积分常数 $$E,C_2,...,C_s$$ 的函数，于是 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;J_1,J_2,...,J_s)$$。把 $$J_\alpha$$ 的共轭变量 $$\omega_\alpha$$ 叫做**角变量**满足 $$\displaystyle\dot\omega_\alpha=\frac{\partial E}{\partial J_\alpha}$$，是 $$q_\alpha$$ 周期运动的频率。
-
-例：一维谐振子。$$\displaystyle E=(\frac{1}{2\pi}\sqrt{\frac{k}{m}})J$$。**量子力学过渡**：量子化作用量 $$J=nh(n=0,1,2,...)$$，则 $$\displaystyle E=n\frac{h}{2\pi}\omega$$。不过，薛定谔氢原子量子力学解并不需要这种认为量子化。
-
-例：平方反比有心力吸引下的质点周期运动频率。延申：各个坐标周期运动如果有不同的运动频率......
 
 ### 正则微扰理论
 
 > 在力学中，有许许多多的问题是无法精确求解的。但是经常遇见这样的情况，这些无法精确求解的问题与能够严格求解的问题之间，仅有微小的差别，因而可以在后者严格解的基础上近似求解前者，这就是**微扰理论**。建立在正则变换基础上的正则微扰理论就是微扰理论的一种。
 
 $$H=H_0+\epsilon H^\prime$$。蒙上眼睛不看微扰，解 $$H_0$$ 假定可以按哈密顿-雅可比方程求解出主函数 $$\displaystyle S(q_1,q_2,...,q_s;\frac{\partial S}{\partial q_1},\frac{\partial S}{\partial q_2},\frac{\partial S}{\partial q_s};t)$$，解出 $$S(q_1,q_2,...,q_s;\alpha_1,\alpha_2,...,\alpha_s;t)=0$$ 一堆积分常数 $$\alpha_\alpha,\beta_\alpha$$ 满足 $$\displaystyle\frac{\partial S}{\partial \alpha_\alpha}=\beta_\alpha$$。现在考虑微扰，这些常数就不再是常数，但是以 $$S$$ 为母函数，正则变换的关系不变，原来求出来的常量是正则变量，满足正则方程 
+
 
 
 $$
@@ -379,7 +376,28 @@ $$
 $$
 
 
-满足以微扰函数 $$\epsilon H^\prime$$ 为哈密顿函数的正则方程。这个方程一般称为**微扰方程**。例：[非线性振动](https://shi200005.github.io/download_file/ACM_Perturbation.pdf)一阶微扰的频率修正。
+
+满足以微扰函数 $$\epsilon H^\prime$$ 为哈密顿函数的正则方程。这个方程一般称为**微扰方程**。
+
+例：非线性振动一阶微扰修正（见本章附件）。我们看到非线性谐振ß子的振幅修正为零，频率修正后为 $$\displaystyle\omega_0(1+\frac{3b}{8k}A^2)$$。由于谐振子能量为 $$\displaystyle\frac{1}{2}m\omega^2A^2$$，不难看出能量修正后为 $$\displaystyle E_0+\frac{3}{8}A^4b+o(b)$$。而非微扰解 $$x=A\sin(\omega_0(t+\beta))$$ 在微扰 $$bx^4$$ 下的期望 $$bA^4\langle\sin^4(\omega_0(t+\beta))\rangle$$ 就是 $$\displaystyle\frac{3}{8}bA^4$$。
+
+### 作用量变量与角变量
+
+物理学中的**周期性运动**中，我们关注其**频率**。分为**天平动**和**转动**（回忆单摆相图，天平动是在底下来回摆，转动是哇哇绕大圈）。现只讨论哈密顿特征函数 $$W$$ 可分离为 $$\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;E,C_2,...,C_s)$$ 的情况。变换后的“动量”常数取为对一个周期积分的**作用量** $$J_\alpha=\oint p_\alpha dq_\alpha$$，$$J_\alpha$$ 只是积分常数 $$E,C_2,...,C_s$$ 的函数，于是 $$W=\displaystyle\sum_{\alpha=1}^s W_\alpha(q_\alpha;J_1,J_2,...,J_s)$$。把 $$J_\alpha$$ 的共轭变量 $$\omega_\alpha$$ 叫做**角变量**满足 $$\displaystyle\dot\omega_\alpha=\frac{\partial E}{\partial J_\alpha}$$，是 $$q_\alpha$$ 周期运动的频率。
+
+例：一维谐振子。$$\displaystyle E=(\frac{1}{2\pi}\sqrt{\frac{k}{m}})J$$。**量子力学过渡**：量子化作用量 $$J=nh(n=0,1,2,...)$$，则 $$\displaystyle E=n\frac{h}{2\pi}\omega$$。不过，氢原子量子力学解并不需要这种认为量子化，量子化是薛定谔方程的结果。为啥关注作用量？下面会讲，浸渐过程下作用量是浸渐不变量。
+
+例：平方反比有心力吸引下的质点周期运动频率。延申：各个坐标周期运动如果有不同的运动频率......
+
+### 浸渐不变量与哈内角
+
+> 如果哈密顿函数含有一个随时间变化的参数 $$\lambda$$，且这个参数随时间的变化非常缓慢，“缓慢”是指在系统运动周期 $$\tau$$ 的时间内，$$\lambda$$ 的相对变化很小，即 $$\displaystyle\tau\frac{d\lambda}{dt}\ll\lambda$$，如有某力学量于此条件下不随时间改变，这个力学量就称为**浸渐不变量**。
+>
+> “浸渐”译自 adiabatic，这里强调的是上式所表明的缓慢性。这同一个词在热学中则译为“绝热”。热学中的绝热过程，其变化相对于系统趋于平衡态的弛豫过程是缓慢的，以至于可以认为系统时时处于平衡态，但另一方面，其变化相对于热传导又是迅速的，以致可以认为热量来不及进出系统。在热学中使用“绝热”一词往往强调其迅速的一面，其实它还有缓慢的一面。
+
+例：摆长缓慢变化的小振幅单摆能量乘以周期为浸渐不变量。高中解法见 [Elementary examples of adiabatic invariance, II. Simple Pendulum](https://pubs.aip.org/aapt/ajp/article-abstract/58/4/337/1053687/Elementary-examples-of-adiabatic-invariance?redirectedFrom=fulltext)，其实用的就是功能原理。正则变换求解见本章附件。
+
+讨论了 $$J$$ 的不变性，与其共轭的变量 $$\omega$$ 怎么变？如果参数缓慢变化，然后又变回去了，系统高频周期运动的相位还和原来一样吗？并不，累积的相位差就是**哈内角**。
 
 ### 从“几何力学”到“波动力学”
 

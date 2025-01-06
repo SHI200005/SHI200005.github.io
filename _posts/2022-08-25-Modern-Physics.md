@@ -7,6 +7,8 @@ keywords: modern physics
 mathjax: true
 ---
 
+任课老师是好老师，但不妨碍课是门烂课，学了不如不学，不如自学。所以我们接着自学 **Griffiths**（引用体内为 Griffiths）。
+
 | 学习时间                 | 大二下                                                                                |
 | 周课时                     | 4                                                                                         |
 | 本人成绩                 | 98                                                                                       |
@@ -14,11 +16,11 @@ mathjax: true
 | 个人建议参考教材 | 无                                                                                        |
 | 先修课程                 | 理论力学 量子力学 电动力学                                           |
 
-任课老师是好老师，课是门烂课，学了不如不学，不如自学。如同氢原子能级的精细结构，真不知道没学量子力学和电动力学咋学。所以我们接着自学 Griffiths。
+那时候氢原子电子自旋轨道相互作用，教材上赫然写着轨道角动量和自旋角动量不再分别守恒，而总角动量守恒，轨道角动量和自旋角动量分别绕着总角动量做拉莫尔进动。首先，我根本不知道什么是拉莫尔进动；其次，看着哈密顿的两个角动量点乘，我看不出怎么这俩不守恒，而总角动量又守恒，更别提谁绕着谁做拉莫尔进动了。
 
 ## 不含时微扰理论
 
-设 $$\hat H^0\psi_n^0=E_n^0$$，加上微扰 $$\hat H=\hat H^0+\lambda\hat H'$$，按 $$\lambda$$ 的不同阶展开。
+设 $$\hat H^0\psi_n^0=E_n^0$$，加上微扰 $$\hat H=\hat H^0+\lambda\hat H'$$，按 $$\lambda$$ 的不同阶展开。[笔记](https://shi200005.github.io/download_file/Quantum_Mechanics_Time_Independent.pdf)
 
 如果基态能量非简并，
 
@@ -28,7 +30,7 @@ mathjax: true
 
   > ... the first-order correction to the energy is the *expectation value* of the perturbation in the *unperturbed* state. 
 
-  [经典对应](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#正则微扰理论)：理论力学里的正则微扰一阶近似的例子里，我们看到非线性谐振子的振幅修正为零，频率修正为 $$\displaystyle\omega_0(1+\frac{3b}{8k}A^2)$$。由于谐振子能量为 $$\displaystyle\frac{1}{2}m\omega^2A^2$$，不难看出能量修正为 $$\displaystyle\frac{3}{8}A^4b+o(b)$$。而非微扰解 $$x=A\sin(\omega_0(t+\beta))$$ 在微扰 $$bx^4$$ 下的期望 $$bA^4\langle\sin^4(\omega_0(t+\beta))\rangle$$ 就是 $$\displaystyle\frac{3}{8}A^4b$$。可见量子和经典有很好的对应。
+  [经典对应](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#正则微扰理论)：理论力学里的正则微扰一阶近似的例子里，也有能量修正是非微扰解在一阶微扰下的期望，可见量子和经典有很好的对应。
 
 - 一阶微扰波函数和二阶微扰能量修正
 
@@ -82,27 +84,129 @@ $$\psi^0=\alpha\psi_a^0+\beta\psi_b^0$$ , $$\langle\psi_a^0\vert\psi_b^0\rangle=
 
 可以首先忽略原子与外磁场的相互作用，在此基础上考虑原子与外磁场的作用。上面已经说过，考虑自旋 - 轨道耦合，好量子数为 $$n,l,j,m_j$$，一阶微扰能量修正为 $$\displaystyle E_Z^1=\langle n l j m_j\vert\hat H_Z'\vert nljm_j\rangle=\frac{e}{2m}\vec B_{\text{ext}}\cdot\langle\vec L+2\vec S\rangle$$。前面已经说过，$$\vec J$$, $$\vec S$$ 都绕着 $$\vec J$$ 进动，一顿操作猛如虎，参见 Griffiths 6.4.1，得 $$\langle\vec L+2\vec S\rangle=g_J\langle\vec J\rangle$$，其中 $$\displaystyle g_J=1+\frac{j(j+1)-l(l+1)+3/4}{2j(j+1)}$$ 为**朗德因子**。于是 $$E_Z^1=\mu_Bg_JB_{\text{ext}}m_j$$，其中 $$\displaystyle\mu_B=\frac{e\hbar}{2m}$$ 是**玻尔磁子**（轨道磁矩的最小单元）。
 
-弱磁场下这种能级分裂在普通光学波段上太小。在垂直于外磁场的方向上加频率满足频率为上述 $$ΔE/h$$ 时，相邻能级之间会有很大的概率发生跃迁，电磁波于磁能级间隔对应的固有频率发生共振而被强烈地吸收，就是磁共振现象。前提是原子的磁矩不是 $$0$$，这种固体样品中磁矩不为零的原子会顺着外磁场排列...(参见《电磁学 - 磁介质》)，这种磁共振又叫电子顺磁共振。
+弱磁场下这种能级分裂在普通光学波段上太小。将总磁矩分解为平行于 $$J$$ 的分量和垂直于 $$J$$ 的分量。可以证明垂直分量的平均值为 $$0$$，平行分量（也称有效磁矩）是守恒量。有效磁矩在外磁场有取向势，按照 $$m_j$$ 的取值分裂。能级间隔为 $$ΔE=g_jμ_BB$$。在垂直于外磁场的方向上加频率满足频率为上述 $$ΔE/h$$ 时，相邻能级之间会有很大的概率发生跃迁，电磁波于磁能级间隔对应的固有频率发生共振而被强烈地吸收，就是磁共振现象。前提是原子的磁矩不是 $$0$$，这种固体样品中磁矩不为零的原子会顺着外磁场排列...(参见《电磁学 - 磁介质》)，这种磁共振又叫**电子顺磁共振**。
 
-#### 氢原子能级的超精细结构
+### 氢原子能级的超精细结构
 
 略。
 
 ## 变分原理
 
+原理：$$E_g\le\langle\psi\vert\hat H\vert\psi\rangle=\langle\hat H\rangle$$。应用：化学中寻找复杂分子的基态能量，反正不知道波函数具体是啥，用一堆可调参数瞎写波函数疯狂算能量，算出来最小的那个能量一般很接近分子的基态能量。
 
+### 氦原子基态能量
+
+实验值为 $$E_g=-78.975eV$$，哈密顿 $$\hat H\psi_0=(8E_1+V_{ee})\psi_0$$。
+
+- 若直接忽略两电子之间的库伦势 $$v_{ee}$$，波函数为 $$\displaystyle\psi_{0}(\vec r_1,\vec r_2)=\psi_{100}({\vec r_1})\psi_{100}({\vec r_2})=\frac{8}{\pi a^3}e^{-2(r_1+r_2)/a}$$，能量为基态氢原子能量的 $$8$$ 倍（玻尔公式中），即 $$109eV$$。这个能量比实验值低，因为哈密顿不对。
+- 不忽略库伦势，但带入波函数为氢原子基态波函数的乘积，一顿操作猛如虎，得到基态能量约 $$-75eV$$。这个能量比实验值略高，但很接近了。这里波函数是错的，但八九不离十，而哈密顿是对的。
+- 考虑两电子相互作用对波函数的影响，对每个电子来说原子核电荷被另一个电子部分屏蔽为 $$Z<2$$，再带着参数 $$Z$$ 将解出的假基态能量对 $$Z$$ 求的极小值，得到基态能量约 $$-77.5eV$$，比之前的解还接近实验值。
 
 ## WKB 近似
 
+> The **WKB** (Wentzel, Kramers, Brillouin) method is a technique for obtaining approximate solutions to the **time-independent** Schrödinger equation in **one dimension** (the same basic idea can be applied to many other differenctial equations, and to the **radical part** of the Schrödinger equation in three dimensions). It is particularly useful in calculating **bound-state energies** and **tunneling rates** through pentential barriers.
 
+在[量子力学](https://shi200005.github.io/2022/08/20/Quantum-Mechanics/#定态薛定谔方程)中已经讨论过方势下波函数的解。现在假设 $$V(x)$$ 不是常数，但相对于 $$1/k$$ 或 $$1/\kappa$$ 变化缓慢。
+
+### $$E>V$$
+
+薛定谔方程写作 $$\displaystyle\frac{\partial^2\psi}{\partial x^2}=-\frac{p^2}{\hbar^2}\psi$$, where $$p(x)=\sqrt{2m[E-V(x)]}$$ is real. 设 $$\psi(x)=A(x)e^{i\phi(x)}$$。近似：$$A''/A\ll(\phi')^2 \text{ and }p^2/\hbar^2$$ 一顿操作猛如虎，$$\displaystyle\psi(x)\approx\frac{C}{\sqrt{p(x)}}e^{\pm\frac{i}{\hbar}\int p(x)dx}$$。
+
+### 隧穿
+
+考虑方势垒散射态，一顿操作猛如虎，得隧穿率 $$T\approx e^{-2\gamma}$$ 其中 $$\displaystyle\gamma=\frac{1}{\hbar}\int_0^a\vert p(x)\vert dx$$。
+
+#### $$\alpha$$ 衰变源的寿命
+
+放射性衰变的种类
+
+- $$α$$ 衰变：原子核吐一个 $$α$$ 粒子（氦核）
+
+- $$β$$ 衰变：核里面质子/中子的转换过程中，可能涉及电子等粒子的释放（14N 的衰变就是一种β衰变，衰变为 14C，14C 测年法的原理......）
+- $$γ$$ 跃迁：原子核经历 $$α$$ 衰变或 $$β$$ 衰变以后往往处于激发态，原子核从激发态到较低能态或基态的退激发跃迁......
+
+$$\alpha$$ 衰变模型：喷出的 $$\alpha$$ 粒子具有一个正能量，离核近的时候有吸引负势，出了这个范围被带正电的母核库伦排斥，有衰减的正排斥势。见 Griffiths Figure 8.5，中间形成非方势垒，可以算 $$\alpha$$ 粒子逃出去的概率。结论：$$\displaystyle\gamma=K_1\frac{Z}{\sqrt{E}}-K_2\sqrt{Zr_1}$$，母核寿命 $$\displaystyle\tau=\frac{2r_1}{v}e^{2\gamma}$$，对于不同母核，指数项为主要特征，近似有 $$\log\tau\propto1/\sqrt{E}$$。
+
+### The Connection Formulas
+
+$$E>V$$ or $$E<V$$ 的 WKB 近似在 $$E\to V$$ 时 $$p(x)$$ 发散。那怎么办？见 Griffiths 8.3。[贝塞尔函数](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#贝塞尔函数)、Airy's function。
 
 ## 含时微扰理论
 
+之前说过，以上都是定态薛定谔方程。现在我们研究**跃迁**过程。如果哈密顿中的含时部分远小于定态部分，含时部分可以看做一个微扰。[笔记](https://shi200005.github.io/download_file/Quantum_Mechanics_Time_Dependent.pdf)
+
+### 二能级系统
+
+设系统在非微扰下有两个本征态，分别为 $$\hat H_0\psi_a=E_a\psi_a$$, $$\hat H_0\psi_b=E_b\psi_b$$，其中 $$E_b> E_a$$。考虑微扰，波函数仍以本征态为基展开，$$\Psi(t)=c_a(t)\psi_ae^{-iE_at/\hbar}+c_b(t)\psi_be^{-iE_bt/\hbar}$$。系统随时间的演化就是考察 $$c_a(t)$$, $$c_b(t)$$。
+
+设 $$\hat H=\hat H_0+\hat H'(t)$$。带入薛定谔方程 $$\hat H\Psi=i\hbar\Psi$$。设 $$H_{ij}'=\langle\psi_i\vert\hat H'\vert\psi_j\rangle$$，一般来说矩阵对角元都是零，即 $$H_{ii}'=\langle\psi_i\vert\hat H'\vert\psi_i\rangle=0$$，因为我们考虑微扰使系统在两个能级之间跃迁，而不改变本征态对应的本征能量。一顿操作猛如虎，得方程组
 
 
-## 绝热近似
+$$
+\begin{cases}
+\displaystyle\dot c_a=-\frac{i}{\hbar}H_{ab}'e^{-i\omega_0t}c_b \\
+\displaystyle\dot c_b=-\frac{i}{\hbar}H_{ba}'e^{i\omega_0t}c_a.
+\end{cases}
+$$
 
 
+其中 $$\omega_0=(E_b-E_a)/\hbar$$。
+
+#### 一阶含时微扰理论
+
+设 $$c_a(0)=1$$, $$c_b(0)=0$$，带入微分方程组一次，得
+
+
+$$
+\begin{cases}
+\displaystyle c_a^{(1)}(t)=1 \\
+\displaystyle c_b^{(1)}(t)=-\frac{i}{\hbar}\int_0^tH_{ba}'(t')e^{i\omega_0t'}dt'.
+\end{cases}
+$$
+
+##### 多能级推广
+
+如果系统初态在 $$\psi_N$$，
+
+
+$$
+c_N(t)\approx1-\frac{i}{\hbar}\int_0^tH'_{NN}(t')dt'\\
+c_m(t)\approx\frac{i}{\hbar}\int_0^tH'_{mN}(t')e^{i(E_m-E_n)t'/\hbar}dt'
+$$
+
+
+##### 正弦微扰
+
+若 $$\hat H'(\vec r,t)=V(\vec r)\cos(\omega t)$$，$$V_{ij}=\langle\psi_i\vert V\vert\psi_j\rangle$$。在 $$\omega\approx\omega_0$$ 下近似，一顿操作猛如虎，得 $$\displaystyle P_{a\to b}(t)=\vert c_b(t)\vert^2\approx\frac{\vert V_{ba}\vert^2}{\hbar}\frac{\sin^2[(\omega_0-\omega) t/2]}{(\omega_0-\omega)^2}$$。
+
+### 原子与电磁波相互作用
+
+原子与电场相互作用。设原子尺度远小于电磁波尺度。设电磁波为单色偏振波，则可以视为原子泡在 $$\vec E=E_0\cos(\omega t)\vec e_k$$。则 $$\hat H'_{ba}=-\mathscr{P}E_0\cos(\omega t)$$，其中 $$\mathscr{P}=q\langle\psi_b\vert z\vert\psi_a\rangle$$，使我们想起来经典电磁学里的**电偶极矩** $$q\vec r$$。泡在这样的电场里，就是把上面正弦微扰情况里的 $$V_{ba}$$ 换成 $$-\mathscr PE_0$$。
+
+如果原子本来在低能态，吸收能量 $$E_b-E_a=\hbar\omega_0$$ 跃迁到高能态，可算出 $$\displaystyle P_{a\to b}(t)\approx(\frac{\vert \mathscr P\vert E_0} {\hbar})^2\frac{\sin^2[(\omega_0-\omega) t/2]}{(\omega_0-\omega)^2}$$。
+
+如果原子本来在高能态，吸收能量 $$E_b-E_a=\hbar\omega_0$$ 跃迁到低能态，可算出 $$\displaystyle P_{b\to a}(t)\approx(\frac{\vert \mathscr P\vert E_0} {\hbar})^2\frac{\sin^2[(\omega_0-\omega) t/2]}{(\omega_0-\omega)^2}$$。同时释放两个光子，这就是**激光**的原理。
+
+- laser: light amplification by stimulated emission of radiation.
+
+### 自发辐射
+
+略。
+
+### 氢原子跃迁的选择定则
+
+辐射率的计算归结于计算 $$\langle\psi_i\vert\hat{\vec r}\vert\psi_j\rangle$$。详见笔记，得到跃迁要满足选择定则：$$Δl=±1$$, $$Δm=0,±1$$。
+![](/images/blog/modern-physics-1.jpg)
+
+## 浸渐近似 Adiabatic Approximation
+
+前面一部分含时微扰考虑系统在两个不同状态间跃迁，不同量子态的本征值不变，那个矩阵对角元都为零。现在研究在外界变化比系统内部变化慢很多的情况下，本征态变化的情况，用 **adiabatic approximation**。在这里，我们不需要哈密顿的含时部分很小，只需要它很慢。在分子物理学中，从假设原子核静止开始分析电子波函数的近似方法是 **Born-Oppenheimer approximation**。
+
+### 浸渐理论
+
+> ...if the particle was initially in the *n*th eigenstate of $$\hat H^i$$, it will be carried (under the Schrödinger equation) into the *n*th eigenstate of $$\hat H^f$$...
+
+证明过程略。结合了一阶不含时和含时微扰理论，并说明了 adiabatic regime 中一阶理论的合理性。
 
 ## 散射
 
@@ -112,34 +216,5 @@ $$\psi^0=\alpha\psi_a^0+\beta\psi_b^0$$ , $$\langle\psi_a^0\vert\psi_b^0\rangle=
 
 麦克斯韦分布的来源（[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)）：麦克斯韦分布是气体分子质心运动的速度分布，它满足非简并条件（$$e^\alpha\gg1$$）的理想气体所遵从的麦克斯韦-玻尔兹曼分布的一种特殊情形。
 
-玻尔兹曼分布。能量均分定理 -> 不同种类分子的自由度 -> 理想气体热容。 不如直接去看[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)。固体热容不如直接去看**固体物理**但我还没打算写。
 
 
-
-## 量子力学初步
-
-### 波粒二象性
-
-光子的粒子特性：普朗克的辐射不连续量子假说（[统计物理 - 玻尔兹曼统计的应用](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/#%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%BA%94%E7%94%A8)、光电效应实验、康普顿实验。光子的波动性：干涉、衍射。
-
-电子的波动性：德布罗意波、电子的晶体衍射实验、电子双棱镜干涉实验。应用：低能单子衍射仪（LEED），电子显微镜，e.g., 透射电镜（TEM）、反射电竞（REM）、扫描电镜（SEM）。
-
-## 电子自旋和原子能级的精细结构
-
-### 电子自旋和自旋-轨道相互作用
-
-能级的精细结构分裂导致相应光谱的精细结构分裂。原子吸收和辐射电磁波可以近似看作是一种电偶极振荡，对于这种电偶极辐射，原子对应的跃迁要满足选择定则：$$Δl=±1$$, $$Δj=0,±1$$. 这个到了量子力学我详细写。
-![](/images/blog/modern-physics-1.jpg)
-
-### 外场中的原子
-
-将总磁矩分解为平行于J的分量和垂直于 $$J$$ 的分量。可以证明垂直分量的平均值为 $$0$$，平行分量（也称有效磁矩）时守恒量。有效磁矩在外磁场有取向势，按照 $$m_j$$ 的取值分裂。能级间隔为 $$ΔE=g_jμ_BB$$。
-
-## 核衰变和核反应
-
-### 放射性衰变
-
-α衰变：原子核吐一个α粒子
-
-- β衰变：核里面质子/中子的转换过程中，可能涉及电子等粒子的释放。(14N的衰变就是一种β衰变，衰变为14C，14C测年法的原理是......)
-- γ跃迁：原子核经历α衰变或β衰变以后往往处于激发态，原子核从激发态到较低能态或基态的退激发跃迁......

@@ -15,7 +15,7 @@ The author wrote an physics article that pointed out a mathematical flaw of "Ans
 | 本人成绩                | 93                                                                                                    |
 | 课程教材                | 徐游《电磁学》科学出版社                                                          |
 | 个人建议参考教材 | 张之翔《电磁学千题解》科学出版社  詹鹏老师电动力学课件  |
-| 先修课程                | 微积分 线性代数  复变函数                                                          |
+| 先修课程                | 微积分 线性代数  复变函数 热力学                                               |
 
 第一部分：建立麦克斯韦方程组
 
@@ -235,7 +235,7 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
   - 例：**磁介质分界面**问题：$$\vec H$$ 有**环路定理**，界面两侧**切向**分量相等，可导出 $$\vec B$$ 界面两侧切向分量的关系；假定界面无自由电流，$$\vec B$$ 用**高斯定理**，界面两侧**法向**分量相等，可导出 $$\vec B$$ 界面两侧法向分量的关系。
 
-## 电磁场的能量
+## 电磁场的能量、动量和角动量
 
 ### 洛伦兹力
 
@@ -251,19 +251,17 @@ $$U=IR$$，给出**电阻率**和**电导率**的关系 $$\displaystyle\sigma=\f
 
 ### 电磁场的能量密度和能流密度矢量
 
-> 电磁场对带电体系统作用遵守洛伦兹力，这种作用力使得带点系统的机械能发生变化，......，带点系统的机械能增加量应该等于电磁场能量的减少量。......描述电磁场的能量：电磁场的能量密度 $$w$$ 和电磁场能流密度矢量（**坡印亭矢量**） $$\vec s$$。
+> 电磁场对带电体系统作用遵守洛伦兹力，这种作用力使得带点系统的机械能发生变化，......，带点系统的机械能增加量应该等于电磁场能量的减少量。......描述电磁场的能量：电磁场的能量密度 $$w$$ 和电磁场能流密度矢量（**坡印亭矢量**） $$\vec S$$。
 
-孤立体系中的电磁场能量和机械能相互转化 $$\displaystyle\int_{\infty}\vec f\cdot\vec vdV=-\frac{d}{dt}\int_{\infty}wdV$$，$$\nabla\cdot\vec s+\displaystyle\frac{\partial w}{\partial t}+\vec f\cdot\vec v=0$$。由于洛伦兹力不做功，$$\vec f\cdot\vec v=\vec J_f\cdot\vec E$$，...，凑出 $$\vec s=\vec E\times\vec H$$, $$\displaystyle\frac{\partial w}{\partial t}=\vec E\cdot\frac{\partial\vec D}{\partial t}+\vec H\cdot\frac{\partial\vec B}{\partial t}$$。
+孤立体系中的电磁场能量和机械能相互转化 $$\displaystyle\int_{\infty}\vec f\cdot\vec vdV=-\frac{d}{dt}\int_{\infty}udV$$，$$\nabla\cdot\vec S+\displaystyle\frac{\partial w}{\partial t}+\vec f\cdot\vec v=0$$。由于洛伦兹力不做功，$$\vec f\cdot\vec v=\vec J_f\cdot\vec E$$，...，凑出 $$\vec S=\vec E\times\vec H$$, $$\displaystyle\frac{\partial u}{\partial t}=\vec E\cdot\frac{\partial\vec D}{\partial t}+\vec H\cdot\frac{\partial\vec B}{\partial t}$$。经观察，容易发现对于各向同性线性介质 $$u=\displaystyle\frac{1}{2}\epsilon E^2+\displaystyle\frac{1}{2}\mu H^2$$​（电场能 + 磁场能）。
 
-经观察，容易发现对于各向同性线性介质 $$w=\displaystyle\frac{1}{2}\epsilon E^2+\displaystyle\frac{1}{2}\mu H^2$$​。电场能 + 磁场能。
+不难看出，真空中 $$\vert\vec S\vert=uc$$。
 
-## Conservation Laws
+###  Momentum
 
 **This part mainly comes from Griffiths 8.2.**
 
 Analyzing the fields of a moving point charge in Griffiths 10.3.2. Fact: the net electromagnetic force on a pair of moving charges can be in violation of Newton's third law.
-
-###  Momentum
 
 Consider the total electromagnetic force on the charges in volume $$\mathscr V$$  ->  the force per unit $$\vec f=\rho\vec E+\vec J\times\vec B$$. Now transform $$\rho$$, $$\vec J$$ into $$\vec E$$, $$\vec B$$. 
 
@@ -278,6 +276,8 @@ The total electromagnetic force on the charges in volume $$\mathscr V$$: $$\vec 
 **The momentum density in the fields** is $$\vec g=\epsilon_0\mu_0\vec S=\displaystyle\frac{1}{c^2}\vec S=\epsilon_0(\vec E\times\vec B)$$. 
 
 > when there *are* charges around the field momentum by itself, and the mechanical momentum by itself, are not conserved--charges and fields exchange momentum, and only the *total* is conserved.--Griffiths 8.2
+
+这部分内容不论是大一下《热学》、大二上《电磁学》还是大三上《电动力学》都没有提及，到了大三下《热力学与统计物理》，突然间似乎我们就都知道热辐射的热平衡理论 $$p=u/3$$ 了。哪里蹦出个压强来？根据上面的结论，电磁波能量密度与动量密度的关系为 $$g=u/c$$，各向同性电磁波在某个方向上的分量为 $$g_n=g/3$$。电磁波入射到黑体表面被完全吸收，动量定理给出给黑体压强 $$p=g_nc$$，于是 $$p=u/3$$。
 
 ### Angular Momentum
 
