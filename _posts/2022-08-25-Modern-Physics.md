@@ -14,7 +14,7 @@ mathjax: true
 | 本人成绩                 | 98                                                                                       |
 | 课程教材                 | 徐克尊 《近代物理学（第4版）》中科大出版社 2019 |
 | 个人建议参考教材 | 无                                                                                        |
-| 先修课程                 | 理论力学 量子力学 电动力学                                           |
+| 先修课程                 | 理论力学 量子力学 电动力学 数学物理方法                   |
 
 那时候氢原子电子自旋轨道相互作用，教材上赫然写着轨道角动量和自旋角动量不再分别守恒，而总角动量守恒，轨道角动量和自旋角动量分别绕着总角动量做拉莫尔进动。首先，我根本不知道什么是拉莫尔进动；其次，看着哈密顿的两个角动量点乘，我看不出怎么这俩不守恒，而总角动量又守恒，更别提谁绕着谁做拉莫尔进动了。
 
@@ -196,9 +196,10 @@ $$
 ### 氢原子跃迁的选择定则
 
 辐射率的计算归结于计算 $$\langle\psi_i\vert\hat{\vec r}\vert\psi_j\rangle$$。详见笔记，得到跃迁要满足选择定则：$$Δl=±1$$, $$Δm=0,±1$$。
-![](/images/blog/modern-physics-1.jpg)
 
-## 浸渐近似 Adiabatic Approximation
+<img src="\images\blog\Modern_Physics.jpg" alt="modern-physics-1" width="400px;" />
+
+## 浸渐近似
 
 前面一部分含时微扰考虑系统在两个不同状态间跃迁，不同量子态的本征值不变，那个矩阵对角元都为零。现在研究在外界变化比系统内部变化慢很多的情况下，本征态变化的情况，用 **adiabatic approximation**。在这里，我们不需要哈密顿的含时部分很小，只需要它很慢。在分子物理学中，从假设原子核静止开始分析电子波函数的近似方法是 **Born-Oppenheimer approximation**。
 
@@ -206,15 +207,9 @@ $$
 
 > ...if the particle was initially in the *n*th eigenstate of $$\hat H^i$$, it will be carried (under the Schrödinger equation) into the *n*th eigenstate of $$\hat H^f$$...
 
-证明过程略。结合了一阶不含时和含时微扰理论，并说明了 adiabatic regime 中一阶理论的合理性。
+证明过程略。先假设系统收到又小又慢的微扰 $$\hat H'=Vf(t)$$，因为小，可以用一阶微扰理论。结合一阶含时和不含时微扰理论，如果系统初态为 $$\Psi(0)=\psi_n^i$$，则系统末态量子态变化 $$\psi_n\to\psi_m,m\neq n$$ 的概率为 $$\displaystyle\langle\psi(T)\vert\psi_m^f\rangle=[\frac{iAV_{nn}V_{nm}}{\hbar(E_m-E_n)}+\sum_{n\neq k\neq m}\frac{V_{{nk}}V_{kn}}{(E_n-E_k)(E_m-E_n)}]e^{iE_nT/\hbar}$$，是一个**二阶小量**。现在假设扰动是又慢又大的，则可以切成很多又慢又小的微扰，而量子态转换的概率是二阶小量，会随着切割份数无穷而趋于零。（[经典对应](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#浸渐不变量与哈内角)）与经典力学中**哈内角**相对应的量子力学概念是**贝瑞相**和**阿哈罗诺夫 - 玻姆效应**，之后没用过，本科也没学，我就先不写。
 
 ## 散射
 
-
-
-
-
-麦克斯韦分布的来源（[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)）：麦克斯韦分布是气体分子质心运动的速度分布，它满足非简并条件（$$e^\alpha\gg1$$）的理想气体所遵从的麦克斯韦-玻尔兹曼分布的一种特殊情形。
-
-
+前面贝瑞相我应该不写了，但这部分我之后会回来写。但现在不写。等我写完这部分就1.0了。
 
