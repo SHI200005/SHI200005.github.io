@@ -23,15 +23,14 @@ Attention: If you are using MobaXterm to SSH to the teach cluster, when you are 
 
 ### C++ introduction
 
-C++ is a **compiled language**: files containing the basic ‘actions’ are to be compiled into a set of basic machine language instructions that the CPU can execute, which means usually we **cannot debug line by line**, unlike python and MATLAB. So, how to debug? Usually we **insert some print-out lines** in our code, to monitor where it crashes. 
+C++ is a **compiled language**: files containing the basic ‘actions’ are to be compiled into a set of basic machine language instructions that the CPU can execute, which means usually we **cannot debug line by line**, unlike python and MATLAB. So, how to debug? 
+
+- Usually we **insert some print-out lines** in our code, to monitor where it crashes. 
+- If you use [Visual Studio Code](https://code.visualstudio.com), in the [C/C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), you can create "tasks.json" and "launch.json" as instructed, and then debug line by line. [example](https://github.com/SHI200005/Examples/tree/main/debug)
 
 **State**: Program state is stored in memory. When a program ends, its state is gone. Files are a way to store data persistently, but fall under I/O (input/output).
 
 **Scope**: If you define a variable inside a code block, it exists only until the code hits the closing curly brace (}) that correspond to the opening curly brace ({) that started the block. This is its local scope.
-
-#### Dealing with errors
-
-Sorry, I never use it in my own code. 
 
 #### Arguments by value or by reference
 
@@ -128,7 +127,7 @@ Don't write all lines linearly in 'int(main){}'. Try to pack the function (an ac
 
 **Make** is a general framework that is used to compile code, of any type.
 
-<img src="\images\blog\Computing_Make.JPG" alt="Computing_Make" style="zoom:67%;" />
+<img src="\images\blog\Computing_Make.JPG" alt="Computing_Make" style="zoom:80%;" />
 
 Example: [Assignment 3: Modularize with make and git.](https://github.com/SHI200005/Comp_23/tree/main/A3_Modularize)
 
@@ -230,7 +229,7 @@ Actually I never use these. For multidimensional options (**also work for 1D arr
 
 ### I/O
 
-<img src="\images\blog\Computing_File.JPG" alt="Computing_Make" style="zoom:67%;" />
+<img src="\images\blog\Computing_File.JPG" alt="Computing_Make" style="zoom:80%;" />
 
 Two options of writing the **multidimensional array** results: write in human-readable ASCII file (what I usually do in my group, but slow and large), write in NetCDF files (you need to write codes for writing (annoying), ask ChatGPT how to write).
 
@@ -240,7 +239,7 @@ Example: [Assignment 5: Solve ODE and store in NetCDF file.](https://github.com/
 
 ### Numeric
 
-<img src="\images\blog\Computing_Numerics.JPG" alt="Computing_Numerics" style="zoom:67%;" />
+<img src="\images\blog\Computing_Numerics.JPG" alt="Computing_Numerics" style="zoom:80%;" />
 
 ### Using Libraries
 
@@ -290,7 +289,7 @@ void fft_fast(const rvector<complex>& f, rvector<complex>& fhat, bool inverse)
 }
 ```
 
-### Random numbers/Monte Carlo
+### Random numbers / Monte Carlo
 
 There are a lot of random pseudo number generators. When applying them, we don't know their quality. Employ two random number generators, and see if they give, statistically speaking, the same result. 
 
@@ -317,53 +316,48 @@ std::uniform_real_distribution<double> dist(0.0, 1.0);
 
 From now on, we are going to log in to HPC, submit our huge computational jobs to the compute nodes, log out, so that we can watch Netflix using our own computer (kidding, I never have time to watch Netflix... So that I can read papers, write essays and go to bed...)
 
-Before submitting our jobs, we need to give a estimate running time to the scheduler. Therefore, we need to know the time elapse of running (a small part of) the program.
+Before submitting our jobs, we need to give an estimate running time to the scheduler. Therefore, we need to know the time elapse of running (a small part of) the program.
 
-In the course, we learned how to sample the lines that the program spend most time on, and then try to improve these lines. However, usually I know where the program spend most time. In practice, I only need to need the running time. Here is my own example of embedding a timer in my program.
+In the course, we learned how to sample the lines that the program spend most time on, and then try to improve these lines. However, usually I know where the program spend most time. In practice, I only need to know the running time. Here is my own example of embedding a timer in my program.
 
 ```
 #include <iostream>       // for output
-#include <chrono>         // for timing functions
+#include <ctime>          // for timing functions
 
-void print_time_elapsed(std::chrono::steady_clock::time_point start_time, std::chrono::steady_clock::time_point end_time)
+//defining the timer class for timing convenience
+class timer
 {
-    std::chrono::duration<double> elapsed_seconds = end_time - start_time;
-
-    auto hours = std::chrono::duration_cast<std::chrono::hours>(elapsed_seconds);
-    elapsed_seconds -= hours;
-
-    auto minutes = std::chrono::duration_cast<std::chrono::minutes>(elapsed_seconds);
-    elapsed_seconds -= minutes;
-
-    auto seconds = std::chrono::duration_cast<std::chrono::seconds>(elapsed_seconds);
-
-    std::ofstream outputFile("time.txt", std::ios::app); 
-
-    if (!outputFile)
-    {
-        std::cerr << "cannot open 'time.txt' to save time elapse." << std::endl;
-        return;
-    }
-
-    // print to screen
-    std::cout << "Elapsed time: " << hours.count() << " hours, "
-              << minutes.count() << " minutes, "
-              << seconds.count() << " seconds." << std::endl;
-
-    // print to file
-    outputFile << "Elapsed time: " << hours.count() << " hours, "
-               << minutes.count() << " minutes, "
-               << seconds.count() << " seconds." << std::endl;
-
-    outputFile.close();
-}
+	clock_t start;
+public:
+	timer();
+	~timer();
+};
 
 int main(int argc, char *argv[])
 {
-	std::chrono::steady_clock::time_point start_time = std::chrono::steady_clock::now();
+  //starting the timer
+	timer ob;
+	
 	... some code
-	std::chrono::steady_clock::time_point end_time = std::chrono::steady_clock::now();
-	print_time_elapsed(start_time, end_time);
+
+}
+
+timer::timer(){start=clock();}
+timer::~timer()
+{
+	int hour,min;
+	float sec;
+	clock_t end;
+	
+	end = clock();
+    
+	sec = (float)(end-start) / CLOCKS_PER_SEC;
+	min = (int)sec / 60;
+    sec = sec - 60*min;
+	hour = (int)min / 60;
+    min = min - 60*hour;
+	
+	std::cout << "Time Elapsed : " << hour << " hour: " << min << " min: " << sec << " sec. " << std::endl;
 }
 ```
 
@@ -375,19 +369,19 @@ The following three examples shows how to apply parallel programming. Before, yo
 
 A race condition is a common issue in parallel programming where two or more threads access a shared resource at the same time, resulting in unpredictable behavior or incorrect results.
 
-In a race condition, the final output depends on the order in which the threads execute, and this order is non-deterministic and may vary between runs or on different hardware. Race conditions typically arise when multiple threads try to read and write a shared variable or resource simultaneously, leading to inconsistencies or unexpected results.
+In a race condition, the final output depends on the order in which the threads execute, and this order is non-deterministic and may vary between runs or on different hardwares. Race conditions typically arise when multiple threads try to read and write a shared variable or resource simultaneously, leading to inconsistencies or unexpected results.
 
 #### Shared Memory Programming with OpenMP
 
-<img src="\images\blog\Computing_Parallel.JPG" alt="Computing_Parallel" style="zoom:67%;" />
+<img src="\images\blog\Computing_Parallel.JPG" alt="Computing_Parallel" style="zoom:80%;" />
 
 Consider: we are computing the time evolution of a 2D wave, by solving PDEs. We know that for taking one time step, the state of a grid only depend on the previous state of its adjacent grids. Naturally, we can chop the computing for grids within a time step. Example: [Assignment 8: Parallel two-dimensional wave equation.](https://github.com/SHI200005/Comp_23/tree/main/A8_Parallel_2Dwave)
 
 #### Distributed Memory Programming with MPI
 
-<img src="\images\blog\Computing_MPI.JPG" alt="Computing_MPI" style="zoom:67%;" />
+<img src="\images\blog\Computing_MPI.JPG" alt="Computing_MPI" style="zoom:80%;" />
 
-<img src="\images\blog\Computing_MPI2.JPG" alt="Computing_MPI2" style="zoom:67%;" />
+<img src="\images\blog\Computing_MPI2.JPG" alt="Computing_MPI2" style="zoom:80%;" />
 
 Consider: from above, we now have the time evolution of the 2D wave. In a NecCDF file, results of huge amount of grids are stored for each time step, and there are huge amount of time steps. For each time step, we want to calculate the energy of that time step, from results of all the grids. Since the number of grids is huge, we chop the huge grids (by rows), calculate the local energy, sum local energies together, and get the total energy for that time step. Then we move on to calculate the next time step. Why we don't chop the job by the time axis? We don't want different threads to write to the same result file simultaneously. Example: [Assignment 9: Parallelize NetCDF data analysis.](https://github.com/SHI200005/Comp_23/tree/main/A9_Parallel_WaveAnalysis)
 
@@ -395,6 +389,6 @@ Consider: from above, we now have the time evolution of the 2D wave. In a NecCDF
 
 You just have a huge bunch of serial jobs (say, 3000 serial jobs). You want 10 computers to run these jobs simultaneously. When a job finished, the next job will be ran on that computer. Fortunately, you can ask for many nodes on the cluster. How to automate this process? Use **[GNU Parallel](https://www.gnu.org/software/parallel/parallel_tutorial.html)**. It solves the problem of managing blocks of subjobs of differing duration.
 
-<img src="\images\blog\Computing_GNU.JPG" alt="Computing_GNU" style="zoom:67%;" />
+<img src="\images\blog\Computing_GNU.JPG" alt="Computing_GNU" style="zoom:80%;" />
 
 Example: [Assignment 10: Managing many serial computations.](https://github.com/SHI200005/Comp_23/tree/main/A10_GNU_Serial)
