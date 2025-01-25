@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 数学物理方程 1.0
-categories: BS-NJU-Course-Review-Physics
+categories: BS-NJU-Course-Review-Mathematics
 description: 对于数学物理方法的回顾
 keywords: mathematical physics
 mathjax: true

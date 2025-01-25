@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 线性代数 1.0
-categories: BS-NJU-Course-Review-Physics
+categories: BS-NJU-Course-Review-Mathematics
 description: 对于微积分与线性代数的回顾
 keywords: linear algebra
 mathjax: true
@@ -195,11 +195,3 @@ $$\vec x^T\mathbf A\vec x=\vec y^T\mathbf P^T\mathbf A\mathbf P\vec y=\vec y^T\m
 系统性总结参见 [矩阵求导术（上）](https://zhuanlan.zhihu.com/p/24709748)& [矩阵求导术（下）](https://zhuanlan.zhihu.com/p/24709748)——知乎用户[长躯鬼侠](https://www.zhihu.com/people/chang-qu-gui-xia)的文章。写得挺循循善诱的，也有和机器学习（[(En) Machine Learning](https://shi200005.github.io/2022/12/05/Machine-Learning/)）中相关运算的结合。
 
 其中行列式的微分详见[行列式微分形式的推导](https://zhuanlan.zhihu.com/p/144255438)——知乎用户 [genekiller](https://www.zhihu.com/people/jiahao-lee-73) 的文章，结论为：可逆情形下的行列式微分形式：$$d\vert\mathbf A\vert=\vert\mathbf A\vert tr(\mathbf{A^{-1}}d\mathbf A)$$。Jacobi's formula
-
-## 对偶空间
-
-[The Dual of a Vector Space: From the Concrete to the Abstract to the Concrete (In Four Lectures)](https://people.math.osu.edu/gerlach.1/math5101/DualOfAVectorSpace.pdf)（对偶空间与**固体物理 - 晶体衍射劳厄公式**、对偶空间与[信息论 - 采样定理](https://shi200005.github.io/2023/10/03/Information-Theory/#sampling-theorem)）。
-
-$$n$$ 维线性空间 $$V$$ 的基为 $$\{\vec e_1,\vec e_2,...,\vec e_n\}$$。其 $$n$$ 维对偶空间 $$V^*$$ 是一个线性空间，其元素为可以把 $$V$$ 中向量映射到实数域的函数，这些函数的基为 $$\{\omega^1,\omega^2,...,\omega^n\}$$。满足 $$\langle\underline{\omega}^i\vert\vec e_j\rangle=\delta_j^i$$，或写为 $$\underline{\omega}^i(\vec e_j)=\delta_j^i$$。
-
-如何建立线性空间中的元素向其对偶空间元素的映射？如果线性空间中定义了内积，记求内积操作为 $$g$$，向量 $$\vec x$$ 和 $$\vec y$$ 的内积则为 $$g(\vec x,\vec y)$$。记 $$\vec x=x^i\vec e_i$$ (ESC)，$$g_{ij}=g(\vec e_i,\vec e_j)=\vec e_i\cdot\vec e_j$$，则 $$g(\vec x,\vec y)=x^iy^jg_{ij}$$ (ESC)...... $$\underline{x}=g(\vec x,\quad)$$，其中 $$g(\vec x,\vec y)=g_{ij}\omega^i(\vec x)\otimes\omega^j(\vec y)$$。$$g$$ 把 $$V$$ 里的 $$\vec x$$ 映射到了 $$V^*$$ 里的 $$\underline x$$。

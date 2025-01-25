@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 概率论 1.0
-categories: BS-NJU-Course-Review-Physics
+categories: BS-NJU-Course-Review-Mathematics
 description: 概率论
 keywords: probability
 mathjax: true

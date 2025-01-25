@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 数理统计 1.0
-categories: BS-NJU-Course-Review-Physics
+categories: BS-NJU-Course-Review-Mathematics
 description: 对于概率论与数理统计的回顾
 keywords: data statistics and analysis
 mathjax: true

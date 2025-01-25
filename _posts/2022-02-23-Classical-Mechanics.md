@@ -277,11 +277,13 @@ $$
 
 ### 波动方程
 
-绳子拉紧，放 $$x$$ 轴上，拉紧。某一段产生了形变（但绳子本身不沿自身方向移动）。通过列解绳子横向位移恢复原状的**经典力学牛顿方程**，做小量近似，绳上微扰传播的波动方程：$$\displaystyle\frac{\partial^2\psi}{\partial x^2}=\frac{1}{v^2}\frac{\partial ^2 \psi}{\partial t^2}$$，其中 $$v=\sqrt{\displaystyle\frac{T}{\mu}}$$，其中 $$T$$ 是绳中张力，$$\mu$$ 是绳子线密度。讲解的文本很多，例如梁昆淼老师的数学物理方法和 Griffiths 电动力学第九章。描述一个以一定速度传播，波形不变的行波，此处 $$v$$ 就是行波的波速。[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/)的重点之一就是求解这种线性偏微分方程。
+绳子拉紧，放 $$x$$ 轴上，拉紧。某一段产生了形变（但绳子本身不沿自身方向移动）。通过列解绳子横向位移恢复原状的**经典力学牛顿方程**，做小量近似，绳上微扰传播的波动方程：$$\displaystyle\frac{\partial^2\psi}{\partial x^2}=\frac{1}{v^2}\frac{\partial ^2 \psi}{\partial t^2}$$，其中 $$v=\sqrt{\displaystyle\frac{T}{\mu}}$$，其中 $$T$$ 是绳中张力（小振动条件下处处相等），$$\mu$$ 是绳子线密度。讲解的文本很多，例如梁昆淼老师的数学物理方法和 Griffiths 电动力学第九章。描述一个以一定速度传播，波形不变的行波，此处 $$v$$ 就是行波的波速。[数学物理方程](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/)的重点之一就是求解这种线性偏微分方程。
+
+注意：在液体和气体里不可能传播横波。
 
 考虑以一定速度 $$v$$ 传播，传播时波形不变的一维绳上波，$$\psi(x,t)\vert_{t=0}=f(x)$$，其中 $$f(x)$$ 是 $$t=0$$ 时的波形，$$\psi(x,t)$$ 是绳上各点在某时某地的振动情况，显然 $$\psi(x,t)=f(x-vt)$$。参照 Hecht 2.1.1，$$\psi(x,t)=f(x-vt)$$ 对应的偏微分波动方程为 $$\displaystyle\frac{\partial^2\psi}{\partial x^2}=\frac{1}{v^2}\frac{\partial ^2\psi}{\partial t^2}$$。 $$\psi(x,t)=f(x+vt)$$ 也是波动方程的解，对应以 $$-v$$​ 传播的波形。波动方程是**线性** PDE，我们可以把几个波线性**叠加**起来。
 
-阻抗 $$Z=T/v$$。
+**阻抗**定义为 $$Z=T/v$$，则决定式为 $$Z=\sqrt{T\mu}$$。
 
 ### 简谐波（单色波）的复数表示
 
@@ -297,15 +299,40 @@ $$
 
 ### 反射与透射
 
-阅读材料：梁昆淼《力学》 52.2 反射波 或 **Griffiths 9.1.3**
+阅读材料：梁昆淼《力学》 52.2 反射波 或 **Griffiths 9.1.3**，对于一个沿 $$z$$ 轴正方向传播的一维机械波，（驻波：反射波和入射波叠加）
 
 $$\tilde f(z,t)=\begin{cases}{\tilde A_Ie^{i(k_1z-\omega t)}+\tilde A_Re^{i(-k_1z-\omega t)}, \quad\text{for } z<0}\\ \tilde A_Te^{i(k_2z-\omega t)}\quad\text{for }z>0.\end{cases}$$
 
-若绳子两介质结点不受净力（质量为零），则**边界条件**为 $$\tilde f(0^-,t)=\tilde f(0^+,t)$$, $$\displaystyle\frac{\partial\tilde f}{\partial z}\vert_{0^-}=\frac{\partial\tilde f}{\partial z}\vert_{0^+}$$.
+若绳子两介质**结点不受净力（质量为零）**，则**边界条件**为 
 
-推出振幅之比 $$A_R=(\displaystyle\frac{k_1-k_2}{k_1+k_2})A_I$$, $$A_T=(\displaystyle\frac{2k_1}{k_1+k_2})A_I$$.
+- 绳子连续：$$\tilde f(0^-,t)=\tilde f(0^+,t)$$, 
+- 张力一致，即绳子切线方向连续：$$\displaystyle\frac{\partial\tilde f}{\partial z}\vert_{0^-}=\frac{\partial\tilde f}{\partial z}\vert_{0^+}$$.
 
-驻波：反射波和入射波叠加。
+推出复振幅之比 $$\displaystyle\tilde A_R=(\frac{k_1-k_2}{k_1+k_2})\tilde A_I$$, $$\displaystyle\tilde A_T=(\frac{2k_1}{k_1+k_2})\tilde A_I$$. 振幅 $$\displaystyle A_Re^{i\delta_R}=(\frac{k_1-k_2}{k_1+k_2}) A_Ie^{i\delta_I}$$, $$\displaystyle A_Te^{i\delta_T}=(\frac{2k_1}{k_1+k_2}) A_Ie^{i\delta_I}$$. 
+
+- 若 $$\mu_2<\mu_1$$，即 $$v_2>v_1$$，则 $$\delta_R=\delta_T=\delta_I$$，$$\displaystyle A_R=(\frac{k_1-k_2}{k_1+k_2}) A_I$$, $$\displaystyle A_T=(\frac{2k_1}{k_1+k_2}) A_I$$。
+- 若 $$\mu_2>\mu_1$$，即 $$v_2<v_1$$，则 $$\delta_R+\pi=\delta_T=\delta_I$$，$$\displaystyle A_R=(\frac{k_2-k_1}{k_1+k_2}) A_I$$, $$\displaystyle A_T=(\frac{2k_1}{k_1+k_2}) A_I$$ —— **半波损失**。
+
+考虑反射和透射的振幅与入射波之比，两段 $$T$$ 应相等，$$Z=T/v$$，所以 反射系数 $$\displaystyle R=\frac{Z_1-Z_2}{Z_1+Z_2}$$，透射系数 $$\displaystyle T=\frac{2Z_1}{Z_1+Z_2}$$。
+
+### 色散
+
+例：考虑两列振幅相等、振动方向相同，频率相差很小，均沿 $$z$$ 轴传播的单色平面波叠加。
+
+
+$$
+\begin{cases}
+E_1=A\cos(\omega_1t-k_1z) \\
+E_2=A\cos(\omega_2t-k_2z) \\
+\end{cases}
+$$
+
+
+令 $$\omega_1>\omega_2$$, $$\omega_1=\omega+d\omega$$,  $$\omega_2=\omega-d\omega$$, $$k_1=k+dk$$,  $$k_2=k-dk$$, 则 $$E=E_1+E_2=2A\cos[(d\omega)t-(dk)z]\cos[\omega t-kz]$$。
+
+波包：$$\cos[(d\omega)t-(dk)z]$$，等振幅条件 $$(d\omega)t-(dk)z=\text{const}$$，微分得群速 $$\displaystyle v_g=\frac{dz}{dt}=\frac{d\omega}{dk}$$。
+
+相速与群速的关系——瑞利群速公式：$$\displaystyle v_g=v_p-\lambda\frac{dv_p}{\lambda}$$，推导见于老师光学课件。
 
 ### 多普勒效应
 
