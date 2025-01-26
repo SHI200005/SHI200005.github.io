@@ -162,13 +162,17 @@ $$P(y\vert x)=\displaystyle\frac{P(x,y)}{P(x)}$$.
 
 ### 相互独立与两两独立
 
-三个随机变量**相互独立**能推出三对随机变量**两两独立**，反之推不出。示例见下图，$$Z=X\oplus Y$$，即布尔代数里的 XOR 运算。这一点在通信加密和解码中有应用（详见 **(En) Information Theory**）。
+三个随机变量**相互独立**能推出三对随机变量**两两独立**，反之推不出。示例见下图，$$Z=X\oplus Y$$，即布尔代数里的 XOR 运算。
 
 ![Probability_Pairwise](\images\blog\Probability_Pairwise.jpg)
 
+通信加密和解码应用例：[One-time pad](https://en.wikipedia.org/wiki/One-time_pad) (thanks Prof Kschischang and TA Amir Tasbihi @ ECE1520 UofT)。
+
 ### 复合形式
 
-$$P((z\vert y)\vert x)$$ 其实就是 $$P(z\vert(x,y))$$. **(En) Information Theory **会用。
+$$P((z\vert y)\vert x)$$ 其实就是 $$P(z\vert(x,y))$$.
+
+$$P(x_1,x_2,x_3)=p(x_2,x_3\vert x_1)=P((x_3\vert x_2)\vert x_1)P(x_2\vert x_1)P(x_1)=p(x_3\vert x_1,x_2)P(x_2\vert x_1)P(x_1)$$. Just imagine finding a probability grid in a 3-D sample space. Find the grid axis after axis.
 
 ## 随机变量的数字特征
 

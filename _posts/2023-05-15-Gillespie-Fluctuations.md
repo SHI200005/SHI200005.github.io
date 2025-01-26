@@ -84,7 +84,7 @@ $$
 
 Note that nonlinear rates prohibit exact **moment closure** [5](https://shi200005.github.io/2023/05/15/Gillespie-Fluctuations/#references).  In the linear case, $$\displaystyle\frac{d\langle x\rangle}{dt}$$ contains terms no higher than the first moment, and you can solve it by given conditions. Then, $$\displaystyle\frac{d\langle x^2\rangle}{dt}$$ contains terms no higher than the second moment, and you can solve it by the solved first moment... But in the nonlinear case, as I have written, $$\displaystyle\frac{d\langle x\rangle}{dt}$$ contains the second-order term and can't be solved analytically.
 
-Let's see something more interesting in my undergrad thesis - there are different types of fixed points in a nonlinear networks!!! The full English abstract of the thesis can be found [here](https://github.com/SHI200005/UndergradThesis_Excitability).
+Let's see something more interesting in my undergrad thesis - there are different types of fixed points in a nonlinear networks!!! The full English abstract of the thesis can be found [here](https://github.com/SHI200005/Examples/Excitability).
 
 ### The Excitable Gene Regulatory Network
 
@@ -96,7 +96,7 @@ The fast positive feedback loop drives the system further away from the stable n
 
 Fixed points analysis in the excitable gene regulatory networks appears in [6](https://shi200005.github.io/2023/05/15/Gillespie-Fluctuations/#references), a model of *B. subtilis* competence. Excitable networks are defined when the ODEs have three fixed points: **a stable node/focus, a saddle, and an unstable focus**. Take the network in Figure.1.b and the ODEs in Box.1 (parameter given by Figure.S3.D), I plotted the three fixed points and the trajectories of the **deterministic approach given by the ODEs** (the MATLAB code attached [3b](https://shi200005.github.io/2023/05/15/Gillespie-Fluctuations/#references)!). The saddle defines a manifold. If the initial point starts from the "node" side of the stable manifold, it will flow to the node. If you start from the "unstable focus" side of the stable manifold, it will flow across the unstable focus and then return to the node, and this is an excitement event. (Whether there will be excitement is totally determined by the initial condition. Similar to the bistable case of the Lotka-Volterra competition model, where there are two stable nodes and a saddle...)
 
-![image](https://raw.githubusercontent.com/SHI200005/UndergradThesis_Excitability/main/annex/3.2/3_2.jpg)
+![image](https://raw.githubusercontent.com/SHI200005/Examples/tree/main/Excitability/main/annex/3.2/3_2.jpg)
 
  ### Stochastic Model and Reduced Model
 
@@ -106,7 +106,7 @@ In the case that the stable node/focus is **close enough** to the saddle (**chem
 
 The excitable network and auto-excitement were also discussed in 8, where the auto-excitement can be regarded as "a genetic timer." My math understanding of the fixed points in excitable networks mainly came from this short paper.
 
-<img src="https://raw.githubusercontent.com/SHI200005/UndergradThesis_Excitability/main/annex/nocode/5_6.jpeg" alt="Figure1" width="350px;" />
+<img src="https://raw.githubusercontent.com/SHI200005/Examples/tree/main/Excitability/main/annex/nocode/5_6.jpeg" alt="Figure1" width="350px;" />
 
 This is the figure 1 in the paper. **A** shows a two-node gene regulatory network consisting of interlinked positive and negative feedback loops. **B** is the deterministic model. The filled red circle is the stable focus, the open red circle is the saddle, and the open red diamond is the unstable focus. If the initial state is on the "excitement" side of the stable manifold defined by the saddle. **D** is from Gillespie simulations. The saddle is very close to the stable focus. When the trajectory bounces due to the stochasticity, it might cross the stable manifold and trigger an auto-excitement.
 
@@ -118,9 +118,9 @@ Note that, if we adjust the parameter set of the network, **making the real-part
 
 In 2002, Ozbudak et al. showed that in a stochastic gene regulatory network model, **When the transcription rate is high, variability in protein levels is low, but when the transcription rate is lowered and the translation rate is raised, gene expression is far noisier, even at the same mean.** (Summarized in [7](https://shi200005.github.io/2023/05/15/Gillespie-Fluctuations/#references))
 
-![image2](https://raw.githubusercontent.com/SHI200005/UndergradThesis_Excitability/main/annex/nocode/5.4.jpg)
+![image2](https://raw.githubusercontent.com/SHI200005/Examples/tree/main/Excitability/main/annex/nocode/5.4.jpg)
 
-This statement is explicitly shown in my simulations. Refer to pages 18-20 in [3c](https://github.com/SHI200005/UndergradThesis_Excitability/blob/main/annex/Eng.pdf), the corresponding figures and codes in [3a](https://github.com/SHI200005/UndergradThesis_Excitability/blob/main/annex/Eng.pdf). In my excitable networks, auto-excitement can be triggered with a larger probability with smaller transcription rates and larger translation rates (at the same mean). Visualized on pages 19-20, [3c](https://github.com/SHI200005/UndergradThesis_Excitability/blob/main/annex/Eng.pdf).
+This statement is explicitly shown in my simulations. Refer to pages 18-20 in [3c](https://github.com/SHI200005/Examples/tree/main/Excitability/blob/main/annex/Eng.pdf), the corresponding figures and codes in [3a](https://github.com/SHI200005/Examples/tree/main/Excitability/blob/main/annex/Eng.pdf). In my excitable networks, auto-excitement can be triggered with a larger probability with smaller transcription rates and larger translation rates (at the same mean). Visualized on pages 19-20, [3c](https://github.com/SHI200005/Examples/tree/main/Excitability/blob/main/annex/Eng.pdf).
 
 ## References
 
@@ -128,13 +128,13 @@ This statement is explicitly shown in my simulations. Refer to pages 18-20 in [3
 
 [2] Gillespie, D. T. (1977). Exact stochastic simulation of coupled chemical reactions. *The journal of physical chemistry*, *81*(25), 2340-2361. [online](https://pubs.acs.org/doi/10.1021/j100540a008)
 
-[3] My undergraduate thesis [repository](https://github.com/SHI200005/UndergradThesis_Excitability).
+[3] My undergraduate thesis [repository](https://github.com/SHI200005/Examples/Excitability).
 
-  - [a] [Figure 5.5](https://github.com/SHI200005/UndergradThesis_Excitability/tree/main/annex/5.5), [Figure 5.6](https://github.com/SHI200005/UndergradThesis_Excitability/tree/main/annex/5.6)
+  - [a] [Figure 5.5](https://github.com/SHI200005/Examples/tree/main/Excitability/tree/main/annex/5.5), [Figure 5.6](https://github.com/SHI200005/Examples/tree/main/Excitability/tree/main/annex/5.6)
 
-  - [b] [Figure 3.2](https://github.com/SHI200005/UndergradThesis_Excitability/tree/main/annex/3.2)
+  - [b] [Figure 3.2](https://github.com/SHI200005/Examples/tree/main/Excitability/tree/main/annex/3.2)
 
-- [c] [Brief introduction](https://github.com/SHI200005/UndergradThesis_Excitability/blob/main/annex/Eng_copyright.pdf)
+- [c] [Brief introduction](https://github.com/SHI200005/Examples/tree/main/Excitability/blob/main/annex/Eng_copyright.pdf)
 
 [4] [Paper repository](https://github.com/t-wittenstein/quantify-biochemical-rates/tree/master/Simulation)
 

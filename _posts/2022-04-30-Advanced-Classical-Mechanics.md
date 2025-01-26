@@ -220,13 +220,20 @@ $$
 
 在经典力学问题求解中，如果用哈密顿力学求解，总是逃不开拉格朗日函数的求解。那么我们为什么要用哈密顿力学呢？对于这个问题，梁昆淼老师在其《理论力学》教材第 7-9 章深入探讨。从一切可能运动的拉格朗日函数 $$L(q,\dot q,t)$$ 出发（拉格朗日动力学）或从一切可能运动的哈密顿函数 $$H(q,p,t)$$ 出发（哈密顿动力学），此时 $$q$$ 和 $$\dot q$$ 相互独立，$$q$$ 和 $$p$$ 也相互独立。但是进入虚位移求实际运动时 $$\dot q$$ 就不再独立于 $$q$$（我的理解是”关联“指的就是拉格朗日方程？），然而 $$p$$ 却独立于 $$q$$（这句话详见下文**哈密顿原理**部分）。于是拉格朗日动力学在 $$s$$ 维位形空间研究，哈密顿力学在 $$2s$$ 维位形空间中研究。
 
-[统计物理 - 统计系综理论](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/#%E7%BB%9F%E8%AE%A1%E7%B3%BB%E7%BB%BC%E7%90%86%E8%AE%BA)（刘维尔定理）。把广义坐标和广义动量当作直角坐标而构成 $$2s$$ 维的空间叫做相空间。哈密顿正则方程的重要性：刘维尔定理是 $$2s$$ 维的相空间中的定理，在普通空间或 $$s$$ 维的位形空间中并不存在类似的定理。
+把广义坐标和广义动量当作直角坐标而构成 $$2s$$ 维的空间叫做相空间。哈密顿正则方程的重要性：刘维尔定理是 $$2s$$ 维的相空间中的定理，在普通空间或 $$s$$ 维的位形空间中并不存在类似的定理。
+
+为什么要引入系综？给定一个由大量微观粒子构成的宏观系统，如果我们知道完整的每个粒子的初始条件，带入哈密顿力学，就能算出一切了（确切地知道一个相点，通过哈密顿力学算出从今往后的相轨道）。然而，完整的初始条件，我们不可能知道，也不需要知道，知道了也懒得拿来算。处于同样宏观条件下的平衡态系统（一坨理想气体的 $$p,V,T$$），对应的微观条件的数目是巨大的（每个气体分子的坐标和动量）。其实我们只需要知道代表点在相空间内的概率分布就行了。**系综是具有相同宏观条件但是各自处于其微观状量相空间的大量系统的集合**。
+
+系统的微观状态随时间不断变化，如何描述系统是否处于**平衡态**呢？系综随时间如何演化，对应相空间中代表点的**概率演化**，描述它的定理就是**刘维尔定理**。
+
+系统微观状态的几率分布函数或几率密度 $$\rho(\boldsymbol p,\boldsymbol q,t)$$，代表 $$t$$ 时刻系统的微观状态处于相点$$\rho(\boldsymbol p,\boldsymbol q,t)$$周围小**相体积元** $$d\Gamma=\displaystyle\prod_{i=1}^{N}d^3\vec p_id^e\vec q_i$$ 内的几率，满足归一化条件 $$\int d\Gamma\rho=1$$。
+
+ - 保守哈密顿系统。证明过程：连续性方程、带入**正则运动方程**......
+ - 结论：$$\displaystyle\frac{d\rho}{dt}=\frac{\partial\rho}{\partial t}+\{\rho,H\}=0$$。如果把系综在相空间的运动看成代表点组成的“流体”，那么刘维尔定理表示这个“流体”是**不可压缩**的。系综的几率密度（或代表点密度）在运动中不变。P.S. 其中$$\displaystyle\frac{d}{dt}$$ 指跟着代表点一起运动，$$\displaystyle\frac{\partial}{\partial t}$$ 指固定地点。上一句话作为 Kardar Eq.(3.11) & Eq.(3.13) 的注释。为啥我们盯着这一群代表点？因为你要套到哈密顿力学里，哈密顿力学描述的是这群粒子广义坐标和广义动量的变化嘛=-=。
 
 ### 位力定理（Virial Theorem）
 
 > The word **virial** for the right-hand side of the equation derives from *vis*, the [Latin](https://en.wikipedia.org/wiki/Latin) word for "force" or "energy", and was given its technical definition by [Rudolf Clausius](https://en.wikipedia.org/wiki/Rudolf_Clausius) in 1870.[[1\]](https://en.wikipedia.org/wiki/Virial_theorem#cite_note-1) ---[Wikipedia](https://en.wikipedia.org/wiki/Virial_theorem)
-
-梁老师书中把这个定理放在哈密顿力学刘维尔定理之后，但我不是很明白和哈密顿动力学有什么关联，我个人把它放在这里。
 
 $$S=\displaystyle\sum_{i=1}^n\vec K_i\cdot\vec r_i$$ 有界（$$\vec K_i$$ 指动量），取 $$\displaystyle\lim_{\tau\rightarrow\infty}\langle\frac{dS}{dt}\rangle$$，得 $$\displaystyle\langle T\rangle=-\frac{1}{2}\langle\sum_{i=1}^n\vec F_i\cdot\vec r_i\rangle$$。
 

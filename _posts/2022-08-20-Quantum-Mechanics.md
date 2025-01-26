@@ -247,10 +247,6 @@ $$\hat S_-\vert11\rangle=\hbar\sqrt2\vert10\rangle$$；$$\hat S_-\vert\uparrow\u
 
 更一般的表示：交换算符 $$\hat Pf(\vec r_1,\vec r_2)=f(\vec r_2,\vec r_1)$$，本征值为 $$\pm1$$。对于**全同粒子**哈密顿算符显然 $$[\hat P,\hat H]=0$$（**宇称守恒**）。$$\psi(\vec r_1,\vec r_2)=\pm\psi(\vec r_2,\vec r_1)$$。
 
-#### 统计行为
-
-根据 Griffiths 5.1.2，对于可分辨粒子 $$\langle(x_1-x_2)^2\rangle=\langle x^2\rangle_a+\langle x^2\rangle_b-2\langle x^2\rangle_a\langle x^2\rangle_b$$；对于全同粒子 $$\langle(x_1-x_2)^2\rangle=\langle x^2\rangle_a+\langle x^2\rangle_b-2\langle x^2\rangle_a\langle x^2\rangle_b\mp2\vert\langle x\rangle_{ab}\vert$$。不难发现 "identical bosons tend to be somewhat closer together, and identical fermions somewhat farther apart, than distinguishable particles in the same two states. 同时也提醒我们，离得太远的两个电子**波函数根本不交叠**（$$\psi_a$$ 和 $$\psi_b$$ 中必有一个为 0，导致 $$\langle x\rangle_{ab}=0$$），就算电子是费米子，直接按可分辨粒子处理就可以。后续[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)中也提到过，定域子系，包括可分辨的玻色子和费米子，也按玻尔兹曼统计处理。
-
 ### 元素周期表
 
 化学上用 $$n$$ 和 $$l$$ 表示电子态。先是数字表示 $$n$$，然后 s,p,d,f,g,h,i 表示 $$l$$。2p 和 2P 分别表示 $$n=2,l=1$$ 的电子态。这里能量只由 $$n$$ 给出，同一能量状态可以有 $$n^2$$ 个不同的波函数，称为**简并**。
@@ -280,18 +276,5 @@ $$V(x+a)=V(x)$$ -> $$\psi(x+a)=e^{iKa}\psi(x)$$。晶体首尾相接，边界条
 
 以周期 $$\delta$$ 函数势为例，解得正能量波函数应满足 $$\displaystyle\cos(Ka)=\cos(ka)-\frac{m\alpha}{\hbar^2k}\sin(ka)$$，其中 $$\displaystyle k=\frac{\sqrt{2mE}}{\hbar}$$（负能量方法类似）。对于有的 $$k$$ 值，波函数无解，也就形成能量禁带。最后，$$k$$ 形成导带 - 禁带交替的结构，第一导带有 $$N/2$$ 个负能量能级和 $$N/2$$ 个正能量能级，更高导带各有 $$N$$ 个正能量能级。体系中有 $$N$$ 个原子，若每个原子含 1 个电子，则填满第一导带的 $$N/2$$ 个负能级；若每个原子含 2 个电子，则填满第一导带的 $$𝑁$$ 个能级......如果导带被电子填满，则要想激发电子，必须跨越禁带（困难），这就是**绝缘体**；如果导带没有全部被电子填满，则较容易激发电子，这就是**导体**；如果在这群原子里掺杂含电子数不同的原子，则可以添几个电子到空旷的导带，或者在拥挤的导带整出空穴，这就是**半导体**。
 
-### 量子统计物理
 
-如果给定各个能级 $$E_i$$ 简并度为 $$d_i$$，则对于 $$N_i$$ 个粒子具有 $$E_i$$ 能量的一群粒子，有几种 $$Q(N_1,N_2,N_3,...)$$ 不同的构型？对于可分辨粒子、费米子、玻色子，结论见 Griffiths 5.4.2。
-
-[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/#%E5%BE%AE%E6%AD%A3%E5%88%99%E7%B3%BB%E7%BB%BC)的基本假说是热力学平衡下给定 $$E$$ 各量子态（微观状态）出现的概率相同。如果给定总粒子数和总能量，$$Q$$ 取最大值时，就是这群粒子最有可能的构型（$$E_i$$ 态上占了 $$N_i$$ 个粒子）。总粒子数和总能量作为约束，用[拉格朗日乘子法](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)处理 $$Q$$ 在约束下的极值问题（粒子数乘子为 $$\alpha$$，能量约束为 $$\beta$$），$$Q$$ 涉及超大阶乘，用 [Stirling's approximation](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula) 处理，得到能量为 $$\epsilon$$ 的能级占据数 $$n(\epsilon)$$ 为
-$$
-n(\epsilon)=
-\begin{cases}
-\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}},\text{可分辨粒子的麦克斯韦 - 玻尔兹曼分布} \\
-\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}+1},\text{费米子的费米 - 波色分布} \\
-\displaystyle\frac{1}{e^{-(\epsilon-\mu)/k_BT}-1} ,\text{玻色子的波色 - 爱因斯坦分布}\\
-\end{cases}
-$$
-通过简单例子验证（没有根据更一般的情况说明），$$\beta=1/k_BT$$，$$\displaystyle e^{-\alpha}=\frac{N}{V}(\frac{2\pi\beta\hbar^2}{m})^{3/2}$$，定义化学势 $$\mu=-\alpha k_BT$$。
 
