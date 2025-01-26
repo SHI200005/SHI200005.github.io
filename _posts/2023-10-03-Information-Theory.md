@@ -11,25 +11,9 @@ mathjax: true
 
 This is an informal oral statement from our lectures. I relate to this statement so much that I would like to put it down here.
 
-## Entropy, Relative entropy, and Mutual Information
+## Relative entropy and Mutual Information
 
-> Entropy is the unique measure of available information consistent with certain simple and plausible requirements. --- Shannon, 1948
 
-A quick note on chain rule of probability. 
-
-$$p(x_1,x_2,x_3)=p(x_2,x_3\vert x_1)=p((x_3\vert x_2)\vert x_1)p(x_2\vert x_1)p(x_1)=p(x_3\vert x_1,x_2)p(x_2\vert x_1)p(x_1)$$. Just imagine finding a probability grid in a 3-D sample space. Find the grid axis after axis.
-
-**Encryption Example of Pairwise Independence and Mutual Independence**
-
-Please refer to the scenario and the diagram in Probability ([概率论](https://shi200005.github.io/2021/10/02/Probability/#%E8%BE%B9%E7%BC%98%E5%88%86%E5%B8%83)). In Encryption application, the following example was mentioned by Prof Kschischang in the lecture and elaborate by the TA Amir Tasbihi.
-
-**Change the base of logarithm**
-
-$$\text{log}_bp=(\text{log}_ba)(\text{log}_ab)$$,
-
-$$H_{\text{in bits}}(X)=(\text{log}_2e)H_{\text{in nats}}(X)$$.
-
-For Bernoulli random variable $$X$$ with probability $$p$$, $$H(X)=\mathscr H(p)=-p\text{log}p-(1-p)\text{log}(1-p)$$. A tip: $$\frac{d}{dp}\mathscr H(f(p))=f^\prime\text{log}\frac{1-f}{f}$$.
 
 ## Convex Function
 

@@ -286,51 +286,6 @@ $$
 
 ---
 
-## Information and Entropy
-
-The content for this part mainly comes from 2.7 of Kardar (particles) (a lot of direct copy... tell me whether it is appropriate and help me to improve!)
-
-### Information
-
-Consider a random variable with a discrete set of outcomes $$\mathbf{x}=\{x_i\}$$ (you use a language to write a letter and the language contains 5 letters, "a, b, c, d, e"), occurring with probabilities $$\{p(i)\}$$ (in that language, all words start with "a", making "a" the most frequent letter in texts), for $$i=1,...,M$$ ($$M$$ is the size of the alphabet, in the "letter" case, $$M=5$$).
-
-Your message contains $$N$$ letters. There are $$M^N$$ kinds of different letter combinations. Choose the unit as "bits" means $$\ln_2(M^N)$$. The number of bits (**information**) to transmit your text precisely (imaging you are sending via email so the letters are coded in a binary way) is $$N\ln_2M$$ (the bits of two texts should add, and the possibilities of the combined text should multiply, which could be reached in this logarithm way).
-
-However, in the limit of large $$N$$, we expect the message to contain"roughly" $$\{N_i=Np_i\}$$ occurrences for each symbol. The number of typical messages thus corresponds to the number of ways of rearranging the $$\{N_i\}$$ occurrences of $$\{x_i\}$$, and is given by the multinomial coefficient $$\displaystyle g=\frac{N!}{\prod_{i=1}^M N_i!}$$, compared with $$M^N$$ before considering the non-uniform distribution. Using **Stirling's approximation**, we have $$\ln_2g\approx -N\displaystyle\sum_{i=1}^M p_i\ln_2p_i$$.
-
-- It is interesting that statistical physicists use $$\ln_2$$ to indicate $$\log_2$$, while engineers use $$\log x$$ to indicate $$\log_2$$.
-
-- Here, we start from "large $$N$$ gives $$\{N_i=Np_i\}$$"  (introduced in [概率论](https://shi200005.github.io/2022/02/17/Probability/#%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86-1))) and then use [Stirling's approximation](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula).  Actually,
-
-
-$$
-  \text{The bound by the extreme value among distribution -> }
-  \begin{cases}
-  \text{The weak law of large number} \\
-  \text{Stirling's approximation}
-  \end{cases}
-$$
-
-
-
-### Shannon Entropy 
-
-> Entropy is the unique measure of available information consistent with certain simple and plausible requirements. --- Shannon, 1948
-
-The above was written before I took Information Theory, where $$H(X)=-\displaystyle\sum_{x}p(x)\log p(x)$$ was derived from three axioms in Shannon's 1948 paper. In Shannon's argument, derivation for uniform distribution over $$n$$ elements, the entropy $$H_U(n)=H_2(n)\log n$$ was determined by a bound, and this sandwich just look like what we did in Stirling's...
-
-**Change the base of logarithm**: $$\text{log}_bp=(\text{log}_ba)(\text{log}_ab)$$, $$H_{\text{in bits}}(X)=(\text{log}_2e)H_{\text{in nats}}(X)$$.
-
-For Bernoulli random variable $$X$$ with probability $$p$$, $$H(X)=\mathscr H(p)=-p\text{log}p-(1-p)\text{log}(1-p)$$. A tip: $$\displaystyle\frac{d}{dp}\mathscr H(f(p))=f^\prime\text{log}\frac{1-f}{f}$$.
-
-### The Entropy of Mixing
-
-Suppose mixing $$M$$ distinct components in the context of statistical mechanics. Consider characterizing the *distribution*, let alone the outcomes from different trials (how many samples taken and the sampling error...).
-
-The *entropy* for *any probability distribution* as $$S=-\displaystyle\sum_{i=1}^Mp(i)\ln p(i)=-\langle\ln p(i)\rangle$$. 
-
-The above is the entropy for a discrete probability distribution, for that of a continuous distribution, $$S=-\int dxp(x)\ln p(x)=-\langle \ln p(x)\rangle$$. The problem of scaling remains to be discussed.
-
 ## The BBGKY hierarchy
 
 Scan-reading the irreversibility parts from Kardar's book (particles)...
@@ -361,7 +316,7 @@ If $$f_1(\vec p,\vec q,t)$$ satisfies the Boltzmann equation, then $$d\Eta/dt\le
 
 $$\displaystyle\Eta(t)=\int d^3\vec pd^3\vec qf_1(\vec p,\vec q,t)\ln f_1(\vec p,\vec q,t)$$,
 
-which is related to the **information content of the one-particle PDF**. Proved by plugging in the Boltzmann equation.
+which is related to the **[information]() content of the one-particle PDF**. Proved by plugging in the Boltzmann equation.
 
 Key mathematical step for introducing time irreversibility: check Kardar Eq.(3.40). *The assumption of molecular chaos* (factorizing $$f_2$$ as the product of two $$f_1$$) is applied to the "before collision term", but not the "after collision term", since when out of equilibrium, after collision, the coordinates are likely to be more correlated!
 
