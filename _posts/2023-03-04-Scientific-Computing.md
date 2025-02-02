@@ -133,50 +133,6 @@ Example: [Assignment 3: Modularize with make and git.](https://github.com/SHI200
 
 Unfortunately, by modularized with make, you cannot rely on the report from your Visual Studio Code anymore.
 
-### Version Control with git
-
-[中文小白入门教程](https://www.freecodecamp.org/chinese/news/git-and-github-for-beginners/) Sorry, I marked a tutorial in Chinese. If you understand Chinese, check it.
-
-Assume you installed git, below is the **least** thing to know about using [git](https://git-scm.com/). Suppose you are writing very fancy code in a directory.
-
-```
-$ mkdir example # it create a directory called example to work with
-$ cd example # go to that directory
-$ git init # initiate a local git repository in this directory
-```
-
-Then you create 'a.txt' which contains the Italian 'uno' in your working directory, and you commit this change into your git with
-
-```
-$ git add one.txt # if you want to update all the files, use '$ git add . '
-$ git commit -m "Create one.txt with an letter 'uno' in it."
-```
-
-Then you change the letter 'uno' to 'due' in your working directory, and commit this change to git.
-
-```
-$ git add one.txt # if you want to update all the files, use '$ git add . '
-$ git commit -m "Change the Italian from 'one' to 'two'."
-```
-
-Oh shit! Unfortunately, that change is abysmally wrong! You shouldn't change Italian 'one' to 'two'. You can't remember how to spell 'one'. You want to go back to the former version. 
-
-```
-$ git log
-```
-
-That will give you a corresponding code for your two commits. Find the code for the code corresponding to "Create one.txt with an letter 'uno' in it.", say, the code is '287dw9yhlejwhvd3475y'. Reset your git to the version after that commit with
-
-```
-$ git reset 287dw9yhlejwhvd3475y --hard
-```
-
-Then reset your 'one.txt' in the working directory as your git repository did.
-
-```
-$ git checkout one.txt # if you want to reset all the files, use 'git checkout . '
-```
-
 ### Arrays
 
 #### Automatic arrays (very dangerous)
@@ -247,27 +203,42 @@ There are lots of well-established libraries for scientific computing, such as O
 
 When you are using a library which is not C++ standard library, you should add **-l flags** and **link to the library** when compiling (see the [example Makefile](https://github.com/SHI200005/Comp_23/blob/main/A5_ODE_netCDF/Makefile)). 
 
-### Ordinary Differential Equations
+### Examples
 
-**Math will be uploaded in the next version (not my priority yet)**
+- Ordinary Differential Equations
 
-Example: [Assignment 5: Solve ODE and store in NetCDF file.](https://github.com/SHI200005/Comp_23/tree/main/A5_ODE_netCDF)
+  Example: [Assignment 5: Solve ODE and store in NetCDF file.](https://github.com/SHI200005/Comp_23/tree/main/A5_ODE_netCDF) with adaptive step-size control by **gsl**.
 
-### Partial Differential Equations
+- Partial Differential Equations
 
-**Here are some math worth mentioning but not my priority, update in the next version**
+  We can use linear algebra formulation to solve PDEs, see examples below.
 
-We can use linear algebra formulation to solve PDEs, see examples below.
+- Linear Algebra
 
-### Linear Algebra
+  In C++, we use **BLAS (Basic Linear Algebra Subroutines)** to solve linear algebra problems. Check [this link](https://netlib.org/blas/blast-forum/) for the routines you are looking for.
 
-In C++, we use **BLAS (Basic Linear Algebra Subroutines)** to solve linear algebra problems. Check [this link](https://netlib.org/blas/blast-forum/) for the routines you are looking for.
+  Example: [Assignment 6: Using BLAS for the 1d wave](https://github.com/SHI200005/Comp_23/tree/main/A6_PDE_LinearAlgebra_BLAS) Attention: Here I used dense matrix, but usually it is a sparse matrix and we should use sparse matrix to interpret. However, I am a rookie who don't know how to code...
 
-Example: [Assignment 6: Using BLAS for the 1d wave](https://github.com/SHI200005/Comp_23/tree/main/A6_PDE_LinearAlgebra_BLAS) Attention: Here I used dense matrix, but usually it is a sparse matrix and we should use sparse matrix to interpret. However, I am a rookie who don't know how to code...
+- Random numbers / Monte Carlo
+
+  There are a lot of random pseudo number generators. When applying them, we don't know their quality. Employ two random number generators, and see if they give, statistically speaking, the same result. 
+
+  Here is an example of generating fast random numbers uniformly distributed between 0 and 1.
+
+  ````
+  #include <random>
+  
+  // Set the seed value (where they start)
+  const unsigned seed = 42;
+  
+  // Create a mt19937_64 random number generator with the seed
+  std::mt19937_64 rng(seed);
+  
+  // Create a uniform distribution for double values in the range [0, 1]
+  std::uniform_real_distribution<double> dist(0.0, 1.0);
+  ````
 
 ### Fast Fourier Transforms
-
-**math-not-now!**
 
 Example of using the **FFTW** library
 
@@ -287,27 +258,6 @@ void fft_fast(const rvector<complex>& f, rvector<complex>& fhat, bool inverse)
 	fftw_execute(p);
 	fftw_destroy_plan(p);
 }
-```
-
-### Random numbers / Monte Carlo
-
-There are a lot of random pseudo number generators. When applying them, we don't know their quality. Employ two random number generators, and see if they give, statistically speaking, the same result. 
-
-Some math about how to generate a given distributed random numbers with random numbers uniformly distributed between 0 and 1 will be discussed in another post.
-
-Here is an example of generating fast random numbers uniformly distributed between 0 and 1.
-
-```
-#include <random>
-
-// Set the seed value (where they start)
-const unsigned seed = 42;
-
-// Create a mt19937_64 random number generator with the seed
-std::mt19937_64 rng(seed);
-
-// Create a uniform distribution for double values in the range [0, 1]
-std::uniform_real_distribution<double> dist(0.0, 1.0);
 ```
 
 ## High-Performance Computing
