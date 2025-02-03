@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 计算物理
-categories: BS-NJU-Course-Review-Others
+categories: BS-NJU-Course-Review-Other
 description: 
 keywords: computational physics
 mathjax: true

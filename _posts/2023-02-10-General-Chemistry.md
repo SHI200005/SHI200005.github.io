@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 大学化学
-categories: BS-NJU-Course-Review-Others
+categories: BS-NJU-Course-Review-Other
 description: 其实还是热力学
 keywords: College Chemistry
 mathjax: true

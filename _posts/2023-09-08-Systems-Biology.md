@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (En) Systems Biology
-categories: BS-NJU-Course-Review-Others
+categories: BS-NJU-Course-Review-Other
 description: 
 keywords: 
 mhchem: true
