@@ -152,7 +152,17 @@ spacings between random points follow a Poisson integral if uniformly distribute
 
 #### 线性最小二乘拟合
 
-寻找 $$\vec x$$ s.t. $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$。设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2=\ldots=\vec b^T\vec b-2\vec x^T\mathbf A^T\vec b+\vec x^T\mathbf A^T\mathbf A\vec x$$。令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$\mathbf A^T\mathbf A\vec x=\mathbf A^T\vec b$$。若 $$\mathbf A$$ 可逆则 $$\vec x=(\mathbf A^T\mathbf A)^{-1}\mathbf A^T\vec b$$。
+寻找 $$\vec x$$ s.t. $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$。$$\mathbf A$$ 有 $$m$$ 行 $$n$$ 列。
+
+- 超定方程组：$$m\ge n$$ 且 $$\text{rank}(A)=n$$ 满秩 -> $$\mathbf A^T \mathbf A$$ 也满秩，
+
+  设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2=\ldots=\vec b^T\vec b-2\vec x^T\mathbf A^T\vec b+\vec x^T\mathbf A^T\mathbf A\vec x$$。令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$\mathbf A^T\mathbf A\vec x=\mathbf A^T\vec b$$，$$\vec x=(\mathbf A^T\mathbf A)^{-1}\mathbf A^T\vec b$$。
+  
+- 欠定方程组：$$m<n$$，或者 $$\mathbf A$$ 非满秩，
+
+  按照线性代数，有无穷多解。这个时候我们可以给解加一些限定，
+
+  - 例：使 $$\vec x$$ 元素序列不要剧烈振荡，尽量光滑，则可以将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2\}$$。设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2 =\ldots$$，令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)\vec x=\mathbf A^T\vec b$$。根据 $$\epsilon$$ 的选取，有可能幸运地发现 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)$$ 居然可逆。于是 $$\vec x=(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)^{-1}\mathbf A^T\vec b$$。
 
 #### 非线性最小二乘拟合
 
@@ -173,6 +183,8 @@ spacings between random points follow a Poisson integral if uniformly distribute
 把信号被离散化为采样点 $$\displaystyle\hat f_q=\sum_{j=0}^{n-1} f_je^{\pm2\pi ijq/n}$$. 用 $$n\times n$$ 矩阵 $$\mathbf F(n)_{jq}=e^{2\pi ijq/n}$$（其中$$j,q$$ 从 0 数起）。实现 $$f$$ 到 $$\hat f$$ 的转化，计算成本为 $$\mathcal O(n^2)$$。不如想点办法转化。
 
 设 $$\omega_n=e^{2\pi i/n}$$，则 $$\omega_n^2=\omega_{n/2}$$。于是 $$\displaystyle\hat f_q=\sum_{j=0}^{n-1}\omega_n^{qj} f_j$$。假设 $$n=2^{m}$$，$$\displaystyle\hat f_q=\sum_{j=0}^{n/2-1}\omega_{n/2}^{qj} f_{2j} + \omega_{n}^{q}\sum_{j=0}^{n/2-1}\omega_{n/2}^{qj} f_{2j+1}$$，如此操作，直到全拆开。计算成本为 $$\mathcal O(n\log n)$$。变换之后数据长度与原始采样信号是一样的。矩阵表示为
+
+
 $$
 \mathbf F(n)=
 
@@ -188,6 +200,7 @@ $$
 
 \mathbf P(n)
 $$
+
 
 
 其中 $$\mathbf P(n)$$ 是 [Bit-reversal permutation](https://en.wikipedia.org/wiki/Bit-reversal_permutation) 矩阵。对角矩阵 $$\mathbf\Lambda(n/2)_{jj}=e^{2\pi ij/n}$$。
