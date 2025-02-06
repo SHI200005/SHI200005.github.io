@@ -3,7 +3,7 @@ layout: post
 title: 计算物理
 categories: BS-NJU-Course-Review-Other
 description: 
-keywords: computational physics
+keywords: 
 mathjax: true
 ---
 
@@ -75,7 +75,10 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 求解线性方程组，大一课上手算用高斯消元法，霸凌 python 则使用
 
-- 求解线性方程组 -> **LU 分解法**：例：$$\mathbf A$$ 是 $$n$$ 阶方阵，则将线性方程组 $$\mathbf A\vec x=\vec b$$ 的 $$\mathbf A$$ 一步一步转化为上三角矩阵，转化矩阵有固定的生成套路，转化为 $$\displaystyle\prod_{i=1}^{n}\mathbf M_{i}\mathbf A\vec x=\prod_{i=1}^{n}\mathbf M_{i}\vec b$$。包： scipy: linalg.solve()。
+- 求解线性方程组 -> **LU 分解法**：例：$$\mathbf A$$ 是 $$n$$ 阶**方阵**，则线性方程组 $$\mathbf A\vec x=\vec b$$ 有可能有唯一确定的解（也有可能无解或有无穷多解）
+  
+  ，将 $$\mathbf A$$ 一步一步转化为上三角方阵，转化矩阵有固定的生成套路，转化为 $$\displaystyle\prod_{i=1}^{n}\mathbf M_{i}\mathbf A\vec x=\prod_{i=1}^{n}\mathbf M_{i}\vec b$$。包： scipy: linalg.solve()。
+  
   - 矩阵求逆：$$\mathbf A\vec x_i=\vec b_i$$，设 $$\vec b_i$$ 除了第 $$i$$ 列是 $$1$$，其他都是 $$0$$。然后排成 $$\mathbf A\mathbf X=\mathbf I$$。用 LU 分解法算出每个 $$x_i$$ 排成 $$\mathbf X=\mathbf A^{-1}$$。包： scipy: linalg.inv()：
   
 - 求矩阵特征值与特征向量
