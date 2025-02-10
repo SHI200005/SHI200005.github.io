@@ -9,8 +9,6 @@ mathjax: true
 
 ...
 
-
-
 ## 数值计算
 
 ### 插值 Interpolation
@@ -124,11 +122,7 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 ### 随机数的产生
 
-随机数的产生：线性同余法产生均匀分布的伪随机数：$$x_{n+1}=(a_n+b)\mod(m)$$，其中 $$x_0$$ 叫种子。实际模拟中我们需要随机数看似独立，所以不能瞎选参数。具体怎么选我没细研究。一般我们调包获得质量有保障的伪随机数。
-
-独立性：相关系数满足 $$\displaystyle c_j=\langle x_ix_{i+j}\rangle=\frac{1}{N}\sum_{i=1}^N(x_i-\bar x)(x_{i+j}-\bar x)\sim\mathcal O(\frac{1}{\sqrt N})$$ for $$j>0$$。
-
-spacings between random points follow a Poisson integral if uniformly distributed
+随机数的产生：线性同余法产生均匀分布的伪随机数：$$x_{n+1}=(a_n+b)\mod(m)$$，其中 $$x_0$$ 叫种子。实际模拟中我们需要随机数看似独立，所以不能瞎选参数。具体怎么选我没细研究。一般我们调包获得质量有保障的伪随机数：$$U(0,1)$$ from i.i.d，然后根据需要产生符合某种分布的随机数。
 
 ### 符合某种分布的随机数
 
@@ -152,6 +146,8 @@ spacings between random points follow a Poisson integral if uniformly distribute
 
 #### 线性最小二乘拟合
 
+[SVD 分解](https://shi200005.github.io/download_file/Comp_SVD.pdf)
+
 寻找 $$\vec x$$ s.t. $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$。$$\mathbf A$$ 有 $$m$$ 行 $$n$$ 列。
 
 - 超定方程组：$$m\ge n$$ 且 $$\text{rank}(A)=n$$ 满秩 -> $$\mathbf A^T \mathbf A$$ 也满秩，
@@ -160,8 +156,10 @@ spacings between random points follow a Poisson integral if uniformly distribute
   
 - 欠定方程组：$$m<n$$，或者 $$\mathbf A$$ 非满秩，
 
-  按照线性代数，有无穷多解。这个时候我们可以给解加一些限定，
+  按照线性代数，有无穷多解。
 
+  - 例：加入正则化项防止奇异，将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \lambda\Vert\vec x\Vert^2\}$$。$$\lambda>0$$ 时 $$\vec x=(\mathbf A^T\mathbf A + \lambda\mathbf I)^{-1}\mathbf A^T\vec b$$ 解唯一，$$\lambda$$ 越大解越偏向 0，避免过拟合，但可能损失准确度。[例子](https://github.com/SHI200005/Examples/blob/main/lstsq_reg/lstsq_reg.ipynb)
+  
   - 例：使 $$\vec x$$ 元素序列不要剧烈振荡，尽量光滑，则可以将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2\}$$。设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2 =\ldots$$，令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)\vec x=\mathbf A^T\vec b$$。根据 $$\epsilon$$ 的选取，有可能幸运地发现 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)$$ 居然可逆。于是 $$\vec x=(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)^{-1}\mathbf A^T\vec b$$。
 
 #### 非线性最小二乘拟合
