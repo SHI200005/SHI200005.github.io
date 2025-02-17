@@ -2,7 +2,7 @@
 layout: post
 title: (En) Machine Learning
 categories: PhD-UT-Course-Review
-description: 
+description: 特别重要
 keywords: Machine Learning
 mathjax: true
 ---
@@ -48,6 +48,7 @@ Ref 1 fig 4 & 5
 </html>
 ### Gradient Descent
 
+
 To minimize the function $$F(\vec x)=F(x_1,x_2,\ldots,x_n)$$:
 
 - **Steepest Descent Method**: Moves in the direction of $$-\nabla F$$ with a variable step size to find a smaller function value.
@@ -78,7 +79,7 @@ To classify data points $$x_i$$ into **two categories** $$y_i=\{0,1\}$$. Draw a 
 - Soft classifier: give the probability that the data points belong to each side. $$\displaystyle P(y_i=1\vert\vec x_i,\mathbf{\vec w})=\frac{1}{1+e^{-\mathbf{\vec x_i}^T\mathbf{\vec w}}}$$. Denote $$\displaystyle\sigma(s)=\frac{1}{1+e^{-s}}$$ as the **logistic** (or **sigmoid**) function.
 
   The error function = the negative log-likelihood = the *cross entropy* -> no close form solution for minimial cross entropy -> e.g., [gradient descent](https://shi200005.github.io/2025/02/02/Computational-Physics/#优化问题). 
-  
+
   - Given two **Gaussian distribution** $$\displaystyle P(\vec x\vert y=i)=\frac{1}{\sqrt{2\pi\det(\hat A)}}\exp\left(-\frac{1}{2}(\vec x-\vec\mu_i)^T\hat\Sigma^{-1}(\vec x-\vec\mu_i)\right)$$ with the same covarince matrix $$\hat\Sigma$$ and means $$\vec\mu_0$$ and $$\vec\mu_1$$. Then $$\displaystyle\frac{P(y=1\vert\vec x)}{P(y=0\vert\vec x)}=\exp(\vec x^T\vec w+\vec\theta)$$, where $$\displaystyle\vec\theta=-\frac{1}{2}(\vec\mu_1 - \vec\mu_0)^T\hat\Sigma^{-1}(\vec\mu_1 - \vec\mu_0)+\ln(\frac{P(s=1)}{P(s=0)})$$  and $$\vec w=\hat\Sigma^{-1}(\vec\mu_1 - \vec\mu_0)$$, which are independent on data points.
   - [Linear regression and quadratic regression examples](https://github.com/SHI200005/Examples/blob/main/machine_learning/regression.ipynb).
 
@@ -177,4 +178,3 @@ Regression algorithm: from $$E_0(x)$$ get $$p_0(x)$$, calculate $$\delta A_i^0=\
 #### Boltzmann Machines
 
 To be completed.
-
