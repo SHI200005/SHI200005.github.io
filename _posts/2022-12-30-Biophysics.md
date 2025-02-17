@@ -35,21 +35,7 @@ Note: The success of the experiment is that we first fit the $$\alpha$$ paramete
 
 The following will be rewrite...
 
-## Information and Entropy
 
-### Distribution of Maximum Entropy
-
-As I have said in Probability ([概率论](https://shi200005.github.io/2021/10/02/Probability/)), we use probability to describe something because we lack information of the whole thing. Entropy quantifies the uncertainty of a distribution. When we don't know something, we cannot "bias" to pretend we know. Thus, given some information of a distribution, we plug in the information (usually use **Lagrange multipliers**, see Calculus([微积分](https://shi200005.github.io/2021/09/30/Calculus/)) and **maximize the entropy** of the distribution for estimation. 
-
-If the mean is specified, the distribution of maximum entropy is **Boltzmann distribution**; if the mean and the standard deviation is specified, the distribution of maximum entropy is **Gaussian distribution**.
-
-#### Simulating Brownian motions
-
-Given potential $$E(x)$$, then we know the corresponding stationary distribution $$\displaystyle p(x)=\frac{1}{Z}e^{-\beta E(x)}$$. However, the known $$E_0(x)$$ is not the actual potential and the distribution from experiment doesn't obey $$p(x)$$. How can we get a more realistic choice for $$p(x)$$ consistent with the experimental data?
-
-From experiment we observe $$\langle A_i(x)\rangle_\text{exp}=\langle A_i(x)\rangle_p$$. Construct $$\displaystyle\mathcal L=-\int p(x)\ln(p)dx-\alpha(\int p(x)dx-1)-\sum_i\lambda_i(\langle A_i(x)\rangle_p-\langle A_i(x)\rangle_\text{exp})$$, then $$\displaystyle p(x)=\frac{1}{Z}e^{-\beta E_0(x)+\sum_i\lambda_iA_i(x)}$$.
-
-Algorithm: from $$E_0(x)$$ get $$p_0(x)$$, calculate $$\delta A_i^0=\langle A_i\rangle_\text{exp}-\langle A_i\rangle_0$$ and set $$\lambda_i^{(0)}=-\eta\delta A_i^0$$, where $$\eta$$ is learning rate. Calculate $$E_n(x)$$ and get $$p_n(x)$$, then $$\lambda_i^{(n+1)}=\lambda_i^{(n)}-\eta\delta A_i^n$$, until good enough.
 
 
 

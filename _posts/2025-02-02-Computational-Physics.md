@@ -7,7 +7,11 @@ keywords: computational physics
 mathjax: true
 ---
 
-...
+<img src="https://github.com/SHI200005/Examples/blob/main/fractal/Ukiyo_e.png" alt="Computing_Make" style="zoom:80%;" />
+
+## References
+
+[1] [Mehta P et. al., Phys Rep. 2019 May 30;810:1-124.](https://www.sciencedirect.com/science/article/pii/S0370157319300766)
 
 ## 数值计算
 
@@ -111,13 +115,6 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 前两者收敛慢，但后两者如遇到拐点或多根可能不收敛，因此先用前两者确定根的范围，再用后两者求精确值。
 
-### 优化问题
-
-给定  $$F(\vec x)=F(x_1,x_2,\ldots,x_n)$$ 下降到最低点。
-
-- 最速下降法：以 $$-\nabla F$$ 为方向，变化步长找到更小函数值。缺点：容易剧烈震荡。
-- 共轭梯度下降法：以当前梯度和上一步搜索方向及梯度的整合。
-
 ## 随机数
 
 ### 随机数的产生
@@ -146,21 +143,25 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 #### 线性最小二乘拟合
 
-[SVD 分解](https://shi200005.github.io/download_file/Comp_SVD.pdf)
+寻找 $$\vec x$$ s.t. $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$。$$\mathbf A\in\mathbb R^{m\times n}$$, $$\vec x\in\mathbb R^{n}$$, $$\vec b\in\mathbb R^{m}$$，即为 $$m$$ 个等式 $$n$$ 个未知数的线性方程组。maximum likelihood estimation of a vector $$\vec x$$, given linear measurements corrupted by Gaussian measurement errors.
 
-寻找 $$\vec x$$ s.t. $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$。$$\mathbf A$$ 有 $$m$$ 行 $$n$$ 列。
+- OLS (ordinary least squares)
 
-- 超定方程组：$$m\ge n$$ 且 $$\text{rank}(A)=n$$ 满秩 -> $$\mathbf A^T \mathbf A$$ 也满秩，
+  对于**超定方程组** $$m\ge n$$ 且 $$\text{rank}(A)=n$$ 满秩 -> $$\mathbf A^T \mathbf A$$ 也满秩
 
-  设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2=\ldots=\vec b^T\vec b-2\vec x^T\mathbf A^T\vec b+\vec x^T\mathbf A^T\mathbf A\vec x$$。令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$\mathbf A^T\mathbf A\vec x=\mathbf A^T\vec b$$，$$\vec x=(\mathbf A^T\mathbf A)^{-1}\mathbf A^T\vec b$$。
+  设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2=\ldots=\vec b^T\vec b-2\vec x^T\mathbf A^T\vec b+\vec x^T\mathbf A^T\mathbf A\vec x$$。令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$\mathbf A^T\mathbf A\vec x=\mathbf A^T\vec b$$，$$\hat{\vec x}=(\mathbf A^T\mathbf A)^{-1}\mathbf A^T\vec b$$。
+
+  参见 ref 1 的 [Ex 1](https://physics.bu.edu/%7Epankajm/ML-Notebooks/HTML/NB3_CVI-linreg_diabetes.html)，如果噪声为 $$\mathcal N(0,\sigma^2)$$ 的高斯噪声，则平均误差 $$\displaystyle\frac{1}{m}E[(\mathbf A\hat{\vec x} - \mathbf A{\vec x_\text{true}})^2]=\sigma^2\frac{n}{m}$$。
+
+- Ridge-regression
+
+  [SVD 分解](https://shi200005.github.io/download_file/Comp_SVD.pdf)。将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \lambda\Vert\vec x\Vert^2\}$$。来自 ref 1：在[数理统计](https://shi200005.github.io/2022/02/18/Statistics/#极大似然估计法-mle)中已经介绍了 MLE 和 MAP。Ridge-regression 对应于 MAP 中的 Gaussian prior 情况，对应于 $$\vec x$$ 的很多维度数值很小的假设；等价于限定 $$\Vert\vec x\Vert^2$$ 最大值求最小二乘解。
   
-- 欠定方程组：$$m<n$$，或者 $$\mathbf A$$ 非满秩，
-
-  按照线性代数，有无穷多解。
-
-  - 例：加入正则化项防止奇异，将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \lambda\Vert\vec x\Vert^2\}$$。$$\lambda>0$$ 时 $$\vec x=(\mathbf A^T\mathbf A + \lambda\mathbf I)^{-1}\mathbf A^T\vec b$$ 解唯一，$$\lambda$$ 越大解越偏向 0，避免过拟合，但可能损失准确度。[例子](https://github.com/SHI200005/Examples/blob/main/lstsq_reg/lstsq_reg.ipynb)
+  - 例：欠定方程组：$$m<n$$，或者 $$\mathbf A$$ 非满秩，按照线性代数，有无穷多解。加入正则化项防止奇异，$$\lambda>0$$ 时 $$\vec x=(\mathbf A^T\mathbf A + \lambda\mathbf I)^{-1}\mathbf A^T\vec b$$ 解唯一，$$\lambda$$ 越大解越偏向 0，避免过拟合，但可能损失准确度。[例子](https://github.com/SHI200005/Examples/blob/main/machine_learning/lstsq_reg.ipynb)
   
-  - 例：使 $$\vec x$$ 元素序列不要剧烈振荡，尽量光滑，则可以将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2\}$$。设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2 =\ldots$$，令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)\vec x=\mathbf A^T\vec b$$。根据 $$\epsilon$$ 的选取，有可能幸运地发现 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)$$ 居然可逆。于是 $$\vec x=(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)^{-1}\mathbf A^T\vec b$$。
+- 例：使 $$\vec x$$ 元素序列不要剧烈振荡，尽量光滑，则可以将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2\}$$。设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2 =\ldots$$，令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)\vec x=\mathbf A^T\vec b$$，$$\vec x=(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)^{-1}\mathbf A^T\vec b$$。
+
+均为**凸优化**，保证了求得的局部极小值是全局最小值。
 
 #### 非线性最小二乘拟合
 

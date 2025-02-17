@@ -66,13 +66,14 @@ mathjax: true
 
 #### 极大似然估计法 MLE
 
-（Maximum Likelihood Estimate，在机器学习里非常重要）对于总体的分布没有完整的认知（比如说知道服从某种分布，但分布的具体参数未知），从测量中得到一些样本。写出得到样本的概率表达式，式中含有未知参数。求使实验中得到样本的概率取最大值的参数值。极大估计值可能不存在也可能不唯一。方法是粗略的，要知道估计值的准确性还要做区间估计。
+Maximum Likelihood Estimate，在机器学习里非常重要。对于总体的分布没有完整的认知（比如说知道服从某种分布，但分布的具体参数未知），从测量中得到一些样本。写出得到样本的概率表达式，式中含有未知参数。求使实验中得到样本的概率取最大值的参数值。极大估计值可能不存在也可能不唯一。方法是粗略的，要知道估计值的准确性还要做区间估计。
 
-利用[贝叶斯公式](https://shi200005.github.io/2022/02/17/Probability/#全概率公式与bayes-公式)，求使实验中得到样本的概率取最大值的参数值，等同于给定试验结果时参数为某值的概率。实操中就是取极值，即概率对参数偏导为 $$0$$。$$\displaystyle P(\theta\vert x)=\frac{P(x\vert \theta)P(\theta)}{P(x)}$$，假定没有对参数的先验知识，$$P(\theta)=\text{const}$$。$$P(x)$$ 是标准化常量，与参数 $$a$$ 无关，$$P(x)=\int d\theta P(x\vert \theta)$$。因此，求 $$P(\theta\vert x)$$ 的极大值归结为求 $$P(x\vert \theta)$$ 的极大值。
+利用[贝叶斯公式](https://shi200005.github.io/2022/02/17/Probability/#全概率公式与bayes-公式)，求使实验中得到样本的概率取最大值的参数值，等同于给定试验结果时参数为某值的概率。实操中就是取极值，即概率对参数偏导为 $$0$$。$$\displaystyle P(\theta\vert x)=\frac{P(x\vert \theta)P(\theta)}{P(x)}$$。其中 $$P(x)$$ 是标准化常量，与参数 $$a$$ 无关，$$P(x)=\int d\theta P(x\vert \theta)$$。
 
 - 为什么 MLE 要使用 $$\log$$ 概率？我觉得有两点原因，首先 $$\log$$ 是单调函数，但这很 trivial，因为单调函数太多了。根本还是来源于我们的样本是“简单随机抽样”，相互独立，抽到这组样本的概率便是把抽到各个样本的概率相乘，而 $$\log$$ 可以把连乘转化为求和。
 - 例：对于一个正态总体，均值的极大似然估计值为样本均值，方差的极大似然估计值为样本 $$2$$ 阶中心矩。
-- 如果对于被估计的参数有先验的偏好，$$P(A)$$ 可以并不是常数，详见[(En) Machine Learning]()。
+- 假定没有对参数的先验知识，$$P(\theta)=\text{const}$$，求 $$P(\theta\vert x)$$ 的极大值归结为求 $$P(x\vert \theta)$$ 的极大值。$$\displaystyle\hat\theta=\arg\min_{\theta}\log p(x\vert\theta)$$。
+- 如果对于被估计的参数有先验的偏好，$$P(\theta)$$ 可以不取常数，$$\displaystyle\hat\theta_\text{MAP}=\arg\min_{\theta}\log p(x\vert\theta)p(\theta)$$ (Maximum a posteriori estimation)。详见 [(En) Machine Learning]()。
 
 ##### Fisher 信息量
 

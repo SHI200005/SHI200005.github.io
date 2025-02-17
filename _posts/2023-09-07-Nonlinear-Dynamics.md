@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (En) Nonlinear Dynamics
-categories: BS-NJU-Course-Review-Others
+categories: BS-NJU-Course-Review-Other
 description: 
 keywords: 
 mhchem: true
