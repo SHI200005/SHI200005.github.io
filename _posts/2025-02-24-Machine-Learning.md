@@ -46,8 +46,8 @@ Ref 1 fig 4 & 5
     </div>
 </body>
 </html>
-### Gradient Descent
 
+### Gradient Descent
 
 To minimize the function $$F(\vec x)=F(x_1,x_2,\ldots,x_n)$$:
 
