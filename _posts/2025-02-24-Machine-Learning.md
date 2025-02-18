@@ -15,30 +15,7 @@ This post is built on Prof Anton Zilman's lectures and materials.
 
 [2] [CS231n: Deep Learning for Computer Vision](https://cs231n.github.io)
 
-## Concepts of statistical learning
 
-### Bias-variance tradeoff
-
-Ref 1 fig 4 & 5
-
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr4.jpg" alt="图片1" style="zoom: 67%;" >
-
-
-
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr5.jpg" alt="图片2" style="zoom:67%;" >
-
-### Gradient Descent
-
-To minimize the function $$F(\vec x)=F(x_1,x_2,\ldots,x_n)$$:
-
-- **Steepest Descent Method**: Moves in the direction of $$-\nabla F$$ with a variable step size to find a smaller function value.
-  *Drawback:* Prone to severe oscillations.
-
-- **Conjugate Gradient Method**: Integrates the current gradient with the previous search direction and gradient to determine the search direction.
-
-- **Stochastic gradient descent (SGD)**
-
-  To be completed.
 
 ## Supervised Learning
 
@@ -65,33 +42,7 @@ To classify data points $$x_i$$ into **two categories** $$y_i=\{0,1\}$$. Draw a 
 
 To classify data points into more categories, use **SoftMax**. $$\vec y_i\in\mathbb Z_2^M$$, e.g., $$\vec y=(1,0,\ldots,0)$$ meas $$\vec x_i$$ belongs to class 1. The SoftMax function: the probability of $$\vec x_i$$ being in class $$m'$$: $$\displaystyle P(y_{im'}=1\vert\vec x_i,\{\vec w_k\}_{k=0}^{M-1})=\frac{e^{-\vec x_i^T\vec w_{m'}}}{\sum_{m=0}^{M-1}e^{-\vec x_i^T\vec w_{m}}}$$...
 
-### Nonlinear clustering - neural networks
 
-A course from SciNet: [DAT112 Neural Network Programming (Apr 2024)](https://education.scinet.utoronto.ca/course/view.php?id=1327).
-
-input layer (input features $$\vec x={x_1,x_2,\ldots,x_d}$$) -> hidden layers -> output layer (output scaler $$a_i(\vec x)$$, a simple classifier), trianed by gradient descent
-
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr35.jpg" alt="图片1">
-
-Ref 1 fig 35
-
-> The universal approximation theorem: a neural network with a single hidden layer can approximate any continous, multi-input/multi-output function with arbitrary accuracy.
-
-**Calculating the gradient - the backpropagation algorithm**
-
-> is a clever procedure that exploits the layered structure of neural networks to more efficiently compute gradients.
->
-> is simply the ordinary chaim rule for partial differential...
-
-**Convolutional Neural Networks (CNNs)**
-
-> a translationally invariant neural network that respects locolity of the input data.
-
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr42.jpg" alt="图片1">
-
-Ref 1 fig 42.
-
-Pending!!! Does "convolution" here related to the convolution thereom in Fourier transform???
 
 ## Unsupervised learning
 
