@@ -2,12 +2,12 @@
 layout: post
 title: (En) Machine Learning
 categories: PhD-UT-Course-Review
-description: 特别重要
+description: 
 keywords: Machine Learning
 mathjax: true
 ---
 
-If you have no idea of Machine Learning, then you are out of date. This post is built on Prof Anton Zilman's lectures and materials. 
+This post is built on Prof Anton Zilman's lectures and materials. 
 
 ## References
 
@@ -22,6 +22,8 @@ If you have no idea of Machine Learning, then you are out of date. This post is 
 Ref 1 fig 4 & 5
 
 <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr4.jpg" alt="图片1" style="zoom: 67%;" >
+
+
 
 <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr5.jpg" alt="图片2" style="zoom:67%;" >
 
@@ -67,7 +69,7 @@ To classify data points into more categories, use **SoftMax**. $$\vec y_i\in\mat
 
 A course from SciNet: [DAT112 Neural Network Programming (Apr 2024)](https://education.scinet.utoronto.ca/course/view.php?id=1327).
 
-input layer (input features $$\vec x={x_1,x_2,\ldots,x_d}$$) -> hidden layers -> output layer (output scaler $$a_i(\vec x)$$, a simple classifier), trianed by [gradient descent](https://shi200005.github.io/2025/02/02/Computational-Physics/#优化问题)
+input layer (input features $$\vec x={x_1,x_2,\ldots,x_d}$$) -> hidden layers -> output layer (output scaler $$a_i(\vec x)$$, a simple classifier), trianed by gradient descent
 
 <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr35.jpg" alt="图片1">
 
