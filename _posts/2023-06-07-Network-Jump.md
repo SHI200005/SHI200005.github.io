@@ -88,7 +88,7 @@ x_1 \stackrel{\lambda}{\longrightarrow} x_1+1 \quad x_2 \stackrel{\alpha x_1}{\l
 x_1 \stackrel{\beta_1 x_1}{\longrightarrow} x_1-1 \quad x_2 \stackrel{\beta_2x_2}{\longrightarrow} x_2-1
 $$
 
-![Network_Jump_2var_Linear](\images\blog\Network_Jump_2var_Linear.jpg)
+![Network_Jump_2var_Linear](\images\blog\Network_Jump_2var_Linear.jpeg)
 
 #### The Classical Model with Additional Complex Formation and Disassociation
 

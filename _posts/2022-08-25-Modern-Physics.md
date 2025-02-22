@@ -197,7 +197,7 @@ $$
 
 辐射率的计算归结于计算 $$\langle\psi_i\vert\hat{\vec r}\vert\psi_j\rangle$$。详见笔记，得到跃迁要满足选择定则：$$Δl=±1$$, $$Δm=0,±1$$。
 
-<img src="\images\blog\Modern_Physics.jpg" alt="modern-physics-1" width="400px;" />
+<img src="/Users/linanshi/Desktop//images/blog/Modern_Physics.jpg" alt="modern-physics-1" width="400px;" />
 
 ## 浸渐近似
 
@@ -212,4 +212,3 @@ $$
 ## 散射
 
 前面贝瑞相我应该不写了，但这部分我之后会回来写。但现在不写。等我写完这部分就1.0了。
-
