@@ -106,6 +106,8 @@ Well, I base the above derivation on [5](https://shi200005.github.io/2023/06/07/
 
 For the linear case, the Lyapunov equation, or the fluctuation-dissipation theorem, can also be derived from the Langevin equation $$\displaystyle\frac{d \vec{a}}{dt}=\hat H\vec{a}+\vec{\tilde{f}}$$, where $$\vec{\tilde f}(t)$$ is a **white noise** vector. The steps can be found in chapter 1.8 from [12](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can also find my note [Network_Langevin_Lyapunov](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) here.
 
+[Here](https://ocw.mit.edu/courses/8-591j-systems-biology-fall-2004/159d6605bd53c9fdfc6ac92bf43b7515_stochastics.pdf) is a tutorial on the master equation approach by A. van Oudenaarden and Mukund Thattai, where they solved the variances of "The Classical Model of mRNA and Protein" by Langevin equations.
+
 The relationship between the master equation, the Fokker-Planck approximation, and the Langevin approach will be discussed in the following part.
 
 ### Nonlinear Case

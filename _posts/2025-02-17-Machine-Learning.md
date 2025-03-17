@@ -29,16 +29,16 @@ Ref 1 fig 4 & 5
 
 ### Gradient Descent
 
-To minimize the function $$F(\vec x)=F(x_1,x_2,\ldots,x_n)$$:
+To minimize the cost function $$\displaystyle E(\vec\theta)=\sum_{i=1}^n  e_i(\vec{\mathbf x_i},\vec\theta)$$ based on $$n$$ data points (e.g., linear regression -> square-error ):
 
-- **Steepest Descent Method**: Moves in the direction of $$-\nabla F$$ with a variable step size to find a smaller function value.
+- **Steepest Descent Method**: Moves in the direction of $$-\nabla_\theta E$$ with a variable step size to find a smaller function value.
   *Drawback:* Prone to severe oscillations.
 
 - **Conjugate Gradient Method**: Integrates the current gradient with the previous search direction and gradient to determine the search direction.
 
 - **Stochastic gradient descent (SGD)**
 
-  To be completed.
+  Divide the data points into $$k=1,\ldots,n/M$$ minibatches, each iteration choise a batch and descent on this batch $$\displaystyle \nabla_\theta E^{MB}(\vec\theta)=\sum_{i\in B_k}  e_i(\vec{\mathbf x_i},\vec\theta)$$, and take batches in turns... that introduces stochasticity and speed up the algorithm.
 
 ## Supervised Learning
 
