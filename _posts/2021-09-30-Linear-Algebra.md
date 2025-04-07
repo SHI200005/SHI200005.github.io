@@ -128,6 +128,8 @@ $$n×n$$ 方阵可对角化的充要条件是有 $$n$$ 个线性无关的特征�
 
 如果需要在考场上徒手对角化矩阵，步骤和下面[线性代数 - 实对称矩阵对角化](https://shi200005.github.io/download_file/Linear_Algebra_Diagonal.pdf)是一样的，只不过基变换矩阵不一定是正交化矩阵罢了。
 
+如果不是方阵咋办？[SVD decomposition](https://shi200005.github.io/download_file/Comp_SVD.pdf). 
+
 ### 矩阵的迹
 
 迹是特征值的和，行列式是特征值的积。因为相似变换是同一个变换在不同基下的表示，所以这个变换对于任何基下特征向量的变化都是一样的，所以相似变换不改变特征值，也就不改变迹和行列式。

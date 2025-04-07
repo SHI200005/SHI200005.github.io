@@ -48,7 +48,33 @@ Given data set and the label of each data point, if I get a new data point, what
 
 #### Continues label - linear regression
 
-As introduced in [计算物理](https://shi200005.github.io/2025/02/02/Computational-Physics/#最小二乘拟合).
+Least Squares Fitting: Find the best function match to the data by minimizing the sum of squared errors.
+
+**Linear Least Squares Fitting**
+
+Find $$\vec x$$ such that $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$.  Here, $$\mathbf A\in\mathbb R^{m\times n}$$, $$\vec x\in\mathbb R^{n}$$, $$\vec b\in\mathbb R^{m}$$, i.e., a linear system with $$m$$ equations and $$n$$ unknowns.  This corresponds to the [maximum likelihood estimation](https://shi200005.github.io/2022/02/18/Statistics/#极大似然估计法-mle) of a vector $$\vec x$$, given measurements corrupted by Gaussian measurement errors,  $$\displaystyle p(x\vert\theta)=\prod_i\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(\vec b-\mathbf{A}\vec x)_i^2}{2\sigma^2}\right)$$(Video: [What Textbooks Don't Tell You About Curve Fitting](https://www.youtube.com/watch?v=q7seckj1hwM), the first half).
+
+- **OLS (Ordinary Least Squares)**
+
+  For an **overdetermined system** where $$m\ge n$$ and $$\text{rank}(A)=n$$ (full rank),  we have that $$\mathbf A^T \mathbf A$$ is also full rank.
+
+  Let $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2=\ldots=\vec b^T\vec b-2\vec x^T\mathbf A^T\vec b+\vec x^T\mathbf A^T\mathbf A\vec x$$.  Setting $$\nabla_{\vec x}\phi(\vec x)=0$$ yields:  $$\mathbf A^T\mathbf A\vec x=\mathbf A^T\vec b$$, hence  $$\hat{\vec x}=(\mathbf A^T\mathbf A)^{-1}\mathbf A^T\vec b$$.
+
+  See [Ref 1 - Ex 1](https://physics.bu.edu/~pankajm/ML-Notebooks/HTML/NB3_CVI-linreg_diabetes.html).  If the noise is Gaussian $$\mathcal N(0,\sigma^2)$$, then the mean error is  $$\displaystyle\frac{1}{m}E[(\mathbf A\hat{\vec x} - \mathbf A{\vec x_{\text{true}}})^2]=\sigma^2\frac{n}{m}$$.
+
+- **Ridge Regression** / **L2 Regularization**
+
+  Modify the least squares problem to find $$\vec x$$ such that $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \lambda\Vert\vec x\Vert^2\}$$. 
+
+  From [Ref 1](https://shi200005.github.io/2022/02/18/Statistics/#极大似然估计法-mle), MLE and MAP are already introduced. Ridge regression corresponds to the MAP with a **Gaussian prior**, i.e., assuming many dimensions of $$\vec x$$ are small.  It is equivalent to minimizing the least squares solution under the constraint on $$\Vert\vec x\Vert^2$$. Here $$\displaystyle p(\theta)=\prod_{k}\frac{1}{\sqrt{2\pi}\tau}\exp\left(-\frac{x_k^2}{2\tau^2}\right)$$, and the $$\lambda=\sigma^2/\tau^2$$ for above.
+
+  - *Example*: An underdetermined system where $$m<n$$ or $$\mathbf A$$ is not full rank has infinitely many solutions.  Adding a regularization term prevents singularity. When $$\lambda>0$$, the solution  $$\vec x=(\mathbf A^T\mathbf A + \lambda\mathbf I)^{-1}\mathbf A^T\vec b$$ is unique.  Larger $$\lambda$$ pushes the solution closer to 0, avoiding overfitting but possibly reducing accuracy.  [Example notebook](https://github.com/SHI200005/Examples/blob/main/machine_learning/lstsq_reg.ipynb)
+
+- **Lasso Regression** / **L1 Regularization**
+
+  To find $$\vec x$$ such that $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \lambda\Vert\vec x\Vert_1\}$$. 
+
+  Corresponds to the MAP with a **Laplace prior**, i.e., assuming many dimensions of $$\vec x$$ are zeros,  $$\displaystyle p(\theta)=\prod_{k}\frac{1}{2b}\exp\left(-\frac{\vert x_k\vert}{b}\right)$$and the $$\lambda=\sigma^2/b$$ for above.
 
 #### Distcrete labels - logistic regression
 

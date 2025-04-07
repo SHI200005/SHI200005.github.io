@@ -7,11 +7,11 @@ keywords: Gillespie, fluctuations
 mathjax: true
 ---
 
-I have been applied Gillespie algorithm for about three years to simulate stochastic chemical reactions, or more coarse-grained gene regulatory networks. I think it is a good point to check Gillespie's important original papers and write a report about some of my thoughts...
+I have applied the Gillespie algorithm for about three years to simulate stochastic chemical reactions or more coarse-grained gene regulatory networks. I think it is a good point to check Gillespie's important original papers and write a report about some of my thoughts...
 
-Here, I used the model of **excitable gene regulatory network** I discussed in my undergraduate thesis as an example to illustrate how is **the significance of fluctuations near chemical instability** captured by **Gillespie Algorithm**.
+Here, I used the model of the **excitable gene regulatory network** I discussed in my undergraduate thesis as an example to illustrate the significance of fluctuations near chemical instability** captured by the **Gillespie Algorithm**.
 
-Given that the algorithm is so well-known and basic for biophysics researchers, the computation steps which I have been taught twice in courses will not be included (but links to example codes below :wink:), but only the physics assumptions behind I learnt from Gillespie's paper by myself is included.
+Given that the algorithm is so well-known and basic for biophysics researchers, the computation steps I have been taught twice in courses will not be included (but links to example codes below :wink:). Still, only the physics assumptions I learned from Gillespie's paper by myself are included.
 
 > An **exact** method is presented for numerically calculating, within the framework of the stochastic formulation of chemical kinetics, the time evolution of any **spatially homogeneous** mixture of molecular species which interreact through a specified set of coupled chemical reaction channels. The method is a compact, computer-based, Monte Carlo simulation procedure. [1](https://shi200005.github.io/2023/05/15/Gillespie-Fluctuations/#references)
 
@@ -19,13 +19,13 @@ Given that the algorithm is so well-known and basic for biophysics researchers, 
 
 D.T. Gillespie's 1976 paper [1](https://shi200005.github.io/2023/05/15/Gillespie-Fluctuations/#references) described a mile-stone computer algorithm to simulate the **Markov process** of stochastic chemical reactions, which is **fully equivalent to the master equation**. It is very powerful for theorists to check their derived analytical statistical properties by numerical results. 
 
-The paper is elegant and enjoyable to read (and easy). Here I used the example in the paper (see below) to quickly summarize the physical ideas (just for my own understanding, for you, it is better to read the original paper :wink:). My aim for this post is to combine it with a 2014 paper. Suppose there is a reaction
+The paper is elegant and enjoyable to read (and easy). Here I used the example in the paper (see below) to quickly summarize the physical ideas (just for my understanding, it is better to read the original paper :wink:). My aim for this post is to combine it with a 2014 paper. Suppose there is a reaction
 
 $$R_\mu: S_1+S_2\rightarrow2S_3 $$
 
 ### Deterministic Approach and its Limitations
 
-For $$N$$ molecular species, a system of $$N$$ ODEs describes the time evolution of molecular concentration. The reaction constants are viewed as reaction "rates".
+For $$N$$ molecular species, a system of $$N$$ ODEs describe the time evolution of molecular concentration. The reaction constants are viewed as reaction "rates".
 
 In the example, $$x_i$$ represent the concentrations of $$S_i$$, and the ODEs are
 
@@ -60,16 +60,6 @@ The relationship with reaction rate in the deterministic approach is $$k_\mu=\la
 In the deterministic approach, we take $$k_\mu\doteq Vc_\mu$$. It works well when $$\langle x_1x_2\rangle=\langle x_1\rangle\langle x_2\rangle$$ is almost true.
 
 The following part of mathematical derivation from probability is so basic in a course that I don't bother to include it. 
-
-### Probability, Markov Chains, and Monte Carlo Method
-
-This part was elegantly explained in the lecture note my supervisor gave me (Johan Paulsson, 10/15/2014, Systems Biology 200), and I don't think I have any better ideas to rewrite. I just summarized some key points. (I don’t know whether the staff I show here violate copyright. If so, I will sincerely すみません…)
-
-Regarding the chemical reaction as the random walk on the discrete lattice in the phase space, If we indicate the probability at state $$A$$ as $$P(A,t)$$, then we have $$P(A,t+dt)=P(A,t)-P_\text{jump}(t,t+dt)$$, while $$P_\text{jump}(t,t+dt)=P_\text{jump}(t,t+dt\vert A,t)P(A,t)$$, then $$\displaystyle\frac{dP(A,t)}{dt}=-\lim\limits_{dt→0}\frac{P_\text{jump}(t,t+dt\vert A,t)}{dt}P(A,t)$$. 
-
-#### First-order degradation and life time
-
-If the probability of jumping out per time is a constant $$\beta$$, then $$\displaystyle\frac{dP(A,t)}{dt}=-\beta P(A,t)$$. That means the life time of an molecule obeys the **exponential distribution**, with a **life time** of $$\tau=1/\beta$$.
 
 ### Output of Gillespie Algorithm
 

@@ -13,29 +13,27 @@ mathjax: true
 
 [1] [Mehta P et. al., Phys Rep. 2019 May 30;810:1-124.](https://www.sciencedirect.com/science/article/pii/S0370157319300766)
 
-## 数值计算
-
-### 插值 Interpolation
+## 插值 Interpolation
 
 - 拉格朗日插值：给俩点，用一次函数连起来；给仨点，用二次函数连起来......给 $$n$$ 个点，可以用 $$n-1$$ 次函数连起来。
 
 - **样条差值** Spline：如果数据点太多，拉格朗日插值函数次数太高，很危险。样条差值是用 $$n$$ 次函数**分段**拟合每两个**相邻**数据点。最常用的是三次样条差值，满足函数连续、一阶导连续、二阶导连续。
 
-### 微分
+## 微分
 
 用插值函数 $$y(x)$$ 代替原始函数的微分 $$f'(x)$$。步长 $$h$$。
 
 - 一阶数值微分：线性插值 -> 两点微分。向前差分、向后差分、**中心差分** $$\displaystyle f'(x_n)=\frac{y_{n+1}-y_{n-1}}{2h}$$。
 - 二阶数值微分：二次插值 -> 三点公式 -> 再求微商 -> 二阶数值微分 $$\displaystyle f''(x_n)=\frac{y_{n-1}-2y_n+y_{n+1}}{h^2}$$。
 
-### 积分
+## 积分
 
 用插值函数的积分代替原函数的积分。步长 $$\Delta x$$。
 
 - 线性插值函数 -> 梯形公式。截断误差 $$\displaystyle R=-\frac{(\Delta x)^3}{12}f''(\eta)$$  ($$x_i<\eta<x_{i+1}$$)。
 - 二次插值函数 -> 抛物线积分 / 辛普生积分。$$\displaystyle R=-\frac{(\Delta x)^5}{90}f^{(4)}(\eta)$$  ($$x_i<\eta<x_{i+1}$$)。
 
-### 常微分方程
+## 常微分方程
 
 $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
@@ -52,7 +50,7 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 - 积分运动方程：Verlet、Leapfrog 等方法。例：[GROMACS Tutorials](http://www.mdtutorials.com/gmx/)。
 
-### 偏微分方程
+## 偏微分方程
 
 思路：用差分或其他常微分求解方法代替微分，下一个时间点的某个空间点的函数值由上一个时间点的该点和相邻的点确定。边界的点只有半边相邻的点，还要考虑边界条件。
 
@@ -76,7 +74,7 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 - 求本征值：打靶法：瞎猜本征值，然后带回微分方程看满不满足边界条件，反正就是瞎蒙。
 
-### 线性代数
+## 线性代数
 
 求解线性方程组，大一课上手算用高斯消元法，霸凌 python 则使用
 
@@ -106,7 +104,7 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
   - 对称矩阵：Jacobi 方法：使用正交矩阵 $$\mathbf Q$$ 对 $$\mathbf A$$ 做 Givens 旋转变换，使对角元比重逐步增加（每一步选择绝对值最大的非对角元位置作为 $$p,q$$），使非对角元逐步变小，当非对角元太小，就近似认为完成。
   - QR 方法：利用 [QR decomposition](https://en.wikipedia.org/wiki/QR_decomposition#Relation_to_RQ_decomposition)（例如 Givens 旋转）将矩阵分解为正交矩阵 $$\mathbf Q$$ 和上三角矩阵 $$\mathbf R$$ 的乘积，然后通过 [QR Algorithm](https://en.wikipedia.org/wiki/QR_algorithm) 逐步迭代，实现矩阵对角化。
 
-### 非线性方程求根
+## 非线性方程求根
 
 - 搜索法：迈步走，变号回头，步长减半接着走。
 - 二分法：砍一半看变不变号。
@@ -116,8 +114,6 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 前两者收敛慢，但后两者如遇到拐点或多根可能不收敛，因此先用前两者确定根的范围，再用后两者求精确值。
 
 ## 随机数
-
-### 随机数的产生
 
 随机数的产生：线性同余法产生均匀分布的伪随机数：$$x_{n+1}=(a_n+b)\mod(m)$$，其中 $$x_0$$ 叫种子。实际模拟中我们需要随机数看似独立，所以不能瞎选参数。具体怎么选我没细研究。一般我们调包获得质量有保障的伪随机数：$$U(0,1)$$ from i.i.d，然后根据需要产生符合某种分布的随机数。
 
@@ -135,49 +131,7 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
   步骤：当前状态为 $$x$$，以等概率原则随机产生新状态 $$x'$$；若 $$\displaystyle\frac{f(x')}{f(x)}\geq1$$，接受新状态，否则产生随机数 $$\xi\sim U(0,1)$$，若 $$\displaystyle\xi<\frac{f(x')}{f(x)}$$ 则接受新状态。反之舍弃新状态。
 
-## 数据处理
-
-### 最小二乘拟合
-
-通过最小化误差的平方和寻找数据的最佳函数匹配。
-
-#### 线性最小二乘拟合
-
-寻找 $$\vec x$$ s.t. $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$。$$\mathbf A\in\mathbb R^{m\times n}$$, $$\vec x\in\mathbb R^{n}$$, $$\vec b\in\mathbb R^{m}$$，即为 $$m$$ 个等式 $$n$$ 个未知数的线性方程组。maximum likelihood estimation of a vector $$\vec x$$, given linear measurements corrupted by Gaussian measurement errors.
-
-- OLS (ordinary least squares)
-
-  对于**超定方程组** $$m\ge n$$ 且 $$\text{rank}(A)=n$$ 满秩 -> $$\mathbf A^T \mathbf A$$ 也满秩
-
-  设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2=\ldots=\vec b^T\vec b-2\vec x^T\mathbf A^T\vec b+\vec x^T\mathbf A^T\mathbf A\vec x$$。令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$\mathbf A^T\mathbf A\vec x=\mathbf A^T\vec b$$，$$\hat{\vec x}=(\mathbf A^T\mathbf A)^{-1}\mathbf A^T\vec b$$。
-
-  参见 ref 1 的 [Ex 1](https://physics.bu.edu/%7Epankajm/ML-Notebooks/HTML/NB3_CVI-linreg_diabetes.html)，如果噪声为 $$\mathcal N(0,\sigma^2)$$ 的高斯噪声，则平均误差 $$\displaystyle\frac{1}{m}E[(\mathbf A\hat{\vec x} - \mathbf A{\vec x_\text{true}})^2]=\sigma^2\frac{n}{m}$$。
-
-- Ridge-regression
-
-  [SVD 分解](https://shi200005.github.io/download_file/Comp_SVD.pdf)。将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \lambda\Vert\vec x\Vert^2\}$$。来自 ref 1：在[数理统计](https://shi200005.github.io/2022/02/18/Statistics/#极大似然估计法-mle)中已经介绍了 MLE 和 MAP。Ridge-regression 对应于 MAP 中的 Gaussian prior 情况，对应于 $$\vec x$$ 的很多维度数值很小的假设；等价于限定 $$\Vert\vec x\Vert^2$$ 最大值求最小二乘解。
-  
-  - 例：欠定方程组：$$m<n$$，或者 $$\mathbf A$$ 非满秩，按照线性代数，有无穷多解。加入正则化项防止奇异，$$\lambda>0$$ 时 $$\vec x=(\mathbf A^T\mathbf A + \lambda\mathbf I)^{-1}\mathbf A^T\vec b$$ 解唯一，$$\lambda$$ 越大解越偏向 0，避免过拟合，但可能损失准确度。[例子](https://github.com/SHI200005/Examples/blob/main/machine_learning/lstsq_reg.ipynb)
-  
-- 例：使 $$\vec x$$ 元素序列不要剧烈振荡，尽量光滑，则可以将最小二乘问题修改为寻找 $$\vec x$$ s.t. $$\min \{\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2\}$$。设 $$\phi(\vec x)=\Vert\mathbf A\vec x-\vec b\Vert^2 + \epsilon\Vert\mathbf \Gamma\vec x\Vert^2 =\ldots$$，令 $$\nabla_\vec x\phi(\vec x)=0$$，则 $$(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)\vec x=\mathbf A^T\vec b$$，$$\vec x=(\mathbf A^T\mathbf A + \epsilon\mathbf\Gamma^T\mathbf\Gamma)^{-1}\mathbf A^T\vec b$$。
-
-均为**凸优化**，保证了求得的局部极小值是全局最小值。
-
-#### 非线性最小二乘拟合
-
-设 $$\displaystyle F(x)=\frac{1}{2}\Vert f(\vec x)\Vert^2$$。寻找 $$\vec x$$ s.t. $$\min F(\vec x)$$。
-
-我现在站在 $$\vec x_k$$ 处，想走一步 $$\vec h$$ 使得 $$F(\vec x)$$ 更小。参见矢量微积分，假设对 $$\vec f(\vec x)$$ 在 $$\vec x_k$$ 附近展开，则 $$\vec f(\vec x_k+\vec h)\approx\vec f(\vec x_k)+\mathbf J(\vec x_k)\vec h$$。以下把在 $$\vec x_k$$ 处取值的函数用 $$_k$$ 脚标简记。
-
-- Gauss - Newton 法
-
-  $$\displaystyle F(\vec x_k+\vec h)\approx\mathcal L(\vec h)= F_k+\vec h^T\mathbf J_k^T\vec f_k+\frac{1}{2}\vec h^T\mathbf J_k^T\mathbf J_k\vec h$$ -> $$\nabla_h\mathcal L(\vec h)=\mathbf J^T_k\vec f_k+\mathbf J^T_k\mathbf J_k\vec h$$ -> $$\mathbf J^T_k\mathbf J\vec h=-\mathbf J^T_k\vec f_k$$ ->若 $$\mathbf J^T_k\mathbf J$$ **非奇异**，则$$\vec h_k=-(\mathbf J^T_k\mathbf J_k)^{-1}\mathbf J^T_k\vec f_k$$, $$\vec x_{k+1}=\vec x_k+\vec h_k$$；若奇异，则哭哭。
-
-- LM 阻尼最小二乘法
-
-  为防止奇异，改为解 $$(\mathbf J^T_k\mathbf J_k+u\mathbf I)\vec h=-\mathbf J^T_k\vec f_k$$。实操时定义增益比，根据 $$u$$ 找到自适应迭代步长。
-
-### 快速傅立叶变换
+## 快速傅立叶变换
 
 把信号被离散化为采样点 $$\displaystyle\hat f_q=\sum_{j=0}^{n-1} f_je^{\pm2\pi ijq/n}$$. 用 $$n\times n$$ 矩阵 $$\mathbf F(n)_{jq}=e^{2\pi ijq/n}$$（其中$$j,q$$ 从 0 数起）。实现 $$f$$ 到 $$\hat f$$ 的转化，计算成本为 $$\mathcal O(n^2)$$。不如想点办法转化。
 
