@@ -7,7 +7,7 @@ keywords: computational physics
 mathjax: true
 ---
 
-<img src="https://github.com/SHI200005/Examples/blob/main/fractal/Ukiyo_e.png" alt="Computing_Make" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/SHI200005/Examples/refs/heads/main/fractal/Ukiyo_e.png" alt="Computing_Make" style="zoom:80%;" />
 
 ## References
 
