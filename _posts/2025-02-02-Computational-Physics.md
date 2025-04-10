@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 计算物理
+title: 计算物理 1.0
 categories: BS-NJU-Course-Review-Other
 description: 特别重要
 keywords: computational physics
@@ -8,6 +8,8 @@ mathjax: true
 ---
 
 <img src="https://raw.githubusercontent.com/SHI200005/Examples/refs/heads/main/fractal/Ukiyo_e.png" alt="Computing_Make" style="zoom:80%;" />
+
+https://github.com/SHI200005/Examples/tree/main/fractal
 
 ## References
 
@@ -158,12 +160,12 @@ $$
 
 其中 $$\mathbf P(n)$$ 是 [Bit-reversal permutation](https://en.wikipedia.org/wiki/Bit-reversal_permutation) 矩阵。对角矩阵 $$\mathbf\Lambda(n/2)_{jj}=e^{2\pi ij/n}$$。
 
-#### 采样定律
+### 采样定律
 
 那么采多少样够用？A continuous band-limited time-series (to *W* Hz) can be **perfectly** reconstructed, if uniformly (in time) sampled with a minimum frequency of 2*W*. Related theorem: [Nyquist–Shannon sampling theorem](https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem). A method is using sinc function, related theorem: [Whittaker–Shannon interpolation formula](https://en.wikipedia.org/wiki/Whittaker–Shannon_interpolation_formula). Math was elaborate in this online handout: [10.4: Perfect Reconstruction](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Signal_Processing_and_Modeling/Signals_and_Systems_(Baraniuk_et_al.)/10%3A_Sampling_and_Reconstruction/10.04%3A_Perfect_Reconstruction), check the former section for unclear equations :-).
 
 (Related to [复变函数](https://shi200005.github.io/2022/02/15/Complex-Functions/#%E5%82%85%E9%87%8C%E5%8F%B6%E7%A7%AF%E5%88%86), since the Fourier transform of the rect is sinc.)
 
-#### 滤波
+### 滤波
 
 将原信号进行傅立叶变换，将得到的数据去掉需要滤波的频率，进行傅立叶逆变换拿回信号。

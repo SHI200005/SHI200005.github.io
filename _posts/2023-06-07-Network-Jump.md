@@ -9,17 +9,17 @@ mathjax: true
 
 The content of this post is closely linked to the research conducted by [A. Hilfinger](https://www.hilfinger.group/), [J. Paulsson](https://paulsson.med.harvard.edu/), and [J. Elf](https://elflab.icm.uu.se/), etc. As a mathematical rookie, I will introduce the models and mathematics in the most accessible way. You need a second-year undergrad level of mathematics to read this. 
 
-At the starting point, [3](https://shi200005.github.io/2023/06/07/Network-Jump/#references), [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references), and [10](https://shi200005.github.io/2023/06/07/Network-Jump/#references) in the references are three papers the can be read in detail.
+At the starting point, [3](https://shi200005.github.io/2023/06/07/Network-Jump/#references), [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references), and [10](https://shi200005.github.io/2023/06/07/Network-Jump/#references) in the references are three papers that can be read in detail.
 
 ## Noise in Gene Regulatory Networks
 
-In 2002, Elowitz et al. provided experimental evidence that gene regulatory networks inherently exhibit noise [1](https://shi200005.github.io/2023/06/07/Network-Jump/#references). How do we analyze the noise? In **Molecular Biology** (a course I took as an undergrad, and I will write something in Chinses, but haven't started yet...), we've already learned how complicated the mechanisms of transcription and translation could be. However, physicists have good intuition for extracting from facts and making models to describe the world. They have tried to use **Markov processes** to describe the network with intrinsic noise (discussed in van Kampen's IV.1 [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references), also quoted in [(En) Stochastic Processes](https://shi200005.github.io/2022/10/28/Stochastic-Processes/)). We describe the dynamics of the number (integers) of molecules (mRNAs, proteins...) as discrete **birth and death** jumps between the grids of the whole phase space. 
+In 2002, Elowitz et al. provided experimental evidence that gene regulatory networks inherently exhibit noise [1](https://shi200005.github.io/2023/06/07/Network-Jump/#references). How do we analyze the noise? In **Molecular Biology** (a course I took as an undergrad, and I will write something in Chinses, but haven't started yet...), we've already learned how complicated the mechanisms of transcription and translation can be. However, physicists have good intuition for extracting from facts and making models to describe the world. They have tried to use **Markov processes** to describe the network with intrinsic noise (discussed in van Kampen's IV.1 [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references), also quoted in [(En) Stochastic Processes](https://shi200005.github.io/2025/03/15/Stochastic-Processes/#the-master-equation)). We describe the dynamics of the number (integers) of molecules (mRNAs, proteins...) as discrete **birth and death** jumps between the grids of the whole phase space. 
 
-For more about the model construction, see **Appendix of [3](https://shi200005.github.io/2023/06/07/Network-Jump/#references)** and the main text of [4](https://shi200005.github.io/2023/06/07/Network-Jump/#references), also quoted in [(En) Stochastic Processes](https://shi200005.github.io/2022/10/28/Stochastic-Processes/).
+For more about the model construction, see **Appendix of [3](https://shi200005.github.io/2023/06/07/Network-Jump/#references)** and the main text of [4](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
 
 ## One-Variable Case
 
-Always start from the simplest. Let's consider a molecule $$X$$'s probability (per unit time) of production  and degradation are $$f(x)$$ and $$g(x)$$ (also refer to transition rates). As a Markovian process, we take the transition rates merely depends on where the current state is. We write it as
+Always start from the simplest. Let's consider a molecule $$X$$'s probability (per unit time) of production  and degradation are $$f(x)$$ and $$g(x)$$ (also refer to transition rates). As a Markovian process, the transition rates merely depend on where the current state is. We write it as
 
 
 $$
@@ -44,7 +44,7 @@ $$
 
 <img src="\images\blog\Network_Jump_1var_Special.jpg" alt="Network_Jump_1var_Special" style="zoom:50%;" />
 
-Note that for the stationary state, for each $$x>0$$ grid, the two ways in and two ways out should sum up to zero. while for the $$x=0$$ grid, there is only one way in and out from/to $$x=1$$ grid. Then we know ways $$x=m$$ to $$x=m+1$$ should equal $$x=m+1$$ to $$x=m$$. 
+Note that for the stationary state, for each $$x>0$$ grid, the two ways in and two ways out should sum up to zero. while for the $$x=0$$ grid, there is only one way in and out from/to $$x=1$$ grid. Then we know ways $$x=m$$ to $$x=m+1$$ should equal $$x=m+1$$ to $$x=m$$, and it satisfies the **detailed balance**. 
 
 ## Multi-variable Case
 
@@ -102,17 +102,9 @@ Well, I base the above derivation on [5](https://shi200005.github.io/2023/06/07/
 
  ![Network_Jump_Complex](\images\blog\Network_Jump_Normalize.jpg)
 
-#### From Langevin Equation
-
-For the linear case, the Lyapunov equation, or the fluctuation-dissipation theorem, can also be derived from the Langevin equation $$\displaystyle\frac{d \vec{a}}{dt}=\hat H\vec{a}+\vec{\tilde{f}}$$, where $$\vec{\tilde f}(t)$$ is a **white noise** vector. The steps can be found in chapter 1.8 from [12](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can also find my note [Network_Langevin_Lyapunov](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) here.
-
-[Here](https://ocw.mit.edu/courses/8-591j-systems-biology-fall-2004/159d6605bd53c9fdfc6ac92bf43b7515_stochastics.pdf) is a tutorial on the master equation approach by A. van Oudenaarden and Mukund Thattai, where they solved the variances of "The Classical Model of mRNA and Protein" by Langevin equations.
-
-The relationship between the master equation, the Fokker-Planck approximation, and the Langevin approach will be discussed in the following part.
-
 ### Nonlinear Case
 
-In the nonlinear case, we cannot simply drag the drift matrix $$A$$ out as $$f(x(t))-\langle f(x(t))\rangle=A(x(t)-\langle x(t)\rangle)$$ (above equation 5 in [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), and get the nice Lyapunov equation. To quantify the variances and covariances (second-moment properties), we must make some approximations...
+In the nonlinear case, we cannot simply drag the drift matrix $$A$$ out as $$f(x(t))-\langle f(x(t))\rangle=A(x(t)-\langle x(t)\rangle)$$ (above equation 5 in [5](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), and get the nice Lyapunov equation. To quantify the variances and covariances (second-moment properties) without moment closure from nonlinearity, we must make some approximations...[The Fokker-Planck equation](https://shi200005.github.io/2025/03/15/Stochastic-Processes/#the-fokker-planck-equation-fp) is based on the assumption that the jumps are relatively very small. N. G. van Kampen's $$\Omega$$ expansion is a formal method when the system is large (jumps are relatively small).
 
 #### Van Kampen's $$\Omega$$ expansion and Linear Noise Approximation
 
@@ -122,13 +114,13 @@ P.S. In most papers, researchers look at the stationary properties. A **cyclosta
 
 You can find a formal explanation in chapter X of [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references). If you are looking for a shorter and closely related to gene regulatory network text, check **the supplementary material of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references) ** (after "Derivation of the LNA," go to "Example 3: Coupled fluctuations in a two-component system" starting from page 6).
 
-I would like to explain it as "changing the variables from several species to the rescaled fluctuations of species." We start from the nonlinear master equation and species' corresponding joint probability distribution (equation A3 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). After approximation, we end at the **linear Fokker-Planck equation** about the joint probability distributions of the fluctuations $$\displaystyle\frac{\partial\Pi(\xi,t)}{\partial t}=-\sum_{ik}A_{ik}\frac{\partial}{\partial \xi_i}\xi_k\Pi(\xi)+\frac{1}{2}\sum_{ik}[BB^T]_{ik}\frac{\partial^2\Pi(\xi)}{\partial\xi_i\partial\xi_k}$$ (equation A9 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). 
+I would like to explain it as "changing the variables from several species to the rescaled fluctuations of species." We start from the nonlinear master equation and species' corresponding joint probability distribution (equation A3 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). After approximation, we end at the [linear Fokker-Planck equation](https://shi200005.github.io/2025/03/15/Stochastic-Processes/#linear-fp-a_1-is-linear) about the joint probability distributions of the fluctuations $$\displaystyle\frac{\partial\Pi(\xi,t)}{\partial t}=-\sum_{ik}A_{ik}\frac{\partial}{\partial \xi_i}\xi_k\Pi(\xi)+\frac{1}{2}\sum_{ik}[BB^T]_{ik}\frac{\partial^2\Pi(\xi)}{\partial\xi_i\partial\xi_k}$$ (equation A9 in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)). 
 
 **P.S.** An alternative perspective of **LNA** can be found in Section A.3 of the Supplemental Information in [15](https://shi200005.github.io/2023/06/07/Network-Jump/#references), which is $$R_i^+(x)\approx R_i^+(\langle x\rangle)+\nabla R_i^+(\langle x\rangle)\cdot(x-\langle x\rangle)$$. Clearly, the physical meaning is expanded **near macroscopic system trajectories** or **stationary solutions** where matrix $$\nabla R_i^+(\langle x\rangle)$$ can be used as the rate matrix as in the linear case.
 
 #### Solution of Linear Fokker-Planck Equation
 
-The stationary solution is equation A11(in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), **the multidimensional Normal/Gaussian distribution**, and the detailed steps in chapter 6.5 Ornstein-Uhlenbeck Process from [16](https://shi200005.github.io/2023/06/07/Network-Jump/#references). Generally speaking, the **Fourier transform** will be applied to solve this multivariable PDE. First have a taste by my note [Biophysics_Diffusion](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) (diffusion equation from [Biophysics](https://shi200005.github.io/2022/12/30/Biophysics/) on the simplest case and see how Fourier transform works).
+The stationary solution is equation A11(in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references)), [the multidimensional Normal/Gaussian distribution](https://shi200005.github.io/2022/02/17/Probability/#multivariate-gaussian-distribution), and the detailed steps in chapter 6.5 **Ornstein-Uhlenbeck Process** from [16](https://shi200005.github.io/2023/06/07/Network-Jump/#references). Generally speaking, the [Fourier transform](https://shi200005.github.io/2022/02/16/Partial-Differential-Equations/#傅里叶变换法) will be applied to solve this multivariable PDE. 
 
 #### Lyapunov Equation of Linear Fokker-Planck Equation
 
@@ -138,21 +130,27 @@ The hint is from VIII.6 [2](https://shi200005.github.io/2023/06/07/Network-Jump/
 
 ![Network_Jump_2var_Linear](\images\blog\Network_Jump_Lyapunov.jpg)
 
+#### Lyapunov Equation of Langevin Equation
+
+From [stochastic Processes](https://shi200005.github.io/2025/03/15/Stochastic-Processes/#langevin-equation) we know that FP has its mathematically equivalent Langevin equation. In the case of $$\Omega$$ expansion and linear noise approximation, we end up with a linear Fokker-Planck equation of noise with zero mean. This linear FP has its corresponding Langevin equation and from the Langevin equation we can also derive Lyapunov equation.
+
+$$\displaystyle\frac{d \vec{a}}{dt}=\hat H\vec{a}+\vec{\tilde{f}}$$, where $$\vec{\tilde f}(t)$$ is a **white noise** vector. The steps can be found in chapter 1.8 from [12](https://shi200005.github.io/2023/06/07/Network-Jump/#references). You can also find my note [Network_Langevin_Lyapunov](https://shi200005.github.io/download_file/Network_Langevin_Lyapunov.pdf) here. Comparing the Langevin equation, here $$\hat H$$ and $$\vec{\tilde f}$$ corresponds to the $$\hat A$$ and $$\hat B$$ in the linear FP case above.
+
+[Here](https://ocw.mit.edu/courses/8-591j-systems-biology-fall-2004/159d6605bd53c9fdfc6ac92bf43b7515_stochastics.pdf) is a tutorial on the master equation approach by A. van Oudenaarden and Mukund Thattai, where they solved the variances of "The Classical Model of mRNA and Protein" by Langevin equations. 
+
+To read more, check chapters V. VII. and VIII. from [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
+
 #### Example of Nonlinear Case
 
 Check "Example 3: Coupled fluctuations in a two-component system" in supplementary materials of [13](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
 
 Using the Lyapunov equation to compute the variance and covariance of species is frequently employed in the research of A. Hilfinger, J. Paulsson, J. Elf, etc. You can read [9](https://shi200005.github.io/2023/06/07/Network-Jump/#references), the famous paper by J. Paulsson where the Lyapunov equation is presented intuitively (and my post derived Equation (S4) rigorously). 
 
-### Master Equation, Fokker-Planck Approximation, and Langevin Approach
-
-We describe the stochastic process by the master equation $$\displaystyle\frac{\partial P(y,t)}{\partial t}=\int\{W(y\vert y^\prime P(y^\prime,t)-W(y^\prime \vert y) P(y,t)\}$$, corresponding to a stationary joint statistical properties (mean, variances, covariances...). However, it is impossible to solve the statistical properties directly from the master equation unless the transition rates are linear.
-
-To solve it approximately, the Fokker-Planck equation is based on the assumption that the jumps are relatively very small. N. G. van Kampen's $$\Omega$$ expansion is a formal method when the system is large (jumps are relatively small). Intuitively, we get a solvable linear Fokker-Planck from the expansion. The Langevin approach is mathematically equivalent to the linear Fokker-Planck equation (the former is a continuous system). I derived the Lyapunov equation from the Langevin approach in the linear case. To read more, check chapters V. VII. and VIII. from [2](https://shi200005.github.io/2023/06/07/Network-Jump/#references).
-
 ## Wrap up
 
 I sincerely thank **everyone** in my group, especially B Kell and A. Hilfinger. You can regard this post as my first-year progress in theory, although it should not have taken that long.... I feel like I'm just crossing the critical point. I completed a phase transition of "being defeated by the equations from the beginning of papers" to "understand the basic math and have a better sense of deriving statistical properties."
+
+Update: 20250409 Langevin & FP relationship!
 
 ## References
 
@@ -187,4 +185,3 @@ I sincerely thank **everyone** in my group, especially B Kell and A. Hilfinger. 
 [15] Hilfinger, A., Norman, T. M., Vinnicombe, G., & Paulsson, J. (2016). Constraints on fluctuations in sparsely characterized biological  systems. *Physical review letters*, *116*(5), 058101. [online](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.058101)
 
 [16] Risken, H., and T. K. Caugheyz. "The fokker-planck equation: Methods of solution and application." (1991): 860-860.
-

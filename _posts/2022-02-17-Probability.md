@@ -258,7 +258,7 @@ $$D(X+Y)=D(X)+D(Y)+2E\{[(X)-E(X)][(Y)-E(Y)]\}$$.
 
 *Chebyshev's inequality*: Using *Markov's*, $$X$$ -> $$(X-\mu)^2$$, then $$\displaystyle P\{\vert X-μ\vert\geq a\}\leq\frac{\sigma^2}{a^2}$$. 
 
-The weak law of large number: for i.i.d. samples $$X_i$$, $$\displaystyle\bar X=\frac{1}{n}\sum_{k=1}^{n}{X_k}$$, $$\displaystyle D[\bar X]=\frac{σ^2}{n}$$. Using *Chebyshev's*, $$X$$ -> $$\bar X$$, $$a$$ -> $$\epsilon$$, then $$\displaystyle P\{\vert\bar X-μ\vert\geq \epsilon\}\leq\frac{1}{n}\frac{\sigma^2}{\epsilon^2}$$ goes to zero when $$n$$ goes to infinity.
+**The weak law of large numbers**: for i.i.d. samples $$X_i$$, $$\displaystyle\bar X=\frac{1}{n}\sum_{k=1}^{n}{X_k}$$, $$\displaystyle D[\bar X]=\frac{σ^2}{n}$$. Using *Chebyshev's*, $$X$$ -> $$\bar X$$, $$a$$ -> $$\epsilon$$, then $$\displaystyle P\{\vert\bar X-μ\vert\geq \epsilon\}\leq\frac{1}{n}\frac{\sigma^2}{\epsilon^2}$$ goes to zero when $$n$$ goes to infinity.
 
 辛钦定理：$$\displaystyle\lim_{n\to\infty} P\{\vert\bar X-μ\vert< ε\}=1$$ 均值收敛于期望，不需要方差存在。具体证明没涉及到，好像需要 Kolmogorov 收敛定理，先不管它。
 
@@ -275,51 +275,6 @@ The weak law of large number: for i.i.d. samples $$X_i$$, $$\displaystyle\bar X=
 Sum $$X=\displaystyle\sum_{i=1}^{N}x_i$$, $$x_i$$ are i.i.d. from a distribution. We have $$\langle X^n\rangle_c=N\langle x^n\rangle_c$$. Construct $$\displaystyle y=\frac{X-N\langle x\rangle_c}{\sqrt N}$$, so $$\langle y^n\rangle_c\propto N^{1-n/2}$$. As $$N\rightarrow\infty$$, **only the second cumulant survives**, and the PDF for $$y$$ converges to the **normal distribution**, $$\displaystyle\lim_{N→\infty}p(y=\frac{\displaystyle\sum_{i=1}^N x_i-N\langle x \rangle_c}{\sqrt N})=\frac{1}{\sqrt{2\pi\langle x^2\rangle_c}}\exp(-\frac{y^2}{2\langle x^2\rangle_c})$$. 
 
 - 特例（学 Lyapunov 之前用这个引出）：伯努利试验次数很多时，成功次数总和 $$S_n$$ 的分布符合正态分布，归一化变量 $$\displaystyle S_n=\frac{S_n-E(S_n)}{\sqrt{\text{Var}(S_n)}}$$~$$N(0,1)$$。证明详见 Garrity, All the math you need to know... chapter 18.5，因为试验次数多，处理大阶乘时用到了 [Stirling's Approximation](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula).
-
-## Information and Entropy
-
-### Information
-
-mainly comes from 2.7 of Kardar (particles) (a lot of direct copy... tell me whether it is appropriate and help me to improve!)
-
-Consider a random variable with a discrete set of outcomes $$\mathbf{x}=\{x_i\}$$ (you use a language to write a letter and the language contains 5 letters, "a, b, c, d, e"), occurring with probabilities $$\{p(i)\}$$ (in that language, all words start with "a", making "a" the most frequent letter in texts), for $$i=1,...,M$$ ($$M$$ is the size of the alphabet, in the "letter" case, $$M=5$$).
-
-Your message contains $$N$$ letters. There are $$M^N$$ kinds of different letter combinations. Choose the unit as "bits" means $$\ln_2(M^N)$$. The number of bits (**information**) to transmit your text precisely (imaging you are sending via email so the letters are coded in a binary way) is $$N\ln_2M$$ (the bits of two texts should add, and the possibilities of the combined text should multiply, which could be reached in this logarithm way).
-
-However, in the limit of large $$N$$, we expect the message to contain"roughly" $$\{N_i=Np_i\}$$ occurrences for each symbol. The number of typical messages thus corresponds to the number of ways of rearranging the $$\{N_i\}$$ occurrences of $$\{x_i\}$$, and is given by the multinomial coefficient $$\displaystyle g=\frac{N!}{\prod_{i=1}^M N_i!}$$, compared with $$M^N$$ before considering the non-uniform distribution. Using **Stirling's approximation**, we have $$\ln_2g\approx -N\displaystyle\sum_{i=1}^M p_i\ln_2p_i$$.
-
-- It is interesting that statistical physicists use $$\ln_2$$ to indicate $$\log_2$$, while engineers use $$\log x$$ to indicate $$\log_2$$.
-
-- Here, we start from "large $$N$$ gives $$\{N_i=Np_i\}$$" and then use [Stirling's approximation](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula).  Actually,
-
-
-$$
-  \text{The bound by the extreme value among distribution -> }
-  \begin{cases}
-  \text{The weak law of large number} \\
-  \text{Stirling's approximation}
-  \end{cases}
-$$
-
-
-
-### Shannon Entropy 
-
-> Entropy is the unique measure of available information consistent with certain simple and plausible requirements. --- Shannon, 1948
-
-The above was written before I took Information Theory, where $$H(X)=-\displaystyle\sum_{x}p(x)\log p(x)$$ was derived from three axioms in Shannon's 1948 paper. In Shannon's argument, derivation for uniform distribution over $$n$$ elements, the entropy $$H_U(n)=H_2(n)\log n$$ was determined by a bound, and this sandwich just look like what we did in Stirling's...
-
-**Change the base of logarithm**: $$\text{log}_bp=(\text{log}_ba)(\text{log}_ab)$$, $$H_{\text{in bits}}(X)=(\text{log}_2e)H_{\text{in nats}}(X)$$.
-
-For Bernoulli random variable $$X$$ with probability $$p$$, $$H(X)=\mathscr H(p)=-p\text{log}p-(1-p)\text{log}(1-p)$$. A tip: $$\displaystyle\frac{d}{dp}\mathscr H(f(p))=f^\prime\text{log}\frac{1-f}{f}$$.
-
-### The Entropy of Mixing
-
-Suppose mixing $$M$$ distinct components in the context of statistical mechanics. Consider characterizing the *distribution*, let alone the outcomes from different trials (how many samples taken and the sampling error...).
-
-The *entropy* for *any probability distribution* as $$S=-\displaystyle\sum_{i=1}^Mp(i)\ln p(i)=-\langle\ln p(i)\rangle$$. 
-
-The above is the entropy for a discrete probability distribution, for that of a continuous distribution, $$S=-\int dxp(x)\ln p(x)=-\langle \ln p(x)\rangle$$. The problem of scaling remains to be discussed.
 
 ## 后记
 
