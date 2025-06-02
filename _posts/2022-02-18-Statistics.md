@@ -25,7 +25,7 @@ mathjax: true
 ## 样本及抽样分布
 
 总体：$$X$$，样本：$$(X_1,X_2,...,X_n)$$。我们关注样本，因为我们能得到的是样本，然后用统计学知识推测总体的性质。
-- 下面我们用的样本都是**简单随机样本(independent and identically distributed, i.i.d.)**：若样本中的每个个体与总体有相同的分布，样本个体相互独立，总体中的个体总数与样本容量满足$$\displaystyle\frac{N}{n}≥10$$，则这些样本可以看作是**不放回抽样**得到的。
+- 下面我们用的样本都是**简单随机样本 (independent and identically distributed, i.i.d.)**：若样本中的每个个体与总体有相同的分布，样本个体相互独立，总体中的个体总数与样本容量满足$$\displaystyle\frac{N}{n}≥10$$，则这些样本可以看作是**不放回抽样**得到的。
 - 若总体 $$X$$ 的分布为 $$F(x)$$，则简单随机样本 $$(X_1,X_2,...,X_n)$$ 的联合分布为 $$\displaystyle\prod_{i=1}^{n}{F(x_i)}$$。 后面最大似然法要用。
 
 ### 样本的常用统计量
@@ -34,19 +34,13 @@ mathjax: true
 
 - 样本均值 $$\displaystyle\bar{X}=\frac{1}{n}\sum_{i=1}^{n}{X_i}$$, $$E(\bar X)=\mu$$, $$\displaystyle E[D(\bar X)]=\frac{\sigma^2}{n}$$.
 
+- 样本各阶矩：原点矩 $$\displaystyle A_k=\frac{1}{n}\sum_{i=1}^nX_i^k$$，期望 $$E[M_k]=E[X^k]$$；中心矩 $$\displaystyle B_k=\frac{1}{n}\sum_{i=1}^n(X_i-\bar X)^k$$。协方差/方差期望 $$\displaystyle\text{Cov}(M_k,M_j)=\frac{1}{n}(E[X^{k+j}]-E[X^k]E[X^j])$$。[推导](https://shi200005.github.io/download_file/Statistics_Cov.pdf)
+
 - 样本方差 $$\displaystyle S^2=\frac{1}{n-1}\sum_{i=1}^{n}{(X_i-\bar{X})^2}$$，是总体方差的**无偏估计**，概念见下文参数估计。
 
-  问：样本的二阶中心矩是 $$\displaystyle S_n^2=\frac{1}{n}\sum_{i=1}^{n}{(X_i-\bar{X})^2}$$，为什么样本方差除以样本容量减去 $$1$$？答：可以证明样本二阶中心矩的期望是 $$\displaystyle E(S_n^2)=\frac{n-1}{n}σ^2$$，并不是 $$σ^2$$（[计算过程](https://www.zhihu.com/question/20099757/answer/13971886)），而 $$E(S^2)=\sigma^2$$。这是因为从总体抽样得到样本，我们在样本方差中采用的是样本均值，样本均值是总体均值的无偏估计，但是采用样本均值会使对总体方差的估计产生偏差，所以要采用无偏修正值（[直观解释](https://www.zhihu.com/question/20099757/answer/26586088)）。
+  问：样本的二阶中心矩是 $$\displaystyle S_n^2=\frac{1}{n}\sum_{i=1}^{n}{(X_i-\bar{X})^2}$$，为什么样本方差除以样本容量减去 $$1$$？答：可以证明样本二阶中心矩的期望是 $$\displaystyle E(S_n^2)=E(B_2)=\frac{n-1}{n}σ^2$$，并不是 $$σ^2$$（[计算过程](https://www.zhihu.com/question/20099757/answer/13971886)），而 $$E(S^2)=\sigma^2$$。这是因为从总体抽样得到样本，我们在样本方差中采用的是样本均值，样本均值是总体均值的无偏估计，但是采用样本均值会使对总体方差的估计产生偏差，所以要采用无偏修正值（[直观解释](https://www.zhihu.com/question/20099757/answer/26586088)）。
 
-- 样本各阶矩的期望 $$E[M_k]=E[X^k]$$；协方差/方差 $$\displaystyle\text{Cov}(M_k,M_j)=\frac{1}{n}(E[X^{k+j}]-E[X^k]E[X^j])$$。[推导](https://shi200005.github.io/download_file/Statistics_Cov.pdf)
-
-### 常用抽样分布
-
-因为**正态分布**是**最常见**的总体分布，于是我们讨论正态分布总体的常用抽样分布。标准正态分布的 $$α$$ 分位数是很简单很直观的东西。在下文的区间估计里，对于已知一个正态总体，分为均值和方差是否已知的情况，不同情况下要确定置信区间和置信度，则要用到这些奇奇怪怪的抽样分布。
-
-- 卡方分布 $$\chi^2(n)$$：若 $$X$$~$$N(0,1)$$，则 $$\displaystyle\sum_{i=1}^{n}{X_i^2}$$~$$\chi^2(n)$$。 有表可查。是一种 **Gamma 分布**。e.g., $$\displaystyle\frac{(n-1)S^2}{\sigma^2}$$~$$\chi^2(n)$$.
-- $$t$$ 分布：若 $$X \sim N(0,1)$$，$$Y\sim \chi^2(n)$$，$$X,Y$$ 相互独立，$$\displaystyle T=\frac{X}{\sqrt{Y/n}}$$。e.g., $$\displaystyle\frac{\bar  X-\mu}{S/\sqrt{n}}$$~$$T(n-1)$$，对比 $$\displaystyle\frac{\bar  X-\mu}{\sigma/\sqrt{n}}$$~$$N(0,1)$$.
-- $$F$$ 分布：若 $$X\sim \chi^2(n)$$，$$Y\sim \chi^2(m)$$，$$X,Y$$ 相互独立，$$\displaystyle F=\frac{X/n}{Y/m}$$。e.g., 对于两个正态总体，$$\displaystyle\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}$$~$$F(n-1,m-1)$$.
+- 样本标准差 $$S=\sqrt{S^2}$$，和样本单位一样，表示统计结果的时候经常用 $$\bar X\pm S$$。
 
 ## 参数估计
 
@@ -93,11 +87,45 @@ Maximum Likelihood Estimate，在机器学习里非常重要。对于总体的�
 
 ### 区间估计
 
-用点估计估计出一个值，这个值估计得有多靠谱呢？例如，我们可以确定真值就在估计值上下一个范围内的概率是多少。一般来说我们如果需要真值在范围内的把握比较大，这个范围会相对大些；我们想要一个小范围得到好的精度，我们就不那么确定真值真的在这个范围里......
+用点估计估计出一个值，这个值估计得有多靠谱呢？例如，我们可以确定真值就在估计值上下一个范围内的概率是多少（**置信区间**）。一般来说我们如果需要真值在范围内的把握比较大，这个范围会相对大些；我们想要一个小范围得到好的精度，我们就不那么确定真值真的在这个范围里......
 
-正态总体的区间估计方法：根据对总体均值和方差的已知知识，构造一个样本函数——**枢轴量**，使其分布满足之前讨论过的**抽样分布**，例如 $$N(0,1)$$, $$t$$ 分布、$$F$$ 分布（细节省略），然后查表截参数取值即可。
+- 标准正态分布的 $$α$$ 分位数：若 $$X$$~$$N(0,1)$$，则 $$P(X>z_\alpha)=\alpha$$ 或 $$P(\vert X\vert>z_{\frac{\alpha}{2}})=\alpha$$。例：$$z_{0.05}=1.645$$，最大的 5% 在右侧 1.645 个 $$\sigma$$；$$Z_{0.025}=1.96$$。
+
+正态总体的区间估计方法：根据对总体均值和方差的已知知识，构造一个样本函数——**枢轴量**，使其分布满足**抽样分布**，例如
+
+- 正态分布 $$N(0,1)$$
+
+  $$X\sim N(\mu,\sigma^2)$$，$$\sigma^2$$ 已知，$$\mu$$ 的置信区间：构造枢轴量 $$\displaystyle\frac{\bar X-\mu}{\sigma/\sqrt n}\sim N(0,1)$$。
+
+  $$X\sim N(\mu_1,\sigma_1^2)$$, $$Y\sim N(\mu_2,\sigma_2^2)$$ 相互独立，$$\sigma_1^2$$, $$\sigma_2^2$$ 已知，$$\mu_1-\mu_2$$ 的置信区间：构造枢轴量 省略 $$\sim N(0,1)$$；$$\sigma_1^2$$, $$\sigma_2^2$$ 未知，$$n_1$$, $$n_2>50$$，$$\mu_1-\mu_2$$ 的置信区间：省略 $$\sim N(0,1)$$。
+
+- $$t$$ 分布：若 $$X \sim N(0,1)$$，$$Y\sim \chi^2(n)$$，$$X,Y$$ 相互独立，$$\displaystyle T=\frac{X}{\sqrt{Y/n}}\sim t(n)$$。
+
+  $$X\sim N(\mu,\sigma^2)$$，$$\sigma^2$$ 未知，$$\mu$$ 的置信区间：构造枢轴量 $$\displaystyle\frac{\bar  X-\mu}{S/\sqrt{n}}\sim t(n-1)$$。
+
+  $$X\sim N(\mu_1,\sigma_1^2)$$, $$Y\sim N(\mu_2,\sigma_2^2)$$ 相互独立，$$\sigma_1^2=\sigma_2^2=\sigma^2$$ 但未知，$$\mu_1-\mu_2$$ 的置信区间：构造枢轴量 省略$$\sim t(n_1+n_2-2)$$；$$\sigma_1^2$$, $$\sigma_2^2$$ 未知，$$n_1=n_2=n$$，$$\mu_1-\mu_2$$ 的置信区间：构造枢轴量 省略$$\sim t(n-1)$$。
+
+- 卡方分布 $$\chi^2(n)$$：若 $$X$$~$$N(0,1)$$，则 $$\displaystyle\sum_{i=1}^{n}{X_i^2}$$~$$\chi^2(n)$$。 有表可查。是一种 **Gamma 分布**。
+
+  $$X\sim N(\mu,\sigma^2)$$，$$\mu$$ 已知，$$\sigma^2$$ 的置信区间：构造枢轴量 $$\displaystyle\sum_{i=1}^n\left(\frac{X_i-\mu}{\sigma}\right)^2\sim \chi^2(n)$$；$$\mu$$ 未知，$$\sigma^2$$ 的置信区间：构造枢轴量 $$\displaystyle\frac{(n-1)S^2}{\sigma^2}$$~$$\chi^2(n-1)$$.
+
+- $$F$$ 分布：若 $$X\sim \chi^2(n)$$，$$Y\sim \chi^2(m)$$，$$X,Y$$ 相互独立，$$\displaystyle F=\frac{X/n}{Y/m}\sim F(n,m)$$。
+
+  $$X\sim N(\mu_1,\sigma_1^2)$$, $$Y\sim N(\mu_2,\sigma_2^2)$$ 相互独立，$$\mu_1$$, $$\mu_2$$ 已知，$$\displaystyle\frac{\sigma_1^2}{\sigma_2^2}$$ 的置信区间：构造枢轴量 省略$$\sim F(n_1, n_2)$$；$$\mu_1$$, $$\mu_2$$ 未知，$$\displaystyle\frac{\sigma_1^2}{\sigma_2^2}$$ 的置信区间：构造枢轴量 $$\displaystyle\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}\sim F(n_1-1, n_2-1)$$。
 
 非正态总体的区间估计方法：抽很多样，根据[中心极限定理](https://shi200005.github.io/2022/02/17/Probability/#lyapunov-%E5%AE%9A%E7%90%86)，把样本均值构造成正态分布即可。
+
+## Gamma 分布
+
+$$\displaystyle\Gamma(x)=\int_{0}^\infty t^{x-1}e^{-t}dt$$ 是阶乘在实数域上的推广，若 $$n$$ 是整数，则 $$\Gamma(n)=(n-1)!$$（参见[分部积分](https://shi200005.github.io/2021/09/30/Calculus/#分部积分)）。
+
+连续型随机变量分布 $$X\sim\Gamma(\alpha,\lambda)$$ (Shape-rate)，p.d.f. $$\displaystyle f(x)=\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$$；$$X\sim\Gamma(\alpha,\theta)$$ (Shape-scale)，p.d.f. $$\displaystyle f(x)=\frac{1}{\Gamma(\alpha)\theta^\alpha}x^{\alpha-1}e^{-x/\theta}$$。$$x\in(0,\infty)$$。
+
+- $$\alpha=1$$ -> [指数分布](https://shi200005.github.io/2022/02/17/Probability/#指数分布)：泊松过程的两个事件发生时间间隔。
+
+- $$\alpha\in\mathbb Z^+$$ -> [Erlang 分布](https://shi200005.github.io/2022/02/17/Probability/#随机变量和的分布)：多个相同指数分布随机变量的和。
+-  $$X\sim\Gamma(\nu/2,\theta=\nu)$$ -> $$\chi^2(\nu)$$ 分布：正态总体的样本平方和的分布。
+- $$X\sim$$ [Maxwell-Boltzmann distribution](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/#麦克斯韦速度分布律) $$\displaystyle f(x)=\sqrt{\frac{2}{\pi}}\frac{x^2}{a^3}\exp\left(-\frac{x^2}{2a^2}\right)$$ -> $$\displaystyle X^2\sim\Gamma(\frac{3}{2},\theta=2a^2)$$.
 
 ## 假设检验
 
@@ -106,8 +134,6 @@ Maximum Likelihood Estimate，在机器学习里非常重要。对于总体的�
 假设我认为总体分布有某种特征（果蝇大部分是白眼）。从总体中抽取一些样本，抽取出的样本是这种结果居然是一间概率非常小的事（$$100$$ 只果蝇里抽出来的 $$5$$ 只全都是红眼）！于是我深刻怀疑之前对于总体分布特征的认知是错误的（大概果蝇大部分还是红眼）。“小概率原理”、**概率意义下的反证法**
 
 依赖于样本值的判断是可能出错的。**弃真错误/第一类错误**概率一般取为 $$α$$，**取伪错误/第二类错误**概率一般取为 $$β$$。假设检验的指导思想是控制 $$α$$，然后若有必要，则通过**增大样本容量**的办法控制 $$β$$。通常把有把握的、有经验的结论作为原假设，或者尽可能使后果严重的错误成为第一类错误。可以证明，当样本容量确定后，犯两类错误的概率不可能同时减小（证明从略）。
-
-方法：与区间估计方法类似。
 
 ## 方差分析
 

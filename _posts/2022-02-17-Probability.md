@@ -80,7 +80,7 @@ $$X\sim π(λ)$$
 
 #### 几何分布
 
-【GRAD-UPDATE】在伯努利实验中，得到一次成功所需要的试验次数分布。在生物物理实验数据中描述**多态动力学**的 **burst-size distribution**。
+在伯努利实验中，得到一次成功所需要的试验次数分布。【GRAD-UPDATE】在生物物理实验数据中描述**多态动力学**的 **burst-size distribution**。
 
 ### 连续型随机变量 
 
@@ -104,10 +104,6 @@ $$X$$~$$N(μ,σ^2)$$
 
 - 例：biased random walk 求解 Fokker-Planck 近似下的小偏差（$$p$$ 接近于 $$1/2$$）的概率偏微分方程，详见[随机过程 - 随机游走与二项分布](https://shi200005.github.io/download_file/Probability_Binomial_Normal_Fourier.pdf)。
 - 通过 [Stirling 近似](https://shi200005.github.io/2021/09/30/Calculus/#stirlings-formula)再取连续极限，[概率论 - 二项分布近似为正态分布](https://shi200005.github.io/download_file/Probability_Binomial_Normal.pdf)。
-
-#### Gamma 分布
-
-以后再说  泊松过程第 $$n$$ 次事件出现的时间服从 Gamma 分布
 
 ### 随机变量和的分布
 

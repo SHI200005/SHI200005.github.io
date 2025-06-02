@@ -241,6 +241,12 @@ $$
 
 ![](/images/blog/Statistical_Mechanics_Maxwell_Velocity_Dist.jpg)
 
+- 一维速度分布 $$\displaystyle f(v_x)dv_x=\sqrt{\frac{m}{2\pi k_BT}}\exp(-\frac{mv_x^2}{2k_BT})dv_x$$
+
+- 对薄球面 $$4\pi v^2dv$$ 积分 -> 速度分布 $$\displaystyle f(v)=\left[\frac{m}{2\pi k_BT}\right]^{3/2}4\pi v^2\exp\left(-\frac{mv^2}{2k_BT}\right)$$ 
+
+  利用 $$\displaystyle\vert\frac{dv}{dK}\vert=\frac{1}{\sqrt{2Km}}$$，推出分子平动动能 $$\displaystyle f_K(K)=\sqrt\frac{2}{\pi(k_BT)^3}\sqrt E\exp(-\frac{E}{k_BT})$$ $$\displaystyle\sim\Gamma(\frac{3}{2},k_BT)$$ 是一种 Gamma 分布。
+
 ### 能量均分定理
 
 只在满足**经典极限**的条件下成立，系统微观能量表达式中的每一个**正平方项**的平均值等于 $$(1/2)kT$$。
