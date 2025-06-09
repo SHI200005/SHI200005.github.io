@@ -7,7 +7,7 @@ keywords: Machine Learning
 mathjax: true 
 ---
 
-This post is built on Prof Anton Zilman's lectures and materials. 
+This post is based on Prof Anton Zilman's lectures and materials, supplemented with my own notes. 
 
 ## References
 
@@ -31,10 +31,14 @@ Ref 1 fig 4 & 5
 
 To minimize the cost function $$\displaystyle E(\vec\theta)=\sum_{i=1}^n  e_i(\vec{\mathbf x_i},\vec\theta)$$ based on $$n$$ data points (e.g., linear regression -> square-error ):
 
-- **Steepest Descent Method**: Moves in the direction of $$-\nabla_\theta E$$ with a variable step size to find a smaller function value.
+- **Steepest Descent Method**
+  
+  Moves in the direction of $$-\nabla_\theta E$$ with a variable step size to find a smaller function value.
   *Drawback:* Prone to severe oscillations.
+  
+- **Conjugate Gradient Method**
 
-- **Conjugate Gradient Method**: Integrates the current gradient with the previous search direction and gradient to determine the search direction.
+  Integrates the current gradient with the previous search direction and gradient to determine the search direction.
 
 - **Stochastic gradient descent (SGD)**
 
@@ -44,9 +48,25 @@ To minimize the cost function $$\displaystyle E(\vec\theta)=\sum_{i=1}^n  e_i(\v
 
 Given data set and the label of each data point, if I get a new data point, what label should it have?
 
-### Linear clustering
+### Interpolation
 
-#### Continues label - linear regression
+Given some discrete data points, interpolate a continuous function that crosses all the points.
+
+- **Lagrange Interpolation**
+
+  Given two points, connect them with a linear function; given three points, use a quadratic function to connect them... In general, given nn points, you can use a polynomial of degree n−1n−1 to interpolate through all of them.
+
+- **Spline Interpolation**
+
+  When there are too many data points, a high-degree Lagrange interpolating polynomial becomes risky.
+
+  Spline interpolation addresses this by using piecewise polynomials between each pair of adjacent points. The most commonly used is the **cubic spline**, which ensures continuity of the function, as well as its first and second derivatives.
+
+### Regression
+
+Now we know there is noise in our data points and we don't want the function to really cross all the data points, we just want it to be "close" to our data points (minimizing errors).
+
+#### Linear regression
 
 Least Squares Fitting: Find the best function match to the data by minimizing the sum of squared errors.
 
@@ -76,7 +96,7 @@ Find $$\vec x$$ such that $$\min\Vert\mathbf A\vec x-\vec b\Vert^2$$.  Here, $$\
 
   Corresponds to the MAP with a **Laplace prior**, i.e., assuming many dimensions of $$\vec x$$ are zeros,  $$\displaystyle p(\theta)=\prod_{k}\frac{1}{2b}\exp\left(-\frac{\vert x_k\vert}{b}\right)$$and the $$\lambda=\sigma^2/b$$ for above.
 
-#### Distcrete labels - logistic regression
+#### Logistic regression
 
 To classify data points $$x_i$$ into **two categories** $$y_i=\{0,1\}$$. Draw a **straight** line $$\vec 0={\vec x_i}^T\vec w+\vec b_0=\vec{\mathbf x_i}^T\vec{\mathbf w}$$, where $$\vec{\mathbf x_i}=(1,\vec x_i)$$, $$\vec{\mathbf w}=(\vec b_0,\vec w)$$ which means it doesn't have to cross the origin. 
 
@@ -91,7 +111,7 @@ To classify data points $$x_i$$ into **two categories** $$y_i=\{0,1\}$$. Draw a 
 
 To classify data points into more categories, use **SoftMax**. $$\vec y_i\in\mathbb Z_2^M$$, e.g., $$\vec y=(1,0,\ldots,0)$$ meas $$\vec x_i$$ belongs to class 1. The SoftMax function: the probability of $$\vec x_i$$ being in class $$m'$$: $$\displaystyle P(y_{im'}=1\vert\vec x_i,\{\vec w_k\}_{k=0}^{M-1})=\frac{e^{-\vec x_i^T\vec w_{m'}}}{\sum_{m=0}^{M-1}e^{-\vec x_i^T\vec w_{m}}}$$...
 
-### Nonlinear clustering - neural networks
+### Neural networks
 
 A course from SciNet: [DAT112 Neural Network Programming (Apr 2024)](https://education.scinet.utoronto.ca/course/view.php?id=1327).
 

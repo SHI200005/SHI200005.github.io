@@ -15,12 +15,6 @@ https://github.com/SHI200005/Examples/tree/main/fractal
 
 [1] [Mehta P et. al., Phys Rep. 2019 May 30;810:1-124.](https://www.sciencedirect.com/science/article/pii/S0370157319300766)
 
-## 插值 Interpolation
-
-- 拉格朗日插值：给俩点，用一次函数连起来；给仨点，用二次函数连起来......给 $$n$$ 个点，可以用 $$n-1$$ 次函数连起来。
-
-- **样条差值** Spline：如果数据点太多，拉格朗日插值函数次数太高，很危险。样条差值是用 $$n$$ 次函数**分段**拟合每两个**相邻**数据点。最常用的是三次样条差值，满足函数连续、一阶导连续、二阶导连续。
-
 ## 微分
 
 用插值函数 $$y(x)$$ 代替原始函数的微分 $$f'(x)$$。步长 $$h$$。
@@ -135,7 +129,24 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 ## 快速傅立叶变换
 
-把信号被离散化为采样点 $$\displaystyle\hat f_q=\sum_{j=0}^{n-1} f_je^{\pm2\pi ijq/n}$$. 用 $$n\times n$$ 矩阵 $$\mathbf F(n)_{jq}=e^{2\pi ijq/n}$$（其中$$j,q$$ 从 0 数起）。实现 $$f$$ 到 $$\hat f$$ 的转化，计算成本为 $$\mathcal O(n^2)$$。不如想点办法转化。
+把信号被离散化为采样点 $$\displaystyle\hat f_q=\sum_{j=0}^{n-1} f_je^{\pm2\pi ijq/n}$$. 用 $$n\times n$$ 矩阵 $$\mathbf F(n)_{jq}=e^{2\pi ijq/n}$$（其中$$j,q$$ 从 0 数起），实现 $$f$$ 到 $$\hat f$$ 的转化，
+
+
+$$
+\mathbf F(n)
+\begin{bmatrix}
+f_0 \\ f_1 \\ \vdots \\ f_{n-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\hat f_0 \\ \hat f_1 \\ \vdots \\ \hat f_{n-1}
+\end{bmatrix}
+$$
+
+
+
+
+计算成本为 $$\mathcal O(n^2)$$。不如想点办法转化。
 
 设 $$\omega_n=e^{2\pi i/n}$$，则 $$\omega_n^2=\omega_{n/2}$$。于是 $$\displaystyle\hat f_q=\sum_{j=0}^{n-1}\omega_n^{qj} f_j$$。假设 $$n=2^{m}$$，$$\displaystyle\hat f_q=\sum_{j=0}^{n/2-1}\omega_{n/2}^{qj} f_{2j} + \omega_{n}^{q}\sum_{j=0}^{n/2-1}\omega_{n/2}^{qj} f_{2j+1}$$，如此操作，直到全拆开。计算成本为 $$\mathcal O(n\log n)$$。变换之后数据长度与原始采样信号是一样的。矩阵表示为
 

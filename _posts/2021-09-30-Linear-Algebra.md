@@ -65,7 +65,7 @@ mathjax: true
 
 - 无解
   - $$\vec b$$ 不在 $$\mathbf A$$ 的列空间内。齐次方程组一定有零解，不属于此类。
-  - **数值方法**：最小二乘法及其变体。数值方法部分见[计算物理](https://shi200005.github.io/2025/02/02/Computational-Physics/)。
+  - **数值方法**：最小二乘法及其变体。数值方法部分见 [(En) Machine Learning](https://shi200005.github.io/2025/02/17/Machine-Learning/#linear-regression)。
 
 ## 行列式
 
