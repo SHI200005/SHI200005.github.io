@@ -11,10 +11,6 @@ mathjax: true
 
 https://github.com/SHI200005/Examples/tree/main/fractal
 
-## References
-
-[1] [Mehta P et. al., Phys Rep. 2019 May 30;810:1-124.](https://www.sciencedirect.com/science/article/pii/S0370157319300766)
-
 ## 微分
 
 用插值函数 $$y(x)$$ 代替原始函数的微分 $$f'(x)$$。步长 $$h$$。
@@ -33,18 +29,22 @@ https://github.com/SHI200005/Examples/tree/main/fractal
 
 $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
-- 欧拉法（折线法）Forward Euler：向前差分代替微分，$$f(y,t)$$ 用前端点 $$f(y_n,t_n)$$ 代替。局部截断误差 $$\propto\Delta t^2$$，总体截断误差 $$\propto\Delta t$$。
+- 欧拉法：折线法
+- Runge-Kutta 法：迂回复盘
+- 积分运动方程：Verlet、Leapfrog 等方法。例：[GROMACS Tutorials](http://www.mdtutorials.com/gmx/)。
+
+### 欧拉法
+
+- Forward Euler：向前差分代替微分，$$f(y,t)$$ 用前端点 $$f(y_n,t_n)$$ 代替。局部截断误差 $$\propto\Delta t^2$$，总体截断误差 $$\propto\Delta t$$。
 
 - 改进的欧拉法 implicit mid-point Euler：向前差分代替微分，$$f(y,t)$$ 用前后端点平均值 $$\displaystyle\frac{1}{2}(f(y_n,t_n)+f(y_{n+1},t_{n+1}))$$ 代替。总体截断误差 $$\propto\Delta t^2$$。
 
-  例：用上述两种方法分别求解一维谐振子，前者雅可比矩阵特征值的模严格大于一，解不稳定；后者等于一。详见 PHY1610 lecture 11.
+例：用上述两种方法分别求解一维谐振子，前者雅可比矩阵特征值的模严格大于一，解不稳定；后者等于一。详见 PHY1610 lecture 11 (2024).
 
-- Runge - Kutta 法：迂回复盘。
+### Runge-Kutta 法
 
-  - 二阶 Runge - Kutta 法：用欧拉法预测中间点 $$f(y_{n+1/2},t_{n+1/2})$$，向前差分代替微分，$$f(y,t)$$ 用中间点代替。总体截断误差 $$\propto\Delta t^2$$。
-  - **四阶 Runge - Kutta 法（RK4）**：[Derivation of the Runge–Kutta fourth-order method](https://en.wikipedia.org/wiki/Runge–Kutta_methods#Derivation_of_the_Runge–Kutta_fourth-order_method)。总体截断误差 $$\propto\Delta t^4$$。
-
-- 积分运动方程：Verlet、Leapfrog 等方法。例：[GROMACS Tutorials](http://www.mdtutorials.com/gmx/)。
+- 二阶 Runge-Kutta 法：用欧拉法预测中间点 $$f(y_{n+1/2},t_{n+1/2})$$，向前差分代替微分，$$f(y,t)$$ 用中间点代替。总体截断误差 $$\propto\Delta t^2$$。
+- **四阶 Runge-Kutta 法（RK4）**：[Derivation of the Runge–Kutta fourth-order method](https://en.wikipedia.org/wiki/Runge–Kutta_methods#Derivation_of_the_Runge–Kutta_fourth-order_method)。总体截断误差 $$\propto\Delta t^4$$。
 
 ## 偏微分方程
 
@@ -74,15 +74,21 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
 
 求解线性方程组，大一课上手算用高斯消元法，霸凌 python 则使用
 
-- 求解线性方程组 -> **LU 分解法**：例：$$\mathbf A$$ 是 $$n$$ 阶**方阵**，则线性方程组 $$\mathbf A\vec x=\vec b$$ 有可能有唯一确定的解（也有可能无解或有无穷多解）
+### LU 分解法
 
-  ，将 $$\mathbf A$$ 一步一步转化为上三角方阵，转化矩阵有固定的生成套路，转化为 $$\displaystyle\prod_{i=1}^{n}\mathbf M_{i}\mathbf A\vec x=\prod_{i=1}^{n}\mathbf M_{i}\vec b$$。包： scipy: linalg.solve()。
+- 求解线性方程组
 
-  - 矩阵求逆：$$\mathbf A\vec x_i=\vec b_i$$，设 $$\vec b_i$$ 除了第 $$i$$ 列是 $$1$$，其他都是 $$0$$。然后排成 $$\mathbf A\mathbf X=\mathbf I$$。用 LU 分解法算出每个 $$x_i$$ 排成 $$\mathbf X=\mathbf A^{-1}$$。包： scipy: linalg.inv()：
+  例：$$\mathbf A$$ 是 $$n$$ 阶**方阵**，则线性方程组 $$\mathbf A\vec x=\vec b$$ 有可能有唯一确定的解（也有可能无解或有无穷多解），将 $$\mathbf A$$ 一步一步转化为上三角方阵，转化矩阵有固定的生成套路，转化为 $$\displaystyle\prod_{i=1}^{n}\mathbf M_{i}\mathbf A\vec x=\prod_{i=1}^{n}\mathbf M_{i}\vec b$$。包： scipy: linalg.solve()。
+
+- 矩阵求逆
+
+  $$\mathbf A\vec x_i=\vec b_i$$，设 $$\vec b_i$$ 除了第 $$i$$ 列是 $$1$$，其他都是 $$0$$。然后排成 $$\mathbf A\mathbf X=\mathbf I$$。用 LU 分解法算出每个 $$x_i$$ 排成 $$\mathbf X=\mathbf A^{-1}$$。包： scipy: linalg.inv()。
+
+### Givens 旋转变换
 
 - 求矩阵特征值与特征向量
 
-  Givens 旋转变换：$$Q_{pq}=\sin\theta$$, $$Q_{qp}=-\sin\theta$$, $$Q_{pp}=Q_{qq}=\cos\theta$$. $$\mathbf{Q^T AQ}$$ 是正交变换。
+  $$Q_{pq}=\sin\theta$$, $$Q_{qp}=-\sin\theta$$, $$Q_{pp}=Q_{qq}=\cos\theta$$. $$\mathbf{Q^T AQ}$$ 是正交变换。
   $$
   \mathbf Q(p,q,\theta)=
   \begin{bmatrix}
@@ -97,17 +103,28 @@ $$\displaystyle \frac{dy}{dt}=f(y,t)$$, $$y(0)=y_0$$.
   $$
 
 
-  - 对称矩阵：Jacobi 方法：使用正交矩阵 $$\mathbf Q$$ 对 $$\mathbf A$$ 做 Givens 旋转变换，使对角元比重逐步增加（每一步选择绝对值最大的非对角元位置作为 $$p,q$$），使非对角元逐步变小，当非对角元太小，就近似认为完成。
-  - QR 方法：利用 [QR decomposition](https://en.wikipedia.org/wiki/QR_decomposition#Relation_to_RQ_decomposition)（例如 Givens 旋转）将矩阵分解为正交矩阵 $$\mathbf Q$$ 和上三角矩阵 $$\mathbf R$$ 的乘积，然后通过 [QR Algorithm](https://en.wikipedia.org/wiki/QR_algorithm) 逐步迭代，实现矩阵对角化。
+  - 对称矩阵：Jacobi 方法
+
+    使用正交矩阵 $$\mathbf Q$$ 对 $$\mathbf A$$ 做 Givens 旋转变换，使对角元比重逐步增加（每一步选择绝对值最大的非对角元位置作为 $$p,q$$），使非对角元逐步变小，当非对角元太小，就近似认为完成。
+
+  - 矩阵对角化：QR 方法
+
+    利用 [QR decomposition](https://en.wikipedia.org/wiki/QR_decomposition#Relation_to_RQ_decomposition)（例如 Givens 旋转）将矩阵分解为正交矩阵 $$\mathbf Q$$ 和上三角矩阵 $$\mathbf R$$ 的乘积，然后通过 [QR Algorithm](https://en.wikipedia.org/wiki/QR_algorithm) 逐步迭代。
 
 ## 非线性方程求根
 
 - 搜索法：迈步走，变号回头，步长减半接着走。
 - 二分法：砍一半看变不变号。
-- Newton - Raphson：用直线代替原函数，直线的零点代替方程的根。
-- 割弦法：上面的微分用差分代替。
+- Newton-Raphson：用直线代替原函数，直线的零点代替方程的根。
+- 割弦法：Newton-Raphson 中微分用差分代替。
 
 前两者收敛慢，但后两者如遇到拐点或多根可能不收敛，因此先用前两者确定根的范围，再用后两者求精确值。
+
+### Newton-Raphson
+
+如果找根的范围离根足够近，则迭代 $$\displaystyle x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}$$ 可以找到方程的根。
+
+- Reference: Garrity, T. A. (2021). *All the Math You Missed: But Need to Know for Graduate School*. Cambridge University Press. 19.5.，[微分学中值定理](https://shi200005.github.io/2021/09/30/Calculus/#微分学中值定理)
 
 ## 随机数
 
