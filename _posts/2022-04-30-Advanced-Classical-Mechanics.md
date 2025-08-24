@@ -18,7 +18,7 @@ mathjax: true
 
 其他推荐教材：
 
-1. 鞠国兴,理论力学学习指导与习题解析(第二版),?,? 
+1. 鞠国兴,理论力学学习指导与习题解析(第二版),科学出版社,2018
 2. 朗道,力学(第五版),高等教育出版社,2007 
 3. 鞠国兴,朗道《力学》解读,高等教育出版社,2014
 
@@ -59,7 +59,7 @@ mathjax: true
 **虚功原理**
 
 - 当一个只有理想约束的力学系统处于**平衡**状态时，作用于该系统所有的**主动力**的虚功之总和为零。$$\delta W=\displaystyle\sum_{i=1}^n\vec F_i\cdot\delta \vec r_i=0$$
-- 虚位移有很大任意性 -> 甩掉虚位移  -> 虚位移不独立 换成广义坐标 -> 广义坐标的虚位移 $$\delta\vec r_i=\displaystyle\sum_{\alpha=1}^s\frac{\partial\vec r_i}{\partial q_\alpha}\delta q_\alpha$$ -> 广义坐标下的虚功原理 -> 广义力（广义力对应广义坐标，而非单个主动力） $$Q_\alpha=\displaystyle\sum_{i=1}^n\vec F_i\cdot\frac{\partial\vec r_i}{\partial q_\alpha}=0$$ -> 完整约束广义虚位移相互独立 $$Q_\alpha=0$$.
+- 虚位移有很大任意性 -> 甩掉虚位移  -> 虚位移不独立 换成广义坐标 -> 广义坐标的虚位移 $$\delta\vec r_i=\displaystyle\sum_{\alpha=1}^s\frac{\partial\vec r_i}{\partial q_\alpha}\delta q_\alpha$$ -> 广义坐标下的虚功原理 -> 广义力（广义力对应广义坐标，而非单个主动力）虚功之和为 0 $$Q_\alpha=\displaystyle\sum_{i=1}^n\vec F_i\cdot\frac{\partial\vec r_i}{\partial q_\alpha}=0$$ -> 完整约束广义虚位移相互独立 $$Q_\alpha=0$$.
 - 解题步骤：判断是否满足理想约束，识别主动力，确定自由度和广义坐标。列所有主动力的虚功为 $$0$$（真实坐标微分），用广义坐标表示真实坐标，算出用广义坐标微分表示的真实坐标微分。若广义坐标相互独立，则令每个广义坐标微分的系数为 $$0$$，解方程。
 
 约束力的求解——[拉格朗日乘子法](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)（虚功原理中约束力被甩掉了，如果要求怎么办？）
@@ -69,7 +69,7 @@ mathjax: true
 
 ### 达朗贝尔原理
 
-- 以上研究的是静力学问题，现在转到动力学问题。代入牛顿第二定律，
+- 以上研究的是静力学问题，现在转到**动力学**问题。代入[牛顿第二定律](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#牛顿运动定律)，
 - 在理想约束作用下，主动力和达朗贝尔力的虚功之总和为零。$$\displaystyle\sum_{i=1}^n(\vec F_i-m_i\ddot{\vec r}_i)\cdot\delta \vec r_i=0$$.
 
 例：[虚功原理 - 达朗贝尔原理](https://shi200005.github.io/download_file/ACM_dAlembert.pdf)。
@@ -102,11 +102,11 @@ mathjax: true
 
 - **[广义动量](https://shi200005.github.io/download_file/ACM_Generalized_Momentum.pdf)** $$\displaystyle p_\alpha=\frac{\partial L}{\partial\dot q_\alpha}$$ 
 
-  基础课程内主要考虑 $$V$$ 与 $$\dot q_\alpha$$ 无关的情况，于是 $$p_\alpha=\displaystyle\frac{\partial T}{\partial\dot q_\alpha}$$）。这时，类比牛顿力学，拉格朗日方程可读作：广义动量的时间变化率等于广义力。
+  基础课程内主要考虑 $$V$$ 与 $$\dot q_\alpha$$ 无关的情况，于是 $$p_\alpha=\displaystyle\frac{\partial T}{\partial\dot q_\alpha}$$。这时，类比牛顿力学，拉格朗日方程 $$\displaystyle\frac{d}{dt}\dot p_\alpha=Q_\alpha$$ 可读作：广义动量的时间变化率等于广义力。
 
   广义动量包含了通常的动量、角动量等物理量，它的量纲取决于广义坐标的量纲。
   
-- 彩蛋 [为什么拉格朗日量是动能减势能，而不是动能加势能？ - 王俊凯的回答 - 知乎](https://www.zhihu.com/question/544323036/answer/2708198213)
+- [为什么拉格朗日量是动能减势能，而不是动能加势能？ - 王俊凯的回答 - 知乎](https://www.zhihu.com/question/544323036/answer/2708198213)
 
 例：[拉格朗日动力学](https://shi200005.github.io/download_file/ACM_Lagrangian.pdf)。
 
@@ -144,7 +144,7 @@ mathjax: true
 
 例：带电粒子在电磁场中受洛伦兹力 $$\vec F=q(\vec E+\vec v\times\vec B)$$。在[洛伦兹规范](https://shi200005.github.io/2022/04/10/Electrodynamics/#%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2%E4%B8%8E%E8%A7%84%E8%8C%83%E4%B8%8D%E5%8F%98%E6%80%A7)下，$$\vec E+\displaystyle\frac{\partial\vec A}{\partial t}=-\nabla V$$, $$\vec B=\nabla\times\vec A$$。于是 $$\vec F=q[\displaystyle-\nabla V-\vec v\times(\nabla\times\vec A)]$$...... -> $$\displaystyle\frac{d}{dt}(\vec p+q\vec A)=\nabla[q(V-\vec v\cdot\vec A)]$$, $$\displaystyle\frac{d}{dt}(T+qV)=\frac{\partial}{\partial t}[q(V-\vec v\cdot\vec A)]$$。详见 Griffiths 10.1.4.
 
-从而定义广义势能 $$U(q,\dot q,t)=e\varphi-e\vec A\cdot\vec v$$，拉格朗日函数成为 $$L=T-U$$​，原来的拉格朗日方程仍成立。此时，研究的守恒量，如广义动量守恒，是不以牛顿第三定律为基础的。
+从而定义广义势能 $$U(q,\dot q,t)=q(V-\vec v\cdot\vec A)$$，拉格朗日函数成为 $$L=T-U$$​，原来的拉格朗日方程仍成立。此时，研究的守恒量，如广义动量守恒，是不以牛顿第三定律为基础的。
 
 通过我每篇表头，可以知道我们先学理论力学后学电动力学。因此，在理论力学教材看到第二段的时候，我很蒙蔽，想着学了电动力学可能就会了。然而学了电动力学，我的矢量分析还是毫无长进，也不敢回过头来看能不能懂这个推广的拉格朗日函数。当然，在看 Griffiths 不厌其烦的细致讲解之前，我是不能懂的。在此，我代表全体物理学院笨蛋，强烈支持循循善诱的讲解，而非点到为止。
 
@@ -173,7 +173,7 @@ mathjax: true
 
 平方反比引力下的椭圆轨道：半长轴 $$\displaystyle a=\frac{mk^2}{2\vert E^\prime\vert}$$、半短轴 $$\displaystyle b=h\sqrt{\frac{m^\prime}{2\vert E^\prime\vert}}$$、能量 $$\displaystyle E^\prime=-\frac{mk^2}{2a}$$。
 
-引力下的圆轨道：稳定性 $$\displaystyle \frac{F^\prime(r_0)}{F(r_0)}+\frac{3}{r_0}>0$$ -> 稳定。星际航行怎么行。
+引力下的圆轨道：稳定性 $$\displaystyle \frac{F^\prime(r_0)}{F(r_0)}+\frac{3}{r_0}>0$$ -> 稳定。
 
 ### 斥力 散射问题
 
@@ -195,6 +195,18 @@ mathjax: true
 
 [力学](https://shi200005.github.io/2022/02/23/Classical-Mechanics/#%E5%88%9A%E4%BD%93%E5%8A%9B%E5%AD%A6)中我们已经学过，刚体的定点转动的三个欧拉角可以确定刚体的运动，于是可以选取欧拉角为广义坐标。如果主动力全是保守力，则可以写出拉格朗日函数。例：陀螺，参见梁老师 6.5 对称重刚体的定点运动（拉格朗日 - 泊松情况）。重力矩与进动的抗衡。
 
+### 进动
+
+> **进动**（precession）是[自转](https://zh.wikipedia.org/wiki/自轉)物体之自转轴又绕着另一轴旋转的现象，又可称作**旋进**......常见的例子为[陀螺](https://zh.wikipedia.org/wiki/陀螺)。当其自转轴的轴线不再呈[铅直](https://zh.wikipedia.org/wiki/鉛直)时，即自转轴与对称轴不重合不平行时，会发现自转轴会沿着铅直线作旋转，此即“旋进”现象。......--Wiki_zh
+
+#### 天文——岁差
+
+> 太阳以恒星为起点绕天空一周比以春分点为起点绕太阳一周要多费时约 11 分钟。这说明春分点是在众星之间一年一年不停地移动位置了。这种移动便叫做“岁差”（the precession of equinoxes）。这也是与天上的东西毫不相干的，只是由于地球在环绕太阳时每年不断地缓慢慢移动地轴的方向而已。
+>
+> 因为月亮和行星以及太阳大都不会离开黄道太远，它们便常常和依循黄道带上的十二星座连在一起了。这十二星座的名称是：白羊（Aries）、金牛（Taurus）、双子（Gemini）、巨蟹（Cancer）、狮子（Leo）、室女（Virgo）、天秤（Libra）、天蝎（Scorpio）、人马（Sagittarius）、摩羯（Capricornus）、宝瓶（Aquarius）、双鱼（Pisces）。黄道带是环绕天球的一道 16 度宽的带子，黄道正在其中。平均分为十二区域便是黄道十二宫，从春分点向东数起，十二宫的名字便是那十二星座的名字。2000 年前每一宫都正好包括所属星座。但因为有岁差，黄道十二宫已向西移动，所以十二宫已不与同名的十二星座完全相符合了。
+>
+> ——《通俗天文学》 西蒙·纽康 金克木译
+
 ## 哈密顿力学
 
 >拉格朗日动力学用广义坐标和广义速度描写力学系统的运动，哈密顿动力学则用**广义坐标**和**广义动量**描写力学系统的运动，后者与广义坐标的量纲无关，总是作用量（能量 $$\times$$ 时间的量纲）。而量子论的量子化条件正是把**作用量**加以量子化。可见哈密顿动力学可作为从经典力学到量子力学的“跳板”。
@@ -208,8 +220,8 @@ mathjax: true
 $$
 \begin{cases}
 \displaystyle\frac{\partial H}{\partial q_\alpha}=-\dot p_\alpha \\
-\displaystyle\frac{\partial H}{\partial p_\alpha}=\dot q_\alpha	\quad(\alpha=1,2,...,s).
-\end{cases}
+\displaystyle\frac{\partial H}{\partial p_\alpha}=\dot q_\alpha	
+\end{cases}\quad(\alpha=1,2,...,s).
 $$
 
 
@@ -218,15 +230,15 @@ $$
 
 ### 刘维尔定理
 
-在经典力学问题求解中，如果用哈密顿力学求解，总是逃不开拉格朗日函数的求解。那么我们为什么要用哈密顿力学呢？对于这个问题，梁昆淼老师在其《理论力学》教材第 7-9 章深入探讨。从一切可能运动的拉格朗日函数 $$L(q,\dot q,t)$$ 出发（拉格朗日动力学）或从一切可能运动的哈密顿函数 $$H(q,p,t)$$ 出发（哈密顿动力学），此时 $$q$$ 和 $$\dot q$$ 相互独立，$$q$$ 和 $$p$$ 也相互独立。但是进入虚位移求实际运动时 $$\dot q$$ 就不再独立于 $$q$$（我的理解是”关联“指的就是拉格朗日方程？），然而 $$p$$ 却独立于 $$q$$（这句话详见下文**哈密顿原理**部分）。于是拉格朗日动力学在 $$s$$ 维位形空间研究，哈密顿力学在 $$2s$$ 维位形空间中研究。
+在经典力学问题求解中，如果用哈密顿力学求解，总是逃不开拉格朗日函数的求解。那么我们为什么要用哈密顿力学呢？对于这个问题，梁昆淼老师在其《理论力学》教材第 7-9 章深入探讨。从一切可能运动的拉格朗日函数 $$L(q,\dot q,t)$$ 出发（拉格朗日动力学）或从一切可能运动的哈密顿函数 $$H(q,p,t)$$ 出发（哈密顿动力学），此时 $$q$$ 和 $$\dot q$$ 相互独立，$$q$$ 和 $$p$$ 也相互独立。但是进入虚位移求实际运动时 $$\dot q$$ 就不再独立于 $$q$$（我的理解是”关联“指的就是拉格朗日关系？），然而 $$p$$ 却独立于 $$q$$（这句话详见下文**哈密顿原理**部分）。于是拉格朗日动力学在 $$s$$ 维位形空间研究，哈密顿力学在 $$2s$$ 维位形空间中研究。
 
 把广义坐标和广义动量当作直角坐标而构成 $$2s$$ 维的空间叫做相空间。哈密顿正则方程的重要性：刘维尔定理是 $$2s$$ 维的相空间中的定理，在普通空间或 $$s$$ 维的位形空间中并不存在类似的定理。
 
-为什么要引入系综？给定一个由大量微观粒子构成的宏观系统，如果我们知道完整的每个粒子的初始条件，带入哈密顿力学，就能算出一切了（确切地知道一个相点，通过哈密顿力学算出从今往后的相轨道）。然而，完整的初始条件，我们不可能知道，也不需要知道，知道了也懒得拿来算。处于同样宏观条件下的平衡态系统（一坨理想气体的 $$p,V,T$$），对应的微观条件的数目是巨大的（每个气体分子的坐标和动量）。其实我们只需要知道代表点在相空间内的概率分布就行了。**系综是具有相同宏观条件但是各自处于其微观状量相空间的大量系统的集合**。
+[统计物理](https://shi200005.github.io/2022/09/10/Statistical-Mechanics/)意义：给定一个由大量微观粒子构成的宏观系统，如果我们知道完整的每个粒子的初始条件，带入哈密顿力学，就能算出一切了（确切地知道一个相点，通过哈密顿力学算出从今往后的相轨道）。然而，完整的初始条件，我们不可能知道，也不需要知道，知道了也懒得拿来算。处于同样宏观条件下的平衡态系统（一坨理想气体的 $$p,V,T$$），对应的微观条件的数目是巨大的（每个气体分子的坐标和动量）。其实我们只需要知道代表点在相空间内的概率分布就行了。**系综是具有相同宏观条件但是各自处于其微观状量相空间的大量系统的集合**。
 
 系统的微观状态随时间不断变化，如何描述系统是否处于**平衡态**呢？系综随时间如何演化，对应相空间中代表点的**概率演化**，描述它的定理就是**刘维尔定理**。
 
-系统微观状态的几率分布函数或几率密度 $$\rho(\boldsymbol p,\boldsymbol q,t)$$，代表 $$t$$ 时刻系统的微观状态处于相点$$\rho(\boldsymbol p,\boldsymbol q,t)$$周围小**相体积元** $$d\Gamma=\displaystyle\prod_{i=1}^{N}d^3\vec p_id^e\vec q_i$$ 内的几率，满足归一化条件 $$\int d\Gamma\rho=1$$。
+系统微观状态的几率分布函数或几率密度 $$\rho(\boldsymbol p,\boldsymbol q,t)$$，代表 $$t$$ 时刻系统的微观状态处于相点 $$\rho(\boldsymbol p,\boldsymbol q,t)$$ 周围小**相体积元** $$d\Gamma=\displaystyle\prod_{i=1}^{N}d^3\vec p_id^3\vec q_i$$ 内的几率，满足归一化条件 $$\int d\Gamma\rho=1$$。
 
  - 保守哈密顿系统。证明过程：连续性方程、带入**正则运动方程**......
  - 结论：$$\displaystyle\frac{d\rho}{dt}=\frac{\partial\rho}{\partial t}+\{\rho,H\}=0$$。如果把系综在相空间的运动看成代表点组成的“流体”，那么刘维尔定理表示这个“流体”是**不可压缩**的。系综的几率密度（或代表点密度）在运动中不变。P.S. 其中$$\displaystyle\frac{d}{dt}$$ 指跟着代表点一起运动，$$\displaystyle\frac{\partial}{\partial t}$$ 指固定地点。上一句话作为 Kardar Eq.(3.11) & Eq.(3.13) 的注释。为啥我们盯着这一群代表点？因为你要套到哈密顿力学里，哈密顿力学描述的是这群粒子广义坐标和广义动量的变化嘛=-=。
@@ -239,9 +251,9 @@ $$S=\displaystyle\sum_{i=1}^n\vec K_i\cdot\vec r_i$$ 有界（$$\vec K_i$$ 指�
 
 【GRAD-UPDATE】研究随机过程统计量的系综平均用到的数学手段也很像，详见 [(En) hilfinger2011separating](https://shi200005.github.io/2023/10/02/hilfinger2011separating/)。
 
-例：两粒子有心力 $$r^n$$ 作用，势能满足 $$V=kr^{n+1}$$，位力定理给出 $$\displaystyle\langle T\rangle=\frac{n+1}{2}\langle V\rangle$$。对于平方反比有心力，$$\displaystyle T=-\frac{1}{2}\langle V\rangle$$。解答了我高中时代的疑惑。
+- 例：两粒子有心力 $$r^n$$ 作用，势能满足 $$V=kr^{n+1}$$，位力定理给出 $$\displaystyle\langle T\rangle=\frac{n+1}{2}\langle V\rangle$$。对于平方反比有心力，$$\displaystyle T=-\frac{1}{2}\langle V\rangle$$，解答了我高中时代的疑惑。
 
-例：推导[理想气体压强方程](https://shi200005.github.io/2022/02/24/Thermodynamics/#%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%89%A9%E6%80%81%E6%96%B9%E7%A8%8B) $$pV=nkT$$。
+- 例：推导[理想气体压强方程](https://shi200005.github.io/2022/02/24/Thermodynamics/#%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%89%A9%E6%80%81%E6%96%B9%E7%A8%8B) $$pV=nkT$$。
 
 ### 泊松括号
 
@@ -273,8 +285,6 @@ $$S=\displaystyle\sum_{i=1}^n\vec K_i\cdot\vec r_i$$ 有界（$$\vec K_i$$ 指�
 
 ## 力学变分原理
 
-Significance: 见梁老师本章引言。
-
 ### 哈密顿原理
 
 哈密顿原理：力学系统的动力学归结为一个[变分原理](https://shi200005.github.io/2021/09/30/Calculus/#%E5%8F%98%E5%88%86%E6%B3%95%E5%88%9D%E6%AD%A5)：力学系统从时刻 $$t_1$$ 到时刻 $$t_2$$ 的一切可能运动之中，使**哈密顿作用量** $$S=\displaystyle\int_{t_1}^{t_2}L(t,q,\dot q)dt$$ 取极值的运动才是实际发生的运动。
@@ -300,15 +310,9 @@ Significance: 见梁老师本章引言。
 
 力学以外的变分原理：[几何光学](https://shi200005.github.io/2022/02/25/Optics/)中也有条变分原理，即费马原理 $$\displaystyle\delta\int\frac{1}{u}ds=\frac{1}{c}\delta\int nds=0$$。几何光学是波动光学的短波长极限，这就启发我们也可以把经典力学当作某种波动力学的短波长极限。
 
-## 正则变换 哈密顿-雅可比方程
+## 正则变换
 
-**揭示了向量子力学的过渡......**
-
-> 哈密顿方程对于范围更广的变换（正则变换）具有不变性。因此可以借助于这种变换使哈密顿函数变得极简单（变为常数或零），以使求解变换后的哈密顿方程成为极简单的事。
-
-此章例子见[正则变换与谐振子](https://shi200005.github.io/download_file/ACM_Hamilton_Jacobi.pdf).
-
-### 正则变换
+**揭示了向量子力学的过渡......**此章例子见[正则变换与谐振子](https://shi200005.github.io/download_file/ACM_Hamilton_Jacobi.pdf).
 
 哈密顿原理 $$\delta \displaystyle\int_{t_1}^{t_2}L(q,\dot q,t)dt=0$$（位形空间中）或者 $$\delta \displaystyle\int_{t_1}^{t_2}[\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H(p,q,t)]dt=0$$（相空间中），被积函数如果加上初末值给定的一个时间全微分 $$U$$，则变分为 $$\delta\displaystyle\int_{t_1}^{t_2}\frac{dU}{dt}dt=0$$，并不改变动力学方程。
 
@@ -318,8 +322,8 @@ Significance: 见梁老师本章引言。
 $$
 \begin{cases}
 P_\alpha=P_\alpha(p,q,t)\\
-Q_\alpha=Q_\alpha(p,q,t)\quad(\alpha=1,2,...,s).
-\end{cases}
+Q_\alpha=Q_\alpha(p,q,t)
+\end{cases}\quad(\alpha=1,2,...,s).
 $$
 
 
@@ -333,21 +337,23 @@ $$
 \end{cases}
 $$
 
+如何实现？按照上面的说法，$$(\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H)-(\displaystyle\sum_{\alpha=1}^s P_\alpha\dot Q_\alpha-K)=\frac{dU}{dt}$$，即 $$\displaystyle\sum_{\alpha=1}^s p_\alpha dq_\alpha-\displaystyle\sum_{\alpha=1}^s P_\alpha dQ_\alpha+(K-H)=dU$$ 即可，这就是**正则变换**。上式很自然地导出 $$U_1=U_1(q,Q,t)$$ 形式母函数的正则变换式（见[正则变换与谐振子](https://shi200005.github.io/download_file/ACM_Hamilton_Jacobi.pdf)），其他形式母函数的正则变换式，可以应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)把宗量给变了。<span style="color: red;">我们希望经过这个变换，能变换出来尽可能多的可遗坐标和相应守恒的“广义动量”。</span>
 
-如何实现？按照上面的说法，$$(\displaystyle\sum_{\alpha=1}^s p_\alpha\dot q_\alpha-H)-(\displaystyle\sum_{\alpha=1}^s P_\alpha\dot Q_\alpha-K)=\frac{dU}{dt}$$，即 $$\displaystyle\sum_{\alpha=1}^s p_\alpha dq_\alpha-\displaystyle\sum_{\alpha=1}^s P_\alpha dQ_\alpha+(K-H)=dU$$ 即可，这就是**正则变换**。<span style="color: red;">我们希望经过这个变换，能变换出来尽可能多的可遗坐标和相应守恒的“广义动量”。</span>
+**性质**
 
-怎么变？应用[勒让德变换](https://shi200005.github.io/2021/09/30/Calculus/#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0)把宗量给变了。见本章例子。
+- **泊松括号不变性**：在正则变换下，$$[\varphi,\psi]_{pq}=[\varphi,\psi]_{PQ}$$。
+  - $$[q,p]=[Q,P]=1$$
+- 正则变换$$\displaystyle\frac{\partial p_k}{\partial Q_s}=-\frac{\partial P_s}{\partial q_k}$$...，进而[雅可比行列式](https://shi200005.github.io/2021/09/30/Calculus/#积分换元---雅可比矩阵)等于 1。**还没想明白**
 
-**泊松括号不变性**：在正则变换下，$$[\varphi,\psi]_{pq}=[\varphi,\psi]_{PQ}$$。
+**无限小正则变换**
 
-**无限小正则变换**：选母函数 $$\displaystyle U_3(q,P,t)=\sum_{\alpha=1}^sq_\alpha P_\alpha+\epsilon G(q,P)$$，正则方程变为
-
+选母函数 $$\displaystyle U_3(q,P,t)=\sum_{\alpha=1}^sq_\alpha P_\alpha+\epsilon G(q,P)$$，正则方程变为
 
 $$
 \begin{cases}
 \displaystyle dq_\alpha=\epsilon\frac{\partial G}{\partial p_\alpha}\\
-\displaystyle dp_\alpha=-\epsilon\frac{\partial G}{\partial q_\alpha}\quad(\alpha=1,2,...,s).
-\end{cases}
+\displaystyle dp_\alpha=-\epsilon\frac{\partial G}{\partial q_\alpha}
+\end{cases}\quad(\alpha=1,2,...,s).
 $$
 
 
@@ -357,15 +363,52 @@ $$
 
 ### 哈密顿 - 雅可比方程
 
-如何找到上文中能把正则变量都变成常数（初始值）的正则变换？我们希望 $$K(P,Q,t)=0$$，正则方程就保证了正则变量是常数作为变换后的“动量”。在哈密顿函数代入 $$K=0$$ 的条件，把原来的一阶 linear system of ODEs 变换为一阶 a nonlinear PDE，这就是**哈密顿-雅可比方程**，方程的解叫做**哈密顿主函数** $$S$$，其实就是拉格朗日函数 $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$。
+> 哈密顿方程对于范围更广的变换（正则变换）具有不变性。因此可以借助于这种变换使哈密顿函数变得极简单（变为常数或零），以使求解变换后的哈密顿方程成为极简单的事。
 
-当 $$H$$ 不显含时间，可以把哈密顿-雅可比方程的空间变量与 $$t$$ 分离，令 $$S(q,P,t)=W(q,P)+f(t)$$，得到 $$\displaystyle H(q,\frac{\partial W}{\partial t})=-f^\prime(t)=E$$。也称前面这个方程为**哈密顿-雅可比方程**，$$W(q,P)$$ 为**哈密顿特征函数**。
+如何变换出来尽可能多的可遗坐标和相应守恒的“广义动量？我们希望 $$K(P,Q,t)=0$$，则
 
-- 对于自由度多于 $$1$$ 的系统，一种特殊的可积系统（泊松定理）：**完全可分离的系统**，哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$......  哈密顿特征函数可写为 $$\displaystyle W=\sum_{\alpha=1}^sW_\alpha(q_\alpha,E,C_2,\ldots,C_s)$$，哈密顿 - 雅可比方程可以分离为 $$s$$ 个 $$\displaystyle\Phi_\alpha(q_\alpha,\frac{dW_\alpha}{dq_\alpha},E,C_2,\ldots,C_s)=0$$ 积分求解以得到特征函数。
 
-书中给出了一些用哈密顿-雅可比方程对力学系统进行正则变换求解然后再变回去的例子。其中**谐振子**的问题很有意思。变换后 $$\displaystyle K(P,X)=\frac{1}{2\pi}\sqrt{\frac{k}{m}}P$$。在这个例子里我们发现，能量和时间其实就是对系统做正则变换后的一对共轭变量，其实就是变换后的哈密顿函数的一对“动量”（能量守恒）和“坐标”（$$K$$ 中不显含 $$X$$，$$X$$ 是可遗坐标）。
+$$
+\begin{cases}
+\displaystyle \frac{dP_k}{dt}=-\frac{\partial K}{\partial Q_k}=0\\
+\displaystyle \frac{dQ_k}{dt}=\frac{\partial K}{\partial P_k}=0
+\end{cases}
+\quad \to \quad
+\begin{cases}
+\displaystyle P_k=\alpha_k\\
+\displaystyle Q_k=\beta_k
+\end{cases}
+\quad(k=1,2,...,s).
+$$
 
-在平方反比有心吸引力的例子里，提到哈密顿 - 雅可比方法总是直接给出轨道。
+
+在哈密顿函数代入 $$K=0$$ 的条件，把原来的一阶 linear system of ODEs 变换为一阶 a nonlinear PDE，这就是**哈密顿-雅可比方程**，方程的解叫做**哈密顿主函数** $$S$$，其实就是拉格朗日函数 $$S=\displaystyle\int_{t_1}^{t_2}Ldt$$。
+
+**当 $$H$$ 不显含时间**，可以把哈密顿-雅可比方程的空间变量与 $$t$$ 分离，令 $$H=\alpha_1$$，$$S=W(q,\alpha)-\alpha_1 t$$，选取生成函数 $$W(q,P)$$ 为**哈密顿特征函数**，得到特征函数的**哈密顿-雅可比方程** $$\displaystyle H(q,\frac{\partial W}{\partial q})=\alpha_1$$。这样变换后 $$\displaystyle K=H=\alpha_1$$（注意跟上面的 0 对比，因为我们把 $$t$$ 的部分从生成函数里分出去了）。此时
+
+$$
+\begin{cases}
+\displaystyle \frac{dP_k}{dt}=-\frac{\partial K}{\partial Q_k}=0\\
+\displaystyle \frac{dQ_1}{dt}=\frac{\partial K}{\partial \alpha_1}=1\\
+\displaystyle \frac{dQ_k}{dt}=\frac{\partial K}{\partial \alpha_k}=0
+\end{cases}
+\quad \to \quad
+\begin{cases}
+\displaystyle P_k=\alpha_k\\
+\displaystyle Q_1=t+\beta_1=\frac{\partial W}{\partial \alpha_1}\quad\to\text{结合轨迹方程得到运动方程}\\ 
+\displaystyle Q_k=\beta_k=\frac{\partial W}{\partial \alpha_k} \to\text{轨迹方程}
+\end{cases}
+$$
+
+
+- 对于自由度多于 $$1$$ 的系统，完全可分离的系统：哈密顿特征函数可写为 $$\displaystyle W=\sum_{\alpha=1}^sW_\alpha(q_\alpha,E,C_2,\ldots,C_s)$$，哈密顿 - 雅可比方程可以分离为 $$s$$ 个 $$\displaystyle\Phi_\alpha(q_\alpha,\frac{dW_\alpha}{dq_\alpha},E,C_2,\ldots,C_s)=0$$ 积分求解以得到特征函数。是否可分离与广义坐标的选取有关。
+
+  - 例：质点在有心力作用下的运动，见教材 9.2 例 2。
+  - 如果 $$q_k$$ 是可遗坐标，则由上面 $$\Phi_k$$ 看出 $$\displaystyle\frac{dW_k}{dq_k}=0$$ 即 $$W_k=\alpha_kq_k$$。
+
+  一种特殊的可积系统（泊松定理）：哈密顿函数是 $$s$$ 个独立部分的和， $$H(q_1,...,q_s,p_1,...,p_s)=\displaystyle\sum_{\alpha=1}^s H_\alpha(q_\alpha,p_\alpha)$$......  
+
+- 书中给出了一些用哈密顿-雅可比方程对力学系统进行正则变换求解然后再变回去的例子。其中**谐振子**的问题很有意思。变换后 $$\displaystyle K(P,X)=\frac{1}{2\pi}\sqrt{\frac{k}{m}}P$$。在这个例子里我们发现，能量和时间其实就是对系统做正则变换后的一对共轭变量，其实就是变换后的哈密顿函数的一对“动量”（能量守恒）和“坐标”（$$K$$ 中不显含 $$X$$，$$X$$ 是可遗坐标）。
 
 ### 正则微扰理论
 
@@ -386,7 +429,7 @@ $$
 
 满足以微扰函数 $$\epsilon H^\prime$$ 为哈密顿函数的正则方程。这个方程一般称为**微扰方程**。
 
-例：非线性振动一阶微扰修正（见本章附件）。我们看到非线性谐振ß子的振幅修正为零，频率修正后为 $$\displaystyle\omega_0(1+\frac{3b}{8k}A^2)$$。由于谐振子能量为 $$\displaystyle\frac{1}{2}m\omega^2A^2$$，不难看出能量修正后为 $$\displaystyle E_0+\frac{3}{8}A^4b+o(b)$$。而非微扰解 $$x=A\sin(\omega_0(t+\beta))$$ 在微扰 $$bx^4$$ 下的期望 $$bA^4\langle\sin^4(\omega_0(t+\beta))\rangle$$ 就是 $$\displaystyle\frac{3}{8}bA^4$$。
+例：非线性振动一阶微扰修正（见[正则变换与谐振子](https://shi200005.github.io/download_file/ACM_Hamilton_Jacobi.pdf)）。我们看到非线性谐振子的振幅修正为零，频率修正后为 $$\displaystyle\omega_0(1+\frac{3b}{8k}A^2)$$。由于谐振子能量为 $$\displaystyle\frac{1}{2}m\omega^2A^2$$，不难看出能量修正后为 $$\displaystyle E_0+\frac{3}{8}A^4b+o(b)$$。而非微扰解 $$x=A\sin(\omega_0(t+\beta))$$ 在微扰 $$bx^4$$ 下的期望 $$bA^4\langle\sin^4(\omega_0(t+\beta))\rangle$$ 就是 $$\displaystyle\frac{3}{8}bA^4$$。
 
 ### 作用量变量与角变量
 

@@ -162,4 +162,6 @@ Consider this step and the next step, $$P(0,\infty\vert n_0,0)=pP(0,\infty\vert 
 - $$q>p$$ -> $$\displaystyle T(0\vert n_0,0)=\frac{\tau n_0}{q-p}$$; <span style="color: blue;">The expected time for you to get broke (as we can see, you are doomed to get broke if you keep gambling, just sooner or later, but we have an estimation of average "get broke" time). </span>
 - $$q<p$$ -> $$T(0\vert n_0,0)\to\infty$$. <span style="color: blue;">**On average** players won't get broke; should you play it? But you can be the unfortunate guy ruined in this ensemble... </span>
 
+[(Zh) 为何赌徒心态终究输光？非遍历性系统中的生存法则](https://mp.weixin.qq.com/s/TDdOlND6zjvVZqCEChm-Aw)
+
 <span style="color: blue;">Conclusion: being a physicist is more rewarding than being a gambler.</span>

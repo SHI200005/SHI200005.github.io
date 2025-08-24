@@ -107,13 +107,19 @@ $$
 
 > 伽利略变换是描述经典力学中一个事件在两个不同的惯性参考系之间的变换，其中时间是绝对的，即两个参考系测量的时间完全相同。根据伽利略变换，可证明满足速度相加原理。事实上，理论和实验都证明任一物体所遵循的牛顿力学方程在不同的惯性系中的形式是相同的，即牛顿力学方程在伽利略变换下保持不变，这就是**经典力学的相对性原理**。——电动力学课件 6.1
 
-## 运动定律与非惯性参考系
+## 非惯性参考系
 
 参见 D. Morin Introduction to Classical Mechanics Chapter 9 Accelerated Frames of Reference。设 $$\displaystyle\frac{d}{dt}$$ 是 $$\vec A$$ 在一个坐标系中的变化率，$$\displaystyle\frac{\partial}{\partial t}$$ 是 $$\vec A$$ 在另一个与前面坐标系有相对运动的坐标系。
 
 $$\displaystyle\frac{d\vec A}{dt}=\frac{\partial\vec A}{\partial t}+\vec\omega\times\vec A$$, therefore, $$\displaystyle\frac{d^2\vec A}{dt^2}=\frac{\partial^2\vec A}{\partial t^2}+\vec\omega\times(\vec\omega\times\vec A)+2\vec\omega\times\frac{\partial\vec A}{\partial t}+\frac{d\vec\omega}{dt}\times\vec A$$
 
-非惯性参考系 -> $$\vec R$$ 是两个坐标系的相对位移，惯性力：1. translation $$\displaystyle-m\frac{\partial^2\vec R}{\partial t^2}$$ 2. centrifugal $$-m\vec\omega\times(\vec\omega\times\vec R)$$ 3. Coriolis $$\displaystyle-2m\vec\omega\times\frac{\partial\vec R}{\partial t}$$ 4. azimuthal $$\displaystyle-m\frac{d\vec\omega}{dt}\times\vec R$$
+非惯性参考系 -> $$\vec R$$ 是两个坐标系的相对位移，惯性力：
+
+- translation $$\displaystyle-m\frac{\partial^2\vec R}{\partial t^2}$$ 
+- 离心力 centrifugal $$-m\vec\omega\times(\vec\omega\times\vec R)$$ 
+- 科里奥利力 Coriolis $$\displaystyle-2m\vec\omega\times\frac{\partial\vec R}{\partial t}$$ 
+  - 地理：河流为什么蜿蜒？大气为什么环流？地转偏向力是一种科里奥利力，使北半球运动（非惯性系中 $$v=\displaystyle\frac{\partial\vec R}{\partial t}$$）的物体右偏，南半球运动的物体左偏。提示：非赤道某点 $$\omega$$ 与地轴平行，不与地平面平行，北半球有向上分量，南半球有向下分量。
+- azimuthal $$\displaystyle-m\frac{d\vec\omega}{dt}\times\vec R$$
 
 ## 质点动力学的运动定理
 
@@ -125,9 +131,7 @@ $$\displaystyle \vec{L}=\vec{r}×\vec{p}$$, $$\displaystyle\vec{M}=\vec{r}×\vec
 
 #### 拉莫尔进动
 
-> **进动**（precession）是[自转](https://zh.wikipedia.org/wiki/自轉)物体之自转轴又绕着另一轴旋转的现象，又可称作**旋进**。在[天文学](https://zh.wikipedia.org/wiki/天文學)上，又称为“[岁差](https://zh.wikipedia.org/wiki/歲差)现象”。常见的例子为[陀螺](https://zh.wikipedia.org/wiki/陀螺)。当其自转轴的轴线不再呈[铅直](https://zh.wikipedia.org/wiki/鉛直)时，即自转轴与对称轴不重合不平行时，会发现自转轴会沿着铅直线作旋转，此即“旋进”现象。另外的例子是[地球](https://zh.wikipedia.org/wiki/地球)的自转。自旋的进动现象主要出现在[核磁共振](https://zh.wikipedia.org/wiki/核磁共振)与[磁振造影](https://zh.wikipedia.org/wiki/磁振造影)上。其中的例子包括了[稳定态自由旋进（进动）造影](https://zh.wikipedia.org/wiki/穩定態自由旋進造影)。 --Wiki_zh
-
-介绍一下进动的意思，之后在[理论力学 - 刚体力学](https://shi200005.github.io/2022/04/30/Advanced-Classical-Mechanics/#%E5%88%9A%E4%BD%93%E5%8A%9B%E5%AD%A6)的陀螺中研究。然而拉莫尔进动特别简单，因为我们并不考虑电子的自转动力学，只是考虑其磁矩在匀强磁场中的转动。在均匀磁场中力矩垂直于角动量，不改变角动量的大小，只改变角动量的方向，造成角动量 $$\vec{L}$$ 和轨道磁矩 $$\vec{μ_l}$$ 绕磁场 $$\vec{B}$$ 以恒定的角频率 $$ω$$ 做**拉莫尔进动**。
+这玩意两门力学课从始至终没提过，因为刚体力学课上讲得不多，高年级天天拉莫尔进动。其实这玩意根本用不着刚体，我们并不考虑电子的自转动力学，只是考虑其磁矩在匀强磁场中的转动。在均匀磁场中力矩垂直于角动量，不改变角动量的大小，只改变角动量的方向，造成角动量 $$\vec{L}$$ 和轨道磁矩 $$\vec{μ_l}$$ 绕磁场 $$\vec{B}$$ 以恒定的角频率 $$ω$$ 做**拉莫尔进动**。
 
 参见梁老师理论力学 6.6，首先根据[磁矩的定义](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%88%86%E5%AD%90%E7%8E%AF%E5%BD%A2%E7%94%B5%E6%B5%81%E6%A8%A1%E5%9E%8B)导出匀速圆周运动带电粒子磁矩 $$\vec\mu=g\vec L$$, 其中$$g=q/2m$$ 为旋磁比。[匀强磁场中](https://shi200005.github.io/2022/03/29/Electromagnetism/#%E5%B0%8F%E5%8C%BA%E5%9F%9F%E7%94%B5%E6%B5%81%E5%9C%A8%E5%A4%96%E7%A3%81%E5%9C%BA)力矩 $$\vec M=\vec\mu\times\vec B$$，于是 $$\displaystyle\frac{d\vec L}{dt}=-g\vec B\times\vec L$$。进动频率为 $$\omega=gB$$。
 

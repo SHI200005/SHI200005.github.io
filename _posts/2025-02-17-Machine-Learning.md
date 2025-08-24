@@ -42,7 +42,7 @@ To minimize the cost function $$\displaystyle E(\vec\theta)=\sum_{i=1}^n  e_i(\v
 
 - **Stochastic gradient descent (SGD)**
 
-  Divide the data points into $$k=1,\ldots,n/M$$ minibatches, each iteration choise a batch and descent on this batch $$\displaystyle \nabla_\theta E^{MB}(\vec\theta)=\sum_{i\in B_k}  e_i(\vec{\mathbf x_i},\vec\theta)$$, and take batches in turns... that introduces stochasticity and speed up the algorithm.
+  Divide the data points into $$k=1,\ldots,n/M$$ minibatches, each iteration choise a batch and descent on this batch $$\displaystyle \nabla_\theta E^{MB}(\vec\theta)=\sum_{i\in B_k}  e_i(\vec{\mathbf x_i},\vec\theta)$$, and take batches in turns... that introduces stochasticity and **speed up the algorithm**.
 
 ## Supervised Learning
 
@@ -131,13 +131,13 @@ Ref 1 fig 35
 
 **Convolutional Neural Networks (CNNs)**
 
-> a translationally invariant neural network that respects locolity of the input data.
+> a **translationally invariant** neural network that respects locolity of the input data.
 
 <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0370157319300766-gr42.jpg" alt="图片1">
 
 Ref 1 fig 42.
 
-Pending!!! Does "convolution" here related to the convolution thereom in Fourier transform???
+> Create a set of neurons that, instead of using all of the data as input, only takes input from a small area of the image. This set of neuros is called a "feature map". **The weights and biases are shared by all the neurons in the feature map**. The goal is to train the feature map to recognize a single feature in the input, regardless of its location in the image. Each feature map is often followed by a "pooling layer". --Compute Ontario Summer School 2025
 
 ## Unsupervised learning
 
